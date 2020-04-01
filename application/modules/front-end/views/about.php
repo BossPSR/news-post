@@ -1,11 +1,11 @@
 		<!-- Slider
 		============================================= -->
-		<section id="slider" class="slider-element clearfix" style="height: 550px; background: url('images/about/hero.jpg') center 70% no-repeat; background-size: cover;">
+		<section id="slider" class="slider-element clearfix" style="height: 550px; background: url('public/assets/front-end/demos/interior-design/images/about/hero.jpg') center 70% no-repeat; background-size: cover;">
 			<div class="container clearfix">
 
 				<div class="clearfix center divcenter" style="max-width: 700px;">
 					<div class="emphasis-title topmargin">
-						<h2 class="font-secondary" style="color: #222; font-size: 70px; font-weight: 900; text-shadow: 0 7px 5px rgba(0,0,0,0.01), 0 4px 4px rgba(0,0,0,0.1);">About us.</h2>
+						<h2 class="font-secondary" style="color: #222; font-size: 70px; font-weight: 900; text-shadow: 0 7px 5px rgba(0,0,0,0.01), 0 4px 4px rgba(0,0,0,0.1);">เกี่ยวกับเรา</h2>
 						<p style="font-weight: 300; opacity: .7; color: #444; text-shadow: 0 -4px 20px rgba(0, 0, 0, .25);">Sell your home to us and skip the hassle of<br>repairs, showings and months of uncertainty</p>
 					</div>
 				</div>

@@ -1,6 +1,6 @@
 <!-- Page Title
 		============================================= -->
-		<section id="page-title" class="parallax page-title-dark center" style="background-image: url('images/single/1.jpg'); background-size: cover; padding: 100px 0;" data-100-bottom-top="background-position:0px 200px;" data-top-bottom="background-position:0px -200px;">
+		<section id="page-title" class="parallax page-title-dark center" style="background-image: url('public/assets/front-end/demos/interior-design/images/single/1.jpg'); background-size: cover; padding: 100px 0;" data-100-bottom-top="background-position:0px 200px;" data-top-bottom="background-position:0px -200px;">
 
 			<div class="container clearfix" style="z-index: 2">
 				<span class="before-heading" style="color: #FFF;">info@canvas.com</span>

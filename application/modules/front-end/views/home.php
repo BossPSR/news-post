@@ -1,5 +1,5 @@
 
-		============================================= -->
+
 		<section id="slider" class="slider-element clearfix" style="height: 500px; background: url('public/assets/front-end/demos/interior-design/images/hero-image.jpg') center center no-repeat; background-size: cover;">
 			<div class="vertical-middle">
 				<div class="container clearfix">
