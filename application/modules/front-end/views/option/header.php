@@ -101,21 +101,18 @@
 
 						</div>
 
-						<div class="col-lg-6 col-12 d-xl-flex d-lg-flex justify-content-xl-center justify-content-lg-center">
+						<div class="col-lg-10 col-12 d-xl-flex d-lg-flex justify-content-xl-center justify-content-lg-center">
 							<!-- Primary Navigation
 							============================================= -->
 							<nav id="primary-menu" class="with-arrows fnone clearfix">
 
 								<ul>
 									<li class="current"><a href="index"><div>หน้าแรก</div></a></li>
-									<li><a href="demos/interior-design/studio.html"><div>Studio</div></a>
-										<ul>
-											<li><a href="public/assets/front-end/demos/interior-design/studio-single.html"><div>Minsk Belarus Studio</div></a></li>
-											<li><a href="public/assets/front-end/demos/interior-design/studio-single.html"><div>Malibu Dream Airstream</div></a></li>
-											<li><a href="public/assets/front-end/demos/interior-design/studio-single.html"><div>Modern Condo in City</div></a></li>
-										</ul>
-									</li>
 									<li><a href="about"><div>เกี่ยวกับเรา</div></a></li>
+									<li><a href="ads"><div>ลงโฆษณา</div></a></li>
+									<li><a href=""><div>ชำระเงิน</div></a></li>
+									<li><a href=""><div>เติมเครดิต</div></a></li>
+									<li><a href=""><div>ดาวน์โหลดหนังสือพิมพ์</div></a></li>
 									<li><a href="contact"><div>ติดต่อเรา</div></a></li>
 								</ul>
 							</nav><!-- #primary-menu end -->
