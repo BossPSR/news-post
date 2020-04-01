@@ -7,7 +7,7 @@
 
 	<!-- Stylesheets
 	============================================= -->
-	
+	<link rel="stylesheet" href="public/assets/front-end/css/newstyle.css" type="text/css" />
 	<link rel="stylesheet" href="public/assets/front-end/css/bootstrap.css" type="text/css" />
 	<link rel="stylesheet" href="public/assets/front-end/style.css" type="text/css" />
     <link rel="stylesheet" href="public/assets/front-end/css/dark.css" type="text/css" />
@@ -101,13 +101,13 @@
 
 						</div>
 
-						<div class="col-lg-8 col-12 d-xl-flex d-lg-flex justify-content-xl-center justify-content-lg-center">
+						<div class="col-lg-6 col-12 d-xl-flex d-lg-flex justify-content-xl-center justify-content-lg-center">
 							<!-- Primary Navigation
 							============================================= -->
 							<nav id="primary-menu" class="with-arrows fnone clearfix">
 
 								<ul>
-									<li class="current"><a href="#"><div>Home</div></a></li>
+									<li class="current"><a href="#"><div>หน้าแรก</div></a></li>
 									<li><a href="demos/interior-design/studio.html"><div>Studio</div></a>
 										<ul>
 											<li><a href="public/assets/front-end/demos/interior-design/studio-single.html"><div>Minsk Belarus Studio</div></a></li>
@@ -122,13 +122,17 @@
 							</nav><!-- #primary-menu end -->
 						</div>
 
-						<div class="col-lg-2 d-none d-lg-inline-flex d-xl-inline-flex justify-content-end nomargin">
+						<div class="col-lg-4 d-none d-lg-inline-flex d-xl-inline-flex justify-content-end nomargin">
+							<div id="register_side">
+								<a href="register" class="d-none d-lg-block">ลงทะเบียน <i class="icon-line-arrow-right"></i></a>
+							</div>
 							<!-- Top Search
 							============================================= -->
 							<div id="side-panel-trigger" class="side-panel-trigger">
 								<a href="#" class="d-block d-lg-none"><i class="icon-line-lock"></i></a>
-								<a href="#" class="d-none d-lg-block">Sign In <i class="icon-line-arrow-right"></i></a>
+								<a href="#" class="d-none d-lg-block">เข้าสู่ระบบ <i class="icon-line-arrow-right"></i></a>
 							</div><!-- #top-search end -->
+							
 						</div>
 						<a href="#" class="d-block d-lg-none mobile-side-panel side-panel-trigger"><i class="icon-line-arrow-right"></i></a>
 					</div>
@@ -137,5 +141,3 @@
 			</div>
 
 		</header><!-- #header end -->
-
-		<!-- Slider
