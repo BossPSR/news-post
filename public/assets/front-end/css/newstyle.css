@@ -21,3 +21,7 @@
     -o-transition: color .3s ease-in-out;
     transition: color .3s ease-in-out;
 }
+
+.data_register_detail{
+    padding: 15px;
+}

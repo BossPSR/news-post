@@ -42,10 +42,10 @@
 
 			<div class="widget clearfix">
 
-				<h4 class="t400">Login with Social</h4>
+				<!-- <h4 class="t400">Login with Social</h4>
 
 				<a href="#" class="button button-rounded t400 btn-block center si-colored noleftmargin si-facebook">Facebook</a>
-				<a href="#" class="button button-rounded t400 btn-block center si-colored noleftmargin si-gplus">Google</a>
+				<a href="#" class="button button-rounded t400 btn-block center si-colored noleftmargin si-gplus">Google</a> -->
 
 				<div class="line line-sm"></div>
 
@@ -62,8 +62,8 @@
 					</div>
 
 					<div class="col_full nobottommargin">
-						<button class="button button-rounded t400 nomargin" id="login-form-submit" name="login-form-submit" value="login">Login</button>
-						<a href="#" class="text-muted fright">Forgot Password?</a>
+						<button class="button button-rounded t400 nomargin" id="login-form-submit" name="login-form-submit" value="login">เข้าสู่ระบบ</button>
+						<a href="#" class="text-muted fright">ลืมรหัสผ่าน</a>
 					</div>
 
 				</form>
@@ -107,7 +107,7 @@
 							<nav id="primary-menu" class="with-arrows fnone clearfix">
 
 								<ul>
-									<li class="current"><a href="#"><div>หน้าแรก</div></a></li>
+									<li class="current"><a href="index"><div>หน้าแรก</div></a></li>
 									<li><a href="demos/interior-design/studio.html"><div>Studio</div></a>
 										<ul>
 											<li><a href="public/assets/front-end/demos/interior-design/studio-single.html"><div>Minsk Belarus Studio</div></a></li>
@@ -115,9 +115,8 @@
 											<li><a href="public/assets/front-end/demos/interior-design/studio-single.html"><div>Modern Condo in City</div></a></li>
 										</ul>
 									</li>
-									<li><a href="public/assets/front-end/demos/interior-design/about.html"><div>About</div></a></li>
-									<li><a href="public/assets/front-end/demos/interior-design/faqs.html"><div>FAQs</div></a></li>
-									<li><a href="public/assets/front-end/demos/interior-design/contact.html"><div>Contact</div></a></li>
+									<li><a href="about"><div>เกี่ยวกับเรา</div></a></li>
+									<li><a href="contact"><div>ติดต่อเรา</div></a></li>
 								</ul>
 							</nav><!-- #primary-menu end -->
 						</div>
