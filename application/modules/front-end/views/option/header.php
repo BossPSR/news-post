@@ -101,7 +101,7 @@
 
 						</div>
 
-						<div class="col-lg-10 col-12 d-xl-flex d-lg-flex justify-content-xl-center justify-content-lg-center">
+						<div class="col-lg-8 col-12 d-xl-flex d-lg-flex justify-content-xl-center justify-content-lg-center">
 							<!-- Primary Navigation
 							============================================= -->
 							<nav id="primary-menu" class="with-arrows fnone clearfix">
@@ -110,15 +110,15 @@
 									<li class="current"><a href="index"><div>หน้าแรก</div></a></li>
 									<li><a href="about"><div>เกี่ยวกับเรา</div></a></li>
 									<li><a href="ads"><div>ลงโฆษณา</div></a></li>
-									<li><a href=""><div>ชำระเงิน</div></a></li>
-									<li><a href=""><div>เติมเครดิต</div></a></li>
-									<li><a href=""><div>ดาวน์โหลดหนังสือพิมพ์</div></a></li>
+									<li><a href="payment"><div>ชำระเงิน</div></a></li>
+									<li><a href="credit"><div>เติมเครดิต</div></a></li>
+									<li><a href="download"><div>ดาวน์โหลดหนังสือพิมพ์</div></a></li>
 									<li><a href="contact"><div>ติดต่อเรา</div></a></li>
 								</ul>
 							</nav><!-- #primary-menu end -->
 						</div>
 
-						<div class="col-lg-4 d-none d-lg-inline-flex d-xl-inline-flex justify-content-end nomargin">
+						<div class="col-lg-2 d-none d-lg-inline-flex d-xl-inline-flex justify-content-end nomargin">
 							<div id="register_side">
 								<a href="register" class="d-none d-lg-block">ลงทะเบียน <i class="icon-line-arrow-right"></i></a>
 							</div>
