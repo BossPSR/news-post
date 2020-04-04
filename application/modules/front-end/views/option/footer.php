@@ -79,20 +79,57 @@
 
 		</footer><!-- #footer end -->
 
-	</div><!-- #wrapper end -->
+		</div><!-- #wrapper end -->
 
-	<!-- Go To Top
+		<!-- Go To Top
 	============================================= -->
-	<div id="gotoTop" class="icon-angle-up"></div>
+		<div id="gotoTop" class="icon-angle-up"></div>
 
-	<!-- External JavaScripts
+		<!-- External JavaScripts
 	============================================= -->
-	<script src="public/assets/front-end/js/jquery.js"></script>
-	<script src="public/assets/front-end/js/plugins.js"></script>
 
-	<!-- Footer Scripts
+		<script src="public/assets/front-end/js/plugins.js"></script>
+
+		<!-- Footer Scripts
 	============================================= -->
-	<script src="public/assets/front-end/js/functions.js"></script>
+		<script src="public/assets/front-end/js/functions.js"></script>
+		<script type="text/javascript">
+			<?php if ($this->session->flashdata('success_login')) : ?>
+				Swal.fire({
+					position: 'start-end',
+					icon: 'success',
+					title: 'Wellcome',
+					showConfirmButton: false,
+					timer: 1500
+				});
+			<?php endif; ?>
+			<?php if ($this->session->flashdata('fail_login')) : ?>
+				Swal.fire({
+					position: 'start-end',
+					icon: 'error',
+					title: 'รหัสผ่านไม่ถูกต้อง',
+					showConfirmButton: true,
+				});
+			<?php endif; ?>
+			<?php if ($this->session->flashdata('success_register')) : ?>
+				Swal.fire({
+					position: 'start-end',
+					icon: 'success',
+					title: 'สมัครสมาชิกสำเร็จ',
+					showConfirmButton: false,
+					timer: 2500
+				});
+			<?php endif; ?>
+			<?php if ($this->session->flashdata('fail_register')) : ?>
+				Swal.fire({
+					position: 'start-end',
+					icon: 'error',
+					title: 'กรุณาออกจากระบบก่อนที่จะสมัครสมาชิก !!',
+					showConfirmButton: true,
+				});
+			<?php endif; ?>
+		</script>
 
-</body>
-</html>
+		</body>
+
+		</html>

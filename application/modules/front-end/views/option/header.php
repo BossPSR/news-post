@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en-US">
+
 <head>
 
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
@@ -10,12 +11,12 @@
 	<link rel="stylesheet" href="public/assets/front-end/css/newstyle.css" type="text/css" />
 	<link rel="stylesheet" href="public/assets/front-end/css/bootstrap.css" type="text/css" />
 	<link rel="stylesheet" href="public/assets/front-end/style.css" type="text/css" />
-    <link rel="stylesheet" href="public/assets/front-end/css/dark.css" type="text/css" />
-    <link href="https://fonts.googleapis.com/css?family=Spartan&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="public/assets/front-end/css/dark.css" type="text/css" />
+	<link href="https://fonts.googleapis.com/css?family=Spartan&display=swap" rel="stylesheet">
 
 	<!-- Home Demo Specific Stylesheet -->
 	<link rel="stylesheet" href="public/assets/front-end/demos/interior-design/interior-design.css" type="text/css" />
-    
+	<link rel="stylesheet" href="public/assets/front-end/css/font-icons.css" type="text/css" />
 	<link rel="stylesheet" href="public/assets/front-end/css/animate.css" type="text/css" />
 	<link rel="stylesheet" href="public/assets/front-end/css/magnific-popup.css" type="text/css" />
 
@@ -25,6 +26,8 @@
 	<link rel="stylesheet" href="public/assets/front-end/css/responsive.css" type="text/css" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<link rel="stylesheet" href="public/assets/front-end/css/colors.php?color=1c85e8" type="text/css" />
+	<script src="public/assets/front-end/js/jquery.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 
 	<!-- Document Title
 	============================================= -->
@@ -33,6 +36,7 @@
 </head>
 
 <body class="stretched side-push-panel">
+	<?php $user = $this->db->get_where('tbl_user', ['email' => $this->session->userdata('email')])->row_array(); ?>
 
 	<div id="side-panel">
 
@@ -49,24 +53,25 @@
 
 				<div class="line line-sm"></div>
 
-				<form id="login-form" name="login-form" class="nobottommargin" action="#" method="post">
+				<form name="frmLogin" method="post">
 
 					<div class="col_full">
-						<label for="login-form-username" class="t400">Username:</label>
-						<input type="text" id="login-form-username" name="login-form-username" value="" class="form-control" />
+						<label class="t400">Email:</label>
+						<input type="email" id="input-email" name="email" value="" class="form-control" />
+						<span id="empty-email" style="font-size:12px;"></span>
 					</div>
 
 					<div class="col_full">
 						<label for="login-form-password" class="t400">Password:</label>
-						<input type="password" id="login-form-password" name="login-form-password" value="" class="form-control" />
-					</div>
-
-					<div class="col_full nobottommargin">
-						<button class="button button-rounded t400 nomargin" id="login-form-submit" name="login-form-submit" value="login">เข้าสู่ระบบ</button>
-						<a href="#" class="text-muted fright">ลืมรหัสผ่าน</a>
+						<input type="password" id="input-password" name="password" value="" class="form-control" />
+						<span id="empty-password" style="font-size:12px;"></span>
 					</div>
 
 				</form>
+				<div class="col_full nobottommargin">
+					<button class="button button-rounded t400 nomargin" id="send_login">เข้าสู่ระบบ</button>
+					<a href="#" class="text-muted fright">ลืมรหัสผ่าน</a>
+				</div>
 
 
 			</div>
@@ -91,12 +96,12 @@
 
 					<div class="row justify-content-xl-between justify-content-lg-between clearfix">
 
-						<div class="col-lg-2 col-12 d-flex align-self-center">
+						<div class="col-lg-1 col-12 d-flex align-self-center">
 							<!-- Logo
 							============================================= -->
 							<div id="logo">
 								<a href="demo-interior-design.html" class="standard-logo"><img src="public/assets/front-end/images/logo_new.png" alt="Canvas Logo"></a>
-								<a href="demo-interior-design.html" class="retina-logo"><img src="public/assets/front-end/images/logo_new.png" alt="Canvas Logo" ></a>
+								<a href="demo-interior-design.html" class="retina-logo"><img src="public/assets/front-end/images/logo_new.png" alt="Canvas Logo"></a>
 							</div><!-- #logo end -->
 
 						</div>
@@ -107,33 +112,122 @@
 							<nav id="primary-menu" class="with-arrows fnone clearfix">
 
 								<ul>
-									<li class="current"><a href="index"><div>หน้าแรก</div></a></li>
-									<li><a href="about"><div>เกี่ยวกับเรา</div></a></li>
-									<li><a href="ads"><div>ลงโฆษณา</div></a></li>
-									<li><a href="payment"><div>ชำระเงิน</div></a></li>
-									<li><a href="credit"><div>เติมเครดิต</div></a></li>
-									<li><a href="download"><div>ดาวน์โหลดหนังสือพิมพ์</div></a></li>
-									<li><a href="contact"><div>ติดต่อเรา</div></a></li>
+									<li class="<?php if ($this->uri->segment(1) == "index") {
+													echo 'current';
+												} ?>"><a href="index">
+											<div>หน้าแรก</div>
+										</a>
+									</li>
+									<li class="<?php if ($this->uri->segment(1) == "about") {
+													echo 'current';
+												} ?>"><a href="about">
+											<div>เกี่ยวกับเรา</div>
+										</a>
+									</li>
+									<li class="<?php if ($this->uri->segment(1) == "ads") {
+													echo 'current';
+												} ?>"><a href="ads">
+											<div>ลงโฆษณา</div>
+										</a>
+									</li>
+									<li class="<?php if ($this->uri->segment(1) == "payment") {
+													echo 'current';
+												} ?>"><a href="payment">
+											<div>ชำระเงิน</div>
+										</a>
+									</li>
+									<li class="<?php if ($this->uri->segment(1) == "credit") {
+													echo 'current';
+												} ?>"><a href="credit">
+											<div>เติมเครดิต</div>
+										</a>
+									</li>
+									<li class="<?php if ($this->uri->segment(1) == "download") {
+													echo 'current';
+												} ?>"><a href="download">
+											<div>ดาวน์โหลดหนังสือพิมพ์</div>
+										</a>
+									</li>
+									<li class="<?php if ($this->uri->segment(1) == "contact") {
+													echo 'current';
+												} ?>"><a href="contact">
+											<div>ติดต่อเรา</div>
+										</a>
+									</li>
+									<!-- <?php if (!empty($user)) { ?>
+										<li class="">
+											<a href="#">
+												<div>เติม Poin</div>
+											</a>
+										</li>
+										<li class="">
+											<a href="logout" onclick="return confirm('Are you sure to logout?');">
+												<div style="color:#1c85e8">คุณมี <span style="color:red;"><?= $user['point']; ?></span> Poin</div>
+											</a>
+										</li>
+										<li class="">
+											<a href="logout" onclick="return confirm('Are you sure to logout?');">
+												<div style="color:red;">ออกจากระบบ</div>
+											</a>
+										</li>
+									<?php } ?> -->
 								</ul>
-							</nav><!-- #primary-menu end -->
+							</nav>
+							<!-- #primary-menu end -->
 						</div>
 
-						<div class="col-lg-2 d-none d-lg-inline-flex d-xl-inline-flex justify-content-end nomargin">
-							<div id="register_side">
-								<a href="register" class="d-none d-lg-block">ลงทะเบียน <i class="icon-line-arrow-right"></i></a>
-							</div>
-							<!-- Top Search
+
+						<div class="col-lg-3 d-none d-lg-inline-flex d-xl-inline-flex justify-content-end nomargin">
+							<?php if (empty($user)) { ?>
+								<div id="register_side">
+									<a href="register" class="d-none d-lg-block">ลงทะเบียน </i></a>
+								</div>
+								<!-- Top Search
 							============================================= -->
-							<div id="side-panel-trigger" class="side-panel-trigger">
-								<a href="#" class="d-block d-lg-none"><i class="icon-line-lock"></i></a>
-								<a href="#" class="d-none d-lg-block">เข้าสู่ระบบ <i class="icon-line-arrow-right"></i></a>
-							</div><!-- #top-search end -->
-							
+								<div id="side-panel-trigger" class="side-panel-trigger">
+									<a href="#" class="d-block d-lg-none"><i class="icon-line-lock"></i></a>
+									<a href="#" class="d-none d-lg-block">เข้าสู่ระบบ</i></a>
+								</div><!-- #top-search end -->
+
+							<?php } else { ?>
+								<div id="register_side">
+									<a href="#">คุณมี <?= $user['point']; ?> Poin |</a>
+								</div>
+								<div id="register_side">
+									<a href="logout" class="d-none d-lg-block" style="color:red" onclick="return confirm('Are you sure to logout?');"> ออกจากระบบ</a>
+								</div>
+							<?php } ?>
 						</div>
-						<a href="#" class="d-block d-lg-none mobile-side-panel side-panel-trigger"><i class="icon-line-arrow-right"></i></a>
+						<?php if (empty($user)) { ?>
+							<a href="#" class="d-block d-lg-none mobile-side-panel side-panel-trigger"><i class="icon-line-arrow-right"></i></a>
+						<?php }  ?>
 					</div>
 				</div>
 
 			</div>
 
 		</header><!-- #header end -->
+		<script type="text/javascript">
+			$('#send_login').click(function() {
+				var email = $("#input-email").val();
+				var password = $("#input-password").val();
+				if (email.length === 0) {
+					$('#empty-email').html('The email is empty.').css('color', 'red');
+				} else if (email.length !== 0) {
+					$('#empty-email').html('').css('color', 'red');
+				}
+				if (password.length === 0) {
+					$('#empty-password').html('The password is empty.').css('color', 'red');
+				} else if (password.length !== 0) {
+					$('#empty-password').html('').css('color', 'red');
+				}
+
+				if (email.length != 0 && password.length !== 0) {
+					frmLogin.action = 'loginMe'
+					frmLogin.submit();
+				} else {
+
+				}
+
+			});
+		</script>
