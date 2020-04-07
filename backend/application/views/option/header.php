@@ -10,7 +10,7 @@
 <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600" rel="stylesheet">
 
 <!-- BEGIN: Vendor CSS-->
-<link rel="stylesheet" type="text/css" href="assets/app-assets/vendors/css/tables/datatable/datatables.min.css">
+
 <link rel="stylesheet" type="text/css" href="assets/app-assets/vendors/css/vendors.min.css">
 <link rel="stylesheet" type="text/css" href="assets/app-assets/vendors/css/tables/datatable/datatables.min.css">
 <link rel="stylesheet" type="text/css" href="assets/app-assets/vendors/css/charts/apexcharts.css">
@@ -38,3 +38,4 @@
 <!-- BEGIN: Custom CSS-->
 <link rel="stylesheet" type="text/css" href="assets/assets/css/style.css">
 <!-- END: Custom CSS-->
+

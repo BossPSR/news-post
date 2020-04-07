@@ -17,6 +17,7 @@
    <script src="assets/app-assets/vendors/js/tables/datatable/buttons.bootstrap.min.js"></script>
    <script src="assets/app-assets/vendors/js/tables/datatable/datatables.bootstrap4.min.js"></script>
    <!-- END: Page Vendor JS-->
+   <script src="assets/app-assets/js/scripts/datatables/datatable.js"></script>
 
    <!-- BEGIN: Theme JS-->
    <script src="assets/app-assets/js/core/app-menu.js"></script>
