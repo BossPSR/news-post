@@ -128,6 +128,23 @@
 					showConfirmButton: true,
 				});
 			<?php endif; ?>
+
+			<?php if ($suss = $this->session->flashdata('save_ss2')) : ?>
+				Swal.fire({
+					position: 'start-end',
+					icon: 'success',
+					title: 'ยืนยัน Email เรียบร้อยแล้ว.กรุณาตั้งค่ารหัสผ่านใหม่ของท่าน !!',
+					showConfirmButton: true,
+				});
+			<?php endif; ?>
+			<?php if ($error = $this->session->flashdata('del_ss2')) : ?>
+				Swal.fire({
+					position: 'start-end',
+					icon: 'error',
+					title: 'ไม่พบ E-mail ที่ท่านกรอกมา กรุณาตรวจสอบใหม่ค่ะ!!',
+					showConfirmButton: true,
+				});
+			<?php endif; ?>
 		</script>
 
 		</body>
