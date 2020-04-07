@@ -20,4 +20,6 @@ $route['ads']               = 'front-end/Ads_ctr';
 $route['payment']           = 'front-end/Payment_ctr';
 $route['credit']            = 'front-end/Credit_ctr';
 $route['download']          = 'front-end/Download_ctr';
-$route['contact']           = 'front-end/Contact_ctr';
+
+$route['contact']           = 'front-end/Contact_ctr/index';
+$route['contact_add']       = 'front-end/Contact_ctr/contact_add';

@@ -27,7 +27,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<link rel="stylesheet" href="public/assets/front-end/css/colors.php?color=1c85e8" type="text/css" />
 	<script src="public/assets/front-end/js/jquery.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+	<script src="public/assets/front-end/sweetalert2.js"></script>
 
 	<!-- Document Title
 	============================================= -->
