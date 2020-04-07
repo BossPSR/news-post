@@ -21,4 +21,15 @@ class Login_model extends CI_Model
          return false;
       }
    }
+
+   public function forgot_check_usre($email)
+    {
+        $this->db->select('*');
+        $this->db->from('tbl_user');
+        $this->db->where('email', $email);
+
+        $data = $this->db->get();
+
+        return $data->row_array();
+    }
 }
