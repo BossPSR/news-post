@@ -16,5 +16,16 @@ class Credit_ctr extends CI_Controller
         $this->load->view('option/footer'); 
     }
 
+    public function paypal_success()
+    {
+        $data = [];
+        $data['name'] = $this->input->post('name');
+        $data['create_time'] = $this->input->post('create_time');
+        $data['amount'] = $this->input->post('amount');
+        $data['currency_code'] = $this->input->post('currency_code');
+        $data['orderID'] = $this->input->post('orderId');
+        $data['payerId'] = $this->input->post('payerId');
+        echo json_encode($data);
+    }
   
 }
