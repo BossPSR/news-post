@@ -128,6 +128,7 @@
 					showConfirmButton: true,
 				});
 			<?php endif; ?>
+		
 		</script>
 
 		</body>
