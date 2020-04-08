@@ -6,8 +6,8 @@
 
 					<div class="clearfix center divcenter" style="max-width: 700px;">
 						<div class="emphasis-title">
-							<h1 class="font-secondary" style="color: #FFF; font-size: 76px; font-weight: 900; text-shadow: 0 7px 10px rgba(0,0,0,0.07), 0 4px 4px rgba(0,0,0,0.2);">Design Studio.</h1>
-							<p style="font-weight: 300; opacity: .7; color: #FFF; text-shadow: 0 -4px 20px rgba(0, 0, 0, .25);">Sell your home to us and skip the hassle of<br>repairs, showings and months of uncertainty</p>
+							<h1 class="font-secondary" style="color: #FFF; font-size: 43px; font-weight: 900; text-shadow: 0 7px 10px rgba(0,0,0,0.07), 0 4px 4px rgba(0,0,0,0.2);">ลงประกาศโฆษณาเชิญประชุมผู้ถือหุ้น กรอบละ 45 บาท</h1>
+							<p style="font-weight: 300; font-size: 23px; opacity: .7; color: #FFF; text-shadow: 0 -4px 30px rgba(0, 0, 0, .25);"><b>ใช้งานง่าย สะดวก รวดเร็ว ประหยัด ดาวน์โหลดหนังสือพิมพ์ได้ในวันถัดไป</b></p>
 						</div>
 						<div class="subscribe-widget" data-loader="button">
 							<div class="widget-subscribe-form-result"></div>

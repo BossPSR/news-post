@@ -10,3 +10,5 @@ $route['Login']                         = 'Login_controller/login';
 $route['LoginMe']                       = 'Login_controller/loginMe';
 $route['Logout']                        = 'Login_controller/logout';
 $route['List-admin']                    = 'Admin_controller/list_admin';
+$route['List-Contact']                  = 'Contact_controller/list_Contact';
+$route['List-Post']                     = 'Post_controller/list_post';
