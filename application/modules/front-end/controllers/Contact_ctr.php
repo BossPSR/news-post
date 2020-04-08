@@ -29,6 +29,6 @@ class Contact_ctr extends CI_Controller
 
         $success = $this->db->insert('tbl_contact', $data);
 
-        echo $success;
+        echo $success ;
     }
 }

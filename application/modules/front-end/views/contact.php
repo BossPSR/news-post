@@ -24,12 +24,12 @@
 			<div class="form-widget mt-5 divcenter" style="max-width: 750px">
 
 				<div class="form-result"></div>
-	<!-- <form action="contact_add" method="post"> -->
+	<form action="contact_add" method="post">
 				<div class="form-process"></div>
 
 				<div class="col_half">
 					<label class="nott" for="template-contactform-name">Name <small>*</small></label>
-					<input type="text" id="name" name="name" value="" class="sm-form-control " />
+					<input type="text" id="name" name="name" value="" class="sm-form-control " required/>
 					<span id="empty-name"></span>
 				</div>
 
@@ -44,7 +44,7 @@
 
 				<div class="col_full">
 					<label class="nott" for="template-contactform-phone">Phone</label>
-					<input type="text" id="phone" name="phone" value="" class="sm-form-control" />
+					<input type="text" id="phone" name="phone" value="" class="sm-form-control" required/>
 					<span id="empty-phone"></span>
 
 				</div>
@@ -53,7 +53,7 @@
 
 				<div class="col_full">
 					<label class="nott" for="template-contactform-message">Message <small>*</small></label>
-					<textarea class=" sm-form-control" id="message" name="message" rows="6" cols="30"></textarea>
+					<textarea class=" sm-form-control" id="message" name="message" rows="6" cols="30" required></textarea>
 					<span id="empty-message"></span>
 
 				</div>
@@ -63,9 +63,9 @@
 					</div> -->
 
 				<div class="col_full">
-					<button class="button button-rounded button-large " id="submit_contact" type="submit">Send Message</button>
+					<button class="button button-rounded button-large " id="submit_contact" type="submit" >Send Message</button>
 				</div>
-				<!-- </form> -->
+				</form>
 				<!-- <input type="hidden" name="prefix" value="template-contactform-"> -->
 
 
@@ -76,7 +76,7 @@
 	</div>
 
 </section><!-- #content end -->
-
+<!-- 
 <script type="text/javascript">
 	$('#submit_contact').click(function() {
 		var name = $("#name").val();
@@ -131,10 +131,5 @@
 
 		}
 
-
-
-
-	
-
 	});
-</script>
+</script> -->

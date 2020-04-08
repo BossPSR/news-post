@@ -109,6 +109,13 @@ class Register_ctr extends CI_Controller
     }
   }
 
+  function forget_sendemail()
+  {
+    $this->load->view('options/header_login');
+    $this->load->view('reset_mail');
+    $this->load->view('options/footer');
+  }
+
   public function reset_passwordProcess()
   {
     $id = $this->input->post('id');
@@ -158,16 +165,7 @@ class Register_ctr extends CI_Controller
     }
   }
 
-  function forget_sendemail()
-  {
-    if ($this->session->userdata('email') == '') {
-      $this->load->view('options/header_login');
-      $this->load->view('send_email');
-      $this->load->view('options/footer');
-    } else {
-      redirect('my-profile');
-    }
-  }
+
 
   function fetch_state()
   {
