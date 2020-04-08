@@ -1,3 +1,6 @@
+<script
+    src="https://www.paypal.com/sdk/js?client-id=ATFjsBgpLf13IC-GVJumMggeaUc-4Kk6l28Q_YTSV0Elabwxb86JFONaaMy5cceARHfZCu7UAwVTw3kQ"> // Required. Replace SB_CLIENT_ID with your sandbox client ID.
+  </script>		
 		<!-- Slider
 		============================================= -->
 		<section id="slider" class="slider-element clearfix" style="height: 550px; background: url('public/assets/front-end/demos/interior-design/images/about/hero.jpg') center 70% no-repeat; background-size: cover;">
@@ -29,21 +32,55 @@
 								</div>
 								<h3 class="ls0 t400 nott" style="font-size: 20px;">บริษัท แอค แทกซ์ นิวส์ จำกัด</h3>
                                 <p style="font-size: 16px;">
-                                วิธีลงโฆษณา
+								<div id="paypal-button-container"></div>
 
-ขั้นตอนใช้งาน
 
-1.  ลงทะเบียนและสมัครสมาชิกด้วย E-mail
-2.  เข้าสู่ระบบจากเมนูด้านบนขวามือ หลังจากนั้นเลือกเติมเครดิต
-
-3.  ชำระเงิน โดยเลือกช่องทางที่ท่านสะดวก หลังจากท่านชำระเงินแล้ว ระบบจะเติมเครดิตให้ท่านอัตโนมัติ 
-4. สามารถลงโฆษณาได้ 3 วิธี 
-   4.1 ลงประกาศโฆษณาตาม  template สำเร็จรูป หรือ กรอกข้อมูลเอง ลงโฆษณาได้ทีละ 1 กรอบ
-   4.2 ลงประกาศโฆษณาด้วยรูปภาพ  JPG, JPEG, PNG หรือไฟล์ PDF ลงโฆษณาได้ทีละหลายกรอบพร้อมกัน 
-   4.3 ลงประกาศโฆษณาเชิญประชุมผู้ถือหุ้นประจำปี (ปิดงบประจำปี) ลงโฆษณาได้หลายกรอบพร้อมกัน
-
-         โดย download excel และกรอกข้อมูลลงตามที่กำหนดไว้
-5. ทุก 24.00 น. ระบบจะรวบรวมโฆษณาที่ผ่านการอนุมัติแล้วเพื่อผลิตเป็นหนังสือพิมพ์ สามารถดาวน์โหลดได้ในวันถัดไป
+								<script>
+									paypal.Buttons({
+									createOrder: function(data, actions) {
+									return actions.order.create({
+										purchase_units: [{
+										amount: {
+											value: '1.0'
+										}
+										}]
+									});
+									},
+									onApprove: function(data, actions) {
+									return actions.order.capture().then(function(details) {
+										alert('Transaction completed by ' + details.payer.name.given_name);
+										// Call your server to save the transaction
+										// return fetch('/ss', {
+										//   method: 'post',
+										//   headers: {
+										//     'content-type': 'application/json'
+										//   },
+										//   body: JSON.stringify({
+										//     orderID: data.orderID
+										//   })
+										// });
+										console.log(details);
+										$.ajax({
+										url:'paypal_success',
+										method: 'post',
+										data:{
+											orderId: data.orderID,
+											payerId: data.payerID,
+											name: details.payer.name.given_name +" "+details.payer.name.surname,
+											create_time: details.create_time,
+											amount: details.purchase_units['0'].amount.value,
+											currency_code: details.purchase_units['0'].amount.currency_code,
+										},
+										success:function (response) {
+											let dataSucces = JSON.parse(response);
+											console.log(dataSucces);
+										}
+										});
+										
+									});
+									}
+								}).render('#paypal-button-container');
+								</script>
                                 </p>
 							</div>
 						</div>
