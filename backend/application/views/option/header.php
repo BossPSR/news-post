@@ -18,7 +18,7 @@
 <link rel="stylesheet" type="text/css" href="assets/app-assets/vendors/css/extensions/tether.min.css">
 <link rel="stylesheet" type="text/css" href="assets/app-assets/vendors/css/extensions/shepherd-theme-default.css">
 <!-- END: Vendor CSS-->
-
+<link href="assets/assets/fileupload/css/uploads.css" rel="stylesheet" type="text/css" />
 <!-- BEGIN: Theme CSS-->
 <link rel="stylesheet" type="text/css" href="assets/app-assets/css/bootstrap.css">
 <link rel="stylesheet" type="text/css" href="assets/app-assets/css/bootstrap-extended.css">

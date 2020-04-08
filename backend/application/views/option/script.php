@@ -17,7 +17,11 @@
    <script src="assets/app-assets/vendors/js/tables/datatable/buttons.bootstrap.min.js"></script>
    <script src="assets/app-assets/vendors/js/tables/datatable/datatables.bootstrap4.min.js"></script>
    <!-- END: Page Vendor JS-->
+   
    <script src="assets/app-assets/js/scripts/datatables/datatable.js"></script>
+
+   <script src="assets/assets/fileupload/global.js" type="text/javascript"></script>
+   <script src="assets/assets/fileupload/js/uploadslider.js" type="text/javascript"></script>
 
    <!-- BEGIN: Theme JS-->
    <script src="assets/app-assets/js/core/app-menu.js"></script>
@@ -28,7 +32,9 @@
    <!-- BEGIN: Page JS-->
    <script src="assets/app-assets/js/scripts/pages/dashboard-analytics.js"></script>
    <script src="assets/app-assets/js/scripts/extensions/sweet-alerts.js"></script>
+   
    <!-- END: Page JS-->
+
    <script type="text/javascript">
       <?php if ($this->session->flashdata('success_login')) : ?>
          Swal.fire({
@@ -52,3 +58,12 @@
          });
       <?php endif; ?>
    </script>
+   <script src="assets/assets/js/sweetalert.min.js"></script>
+   <script>
+    <?php if ($suss = $this->session->flashdata('save_ss2')) : ?>
+        swal("Good job!", '<?php echo $suss; ?>', "success");
+    <?php endif; ?>
+    <?php if ($error = $this->session->flashdata('del_ss2')) : ?>
+        swal("Fail !", '<?php echo $error; ?>', "error");
+    <?php endif; ?>
+</script>

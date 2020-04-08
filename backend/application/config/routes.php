@@ -12,3 +12,4 @@ $route['Logout']                        = 'Login_controller/logout';
 $route['List-admin']                    = 'Admin_controller/list_admin';
 $route['List-Contact']                  = 'Contact_controller/list_Contact';
 $route['List-Post']                     = 'Post_controller/list_post';
+$route['post_add_com']                  = 'Post_controller/post_add_com';

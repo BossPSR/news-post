@@ -1,0 +1,24 @@
+#show_img{
+	margin-top: 10px;
+}
+#show_img img {
+	border-radius: 3px;
+}
+
+#image-preview{
+    display:none;
+    width : 590px;
+    height : 335px;
+}
+
+#image-previewcate{
+    display:none;
+    width : 300px;
+    height : 200px;
+}
+
+#image-previewnar{
+    display:none;
+    width : 100px;
+    height : 100px;
+}
