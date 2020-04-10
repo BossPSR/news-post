@@ -5,7 +5,7 @@
 		}
 	}
 </style>
-<section id="slider" class="slider-element clearfix" style="height: 700px; background: url('public/assets/front-end/images/3369337.jpg') center center no-repeat; background-size: cover;">
+<section id="slider" class="slider-element clearfix" style="height: 555px; background: url('public/assets/front-end/images/3369337.jpg') center center no-repeat; background-size: cover;">
 	<div class="vertical-middle">
 		<div class="container clearfix">
 			<!-- <div class="clearfix center divcenter" style="max-width: 700px;"> -->
@@ -42,7 +42,7 @@
 <section id="content">
 	<div class="heading-block center nobottomborder">
 		<span class="ls2 t700" style="color:#e74c3c;font-size:1.5rem">ติดต่อสอบถาม แจ้งปัญหาการใช้งาน</span>
-		<span  class="ls2 t700"style="color:#e74c3c;font-size:1.5 rem">กรุณาติดต่อ <span class="ls2 t700" style="color:#2980b9;font-size:1.5 rem">092-562-3256</span><span class="ls2 t700" style="color:#e74c3c;font-size:1.5 rem"> หรือ ส่งอีเมลมาที่ </span><span class="ls2 t700" style="color:#2980b9;font-size:1.5 rem">infinityp.soft@gmail.com</span></span>
+		<span class="ls2 t700" style="color:#e74c3c;font-size:1rem">กรุณาติดต่อ <span style="color:#2980b9;">092-562-3256</span><span style="color:#e74c3c;"> หรือ ส่งอีเมลมาที่ </span><span style="color:#2980b9;">infinityp.soft@gmail.com</span></span>
 	</div>
 	<div class="content-wrap notoppadding clearfix">
 
@@ -106,7 +106,7 @@
 				<h4>วิดิโอสาธิตการลงโฆษณา 3 วิธี</h4>
 			</div> -->
 			<div class="container">
-				<h4 class="text-center">วิดิโอสาธิตการลงโฆษณา 3 วิธี</h4>
+				<h4 class="text-center" style="color:#fff;">วิดิโอสาธิตการลงโฆษณา 3 วิธี</h4>
 				<div class="col_one_third nobottommargin">
 
 					<!-- <div class="heading-block fancy-title nobottomborder title-bottom-border">
@@ -133,6 +133,9 @@
 				</div> -->
 					<iframe src="https://www.youtube.com/embed/ZeDP-rzOnAA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
+				</div>
+				<div>
+					
 				</div>
 			</div>
 
