@@ -1,47 +1,55 @@
-<section id="slider" class="slider-element clearfix" style="height: 500px; background: url('public/assets/front-end/demos/interior-design/images/hero-image.jpg') center center no-repeat; background-size: cover;">
+<style>
+	@media (min-width:992px) {
+		.h_main {
+			width: 50%;
+		}
+	}
+</style>
+<section id="slider" class="slider-element clearfix" style="height: 700px; background: url('public/assets/front-end/images/3369337.jpg') center center no-repeat; background-size: cover;">
 	<div class="vertical-middle">
 		<div class="container clearfix">
-
-			<div class="clearfix center divcenter" style="max-width: 700px;">
+			<!-- <div class="clearfix center divcenter" style="max-width: 700px;"> -->
+			<div class="clearfix center divcenter">
 				<div class="emphasis-title">
-					<h1 class="font-secondary" style="color: #FFF; font-size: 43px; font-weight: 900; text-shadow: 0 7px 10px rgba(0,0,0,0.07), 0 4px 4px rgba(0,0,0,0.2);">ลงประกาศโฆษณาเชิญประชุมผู้ถือหุ้น กรอบละ 45 บาท</h1>
-					<p style="font-weight: 300; font-size: 23px; opacity: .7; color: #FFF; text-shadow: 0 -4px 30px rgba(0, 0, 0, .25);"><b>ใช้งานง่าย สะดวก รวดเร็ว ประหยัด ดาวน์โหลดหนังสือพิมพ์ได้ในวันถัดไป</b></p>
+					<h1 class="font-secondary" style="color: #123262;font-size: 2.5rem; font-weight: 900; text-shadow: 0 7px 10px rgba(0,0,0,0.07), 0 4px 4px rgba(0,0,0,0.2);margin-bottom: 1.5rem;">ลงประกาศโฆษณาเชิญประชุมผู้ถือหุ้น กรอบละ <span style="color:#FF0000;">45</span> บาท</h1>
+					<p style="font-weight: 300; font-size: 1.75rem; opacity: .7; color: #4A4A4A; text-shadow: 0 -4px 30px rgba(0, 0, 0, .25);margin-top:15px;"><b>ใช้งานง่าย สะดวก รวดเร็ว ประหยัด ดาวน์โหลดหนังสือพิมพ์ได้ในวันถัดไป</b></p>
 				</div>
 				<div class="subscribe-widget" data-loader="button">
 					<div class="widget-subscribe-form-result"></div>
-					<form id="widget-subscribe-form" action="include/subscribe.php" method="post" class="nobottommargin" data-animate="fadeInUp">
-						<div class="input-group divcenter">
-							<input type="email" id="widget-subscribe-form-email" name="widget-subscribe-form-email" class="form-control form-control-lg not-dark required email" placeholder="Enter your Email Address.." style="border: 0; box-shadow: none; overflow: hidden;">
+					<form id="widget-subscribe-form" action="include/subscribe.php" method="post" class="nobottommargin h_main" data-animate="fadeInUp" style="padding:0px;border-radius: 20px 20px 20px 20px;margin:auto;">
+
+						<div class="input-group divcenter travel-date-group">
+							<input type="text" value="" class="form-control tleft default" placeholder="ค้นหาหนังสือพิมพ์จากวันที่" style="border: 0; box-shadow: none; overflow: hidden;margin:auto;border-radius: 20px 20px 20px 20px;">
+							<!-- <input type="email" id="widget-subscribe-form-email" name="widget-subscribe-form-email" class="form-control form-control-lg not-dark required email" placeholder="Enter your Email Address.." style="border: 0; box-shadow: none; overflow: hidden;"> -->
 							<div class="input-group-append">
-								<button href="#" class="button t400" type="submit" style="border-radius: 3px;">Subscribe</button>
+								<button href="#" class="button t400" type="submit" style="border-radius: 0px 20px 20px 0px;">ค้นหา</button>
 							</div>
 						</div>
 					</form>
 				</div>
+				<!-- <div class="emphasis-title">
+					<p style="font-weight: 300; font-size: 1 rem;margin-top:100px;"><span style="color:#e74c3c">ติดต่อสอบถาม แจ้งปัญหาการใช้งาน</span></p>
+				</div> -->
 			</div>
-
 		</div>
-	</div>
 
+	</div>
 </section>
 
 <!-- Content
 		============================================= -->
+<!-- <section id="content" style="margin-top:-150px;"> -->
 <section id="content">
-
+	<div class="heading-block center nobottomborder">
+		<span class="ls2 t700" style="color:#e74c3c;font-size:1.5rem">ติดต่อสอบถาม แจ้งปัญหาการใช้งาน</span>
+		<span  class="ls2 t700"style="color:#e74c3c;font-size:1.5 rem">กรุณาติดต่อ <span class="ls2 t700" style="color:#2980b9;font-size:1.5 rem">092-562-3256</span><span class="ls2 t700" style="color:#e74c3c;font-size:1.5 rem"> หรือ ส่งอีเมลมาที่ </span><span class="ls2 t700" style="color:#2980b9;font-size:1.5 rem">infinityp.soft@gmail.com</span></span>
+	</div>
 	<div class="content-wrap notoppadding clearfix">
 
-		<div class="section notopmargin clearfix" style="padding: 80px 0">
+		<!-- <div class="section notopmargin clearfix" style="padding: 80px 0">
 			<div class="container clearfix">
 
-				<div class="divcenter" style="max-width: 960px;">
-					<div class="row" style="font-size: 19px;">
-						<div class="col-12 center">
-							ติดต่อสอบถาม แจ้งปัญหาการใช้งาน <br>
-							กรุณาติดต่อ 02-140-0779, 085-826-4498 หรือ ส่งอีเมลมาที่ accttaxnews@gmail.com
-						</div>
-					</div>
-					<br>
+				<div class="divcenter" style="max-width: 960px">
 					<div class="row clearfix">
 						<div class="col-12 col-md-4 center customers-count">
 							<div class="counter center counter-large font-primary"><span data-from="100" data-to="3583" data-refresh-interval="100" data-speed="2000" data-comma="true"></span></div>
@@ -57,8 +65,94 @@
 				</div>
 
 			</div>
+		</div> -->
+
+		<div class="section parallax" data-bottom-top="background-position:0px 100px;" data-top-bottom="background-position:0px -100px;">
+			<div class="heading-block center nobottomborder nobottommargin">
+				<div class="col_one_third">
+					<div class="feature-box fbox-center fbox-effect nobottomborder" data-animate="fadeIn">
+						<div class="fbox-icon">
+							<a href="#"><i class="icon-phone2"></i></a>
+						</div>
+						<h4>สมัครสมาชิก</h4>
+
+					</div>
+				</div>
+
+				<div class="col_one_third">
+					<div class="feature-box fbox-center fbox-effect nobottomborder" data-animate="fadeIn" data-delay="200">
+						<div class="fbox-icon">
+							<a href="#"><i class="icon-eye"></i></a>
+						</div>
+						<h4>เติมเครดิต</h4>
+
+					</div>
+				</div>
+
+				<div class="col_one_third col_last">
+					<div class="feature-box fbox-center fbox-effect nobottomborder" data-animate="fadeIn" data-delay="400">
+						<div class="fbox-icon">
+							<a href="#"><i class="icon-star2"></i></a>
+						</div>
+						<h4>ลงโฆษณา</h4>
+
+					</div>
+					<br>
+					<div class="row clearfix">
+						<div class="col-12 col-md-4 center customers-count">
+							<div class="counter center counter-large font-primary"><span data-from="100" data-to="3583" data-refresh-interval="100" data-speed="2000" data-comma="true"></span></div>
+							<p>Happy Customers</p>
+						</div>
+						<div class="col-12 col-md-7 offset-md-1">
+							<blockquote class="quote nobottommargin">
+								<p>Efficiently synthesize magnetic niches via resource maximizing procrastinate adaptive web-readiness.</p>
+								<footer class="color">John Doe, Google Inc.</footer>
+							</blockquote>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 
+		<div class="clearfix" style="background-image: url('public/assets/front-end/images/3560210.jpg'); padding: 100px 0;background-size: cover;">
+			<!-- <div class="heading-block center nobottomborder bottommargin-lg">
+				<h4>วิดิโอสาธิตการลงโฆษณา 3 วิธี</h4>
+			</div> -->
+			<div class="container">
+				<h4 class="text-center">วิดิโอสาธิตการลงโฆษณา 3 วิธี</h4>
+				<div class="col_one_third nobottommargin">
+
+					<!-- <div class="heading-block fancy-title nobottomborder title-bottom-border">
+					<h4>Why choose <span>Us</span>.</h4>
+				</div> -->
+					<iframe src="https://www.youtube.com/embed/AynSfsJPzhk" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+					<!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi quidem minus id omnis, nam expedita, ea fuga commodi voluptas iusto, hic autem deleniti dolores explicabo labore enim repellat earum perspiciatis.</p> -->
+
+				</div>
+
+				<div class="col_one_third nobottommargin">
+
+					<!-- <div class="heading-block fancy-title nobottomborder title-bottom-border">
+					<h4>Our <span>Mission</span>.</h4>
+				</div> -->
+					<iframe src="https://www.youtube.com/embed/X8NFkUQNeek" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+				</div>
+
+				<div class="col_one_third nobottommargin col_last">
+
+					<!-- <div class="heading-block fancy-title nobottomborder title-bottom-border">
+					<h4>What we <span>Do</span>.</h4>
+				</div> -->
+					<iframe src="https://www.youtube.com/embed/ZeDP-rzOnAA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+				</div>
+			</div>
+
+
+			<div class="clear"></div>
+
+		</div>
 		<div class="container topmargin-lg bottommargin-lg clearfix">
 
 			<div class="divcenter" style="max-width: 960px">

@@ -67,3 +67,19 @@
         swal("Fail !", '<?php echo $error; ?>', "error");
     <?php endif; ?>
 </script>
+<script>
+    function confirmalertdelete(data) {
+
+        swal({
+            title: "Are you sure delete?",
+            text: "Are you sure you want to delete  ?",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        }).then(function(isConfirm) {
+            if (isConfirm) {
+                window.location = 'delete_post?id=' + data;
+            }
+        })
+    }
+</script>

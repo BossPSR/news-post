@@ -79,8 +79,60 @@
                                                             <td><?php echo $post['details'] ?></td>
                                                             <td><?php echo $post['created_at'] ?></td>
                                                             <td>
+                                                                <button data-toggle="modal" data-target="#exampleModala<?php echo $post['id']; ?>" type="button" class="btn btn-warning"><i class="feather icon-edit" style="font-size: 25px;"></i>แก้ไข</button>
+                                                                <button onclick="confirmalertdelete('<?php echo $post['id']; ?>')" class="btn btn-danger " type="button" aria-haspopup="true" aria-expanded="false"><i class="feather icon-trash" style="font-size: 25px;"></i>
+                                                                    ลบ
+                                                                </button>
+                                                                <div class="modal fade" id="exampleModala<?php echo $post['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                                    <div class="modal-dialog" role="document">
+                                                                        <form action="post_edit_com" method="post" class="form-horizontal" enctype="multipart/form-data">
+                                                                            <div class="modal-content">
+                                                                                <div class="modal-header">
+                                                                                    <h5 class="modal-title" id="exampleModalLabel">หลักในการลงประกาศหนังสือพิมพ์</h5>
+                                                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                                        <span aria-hidden="true">&times;</span>
+                                                                                    </button>
+                                                                                </div>
+                                                                                    <input type="text" name="id" value="<?php echo $post['id']; ?>" hidden>
+
+                                                                                <div class="modal-body">
+                                                                                    <div class="col-xl-12 col-md-6 col-12 mb-1">
+                                                                                        <div class="form-group">
+                                                                                            <label for="helpInputTop">หัวข้อ</label>
+                                                                                            <input type="text" class="form-control" name="topic" value="<?php echo $post['topic']; ?>" placeholder="Enter หัวข้อ" R>
+                                                                                        </div>
+                                                                                    </div>
+
+                                                                                    <div class="col-xl-12 col-md-6 col-12 mb-1">
+                                                                                        <div class="form-group">
+                                                                                            <label for="helpInputTop">รายละเอียด</label>
+                                                                                            <textarea name="details" id="" cols="30" rows="10" class="form-control"><?php echo $post['details']; ?></textarea>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="col-xl-12 col-md-6 col-12 mb-1">
+                                                                                        <div class="form-group">
+                                                                                            <label for="helpInputTop">File name</label>
+                                                                                            <input type="file" class="form-control" name="file_name" id="image-source" onchange="previewImage();" placeholder="Enter file_name">
+                                                                                        </div>
+                                                                                        <br>
+                                                                                        <img src="../uploads/post/<?php echo $post['file_name']; ?>" style="width: auto;height: 200px;   padding-bottom: 10px;">
+                                                                                        <img id="image-preview" alt="image preview"/ style="width:auto;height: 200px;">
+                                                                                    </div>
+                                                                                    <div class="modal-footer">
+                                                                                        <div class="add-data-footer d-flex justify-content-around px-3 mt-2">
+                                                                                            <div class="add-data-btn mr-1">
+                                                                                                <button type="submit" class="btn btn-primary">submit</button>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                        </form>
+                                                                    </div>
+                                                                </div>
+
 
                                                             </td>
+
 
                                                         </tr>
                                                     <?php } ?>
