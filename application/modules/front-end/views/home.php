@@ -97,6 +97,19 @@
 						<h4>ลงโฆษณา</h4>
 
 					</div>
+					<br>
+					<div class="row clearfix">
+						<div class="col-12 col-md-4 center customers-count">
+							<div class="counter center counter-large font-primary"><span data-from="100" data-to="3583" data-refresh-interval="100" data-speed="2000" data-comma="true"></span></div>
+							<p>Happy Customers</p>
+						</div>
+						<div class="col-12 col-md-7 offset-md-1">
+							<blockquote class="quote nobottommargin">
+								<p>Efficiently synthesize magnetic niches via resource maximizing procrastinate adaptive web-readiness.</p>
+								<footer class="color">John Doe, Google Inc.</footer>
+							</blockquote>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>

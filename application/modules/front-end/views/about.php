@@ -1,12 +1,15 @@
 		<!-- Slider
 		============================================= -->
-		<section id="slider" class="slider-element clearfix" style="height: 550px; background: url('public/assets/front-end/demos/interior-design/images/about/hero.jpg') center 70% no-repeat; background-size: cover;">
+		<section id="slider" class="slider-element clearfix" style="height: 550px; background: url('https://onesiri-acc.com/wp-content/uploads/2018/12/536-1.jpg') center 70% no-repeat; background-size: cover;">
 			<div class="container clearfix">
 
 				<div class="clearfix center divcenter" style="max-width: 700px;">
 					<div class="emphasis-title topmargin">
-						<h2 class="font-secondary" style="color: #222; font-size: 70px; font-weight: 900; text-shadow: 0 7px 5px rgba(0,0,0,0.01), 0 4px 4px rgba(0,0,0,0.1);">เกี่ยวกับเรา</h2>
-						<p style="font-weight: 300; opacity: .7; color: #444; text-shadow: 0 -4px 20px rgba(0, 0, 0, .25);">Sell your home to us and skip the hassle of<br>repairs, showings and months of uncertainty</p>
+						<h2 class="font-secondary" style="color: #fff; font-size: 70px; font-weight: 900; text-shadow: 0 7px 5px rgba(0, 0, 0, 0.38), 0 4px 4px rgba(0,0,0,0.1);">เกี่ยวกับเรา</h2>
+						<div style="font-weight: 300; opacity: 1; color: #fff;    font-size: 32px; text-shadow:-1px 0px 6px rgba(0, 0, 0, 0.48);">One Siri Accounting and Tax </div>
+						<div style="font-weight: 300;     margin-left: 46px;opacity: 1; color: #fff;    font-size: 24px; text-shadow:-1px 0px 6px rgba(0, 0, 0, 0.48);"> -ประสบการณ์กว่า 10 ปีในด้านบัญชีและภาษี </div>
+						<div style="font-weight: 300;     margin-right: 208px;opacity: 1; color: #fff;    font-size: 24px; text-shadow:-1px 0px 6px rgba(0, 0, 0, 0.48);"> -ทีมงานคุณภาพ  </div>
+						<div style="font-weight: 300;     margin-right: 24px;opacity: 1; color: #fff;    font-size: 24px; text-shadow: -1px 0px 6px rgba(0, 0, 0, 0.48);"> -และผู้สอบบัญชี พร้อมให้คำปรึกษา </div>
 					</div>
 				</div>
 
@@ -27,9 +30,25 @@
 								<div class="fbox-icon">
 									<i class="icon-line2-home"></i>
 								</div>
-								<h3 class="ls0 t400 nott" style="font-size: 20px;">บริษัท แอค แทกซ์ นิวส์ จำกัด</h3>
+								<h3 class="ls0 t400 nott" style="font-size: 20px;"> ด้วยประสบการณ์กว่า 10 ปี </h3>
                                 <p style="font-size: 16px;">
-                                บริษัท แอค แทกซ์ นิวส์ จำกัด จัดตั้งเพื่อทำหนังสือพิมพ์ แอค แทกซ์ นิวส์ (เลขที่ใบอนุญาต สสช 15/2561 ISSN 2586-999X) เป็นหนังสือพิมพ์รายวันท้องถิ่นที่มีวัตถุประสงค์เพื่อเผยแพร่ข่าวสารด้านบัญชี ภาษีอากร และข้อความประกาศต่างๆ ที่จำเป็นสำหรับการดำเนินไปตามปกติแห่งธุรกิจการค้า เช่น การประกาศบอกกล่าวเรียกประชุมใหญ่ผู้ถือหุ้นของนิติบุคคล ตามประมวลกฎหมายแพ่งและพาณิชย์ มาตรา 1175 หรือประกาศข้อความตามกฎหมายอื่นๆ เช่น การเพิ่มทุน ลดทุน, การบังคับจำนอง, การแจ้งให้ชำระหนี้ การเลิกบริษัท ฯลฯ ทั้งนี้เพื่อความครบถ้วนถูกต้องตามที่กฎหมายกำหนด ซึ่งหากฝ่าฝืนต้องระวางโทษปรับตามกฎหมาย
+								One Siri Accounting and Tax เราเป็นสำนักงานบัญชี ที่เกิดจากการรวมตัวกันของผู้ทำบัญชี และทีมผู้สอบ <br>
+								บัญชีที่มีประสบการณ์กว่า 10 ปีในด้านบัญชีและภาษี ด้วยความตั้งใจที่จะให้บริการด้วยคุณภาพ ถูกต้องตามหลัก <br>
+								กฎหมาย และให้คำแนะนำแก่ลูกค้าทุกราย เพื่อช่วยให้ธุรกิจคุณเติบโตอย่างมั่นคง <br>
+								</p>
+								<br>
+								<h3 class="ls0 t400 nott" style="font-size: 20px;"> ทีมงานและผู้สอบบัญชีคอยให้คำปรึกษา </h3>
+                                <p style="font-size: 16px;">
+								เราแตกต่างด้วยทีมงานคุณภาพ พร้อมผู้สอบบัญชี และนักวิชาการประจำสำนักงาน เพื่อตอบทุกข้อสงสัยและ <br>
+								แนะนำประเด็นทางบัญชีภาษีที่ถูกต้อง อีกทั้งเราติดตามและช่วยวางแผนภาษีแก่ธุรกิจท่าน พร้อมอัพเดทให้ท่าน <br>
+								ในแต่ละเดือน เพื่อให้ผลการดำเนินงานของธุรกิจเป็นไปตามแผนที่ท่านวางไว้ <br>
+								</p>
+								
+								<br>
+								<h3 class="ls0 t400 nott" style="font-size: 20px;">  บริการครบวงจร </h3>
+                                <p style="font-size: 16px;">
+								ทั้งบริการรับทำบัญชีรายเดือน/ รายปี ,ตรวจสอบบัญชี, วางระบบบัญชี และวางแผนภาษีอากร ซึ่งลูกค้ามาใช้ <br>
+								บริการกับบริษัทจะเรียกได้ว่ามาที่เดียวแล้วครบทุกความต้องการทางธุรกิจ <br>
                                 </p>
 							</div>
 						</div>
