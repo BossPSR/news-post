@@ -19,6 +19,11 @@
 	<link rel="stylesheet" href="public/assets/front-end/css/font-icons.css" type="text/css" />
 	<link rel="stylesheet" href="public/assets/front-end/css/animate.css" type="text/css" />
 	<link rel="stylesheet" href="public/assets/front-end/css/magnific-popup.css" type="text/css" />
+	<!-- Date & Time Picker CSS -->
+	<link rel="stylesheet" href="public/assets/front-end/css/components/datepicker.css" type="text/css" />
+	<link rel="stylesheet" href="public/assets/front-end/css/components/timepicker.css" type="text/css" />
+	<link rel="stylesheet" href="public/assets/front-end/css/components/daterangepicker.css" type="text/css" />
+
 
 	<!-- Reader's Blog Demo Specific Fonts -->
 	<link rel="stylesheet" href="public/assets/front-end/demos/interior-design/css/fonts.css" type="text/css" />
@@ -36,6 +41,13 @@
 </head>
 
 <body class="stretched side-push-panel">
+	<style>
+		@media (min-width:992px) {
+			.h_menu {
+				display: none;
+			}
+		}
+	</style>
 	<?php $user = $this->db->get_where('tbl_user', ['email' => $this->session->userdata('email')])->row_array(); ?>
 
 	<div id="side-panel">
@@ -134,6 +146,18 @@
 							<nav id="primary-menu" class="with-arrows fnone clearfix">
 
 								<ul>
+									<?php if (!empty($user)) { ?>
+										<li class="h_menu">
+											<a href="">
+												<div><?= $user['email']; ?></div>
+											</a>
+										</li>
+										<li class="h_menu">
+											<a href="">
+												<div><i class="icon-coins"></i> <?= $user['point']; ?> Coin </div>
+											</a>
+										</li>
+									<?php } ?>
 									<li class="<?php if ($this->uri->segment(1) == "index") {
 													echo 'current';
 												} ?>"><a href="index">
@@ -176,23 +200,19 @@
 											<div>ติดต่อเรา</div>
 										</a>
 									</li>
-									<!-- <?php if (!empty($user)) { ?>
-										<li class="">
+									<?php if (!empty($user)) { ?>
+										<li class="h_menu">
+
 											<a href="#">
-												<div>เติม Poin</div>
+												<div>เติม Coin</div>
 											</a>
 										</li>
-										<li class="">
-											<a href="logout" onclick="return confirm('Are you sure to logout?');">
-												<div style="color:#1c85e8">คุณมี <span style="color:red;"><?= $user['point']; ?></span> Poin</div>
+										<li class="h_menu">
+											<a href="logout" style="color:red" onclick="return confirm('Are you sure to logout?');">
+												<div>ออกจากระบบ</div>
 											</a>
 										</li>
-										<li class="">
-											<a href="logout" onclick="return confirm('Are you sure to logout?');">
-												<div style="color:red;">ออกจากระบบ</div>
-											</a>
-										</li>
-									<?php } ?> -->
+									<?php } ?>
 								</ul>
 							</nav>
 							<!-- #primary-menu end -->
@@ -213,7 +233,7 @@
 
 							<?php } else { ?>
 								<div id="register_side">
-									<a href="#">คุณมี <?= $user['point']; ?> Poin |</a>
+									<a href="#"><i class="icon-coins"></i> <?= $user['point']; ?> Coin |</a>
 								</div>
 								<div id="register_side">
 									<a href="logout" class="d-none d-lg-block" style="color:red" onclick="return confirm('Are you sure to logout?');"> ออกจากระบบ</a>
