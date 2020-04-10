@@ -38,8 +38,12 @@
 
 <!-- Content
 		============================================= -->
-<section id="content" style="margin-top:-150px;">
-
+<!-- <section id="content" style="margin-top:-150px;"> -->
+<section id="content">
+	<div class="heading-block center nobottomborder">
+		<span class="ls2 t700" style="color:#e74c3c;font-size:1.5rem">ติดต่อสอบถาม แจ้งปัญหาการใช้งาน</span>
+		<span  class="ls2 t700"style="color:#e74c3c;font-size:1.5 rem">กรุณาติดต่อ <span class="ls2 t700" style="color:#2980b9;font-size:1.5 rem">092-562-3256</span><span class="ls2 t700" style="color:#e74c3c;font-size:1.5 rem"> หรือ ส่งอีเมลมาที่ </span><span class="ls2 t700" style="color:#2980b9;font-size:1.5 rem">infinityp.soft@gmail.com</span></span>
+	</div>
 	<div class="content-wrap notoppadding clearfix">
 
 		<!-- <div class="section notopmargin clearfix" style="padding: 80px 0">
@@ -97,7 +101,7 @@
 			</div>
 		</div>
 
-		<div class="clearfix" style="background-image: url('public/assets/front-end/images/3560210.jpg'); padding: 100px 0;background-size: cover;"> 
+		<div class="clearfix" style="background-image: url('public/assets/front-end/images/3560210.jpg'); padding: 100px 0;background-size: cover;">
 			<!-- <div class="heading-block center nobottomborder bottommargin-lg">
 				<h4>วิดิโอสาธิตการลงโฆษณา 3 วิธี</h4>
 			</div> -->
