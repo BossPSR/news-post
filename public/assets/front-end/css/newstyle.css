@@ -1,27 +1,47 @@
-#register_side{
-    margin-top: 33px;
-    margin-bottom: 33px;
-    display: block;
-    cursor: pointer;
-    z-index: 11;
-    margin-right: 5px;
-
+#register_side {
+	margin-top: 33px;
+	margin-bottom: 33px;
+	display: block;
+	cursor: pointer;
+	z-index: 11;
+	margin-right: 5px;
 }
 
-#register_side > a{
-    display: block;
-    position: relative;
-    width: auto;
-    height: auto;
-    font-size: 15px;
-    line-height: 16px;
-    color: #525975;
-    font-weight: 300;
-    -webkit-transition: color .3s ease-in-out;
-    -o-transition: color .3s ease-in-out;
-    transition: color .3s ease-in-out;
+#register_side > a {
+	display: block;
+	position: relative;
+	width: auto;
+	height: auto;
+	font-size: 15px;
+	line-height: 16px;
+	color: #525975;
+	font-weight: 300;
+	-webkit-transition: color 0.3s ease-in-out;
+	-o-transition: color 0.3s ease-in-out;
+	transition: color 0.3s ease-in-out;
 }
 
-.data_register_detail{
-    padding: 15px;
+.data_register_detail {
+	padding: 15px;
+}
+@media (min-width: 992px) {
+	.h_menu {
+		display: none;
+	}
+}
+a.r_and_l {
+	padding: 0 19px;
+	border-radius: 40px;
+	box-shadow: -2px 0px 20px rgba(255, 255, 255),
+		0 0 12px rgba(255, 255, 255, 0.5),
+		inset 2px 2px 4px rgba(255, 255, 255, 0.1), 2px 2px 8px rgba(0, 0, 0, 0.15);
+}
+a.r_and_l:hover {
+	box-shadow: -2px 0px 20px rgba(112, 188, 233),
+		0 0 12px rgba(255, 255, 255, 0.5),
+		inset 2px 2px 4px rgba(255, 255, 255, 0.1), 2px 2px 8px rgba(0, 0, 0, 0.15);
+}
+a.r_and_l:hover span {
+	display: inline-block;
+	transform: scale(0.98);
 }

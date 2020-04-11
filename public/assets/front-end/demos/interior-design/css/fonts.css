@@ -12,7 +12,7 @@ small,
 .wp-caption,
 .feature-box.fbox-center.fbox-italic p,
 .skills li .progress-percent .counter,
-.nav-tree ul ul a { font-family: 'Rubik', sans-serif; }
+.nav-tree ul ul a { font-family: 'Kanit', sans-serif; }
 
 h1,
 h2,
@@ -31,7 +31,7 @@ h6,
 label,
 .nav-tree li a,
 .wedding-head .first-name,
-.wedding-head .last-name { font-family: 'Rubik', sans-serif; }
+.wedding-head .last-name { font-family: 'Kanit', sans-serif; }
 
 .entry-meta li,
 .entry-link span,
@@ -43,10 +43,10 @@ label,
 .team-title span,
 .before-heading,
 .wedding-head .first-name span,
-.wedding-head .last-name span { font-family: 'Playfair Display', serif; }
+.wedding-head .last-name span { font-family: 'Kanit', sans-serif; }
 
-.font-body { font-family: 'Rubik', sans-serif !important; }
+.font-body { font-family: 'Kanit', sans-serif !important; }
 
-.font-primary { font-family: 'Rubik', sans-serif !important; }
+.font-primary { font-family: 'Kanit', sans-serif !important; }
 
-.font-secondary { font-family: 'Playfair Display', serif !important; }
+.font-secondary {font-family: 'Kanit', sans-serif !important; }
