@@ -40,7 +40,11 @@
 	<title>Interior Design Studio | Canvas</title>
 
 </head>
-
+<style>
+	img {
+    	width: 100%;
+	}
+</style>
 <body class="stretched side-push-panel">
 
 	<?php $user = $this->db->get_where('tbl_user', ['email' => $this->session->userdata('email')])->row_array(); ?>
@@ -129,8 +133,8 @@
 							<!-- Logo
 							============================================= -->
 							<div id="logo">
-								<a href="demo-interior-design.html" class="standard-logo"><img src="public/assets/front-end/images/logo_new.png" alt="Canvas Logo"></a>
-								<a href="demo-interior-design.html" class="retina-logo"><img src="public/assets/front-end/images/logo_new.png" alt="Canvas Logo"></a>
+								<a href="demo-interior-design.html" class="standard-logo"><img src="public/assets/front-end/images/logo_new1.png" alt="Canvas Logo" style="width: 100px;height: auto;    max-width: none !important;"></a>
+								<a href="demo-interior-design.html" class="retina-logo"><img src="public/assets/front-end/images/logo_new1.png" alt="Canvas Logo" style="    width: 150px;padding-top: 24px;height: auto; max-width: none !important;"></a>
 							</div><!-- #logo end -->
 
 						</div>

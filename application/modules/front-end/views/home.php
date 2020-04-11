@@ -5,7 +5,7 @@
 		}
 	}
 </style>
-<section id="slider" class="slider-element clearfix" style="height: 555px; background: url('public/assets/front-end/images/3369337.jpg') center center no-repeat; background-size: cover;">
+<section id="slider" class="slider-element clearfix" style="height: 100vh; background: url('public/assets/front-end/images/3369337.jpg') center center no-repeat; background-size: cover;">
 	<div class="vertical-middle">
 		<div class="container clearfix">
 			<!-- <div class="clearfix center divcenter" style="max-width: 700px;"> -->
@@ -40,8 +40,8 @@
 		============================================= -->
 <!-- <section id="content" style="margin-top:-150px;"> -->
 <section id="content">
-	<div class="heading-block center nobottomborder">
-		<span class="ls2 t700" style="color:#e74c3c;font-size:1.5rem">ติดต่อสอบถาม แจ้งปัญหาการใช้งาน</span>
+	<div class="heading-block center nobottomborder" style="    margin-top: 50px;">
+		<span class="ls2 t700" style="color:#e74c3c;font-size:1.9rem">ติดต่อสอบถาม แจ้งปัญหาการใช้งาน</span>
 		<span class="ls2 t700" style="color:#e74c3c;font-size:1rem">กรุณาติดต่อ <span style="color:#2980b9;">092-562-3256</span><span style="color:#e74c3c;"> หรือ ส่งอีเมลมาที่ </span><span style="color:#2980b9;">infinityp.soft@gmail.com</span></span>
 	</div>
 	<div class="content-wrap notoppadding clearfix">
@@ -67,7 +67,7 @@
 			</div>
 		</div> -->
 
-		<div class="section parallax" data-bottom-top="background-position:0px 100px;" data-top-bottom="background-position:0px -100px;">
+		<!-- <div class="section parallax" data-bottom-top="background-position:0px 100px;" data-top-bottom="background-position:0px -100px;">
 			<div class="heading-block center nobottomborder nobottommargin">
 				<div class="col_one_third">
 					<div class="feature-box fbox-center fbox-effect nobottomborder" data-animate="fadeIn">
@@ -97,19 +97,19 @@
 						<h4>ลงโฆษณา</h4>
 
 					</div>
-					<br>
-					<div class="row clearfix">
-						<div class="col-12 col-md-4 center customers-count">
-							<div class="counter center counter-large font-primary"><span data-from="100" data-to="3583" data-refresh-interval="100" data-speed="2000" data-comma="true"></span></div>
-							<p>Happy Customers</p>
-						</div>
-						<div class="col-12 col-md-7 offset-md-1">
-							<blockquote class="quote nobottommargin">
-								<p>Efficiently synthesize magnetic niches via resource maximizing procrastinate adaptive web-readiness.</p>
-								<footer class="color">John Doe, Google Inc.</footer>
-							</blockquote>
-						</div>
+				</div>
+			</div>
+		</div> -->
+
+		<div class="container clearfix" style="margin-bottom: 80px;">
+			<div class="service-box margin-bottom-25">
+				<div class="row no-margin">
+					<div class="col-12">
+						<a href="" target="">
+							<img src="uploads/img/LineTime.png">
+						</a>
 					</div>
+
 				</div>
 			</div>
 		</div>
@@ -118,14 +118,36 @@
 			<!-- <div class="heading-block center nobottomborder bottommargin-lg">
 				<h4>วิดิโอสาธิตการลงโฆษณา 3 วิธี</h4>
 			</div> -->
+			<div class="container" style="    font-size: 20px;">
+				<div style="color:#fff;">
+					หนังสือพิมพ์ แอค แทกซ์ นิวส์ เป็นหนังสือพิมพ์รายวันออนไลน์ ที่มีผู้ลงโฆษณามากที่สุดเป็นลำดับต้นๆ
+
+					สามารถลงประกาศโฆษณาออนไลน์ได้ตลอด 24 ชั่วโมง โดยเลือกลงประกาศโฆษณาได้ 3 แบบ ดังนี้
+				</div>
+				<hr style="border-top:1px solid rgba(255, 255, 255, 0.58);">
+				<div style="color:#fff">
+					1 ลงประกาศโฆษณาตาม template สำเร็จรูป ลงโฆษณาได้ทีละ 1 กรอบ
+				</div>
+				<div style="color:#fff">
+					2 ลงประกาศโฆษณาด้วยรูปภาพ JPG, JPEG, PNG หรือไฟล์ PDF ลงโฆษณาได้ทีละหลายกรอบพร้อมกัน
+				</div>
+				<div style="color:#fff">
+					3 ลงประกาศโฆษณาเชิญประชุมผู้ถือหุ้นประจำปี (ปิดงบประจำปี) ลงโฆษณาได้หลายกรอบพร้อมกัน
+				</div>
+				<div style="color:#fff">
+					โดย download excel และกรอกข้อมูลลงตามที่กำหนดไว้
+				</div>
+			</div>
+			<br>
+			<br>
 			<div class="container">
-				<h4 class="text-center" style="color:#fff;">วิดิโอสาธิตการลงโฆษณา 3 วิธี</h4>
+				<h4 class="text-center" style="color:#fff;    font-size: 28px;">วิดิโอสาธิตการลงโฆษณา 3 วิธี</h4>
 				<div class="col_one_third nobottommargin">
 
 					<!-- <div class="heading-block fancy-title nobottomborder title-bottom-border">
 					<h4>Why choose <span>Us</span>.</h4>
 				</div> -->
-					<iframe src="https://www.youtube.com/embed/AynSfsJPzhk" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+					<iframe src="https://www.youtube.com/embed/AynSfsJPzhk" frameborder="0" allow="autoplay; encrypted-media" style="    border-radius: 15px;" allowfullscreen></iframe>
 					<!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi quidem minus id omnis, nam expedita, ea fuga commodi voluptas iusto, hic autem deleniti dolores explicabo labore enim repellat earum perspiciatis.</p> -->
 
 				</div>
@@ -135,7 +157,7 @@
 					<!-- <div class="heading-block fancy-title nobottomborder title-bottom-border">
 					<h4>Our <span>Mission</span>.</h4>
 				</div> -->
-					<iframe src="https://www.youtube.com/embed/X8NFkUQNeek" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+					<iframe src="https://www.youtube.com/embed/X8NFkUQNeek" frameborder="0" allow="autoplay; encrypted-media" style="    border-radius: 15px;" allowfullscreen></iframe>
 
 				</div>
 
@@ -144,11 +166,11 @@
 					<!-- <div class="heading-block fancy-title nobottomborder title-bottom-border">
 					<h4>What we <span>Do</span>.</h4>
 				</div> -->
-					<iframe src="https://www.youtube.com/embed/ZeDP-rzOnAA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+					<iframe src="https://www.youtube.com/embed/ZeDP-rzOnAA" frameborder="0" allow="autoplay; encrypted-media" style="    border-radius: 15px;" allowfullscreen></iframe>
 
 				</div>
 				<div>
-					
+
 				</div>
 			</div>
 
@@ -160,72 +182,37 @@
 
 			<div class="divcenter" style="max-width: 960px">
 				<div class="heading-block center nobottomborder">
-					<h2 class="ls2 t700">Your Priority is our Priority</h2>
-					<span>Competently benchmark backward-compatible technologies vis-a-vis<br>parallel convergence. Rapidiously innovate stand-alone.</span>
+					<h2 class="ls2 t700">หลักในการลงประกาศหนังสือพิมพ์</h2>
 				</div>
 				<div class="tabs tabs-alt tabs-responsive tabs-justify clearfix" id="tab">
-
-					<ul class="tab-nav clearfix">
-						<li><a href="#tabs-1"><i class="icon-line2-key"></i>24x7 Available</a></li>
-						<li><a href="#tabs-2"><i class="icon-line2-social-dropbox"></i>Complete Solutions</a></li>
-						<li><a href="#tabs-3"><i class="icon-line2-drop"></i>Water Treatments</a></li>
-						<li><a href="#tabs-4"><i class="icon-line2-pointer"></i>Location Independant</a></li>
-					</ul>
 
 					<div class="tab-container">
 
 						<div class="tab-content clearfix" id="tabs-1">
 							<div class="story-box description-left clearfix">
 								<div class="story-box-image">
-									<img src="public/assets/front-end/demos/interior-design/images/story/1.jpg" alt="story-image">
+									<img src="https://www.accttaxnews.com/uploads/information/4673e68fff354c8080a5925533e6172c.jpeg" alt="story-image">
 								</div>
 								<div class="story-box-info">
-									<h3 class="story-title">We help people to create new Website.</h3>
+									<h3 class="story-title">ต้องลงโฆษณาอย่างน้อย 1 ครั้ง.</h3>
 									<div class="story-box-content">
-										<p>Uniquely productize cross-unit action items with multifunctional imperatives. Quickly communicate collaborative relationships rather than timely materials. Progressively foster unique interfaces vis-a-vis backend e-services.</p>
-										<button class="t300 button noleftmargin button-rounded">Read Canvas's story</button>
+										<p>มติทั่วไป ต้องลงโฆษณาอย่างน้อย 1 ครั้ง ก่อนวันประชุมฯไม่น้อยกว่า 7 วัน (ต้อง + 8 วัน เนื่องจากไม่นับวันลงโฆษณาและวันประชุม) หรือตามที่กำหนดไว้ในข้อบังคับ</p>
+										<button class="t300 button noleftmargin button-rounded">รายละเอียด</button>
 									</div>
 								</div>
 							</div>
 						</div>
-						<div class="tab-content clearfix" id="tabs-2">
-							<div class="story-box clearfix">
-								<div class="story-box-image">
-									<img src="public/assets/front-end/demos/interior-design/images/story/2.jpg" alt="story-image">
-								</div>
-								<div class="story-box-info">
-									<h3 class="story-title">Get better results tomorrow by reading this post.</h3>
-									<div class="story-box-content">
-										<p>Progressively streamline future-proof networks rather than virtual channels. Intrinsicly architect performance based products with B2C communities. Appropriately underwhelm integrated information via superior platforms.</p>
-										<button class="t300 button noleftmargin button-rounded">Read More</button>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="tab-content clearfix" id="tabs-3">
-							<div class="story-box description-left clearfix">
-								<div class="story-box-image">
-									<img src="public/assets/front-end/demos/interior-design/images/story/3.jpg" alt="story-image">
-								</div>
-								<div class="story-box-info">
-									<h3 class="story-title">TK’s recipe of the week: Guiness beef stew.</h3>
-									<div class="story-box-content">
-										<p>Compellingly synthesize technically sound users without technically sound vortals. Rapidiously redefine maintainable leadership with multifunctional strategic theme areas. Appropriately plagiarize business ideas vis-a-vis.</p>
-										<button class="t300 button noleftmargin button-rounded">Read About Me</button>
-									</div>
-								</div>
-							</div>
-						</div>
+
 						<div class="tab-content clearfix" id="tabs-4">
 							<div class="story-box clearfix">
 								<div class="story-box-image">
-									<img src="public/assets/front-end/demos/interior-design/images/story/4.jpg" alt="story-image">
+									<img src="https://www.accttaxnews.com/uploads/information/3e5f3f888ed8421fcaa4aa4ea289c4df.jpeg" alt="story-image">
 								</div>
 								<div class="story-box-info">
-									<h3 class="story-title">We help people to create new Website.</h3>
+									<h3 class="story-title">มติพิเศษ ต้องลงโฆษณาอย่างน้อย 1 ครั้งก่อน</h3>
 									<div class="story-box-content">
-										<p>Dynamically exploit cross-platform sources vis-a-vis scalable paradigms. Efficiently plagiarize multifunctional internal or "organic" sources before intuitive innovation. Synergistically facilitate goal-oriented ROI vis-a-vis client-focused.</p>
-										<a href="#">Read Deanne's story</a>
+										<p>มติพิเศษ ต้องลงโฆษณาอย่างน้อย 1 ครั้งก่อนวันประชุมฯไม่น้อยกว่า 14 วัน (ต้อง + 15 วัน เนื่องจากไม่นับวันลงโฆษณาและวันประชุม) หรือตามที่กำหนดไว้ในข้อบังคับ</p>
+										<button class="t300 button noleftmargin button-rounded">รายละเอียด</button>
 									</div>
 								</div>
 							</div>
@@ -238,7 +225,7 @@
 
 		</div>
 
-		<div class="section bottommargin-lg dark" style="background: url('public/assets/front-end/demos/interior-design/images/section/1.jpg') center 80%; background-size: cover; padding: 180px 0">
+		<div class="section bottommargin-lg dark" style="background: url('https://image.freepik.com/free-photo/caucasian-man-working-shoot_53876-30174.jpg') center 80%; background-size: cover; padding: 180px 0">
 			<div class="container clearfix">
 				<div class="emphasis-title divcenter center" style="max-width: 700px">
 					<h2 class="font-secondary ls1" style="font-size: 52px;">Welcome to a better way to Live your Life.</h2>
@@ -249,15 +236,11 @@
 		<div class="container clearfix">
 
 			<div class="emphasis-title center divcenter" style="max-width: 800px">
-				<h2 class="font-secondary nott t700">3,583 happy homeowners and counting...</h2>
+				<h2 class="font-secondary nott t700">คำถามที่พบบ่อย</h2>
 			</div>
 
 			<div class="row bottommargin clearfix">
-				<div class="col-lg-10 offset-lg-1 col-12">
-					<div class="review-row center">
-						<h6>Top Best Reviews of Canvas</h6>
-					</div>
-				</div>
+		
 
 				<div class="clear"></div>
 
@@ -270,23 +253,12 @@
 								<div class="col-lg-10 offset-lg-1 col-12">
 									<div class="review clearfix">
 										<div class="row">
-											<div class="col-12 col-md-4">
-												<div class="review-company">Datanetpress</div>
-												<div class="review-id">Themeforest Author</div>
-												<div class="rating-stars fright">
-													<i class="icon-star3"></i><i class="icon-star3"></i><i class="icon-star3"></i><i class="icon-star3"></i><i class="icon-star3"></i>
-												</div>
-												<div class="review-date">
-													Sold 19/11/2016<br>
-													after 22 days
-												</div>
-											</div>
-											<div class="col-12 col-md-8">
+											<div class="col-12 col-md-12">
 												<div class="review-title">
-													<h3>Awesome Template and Good Support.</h3>
+													<h3>หนังสือพิมพ์ แอค แทกซ์ นิวส์ มีความน่าเชื่อถือขนาดไหน สามารถลงประกาศได้หรือไม่</h3>
 												</div>
 												<div class="review-content">
-													<p>Not only is this a REALLY professionally designed website, but the support is phenomenal. They have promptly answered all of my questions (and I had several :) ) Nice job SemiColonWeb!!! I highly recommend your HTML template to anyone looking for a website. Excellent, only gripe is the php email section, that needs to be better otherwise a brilliant template and set of codes. well done. Hello, I would like to say that :SemiColonWeb" has being the SUPER BEST CUSTOMER SERVICE I HAVE EVER HAD during all my year in Envato. This Guys are the Best, not only on Design by the most Important for us, in customer service. There are fast, super professional, on time and the most important they care about their clients. 100 BIG STARS FOR EVER!!!</p>
+													<p>หนังสือพิมพ์ แอค แทกซ์ นิวส์ ได้จดแจ้งการพิมพ์อย่างถูกต้อง และได้รับใบอนุญาตเลขที่ สสช 15/2561 ISSN 2586-999X</p>
 												</div>
 											</div>
 										</div>
@@ -300,23 +272,12 @@
 								<div class="col-lg-10 offset-lg-1 col-12">
 									<div class="review clearfix">
 										<div class="row">
-											<div class="col-12 col-md-4">
-												<div class="review-company">VarunD</div>
-												<div class="review-id">Themeforest Author</div>
-												<div class="rating-stars">
-													<i class="icon-star3"></i><i class="icon-star3"></i><i class="icon-star3"></i><i class="icon-star3"></i><i class="icon-star3"></i>
-												</div>
-												<div class="review-date">
-													Sold 21/09/2016<br>
-													after 39 days
-												</div>
-											</div>
-											<div class="col-12 col-md-8">
+											<div class="col-12 col-md-12">
 												<div class="review-title">
-													<h3>Nice Design Quality &amp; Well Support.</h3>
+													<h3>ทำไมขนาดของหนังสือพิมพ์เป็น A4</h3>
 												</div>
 												<div class="review-content">
-													<p>Excellent, only gripe is the php email section, that needs to be better otherwise a brilliant template and set of codes. well done. Awesome theme. Using it for two different sites at the moment and it keeps on giving! Thanks SemiColonWeb! Love this template. one of the best I've worked with. Wow, very inspiring design and excellent code. One of the best HTML and bootstrap templates here on Themeforest with infinitely many features. Really Well Done! Flexible, easy to customize, amazing code quality and a good documentation. This theme fits well in various business strategies.</p>
+													<p>เราได้ขออนุญาตจัดพิมพ์เป็นแผ่น ดังนั้นเป็น A4 จึงใช้ได้ นอกจากนี้จัดทำเป็น A4 เพื่อง่ายต่อการเก็บรักษา</p>
 												</div>
 											</div>
 										</div>
@@ -330,23 +291,13 @@
 								<div class="col-lg-10 offset-lg-1 col-12">
 									<div class="review clearfix">
 										<div class="row">
-											<div class="col-12 col-md-4">
-												<div class="review-company">Paultran47</div>
-												<div class="review-id">Themeforest Author</div>
-												<div class="rating-stars">
-													<i class="icon-star3"></i><i class="icon-star3"></i><i class="icon-star3"></i><i class="icon-star3"></i><i class="icon-star3"></i>
-												</div>
-												<div class="review-date">
-													Sold 03/01/2017<br>
-													after 11 days
-												</div>
-											</div>
-											<div class="col-12 col-md-8">
+									
+											<div class="col-12 col-md-12">
 												<div class="review-title">
-													<h3>The support is wonderful as well.</h3>
+													<h3>หนังสือพิมพ์แห่งท้องถิ่น หมายถึงอะไร</h3>
 												</div>
 												<div class="review-content">
-													<p>It's amazing that less than 20 dollars gets you more than 400 templates and a bunch of customisability. But what I love the most about Canvas's template is the clear and clean code structure. Everything is easy to understand and to find. This template is so well done, clean and well documented. Having examples for almost any variation that I can use as a basis. I find this much more efficient that website builders. Continue this great work! Really, really great job, guys!!</p>
+													<p>หมายถึงหนังสือพิมพ์ที่มีจำหน่ายในท้องถิ่นนั้นๆ โดยหนังสือพิมพ์ แอค แทกซ์ นิวส์เปิดให้ประชาชนทั่วประเทศดาวน์โหลด ได้ ดังนั้นจึงถือเป็นหนังสือพิมพ์ที่สามารถลงประกาศได้ทั่วประเทศ</p>
 												</div>
 											</div>
 										</div>
@@ -354,37 +305,31 @@
 								</div>
 							</div>
 						</div>
+
+						<div class="oc-item">
+							<div class="row">
+								<div class="col-lg-10 offset-lg-1 col-12">
+									<div class="review clearfix">
+										<div class="row">
+									
+											<div class="col-12 col-md-12">
+												<div class="review-title">
+													<h3>ปัจจุบันยังคงต้องลงประกาศหนังสือพิมพ์เชิญประชุมหรือไม่</h3>
+												</div>
+												<div class="review-content">
+													<p>ตามประมวลกฏหมายแพ่งและพาณิชย์ มาตรา 1175 พ.ศ. 2551 ยังคงบังคับให้ลงประกาศหนังสือพิมพ์อย่างน้อย 1 ครั้ง ซึ่งถ้าบริษัทไม่ได้ลงประกาศจะมีความผิด เช่นในการชำระบัญชีถ้าไม่มีการลงประกาศหนังสือพิมพ์จะมีโทษปรับไม่เกิน 80,000 บาท</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						
 					</div>
 				</div>
 			</div>
 
-			<div class="col_one_third nobottommargin">
-				<div class="feature-box fbox-small fbox-center fbox-plain fbox-large nobottomborder">
-					<div class="fbox-icon">
-						<i class="icon-line2-home"></i>
-					</div>
-					<h3 class="ls0 t400 nott" style="font-size: 20px;">Commercial &amp; Personal Use</h3>
-					<p style="font-size: 16px;">Proactively reintermediate B2C infomediaries before multimedia methods of empowerment.</p>
-				</div>
-			</div>
-			<div class="col_one_third nobottommargin">
-				<div class="feature-box fbox-small fbox-center fbox-plain fbox-large nobottomborder">
-					<div class="fbox-icon">
-						<i class="icon-line2-compass"></i>
-					</div>
-					<h3 class="ls0 t400 nott" style="font-size: 20px;">Vaastu Compliant</h3>
-					<p style="font-size: 16px;">Uniquely formulate principle-centered applications after just in time opportunities.</p>
-				</div>
-			</div>
-			<div class="col_one_third nobottommargin col_last">
-				<div class="feature-box fbox-small fbox-center fbox-plain fbox-large nobottomborder">
-					<div class="fbox-icon">
-						<i class="icon-line2-directions"></i>
-					</div>
-					<h3 class="ls0 t400 nott" style="font-size: 20px;">Great Location</h3>
-					<p style="font-size: 16px;">Collaboratively reinvent ubiquitous functionalities vis future-proof systems.</p>
-				</div>
-			</div>
 		</div>
 
 	</div>
