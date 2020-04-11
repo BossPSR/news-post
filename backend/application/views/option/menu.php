@@ -34,10 +34,10 @@
                     </li>
                 <?php } ?>
 
-                <li class="nav-item <?php if ($this->uri->segment(1) == "List-Order") {
+                <li class="nav-item <?php if ($this->uri->segment(1) == "Main_order") {
                                                 echo 'active';
                                             } ?>">
-                 <a href="List-Order"><i class="feather icon-home"></i><span data-i18n="Dashboard">Order</span></a>
+                 <a href="Main_order"><i class="feather icon-home"></i><span data-i18n="Dashboard">Order</span></a>
             </li>
 
             <li class="nav-item <?php if ($this->uri->segment(1) == "List-Post") {

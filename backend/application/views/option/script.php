@@ -83,3 +83,20 @@
         })
     }
 </script>
+<script>
+    function confirmalertdelete_pdf(data1) {
+
+        swal({
+            title: "Are you sure delete?",
+            text: "Are you sure you want to delete  ?",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        }).then(function(isConfirm) {
+            if (isConfirm) {
+                window.location = 'delete_pdf?id=' + data1;
+            }
+        })
+    }
+</script>
+
