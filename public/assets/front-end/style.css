@@ -6653,6 +6653,8 @@ body:not(.device-touch) .button {
 }
 
 .button.button-desc {
+	width: 287.86px;
+	border-radius: 5px;
 	text-align: left;
 	padding: 24px 34px;
 	font-size: 22px;
@@ -6662,13 +6664,14 @@ body:not(.device-touch) .button {
 }
 
 .button.button-desc span {
+	text-align: center;
 	display: block;
 	margin-top: 10px;
 	font-size: 14px;
 	font-weight: 400;
 	letter-spacing: 1px;
 	font-family: 'Kanit', sans-serif;
-	font-style: italic;
+	/* font-style: italic; */
 	text-transform: none;
 }
 
@@ -7784,7 +7787,7 @@ body:not(.device-touch) .button.button-full strong {
 
 .feature-box.fbox-center.fbox-small p {
 	font-size: 14px;
-	margin-top: 10px;
+	/* margin-top: 10px; */
 }
 
 .feature-box.fbox-center.fbox-plain.fbox-small p { margin-left: 0; }
