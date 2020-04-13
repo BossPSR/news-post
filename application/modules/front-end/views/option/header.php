@@ -199,6 +199,12 @@
 											<div>ติดต่อเรา</div>
 										</a>
 									</li>
+									<li class="<?php if ($this->uri->segment(1) == "PDF") {
+													echo 'current';
+												} ?>"><a href="PDF">
+											<div>PDF</div>
+										</a>
+									</li>
 									<?php if (!empty($user)) { ?>
 										<li class="h_menu">
 
