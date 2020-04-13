@@ -69,7 +69,6 @@
 			<form action="saveRecord_checkout" method="POST" class="checkout-form">
 				<div class="modal-body">
 				
-					<input type="hidden" class="form-control" name="user_id" value="<?php echo $user['id_user'];?>">
 					<div id="omise_detail">
 					
 					</div>
@@ -95,6 +94,7 @@
 		</div>
 		</div>
 <?php } ?>
+<script src="https://cdn.omise.co/omise.js"></script>
 <script>
 	function address_user(e) {
 		if (e == 1) {
@@ -182,6 +182,7 @@
 						detail_omise += '<input type="hidden" name="result_number_address" value="'+number_address+'">';
 						detail_omise += '<input type="hidden" name="result_compony_address" value="'+compony_address+'">';
 						detail_omise += '<input type="hidden" name="result_detail_address" value="'+detail_address+'">';
+						detail_omise += '<input type="hidden" class="form-control" name="id_user" value="<?php echo $user['id_user'];?>">';
 						detail_omise += '<script type="text/javascript" src="https://cdn.omise.co/omise.js" data-key="pkey_test_5jj79losaq3gdkmmo4x" data-image=""data-frame-label="One Business"data-button-label="ชำระเงิน"data-submit-label="ชำระเงิน"data-amount="'+price+'00"data-currency="บาท">'+'<'+'/script>';
 
 					$('#omise_detail').html(detail_omise);

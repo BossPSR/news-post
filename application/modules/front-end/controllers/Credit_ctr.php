@@ -40,7 +40,7 @@ class Credit_ctr extends CI_Controller
             $result_number_address  = $this->input->post('result_number_address');
             $result_compony_address  = $this->input->post('result_compony_address');
             $result_detail_address  = $this->input->post('result_detail_address');
-            $user_id = $this->input->post('user_id');
+            $id_user = $this->input->post('id_user');
   
              
             
@@ -60,7 +60,7 @@ class Credit_ctr extends CI_Controller
                     'id_taxs' => $result_number_address,
                     'company' => $result_compony_address,
                     'address' => $result_detail_address,
-                    'user_id' => $user_id,
+                    'id_user' => $id_user,
                 ];
                    
                     $success =  $this->db->insert('tbl_omise',$data);
