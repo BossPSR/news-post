@@ -50,6 +50,51 @@
 
 		</section><!-- #content end -->
 
+
+<?php 
+	$user = $this->db->get_where('tbl_user',['email' => $this->session->userdata('email')])->row_array(); 
+	if (!empty($user)) {
+	
+?>		
+		<!-- Modal -->
+		<div class="modal fade" id="omise_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+			<div class="modal-header">
+				<h3 class="modal-title" id="exampleModalLabel">เติมเงิน</h3>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<form action="saveRecord_checkout" method="POST" class="checkout-form">
+				<div class="modal-body">
+				
+					<div id="omise_detail">
+					
+					</div>
+
+					<!-- <script type="text/javascript" src="https://cdn.omise.co/omise.js"
+						data-key="pkey_test_5jj79losaq3gdkmmo4x"
+						data-image=""
+						data-frame-label="One Business"
+						data-button-label="ชำระเงิน"
+						data-submit-label="ชำระเงิน"
+						data-amount="100.00"
+						data-currency="บาท"
+					>
+					</script> -->
+				
+				</div>
+				<div class="modal-footer">
+					<!-- <button type="submit" class="btn btn-primary">เติมเงิน</button> -->
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">ยกเลิก</button>
+				</div>
+			</form>
+			</div>
+		</div>
+		</div>
+<?php } ?>
+<script src="https://cdn.omise.co/omise.js"></script>
 <script>
 	function address_user(e) {
 		if (e == 1) {
@@ -59,6 +104,7 @@
 		}
 		
 	}
+
 	function before_buy() {
 		let credit = $('#credit').val();
 			credit_new = credit * 45;
@@ -71,7 +117,8 @@
 				detailCredit += '<div class="card">';
 				detailCredit += '<div class="card-header text-left" style="color:#000;">ที่อยู่ใบเสร็จรับเงิน</div>';
 				detailCredit += '<div class="card-body">';
-				detailCredit += '<form style="margin-bottom:0;">';
+				detailCredit += '<input type="hidden" name="count" value="'+credit+'">';
+				detailCredit += '<input type="hidden" name="price" value="'+parseFloat(credit_new)+'">';
 				detailCredit += '<div class="text-left">';
 				detailCredit += '<input type="radio" name="address" class="form-group" style="cursor:pointer;" onclick="address_user(0);" checked value="ที่อยู่เดียวกันกับตอนลงทะเบียน">';
 				detailCredit += '<label style="font-size:18px;cursor: auto;">';
@@ -88,20 +135,19 @@
 				detailCredit += '<div class="row">';
 				detailCredit += '<div class="col-6 text-left form-group">';
 				detailCredit += '<label style="font-size:18px;cursor: auto;">เลขประจำตัวผู้เสียภาษี,สาขา</label>';
-				detailCredit += '<input type="text" name="address" class="form-control">';
+				detailCredit += '<input type="text" name="number_address" class="form-control">';
 				detailCredit += '</div>';
 				detailCredit += '<div class="col-6 text-left form-group">';
 				detailCredit += '<label style="font-size:18px;cursor: auto;">บริษัท</label>';
-				detailCredit += '<input type="text" name="address" class="form-control">';
+				detailCredit += '<input type="text" name="compony_address" class="form-control">';
 				detailCredit += '</div>';
 				detailCredit += '<div class="col-12 text-left">';
 				detailCredit += '<label style="font-size:18px;cursor: auto;">ที่อยู่</label>';
-				detailCredit += '<textarea name="address" class="form-control" rows="10" col="30"></textarea>';
+				detailCredit += '<textarea name="detail_address" class="form-control" rows="10" col="30"></textarea>';
 				detailCredit += '</div>';
 				detailCredit += '</div>';
 				detailCredit += '</div>';
-				detailCredit += '<button type="button" class="btn btn-primary">ดำเนินการต่อ</button>';
-				detailCredit += '</form>';
+				detailCredit += '<button type="button" onClick="send_data(this);" class="btn btn-primary">ดำเนินการต่อ</button>';
 				detailCredit += '</div>';
 				detailCredit += '</div>';
 				detailCredit += '</div>';
@@ -109,6 +155,42 @@
 			$('#detail_credit').html(detailCredit);
 		}
 	}
+	function send_data(e) {
+		$.ajax({
+			url: "check_user_credit",
+			method: "GET",
+			success: function(getData) {
+				if (getData == 0) {
+					$('body').addClass('side-panel-open');
+				}else{
+					$('#omise_modal').modal("toggle");
+					const count = $('[name="count"]').val();
+					let price = $('[name="price"]').val();
+					const type_address = $('[name="address"]:checked').val();
+					let number_address = 0;
+					let compony_address = 0;
+					let detail_address = 0;
+					if (type_address == "กรอกที่อยู่ใหม่") {
+						number_address = $('[name="number_address"]').val();
+						compony_address = $('[name="compony_address"]').val();
+						detail_address = $('[name="detail_address"]').val();	
+					}
+					let detail_omise = '<h4 style="margin:0;">ระบุจำนวนเอง : '+count+' เครดิต</h4>';
+						detail_omise += '<h4>ยอดเงินที่ต้องชำระ : <span style="color:red;">'+parseFloat(price)+' บาท</span></h4>';
+						detail_omise += '<input type="hidden" name="result_count" value="'+count+'">';
+						detail_omise += '<input type="hidden" name="result_price" value="'+price+'">';
+						detail_omise += '<input type="hidden" name="result_number_address" value="'+number_address+'">';
+						detail_omise += '<input type="hidden" name="result_compony_address" value="'+compony_address+'">';
+						detail_omise += '<input type="hidden" name="result_detail_address" value="'+detail_address+'">';
+						detail_omise += '<input type="hidden" class="form-control" name="id_user" value="<?php echo $user['id_user'];?>">';
+						detail_omise += '<script type="text/javascript" src="https://cdn.omise.co/omise.js" data-key="pkey_test_5jj79losaq3gdkmmo4x" data-image=""data-frame-label="One Business"data-button-label="ชำระเงิน"data-submit-label="ชำระเงิน"data-amount="'+price+'00"data-currency="บาท">'+'<'+'/script>';
+
+					$('#omise_detail').html(detail_omise);
+				}
+
+			}
+    	});
+	}
 	
-				
+	
 </script>

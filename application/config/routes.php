@@ -20,6 +20,8 @@ $route['about']             = 'front-end/About_ctr';
 $route['ads']               = 'front-end/Ads_ctr';
 $route['payment']           = 'front-end/Payment_ctr';
 $route['credit']            = 'front-end/Credit_ctr';
+$route['check_user_credit'] = 'front-end/Credit_ctr/check_user_credit';
+$route['saveRecord_checkout'] = 'front-end/Credit_ctr/saveRecord_checkout';
 $route['paypal_success']    = 'front-end/Credit_ctr/paypal_success';
 $route['download']          = 'front-end/Download_ctr';
 
