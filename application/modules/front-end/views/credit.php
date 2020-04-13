@@ -51,6 +51,12 @@
 		</section><!-- #content end -->
 
 <script>
+	function address_user(e) {
+		if (e == 1) {
+			
+		}
+		
+	}
 	function before_buy() {
 		let credit = $('#credit').val();
 			credit_new = credit * 45;
@@ -65,13 +71,13 @@
 				detailCredit += '<div class="card-body">';
 				detailCredit += '<form style="margin-bottom:0;">';
 				detailCredit += '<div class="text-left">';
-				detailCredit += '<input type="radio" name="address" class="form-group" style="cursor:pointer;" checked value="ที่อยู่เดียวกันกับตอนลงทะเบียน">';
+				detailCredit += '<input type="radio" name="address" class="form-group" style="cursor:pointer;" onclick="address_user(0);" value="ที่อยู่เดียวกันกับตอนลงทะเบียน">';
 				detailCredit += '<label style="font-size:18px;cursor: auto;">';
 				detailCredit += 'ที่อยู่เดียวกันกับตอนลงทะเบียน';
 				detailCredit += '</label>';
 				detailCredit += '</div>';
 				detailCredit += '<div class="text-left">';
-				detailCredit += '<input type="radio" name="address" class="form-group" style="cursor:pointer;" value="กรอกที่อยู่ใหม่">';
+				detailCredit += '<input type="radio" name="address" class="form-group" style="cursor:pointer;" onclick="address_user(1);" value="กรอกที่อยู่ใหม่">';
 				detailCredit += '<label style="font-size:18px;cursor: auto;">';
 				detailCredit += 'กรอกที่อยู่ใหม่';
 				detailCredit += '</label>';
@@ -85,15 +91,6 @@
 			$('#detail_credit').html(detailCredit);
 		}
 	}
-
-	function address() {
-		let address = $('[name="address"]:checked').val();
-		if (address == "กรอกที่อยู่ใหม่") {
-			console.log(address)
-		}
-		
-	}
-	address();
 	
 				
 </script>
