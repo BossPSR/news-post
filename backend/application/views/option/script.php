@@ -100,3 +100,21 @@
     }
 </script>
 
+<script>
+    function confirmalertdelete_contact_us(data2) {
+
+        swal({
+            title: "Are you sure delete คำถามที่พบบ่อย?",
+            text: "Are you sure you want to delete คำถามที่พบบ่อย  ?",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        }).then(function(isConfirm) {
+            if (isConfirm) {
+                window.location = 'delete_contact_us?id=' + data2;
+            }
+        })
+    }
+</script>
+
+

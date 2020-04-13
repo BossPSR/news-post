@@ -38,7 +38,7 @@ class Login_controller extends CI_Controller
             );
             $this->db->insert('tbl_session', $checkSession);
             $this->session->set_flashdata('success_login', TRUE);
-            redirect('Dashboard');
+            redirect('List-admin');
         } else {
             $this->session->set_flashdata('fail_login', TRUE);
             redirect('Login');
