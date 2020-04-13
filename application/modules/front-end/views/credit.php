@@ -1,6 +1,3 @@
-<script
-    src="https://www.paypal.com/sdk/js?client-id=ATFjsBgpLf13IC-GVJumMggeaUc-4Kk6l28Q_YTSV0Elabwxb86JFONaaMy5cceARHfZCu7UAwVTw3kQ"> // Required. Replace SB_CLIENT_ID with your sandbox client ID.
-  </script>		
 		<!-- Slider
 		============================================= -->
 		<section id="slider" class="slider-element clearfix" style="height: 550px; background: url('public/assets/front-end/demos/interior-design/images/about/hero.jpg') center 70% no-repeat; background-size: cover;">
@@ -31,57 +28,16 @@
 									<i class="icon-line2-home"></i>
 								</div>
 								<h3 class="ls0 t400 nott" style="font-size: 20px;">บริษัท แอค แทกซ์ นิวส์ จำกัด</h3>
-                                <p style="font-size: 16px;">
-								<div id="paypal-button-container"></div>
 
-
-								<script>
-									paypal.Buttons({
-									createOrder: function(data, actions) {
-									return actions.order.create({
-										purchase_units: [{
-										amount: {
-											value: '1.0'
-										}
-										}]
-									});
-									},
-									onApprove: function(data, actions) {
-									return actions.order.capture().then(function(details) {
-										alert('Transaction completed by ' + details.payer.name.given_name);
-										// Call your server to save the transaction
-										// return fetch('/ss', {
-										//   method: 'post',
-										//   headers: {
-										//     'content-type': 'application/json'
-										//   },
-										//   body: JSON.stringify({
-										//     orderID: data.orderID
-										//   })
-										// });
-										console.log(details);
-										$.ajax({
-										url:'paypal_success',
-										method: 'post',
-										data:{
-											orderId: data.orderID,
-											payerId: data.payerID,
-											name: details.payer.name.given_name +" "+details.payer.name.surname,
-											create_time: details.create_time,
-											amount: details.purchase_units['0'].amount.value,
-											currency_code: details.purchase_units['0'].amount.currency_code,
-										},
-										success:function (response) {
-											let dataSucces = JSON.parse(response);
-											console.log(dataSucces);
-										}
-										});
-										
-									});
-									}
-								}).render('#paypal-button-container');
-								</script>
-                                </p>
+                               <div class="card">
+									<div class="card-header text-left" style="color:#000;">เติมเครดิต</div>
+									<div class="card-body" id="detail_credit">
+										<h4 style="margin: 0;">ระบุจำนวนเอง</h4> 
+										<h4>( 45 บาท ต่อเครดิต )</h4> 
+										<input type="number" class="form-control form-group" id="credit">
+										<button type="button" class="btn btn-primary" onClick="before_buy();">ซื้อตอนนี้</button>
+									</div>
+								</div>
 							</div>
 						</div>
 						
@@ -93,3 +49,51 @@
 			</div>
 
 		</section><!-- #content end -->
+
+<script>
+	function before_buy() {
+		let credit = $('#credit').val();
+			credit_new = credit * 45;
+		if (credit > 0) {
+			let detailCredit = '<div style="width:70%; margin: auto;">';
+			 	detailCredit += '<h4 style="margin:0;">สรุปยอดการชำระเงิน</h4>';
+				detailCredit += '<hr>';
+				detailCredit += '<h5 style="margin:0;">ระบุจำนวนเอง : '+credit+' เครดิต</h5>';
+				detailCredit += '<h5>ยอดเงินที่ต้องชำระ : <span style="color:red;">'+credit_new+' บาท</span></h5>';
+				detailCredit += '<div class="card">';
+				detailCredit += '<div class="card-header text-left" style="color:#000;">ที่อยู่ใบเสร็จรับเงิน</div>';
+				detailCredit += '<div class="card-body">';
+				detailCredit += '<form style="margin-bottom:0;">';
+				detailCredit += '<div class="text-left">';
+				detailCredit += '<input type="radio" name="address" class="form-group" style="cursor:pointer;" checked value="ที่อยู่เดียวกันกับตอนลงทะเบียน">';
+				detailCredit += '<label style="font-size:18px;cursor: auto;">';
+				detailCredit += 'ที่อยู่เดียวกันกับตอนลงทะเบียน';
+				detailCredit += '</label>';
+				detailCredit += '</div>';
+				detailCredit += '<div class="text-left">';
+				detailCredit += '<input type="radio" name="address" class="form-group" style="cursor:pointer;" value="กรอกที่อยู่ใหม่">';
+				detailCredit += '<label style="font-size:18px;cursor: auto;">';
+				detailCredit += 'กรอกที่อยู่ใหม่';
+				detailCredit += '</label>';
+				detailCredit += '</div>';
+				detailCredit += '<button type="button" class="btn btn-primary">ดำเนินการต่อ</button>';
+				detailCredit += '</form>';
+				detailCredit += '</div>';
+				detailCredit += '</div>';
+				detailCredit += '</div>';
+
+			$('#detail_credit').html(detailCredit);
+		}
+	}
+
+	function address() {
+		let address = $('[name="address"]:checked').val();
+		if (address == "กรอกที่อยู่ใหม่") {
+			console.log(address)
+		}
+		
+	}
+	address();
+	
+				
+</script>
