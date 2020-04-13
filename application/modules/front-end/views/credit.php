@@ -34,7 +34,7 @@
 									<div class="card-body" id="detail_credit">
 										<h4 style="margin: 0;">ระบุจำนวนเอง</h4> 
 										<h4>( 45 บาท ต่อเครดิต )</h4> 
-										<input type="number" class="form-control form-group" id="credit">
+										<input type="number" class="form-control" style="margin: 0 auto 15px; width:50%;" id="credit">
 										<button type="button" class="btn btn-primary" onClick="before_buy();">ซื้อตอนนี้</button>
 									</div>
 								</div>
@@ -53,7 +53,9 @@
 <script>
 	function address_user(e) {
 		if (e == 1) {
-			
+			$('#new_address').css("display","block");
+		}else{
+			$('#new_address').css("display","none");
 		}
 		
 	}
@@ -65,13 +67,13 @@
 			 	detailCredit += '<h4 style="margin:0;">สรุปยอดการชำระเงิน</h4>';
 				detailCredit += '<hr>';
 				detailCredit += '<h5 style="margin:0;">ระบุจำนวนเอง : '+credit+' เครดิต</h5>';
-				detailCredit += '<h5>ยอดเงินที่ต้องชำระ : <span style="color:red;">'+credit_new+' บาท</span></h5>';
+				detailCredit += '<h5>ยอดเงินที่ต้องชำระ : <span style="color:red;">'+parseFloat(credit_new)+' บาท</span></h5>';
 				detailCredit += '<div class="card">';
 				detailCredit += '<div class="card-header text-left" style="color:#000;">ที่อยู่ใบเสร็จรับเงิน</div>';
 				detailCredit += '<div class="card-body">';
 				detailCredit += '<form style="margin-bottom:0;">';
 				detailCredit += '<div class="text-left">';
-				detailCredit += '<input type="radio" name="address" class="form-group" style="cursor:pointer;" onclick="address_user(0);" value="ที่อยู่เดียวกันกับตอนลงทะเบียน">';
+				detailCredit += '<input type="radio" name="address" class="form-group" style="cursor:pointer;" onclick="address_user(0);" checked value="ที่อยู่เดียวกันกับตอนลงทะเบียน">';
 				detailCredit += '<label style="font-size:18px;cursor: auto;">';
 				detailCredit += 'ที่อยู่เดียวกันกับตอนลงทะเบียน';
 				detailCredit += '</label>';
@@ -81,6 +83,22 @@
 				detailCredit += '<label style="font-size:18px;cursor: auto;">';
 				detailCredit += 'กรอกที่อยู่ใหม่';
 				detailCredit += '</label>';
+				detailCredit += '</div>';
+				detailCredit += '<div class="form-group" id="new_address" style="display:none;">';
+				detailCredit += '<div class="row">';
+				detailCredit += '<div class="col-6 text-left form-group">';
+				detailCredit += '<label style="font-size:18px;cursor: auto;">เลขประจำตัวผู้เสียภาษี,สาขา</label>';
+				detailCredit += '<input type="text" name="address" class="form-control">';
+				detailCredit += '</div>';
+				detailCredit += '<div class="col-6 text-left form-group">';
+				detailCredit += '<label style="font-size:18px;cursor: auto;">บริษัท</label>';
+				detailCredit += '<input type="text" name="address" class="form-control">';
+				detailCredit += '</div>';
+				detailCredit += '<div class="col-12 text-left">';
+				detailCredit += '<label style="font-size:18px;cursor: auto;">ที่อยู่</label>';
+				detailCredit += '<textarea name="address" class="form-control" rows="10" col="30"></textarea>';
+				detailCredit += '</div>';
+				detailCredit += '</div>';
 				detailCredit += '</div>';
 				detailCredit += '<button type="button" class="btn btn-primary">ดำเนินการต่อ</button>';
 				detailCredit += '</form>';
