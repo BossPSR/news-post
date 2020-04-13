@@ -88,8 +88,10 @@
                                                                 <?php if ($img[1] == 'pdf') : ?>
                                                                     <a href="../uploads/pdf/<?php echo $pdf['file_name'] ?>" target="_blank"><i class="feather icon-file-text" style="font-size: 25px; cursor: pointer;"></i></a>
                                                                 <?php else : ?>
-                                                                    <a href="../uploads/pdf/<?php echo $pdf['file_name']; ?>"><i class="feather icon-file-text" style="font-size: 25px; cursor: pointer;"></i></a>
+                                                                    <a href="../uploads/pdf/<?php echo $pdf['file_name']; ?>" target="_blank"><i class="feather icon-file-text" style="font-size: 25px; cursor: pointer;"></i></a>
                                                                 <?php endif; ?>
+
+                                                                
                                                             </td>
                                                             <td><?php echo $pdf['topic']; ?></td>
                                                             <td><?php echo $pdf['date']; ?></td>
