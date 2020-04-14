@@ -177,12 +177,7 @@
 											<div>ลงโฆษณา</div>
 										</a>
 									</li>
-									<li class="<?php if ($this->uri->segment(1) == "payment") {
-													echo 'current';
-												} ?>"><a href="payment">
-											<div>ชำระเงิน</div>
-										</a>
-									</li>
+								
 									<li class="<?php if ($this->uri->segment(1) == "credit") {
 													echo 'current';
 												} ?>"><a href="credit">
@@ -201,12 +196,7 @@
 											<div>ติดต่อเรา</div>
 										</a>
 									</li>
-									<li class="<?php if ($this->uri->segment(1) == "PDF") {
-													echo 'current';
-												} ?>"><a href="PDF">
-											<div>PDF</div>
-										</a>
-									</li>
+								
 									<?php if (!empty($user)) { ?>
 										<li class="h_menu">
 
@@ -240,7 +230,14 @@
 
 							<?php } else { ?>
 								<div id="register_side">
-									<a href="#"><i class="icon-coins"></i> <?= $user['point']; ?> Coin |</a>
+									<?php 
+										$omeise = $this->db->get_where('tbl_omise',['id_user' => $user['id_user']])->result_array(); 
+										$point = 0;
+										foreach ($omeise as $omeise_point) {
+											$point += $omeise_point['price'];
+										}
+									?>
+									<a href="#"><i class="icon-coins"></i> <?= $point; ?> Coin |</a>
 								</div>
 								<div id="register_side">
 									<a href="logout" class="d-none d-lg-block" style="color:red" onclick="return confirm('Are you sure to logout?');"> ออกจากระบบ</a>
