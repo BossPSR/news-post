@@ -238,7 +238,14 @@
 
 							<?php } else { ?>
 								<div id="register_side">
-									<a href="#"><i class="icon-coins"></i> <?= $user['point']; ?> Coin |</a>
+									<?php 
+										$omeise = $this->db->get_where('tbl_omise',['id_user' => $user['id_user']])->result_array(); 
+										$point = 0;
+										foreach ($omeise as $omeise_point) {
+											$point += $omeise_point['price'];
+										}
+									?>
+									<a href="#"><i class="icon-coins"></i> <?= $point; ?> Coin |</a>
 								</div>
 								<div id="register_side">
 									<a href="logout" class="d-none d-lg-block" style="color:red" onclick="return confirm('Are you sure to logout?');"> ออกจากระบบ</a>
