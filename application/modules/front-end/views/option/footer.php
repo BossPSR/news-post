@@ -153,6 +153,28 @@
 
 		<!-- Include Date Range Picker -->
 		<script src="public/assets/front-end/js/components/daterangepicker.js"></script>
+		<!-- Bootstrap File Upload Plugin -->
+		<script src="public/assets/front-end/js/components/bs-filestyle.js"></script>
+		<script>
+			$(document).ready(function() {
+				$("#inputfile").fileinput({
+					allowedFileExtensions: ['pdf'],
+					previewClass: "bg-warning",
+					browseClass: "btn btn-primary",
+					removeClass: "btn btn-secondary",
+				});
+			});
+		</script>
+		<script>
+			$(document).ready(function() {
+				$("#inputfileIMG").fileinput({
+					allowedFileExtensions: ["png", "jpg", "jpeg"],
+					previewClass: "bg-warning",
+					browseClass: "btn btn-primary",
+					removeClass: "btn btn-secondary",
+				});
+			});
+		</script>inputfileIMG
 		<script>
 			$(function() {
 				$('.travel-date-group .default').datepicker({

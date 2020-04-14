@@ -28,7 +28,8 @@
 
 	<!-- Reader's Blog Demo Specific Fonts -->
 	<link rel="stylesheet" href="public/assets/front-end/demos/interior-design/css/fonts.css" type="text/css" />
-
+	<!-- Bootstrap File Upload CSS -->
+	<link rel="stylesheet" href="public/assets/front-end/css/components/bs-filestyle.css" type="text/css" />
 	<link rel="stylesheet" href="public/assets/front-end/css/responsive.css" type="text/css" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<link rel="stylesheet" href="public/assets/front-end/css/colors.php?color=1c85e8" type="text/css" />
@@ -42,9 +43,10 @@
 </head>
 <style>
 	img {
-    	width: 100%;
+		width: 100%;
 	}
 </style>
+
 <body class="stretched side-push-panel">
 
 	<?php $user = $this->db->get_where('tbl_user', ['email' => $this->session->userdata('email')])->row_array(); ?>

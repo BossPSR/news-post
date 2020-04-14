@@ -38,7 +38,7 @@
 									<span>ลงได้ครั้งละ 1 กรอบ</span>
 									<span>( จำกัดจำนวน )</span>
 								</a>
-								<a href="#" class="button button-desc text-center">
+								<a href="#" class="button button-desc text-center" id="btPDF">
 									<div style="font-size:16px;">วิธีที่ 2 ลงด้วยรูปภาพและ PDF</div>
 									<span>ลงได้หลายกรอบพร้อมกัน</span>
 									<span>( ไม่จำกัดจำนวน )</span>
@@ -73,58 +73,44 @@
 												</select>
 											</div>
 											<div id="texA">
-												<div class="form-group" style="text-align: left;font-size:16px;">
-													<b>วาระการประชุม <span style="color:red;">( เพื่อความถูกต้องของข้อมูล แนะนำให้พิมพ์เท่านั้น !! ) จำกัดจำนวนบรรทัด 10 บรรทัด</span></b>
-													<textarea class="form-control" name="" id="" rows="5" style="margin: 10px 0px 10px 0px;"></textarea>
-												</div>
-												<div class="form-group" style="text-align: left;font-size:16px;">
-													<b>ชื่อบริษัท / ชื่อหน่วยงาน</b>
-													<input type="text" class="form-control" placeholder="ชื่อบริษัท / ชื่อหน่วยงาน">
-												</div>
-												<div class="form-group" style="text-align: left;font-size:16px;">
-													<b>ครั้งที่ประชุม</b>
-													<input type="text" class="form-control" value="1 / <?= date('Y') + 543; ?>" placeholder="ครั้งที่ประชุม">
-												</div>
-												<div class="form-group" style="text-align: left;font-size:16px;">
-													<b>ประกาศถึง</b>
-													<input type="text" class="form-control" value="ท่านผู้ถือหุ้นของบริษัท" placeholder="ประกาศถึง">
-												</div>
-												<div class="row">
-													<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-														<div class="form-group travel-date-group" style="text-align: left;font-size:16px;">
-															<b>วันที่จัดประชุม</b>
-															<input type="text" value="" class="form-control tleft default" placeholder="วันที่จัดประชุม">
-														</div>
-													</div>
-													<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-														<div class="form-group travel-date-group" style="text-align: left;font-size:16px;">
-															<b>เวลาจัดประชุม</b>
-															<select class="form-control" name="" id="">
-																<option selected disabled>--- เลือกเวลาจัดประชุม ---</option>
-															</select>
-														</div>
-													</div>
-												</div>
-												<div class="form-group" style="text-align: left;font-size:16px;">
-													<b>สถานที่จัดประชุม / ที่อยู่บริษัท (กรณีเลิกบริษัท)</b>
-													<textarea class="form-control" name="" id="" rows="5" placeholder="สถานที่จัดประชุม / ที่อยู่บริษัท (กรณีเลิกบริษัท)"></textarea>
-												</div>
-												<div class="form-group travel-date-group" style="text-align: left;font-size:16px;">
-													<b>วันที่ลงโฆษณา</b>
-													<input type="text" value="" class="form-control tleft default" placeholder="วันที่ลงโฆษณา">
-												</div>
-												<div class="form-group" style="text-align: left;font-size:16px;">
-													<b>ชื่อ-นามสกุลผู้ลงนาม (กรุณาใส่คำนำหน้าชื่อ)</b>
-													<input type="text" class="form-control" placeholder="ชื่อ-นามสกุลผู้ลงนาม (กรุณาใส่คำนำหน้าชื่อ)">
-												</div>
-												<div class="form-group" style="text-align: left;font-size:16px;">
-													<b>ตำแหน่งผู้ลงนาม</b>
-													<input type="text" class="form-control" placeholder="กรรมการผู้มีอำนาจลงนาม" value="ตำแหน่งผู้ลงนาม">
-												</div>
-												<div class="text-left">
-													<button class="btn btn-info">ดูตัวอย่างโฆษณา</button>
-													<button class="btn btn-success">ลงโฆษณา</button>
-												</div>
+												<?php include('option/texA.php'); ?>
+											</div>
+											<div id="texB">
+												<?php include('option/texB.php'); ?>
+											</div>
+											<div id="texC">
+												<?php include('option/texC.php'); ?>
+											</div>
+											<div class="text-left">
+												<button class="btn btn-info">ดูตัวอย่างโฆษณา</button>
+												<button class="btn btn-success">ลงโฆษณา</button>
+											</div>
+										</form>
+									</div>
+									<div class="col-1"></div>
+								</div>
+
+								<div class="row" style="margin-top:20px;display:none" id="myPDF">
+									<div class="col-1"></div>
+									<div class="col-10" style="margin: auto;">
+										<form action="">
+											<div class="form-group" style="text-align: left;font-size:16px;">
+												<b>เลือกหัวข้อ / เรื่อง</b>
+												<select class="form-control" style="margin: 10px 0px 10px 0px;" id="op_title_PDF">
+													<option value="" selected disabled>** กรุณาเลือก **</option>
+													<option value="แบบไฟล์PDF">แบบไฟล์ PDF (ขนาดไฟล์เท่ากับ A4 เท่านั้น)</option>
+													<option value="แนบรูปภาพ">แนบรูปภาพ (ขนาดไฟล์เท่ากับ A4 เท่านั้น)</option>
+												</select>
+											</div>
+											<div id="pdfA">
+												<?php include('option/pdfA.php'); ?>
+											</div>
+											<div id="pdfB">
+												<?php include('option/pdfB.php'); ?>
+											</div>
+
+											<div class="text-left">
+												<button class="btn btn-success">ลงโฆษณา</button>
 											</div>
 										</form>
 									</div>
@@ -146,16 +132,74 @@
 
 <script type="text/javascript">
 	$('#btTEM').click(function() {
-		var x = document.getElementById("myTEM");
 		$('#myTEM').css('display', 'block');
 		$('#texA').css('display', 'none');
+		$('#texB').css('display', 'none');
+		$('#texC').css('display', 'none');
+		$('#pdfA').css('display', 'none');
+		$('#pdfB').css('display', 'none');
+		$('#myPDF').css('display', 'none');
 
 		$('#op_title').change(function() {
-			$('#texA').css('display', 'block');
+			if (this.value == "ประกาศเลิกบริษัท") {
+				$('#texA').css('display', 'none');
+				$('#texB').css('display', 'block');
+				$('#texC').css('display', 'none');
+			} else if (this.value == "ประกาศจ่ายเงินปันผล") {
+				$('#texA').css('display', 'none');
+				$('#texB').css('display', 'none');
+				$('#texC').css('display', 'block');
+			} else {
+				$('#texA').css('display', 'block');
+				$('#texB').css('display', 'none');
+				$('#texC').css('display', 'none');
+			}
 		});
 	});
-
-
 	// $('.ee').css('display', 'none');
 	// $('.gg').css('display', 'flex');
+</script>
+
+<script type="text/javascript">
+	$('#btPDF').click(function() {
+		$('#myPDF').css('display', 'block');
+		$('#myTEM').css('display', 'none');
+		$('#texA').css('display', 'none');
+		$('#texB').css('display', 'none');
+		$('#texC').css('display', 'none');
+		$('#pdfA').css('display', 'none');
+		$('#pdfB').css('display', 'none');
+
+		$('#op_title_PDF').change(function() {
+			if (this.value == "แบบไฟล์PDF") {
+				$('#pdfA').css('display', 'block');
+				$('#pdfB').css('display', 'none');
+			} else {
+				$('#pdfA').css('display', 'none');
+				$('#pdfB').css('display', 'block');
+			}
+		});
+	});
+	// $('.ee').css('display', 'none');
+	// $('.gg').css('display', 'flex');
+</script>
+<script>
+	$("#NUMBER")
+		.keyup(function() {
+			var value = $(this).val();
+			$("#TEXTNUMBER").val(ArabicNumberToText(value));
+		})
+		.keyup();
+	$("#NUMBER2")
+		.keyup(function() {
+			var value = $(this).val();
+			$("#TEXTNUMBER2").val(ArabicNumberToText(value));
+		})
+		.keyup();
+	$("#NUMBER3")
+		.keyup(function() {
+			var value = $(this).val();
+			$("#TEXTNUMBER3").val(ArabicNumberToText(value));
+		})
+		.keyup();
 </script>
