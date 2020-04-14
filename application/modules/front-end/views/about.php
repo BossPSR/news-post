@@ -1,6 +1,6 @@
 		<!-- Slider
 		============================================= -->
-		<section id="slider" class="slider-element clearfix" style="height: 550px; background: url('https://onesiri-acc.com/wp-content/uploads/2018/12/536-1.jpg') center 70% no-repeat; background-size: cover;">
+		<section id="slider" class="slider-element clearfix" style="height: 400px; background: url('https://onesiri-acc.com/wp-content/uploads/2018/12/536-1.jpg') center 70% no-repeat; background-size: cover;">
 			<div class="container clearfix">
 
 				<div class="clearfix center divcenter" style="max-width: 700px;">

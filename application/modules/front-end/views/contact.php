@@ -1,6 +1,6 @@
 <!-- Page Title
 		============================================= -->
-<section id="page-title" class="parallax page-title-dark center" style="background-image: url('public/assets/front-end/demos/interior-design/images/single/1.jpg'); background-size: cover; padding: 100px 0;" data-100-bottom-top="background-position:0px 200px;" data-top-bottom="background-position:0px -200px;">
+<section id="page-title" class="parallax page-title-dark center" style="background-image: url('public/assets/front-end/demos/interior-design/images/single/1.jpg'); background-size: cover; padding: 40px 0;" data-100-bottom-top="background-position:0px 200px;" data-top-bottom="background-position:0px -200px;">
 
 	<div class="container clearfix" style="z-index: 2">
 		<span class="before-heading" style="color: #FFF;">info@canvas.com</span>
@@ -28,13 +28,13 @@
 				<div class="form-process"></div>
 
 				<div class="col_half">
-					<label class="nott" for="template-contactform-name">Name <small>*</small></label>
+					<label class="nott" for="template-contactform-name">ชื่อ - นามสกุล <small>*</small></label>
 					<input type="text" id="name" name="name" value="" class="sm-form-control " required/>
 					<span id="empty-name"></span>
 				</div>
 
 				<div class="col_half col_last">
-					<label class="nott" for="template-contactform-email">Email <small>*</small></label>
+					<label class="nott" for="template-contactform-email">อีเมล์ <small>*</small></label>
 					<input type="text" id="email" name="email" value="" class="sm-form-control" required />
 					<span id="empty-email"></span>
 
@@ -43,7 +43,7 @@
 				<div class="clear"></div>
 
 				<div class="col_full">
-					<label class="nott" for="template-contactform-phone">Phone</label>
+					<label class="nott" for="template-contactform-phone">เบอร์โทรติดต่อ</label>
 					<input type="text" id="phone" name="phone" value="" class="sm-form-control" required/>
 					<span id="empty-phone"></span>
 
@@ -52,7 +52,7 @@
 				<div class="clear"></div>
 
 				<div class="col_full">
-					<label class="nott" for="template-contactform-message">Message <small>*</small></label>
+					<label class="nott" for="template-contactform-message">ข้อความ <small>*</small></label>
 					<textarea class=" sm-form-control" id="message" name="message" rows="6" cols="30" required></textarea>
 					<span id="empty-message"></span>
 
@@ -63,7 +63,7 @@
 					</div> -->
 
 				<div class="col_full">
-					<button class="button button-rounded button-large " id="submit_contact" type="submit" >Send Message</button>
+					<button class="button button-rounded button-large " id="submit_contact" type="submit" >สงข้อมูล</button>
 				</div>
 				</form>
 				<!-- <input type="hidden" name="prefix" value="template-contactform-"> -->
