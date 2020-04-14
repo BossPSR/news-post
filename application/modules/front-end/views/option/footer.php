@@ -145,6 +145,23 @@
 					showConfirmButton: true,
 				});
 			<?php endif; ?>
+
+			<?php if ($suss = $this->session->flashdata('responseA')) : ?>
+				Swal.fire({
+					position: 'start-end',
+					icon: 'success',
+					title: 'ลงโฆษณา เรียบร้อยแล้ว!!',
+					showConfirmButton: true,
+				});
+			<?php endif; ?>
+			<?php if ($error = $this->session->flashdata('msgA')) : ?>
+				Swal.fire({
+					position: 'start-end',
+					icon: 'error',
+					title: 'ล้มเหลวในการลงโฆษณา กรุณาลงใหม่อีกครั้ง!!',
+					showConfirmButton: true,
+				});
+			<?php endif; ?>
 		</script>
 		<!-- Date & Time Picker JS -->
 		<script src="public/assets/front-end/js/components/moment.js"></script>

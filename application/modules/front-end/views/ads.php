@@ -47,10 +47,10 @@
 								<div class="row" style="margin-top:20px;display:none" id="myTEM">
 									<div class="col-1"></div>
 									<div class="col-10" style="margin: auto;">
-										<form action="">
+										<form action="insert_ads" method="post">
 											<div class="form-group" style="text-align: left;font-size:16px;">
 												<b>เลือกหัวข้อ / เรื่อง</b>
-												<select class="form-control" style="margin: 10px 0px 10px 0px;" id="op_title">
+												<select class="form-control" name="topic" style="margin: 10px 0px 10px 0px;" id="op_title">
 													<option value="" selected disabled>** สามัญ **</option>
 													<option value="เชิญประชุมปิดงบประมาณ">เชิญประชุมปิดงบประมาณ</option>
 													<option value="กำหนดรายละเอียดการประชุมเอง">กำหนดรายละเอียดการประชุมเอง</option>
@@ -82,8 +82,8 @@
 												<?php include('option/texC.php'); ?>
 											</div>
 											<div class="text-left">
-												<button class="btn btn-info">ดูตัวอย่างโฆษณา</button>
-												<button class="btn btn-success">ลงโฆษณา</button>
+												<button type="button" class="btn btn-info">ดูตัวอย่างโฆษณา</button>
+												<button type="submit" class="btn btn-success">ลงโฆษณา</button>
 											</div>
 										</form>
 									</div>
@@ -110,7 +110,7 @@
 											</div>
 
 											<div class="text-left">
-												<button class="btn btn-success">ลงโฆษณา</button>
+												<button type="submit" class="btn btn-success">ลงโฆษณา</button>
 											</div>
 										</form>
 									</div>
