@@ -5,8 +5,8 @@
 		}
 	}
 </style>
-<section id="slider" class="slider-element clearfix" style="height: 100vh; background: url('public/assets/front-end/images/3369337.jpg') center center no-repeat; background-size: cover;">
-	<div class="vertical-middle">
+<section id="slider" class="slider-element clearfix" style="height: 85vh; background: url('public/assets/front-end/images/3369337.jpg') center center no-repeat; background-size: cover;">
+	<div class="vertical-middle" >
 		<div class="container clearfix">
 			<!-- <div class="clearfix center divcenter" style="max-width: 700px;"> -->
 			<div class="clearfix center divcenter">

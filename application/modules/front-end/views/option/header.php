@@ -28,7 +28,8 @@
 
 	<!-- Reader's Blog Demo Specific Fonts -->
 	<link rel="stylesheet" href="public/assets/front-end/demos/interior-design/css/fonts.css" type="text/css" />
-
+	<!-- Bootstrap File Upload CSS -->
+	<link rel="stylesheet" href="public/assets/front-end/css/components/bs-filestyle.css" type="text/css" />
 	<link rel="stylesheet" href="public/assets/front-end/css/responsive.css" type="text/css" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<link rel="stylesheet" href="public/assets/front-end/css/colors.php?color=1c85e8" type="text/css" />
@@ -42,9 +43,10 @@
 </head>
 <style>
 	img {
-    	width: 100%;
+		width: 100%;
 	}
 </style>
+
 <body class="stretched side-push-panel">
 
 	<?php $user = $this->db->get_where('tbl_user', ['email' => $this->session->userdata('email')])->row_array(); ?>
@@ -175,12 +177,7 @@
 											<div>ลงโฆษณา</div>
 										</a>
 									</li>
-									<li class="<?php if ($this->uri->segment(1) == "payment") {
-													echo 'current';
-												} ?>"><a href="payment">
-											<div>ชำระเงิน</div>
-										</a>
-									</li>
+								
 									<li class="<?php if ($this->uri->segment(1) == "credit") {
 													echo 'current';
 												} ?>"><a href="credit">
@@ -199,12 +196,7 @@
 											<div>ติดต่อเรา</div>
 										</a>
 									</li>
-									<li class="<?php if ($this->uri->segment(1) == "PDF") {
-													echo 'current';
-												} ?>"><a href="PDF">
-											<div>PDF</div>
-										</a>
-									</li>
+								
 									<?php if (!empty($user)) { ?>
 										<li class="h_menu">
 

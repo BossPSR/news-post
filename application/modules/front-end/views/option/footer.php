@@ -145,6 +145,23 @@
 					showConfirmButton: true,
 				});
 			<?php endif; ?>
+
+			<?php if ($suss = $this->session->flashdata('responseA')) : ?>
+				Swal.fire({
+					position: 'start-end',
+					icon: 'success',
+					title: 'ลงโฆษณา เรียบร้อยแล้ว!!',
+					showConfirmButton: true,
+				});
+			<?php endif; ?>
+			<?php if ($error = $this->session->flashdata('msgA')) : ?>
+				Swal.fire({
+					position: 'start-end',
+					icon: 'error',
+					title: 'ล้มเหลวในการลงโฆษณา กรุณาลงใหม่อีกครั้ง!!',
+					showConfirmButton: true,
+				});
+			<?php endif; ?>
 		</script>
 		<!-- Date & Time Picker JS -->
 		<script src="public/assets/front-end/js/components/moment.js"></script>
@@ -153,6 +170,28 @@
 
 		<!-- Include Date Range Picker -->
 		<script src="public/assets/front-end/js/components/daterangepicker.js"></script>
+		<!-- Bootstrap File Upload Plugin -->
+		<script src="public/assets/front-end/js/components/bs-filestyle.js"></script>
+		<script>
+			$(document).ready(function() {
+				$("#inputfile").fileinput({
+					allowedFileExtensions: ['pdf'],
+					previewClass: "bg-warning",
+					browseClass: "btn btn-primary",
+					removeClass: "btn btn-secondary",
+				});
+			});
+		</script>
+		<script>
+			$(document).ready(function() {
+				$("#inputfileIMG").fileinput({
+					allowedFileExtensions: ["png", "jpg", "jpeg"],
+					previewClass: "bg-warning",
+					browseClass: "btn btn-primary",
+					removeClass: "btn btn-secondary",
+				});
+			});
+		</script>inputfileIMG
 		<script>
 			$(function() {
 				$('.travel-date-group .default').datepicker({
