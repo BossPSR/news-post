@@ -234,7 +234,7 @@
 										$omeise = $this->db->get_where('tbl_omise',['id_user' => $user['id_user']])->result_array(); 
 										$point = 0;
 										foreach ($omeise as $omeise_point) {
-											$point += $omeise_point['price'];
+											$point += $omeise_point['count'];
 										}
 									?>
 									<a href="#"><i class="icon-coins"></i> <?= $point; ?> Coin |</a>
