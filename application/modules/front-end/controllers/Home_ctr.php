@@ -17,6 +17,12 @@ class Home_ctr extends CI_Controller
         $this->load->view('option/footer');    
     }
 
+    public function textarea()
+    {
+        
+        echo mb_ereg_replace('\n','<br>',$this->input->get('data'));
+        
 
+    }
   
 }

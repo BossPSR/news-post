@@ -1,6 +1,7 @@
+
 <div class="form-group" style="text-align: left;font-size:16px;">
     <b>วาระการประชุม <span style="color:red;">( เพื่อความถูกต้องของข้อมูล แนะนำให้พิมพ์เท่านั้น !! ) จำกัดจำนวนบรรทัด 10 บรรทัด</span></b>
-    <div id="editor1" class="eg"></div>
+    <textarea class="form-control" name="agendaA" id="agendaA" rows="5" placeholder="สถานที่จัดประชุม / ที่อยู่บริษัท (กรณีเลิกบริษัท)"></textarea>
 </div>
 <div class="form-group" style="text-align: left;font-size:16px;">
     <b>ชื่อบริษัท / ชื่อหน่วยงาน</b>

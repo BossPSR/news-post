@@ -32,3 +32,5 @@ $route['PDF']               = 'front-end/PDF_ctr';
 
 $route['contact']           = 'front-end/Contact_ctr/index';
 $route['contact_add']       = 'front-end/Contact_ctr/contact_add';
+
+$route['textarea']          = 'front-end/Home_ctr/textarea';

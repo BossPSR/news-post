@@ -159,7 +159,7 @@
 						<span id="detail6"></span>
 						<span id="detail7"></span>
 					</p>
-					<p id="detail8"></p>
+					<div id="detail8"></div>
 
 				</div>
 			</div>
@@ -317,6 +317,29 @@
 		}).keyup();
 
 	});
+	$(document).ready(function() {
+		$("#agendaA").keyup(function() {
+			$.ajax({
+				url: "textarea",
+				data: {
+					data: $(this).val()
+				},
+				success: function(getData) {
+					var value4 = getData;
+					$("#detail8").html(value4);
+				}
+			});
+		}).keyup();
+	});
+
+	// $(document).ready(function() {
+	// 	$("#agendaA").keyup(function() {
+	// 		var value4 = $(this).val();
+
+	// 		$("#detail8").html(value4);
+	// 	}).keyup();
+
+	// });
 </script>
 
 <script>
