@@ -135,8 +135,8 @@
 							<!-- Logo
 							============================================= -->
 							<div id="logo">
-								<a href="demo-interior-design.html" class="standard-logo"><img src="public/assets/front-end/images/logo_new1.png" alt="Canvas Logo" style="width: 100px;height: auto;    max-width: none !important;"></a>
-								<a href="demo-interior-design.html" class="retina-logo"><img src="public/assets/front-end/images/logo_new1.png" alt="Canvas Logo" style="    width: 150px;padding-top: 24px;height: auto; max-width: none !important;"></a>
+								<a href="index" class="standard-logo"><img src="public/assets/front-end/images/logo_new1.png" alt="Canvas Logo" style="width: 100px;height: auto;    max-width: none !important;"></a>
+								<a href="index" class="retina-logo"><img src="public/assets/front-end/images/logo_new1.png" alt="Canvas Logo" style="    width: 150px;padding-top: 24px;height: auto; max-width: none !important;"></a>
 							</div><!-- #logo end -->
 
 						</div>
