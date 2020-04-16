@@ -160,7 +160,13 @@
 						<span id="detail7"></span>
 					</p>
 					<div id="detail8"></div>
-
+					
+					<div id="detail9" style="padding-top: 10px"><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ดังนั้น จึงขอเรียนเชิญ <span id="detail10"></span> ไปประชุมตามวัน เวลา และสถานที่ดังกล่าวข้างต้นโดยพร้อมเพรียงกันด้วย จักขอบพระคุณยิ่ง</p></div>
+					<div class="text-center" style="float: right;width: 50%;" >
+						<p id="detail11" style="margin-bottom: 0px;">ขอแสดงความนับถือ</p>
+						<p id="detail12" style="margin-bottom: 0px;">(นายทดสอบ)</p>
+						<p id="detail13" style="margin-bottom: 0px;">กรรมการผู้มีอำนาจลงนาม tETS</p>
+					</div>
 				</div>
 			</div>
 			<div class="modal-footer">
@@ -310,13 +316,15 @@
 	});
 
 	$(document).ready(function() {
-		$("#advertisementA").keyup(function() {
+		$("#placeA").keyup(function() {
 			var value4 = $(this).val();
 
 			$("#detail7").text(' ณ ' + value4 + ' เพื่อพิจารณาเรื่องต่างๆ ตามระเบียบวาระดังต่อไปนี้');
 		}).keyup();
 
 	});
+
+	
 	$(document).ready(function() {
 		$("#agendaA").keyup(function() {
 			$.ajax({
@@ -332,67 +340,12 @@
 		}).keyup();
 	});
 
-	// $(document).ready(function() {
-	// 	$("#agendaA").keyup(function() {
-	// 		var value4 = $(this).val();
+	$(document).ready(function() {
+		$("#announceA").keyup(function() {
+			var value = $(this).val();
 
-	// 		$("#detail8").html(value4);
-	// 	}).keyup();
+			$("#detail10").text(value);
+		}).keyup();
 
-	// });
-</script>
-
-<script>
-	        	// The following line ensures that the CK Editor toolbar doesn't show up for contenteditable regions automatically. See http://docs.ckeditor.com/#!/guide/dev_inline
-					CKEDITOR.disableAutoInline = true;
-        	var ce = CKEDITOR.inline("contentedit", {
-        		removePlugins: 'toolbar'
-        	});
-        	// Replace TEXTAREA with CKEditor. See http://docs.ckeditor.com/#!/guide/dev_installation
-        	// onchange explained at http://docs.ckeditor.com/#!/guide/dev_savedata
-        	var ck = CKEDITOR.replace('ckeditor').on('change', function(e) {
-        		console.log(document.activeElement.nodeName);
-        		// Only fire this if the change comes from within the CKEditor itself, not invoked externally via setData()
-        		if (document.activeElement.nodeName == "IFRAME") {
-	        		var thisHTML = e.editor.getData();
-	        		console.log(thisHTML);
-					var tempDiv = $('<div>').html(thisHTML);
-					thisText = tempDiv.text();
-					//console.log(thisText);
-					$('#textarea').val(thisText);
-					$('#contentedit, #result').html(thisHTML);	
-				}
-			});
-        	
-			var timer;
-        	
-			$('#textarea').keyup(function() {
-				// TEXTAREA uses val()
-				var _this = this;
-				clearTimeout(timer);
-				timer = setTimeout(function() {
-					var thisText =$(_this).val().replace(/\n/g, "<br/>");
-	 				$('#result, #contentedit').html(thisText);
-	 				CKEDITOR.instances.ckeditor.setData(thisText);
-				}, 200);
-			});
-
-        	
-			$('#contentedit').keyup(function(e) {
-				// CONTENTEDITABLE uses html() or text() but this is a CKEditor inline
-		
-				var _this = this;
-				clearTimeout(timer);
-				timer = setTimeout(function() {
-					var thisHTML = $(_this).html();
-					console.log("thisHTML = ", thisHTML.replace(/\<\/p\>/g,"</p>\n\n"));
-					var tempDiv = $('<div>').html(thisHTML.replace(/\<\/p\>/g,"</p>\n\n"));
-					thisText = tempDiv.text();
-					console.log("thisText = ", thisText);
-					$('#textarea').val(thisText);
-	 				$('#result').html(thisHTML);
-	 				CKEDITOR.instances.ckeditor.setData(thisHTML);
-	 				//CKEDITOR.instances.ckeditor.editable().setHtml(thisHTML);
-				}, 200);
-			});
+	});
 </script>
