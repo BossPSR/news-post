@@ -150,11 +150,28 @@
 				Swal.fire({
 					position: 'start-end',
 					icon: 'success',
-					title: 'ลงโฆษณา เรียบร้อยแล้ว!!',
+					title: 'ลงโฆษณาตาม template เรียบร้อยแล้ว!!',
 					showConfirmButton: true,
 				});
 			<?php endif; ?>
 			<?php if ($error = $this->session->flashdata('msgA')) : ?>
+				Swal.fire({
+					position: 'start-end',
+					icon: 'error',
+					title: 'ล้มเหลวในการลงโฆษณาตาม template กรุณาลงใหม่อีกครั้ง!!',
+					showConfirmButton: true,
+				});
+			<?php endif; ?>
+
+			<?php if ($suss = $this->session->flashdata('responsepdf')) : ?>
+				Swal.fire({
+					position: 'start-end',
+					icon: 'success',
+					title: 'ลงโฆษณา เรียบร้อยแล้ว!!',
+					showConfirmButton: true,
+				});
+			<?php endif; ?>
+			<?php if ($error = $this->session->flashdata('msgpdf')) : ?>
 				Swal.fire({
 					position: 'start-end',
 					icon: 'error',
@@ -179,19 +196,21 @@
 					previewClass: "bg-warning",
 					browseClass: "btn btn-primary",
 					removeClass: "btn btn-secondary",
+					showUpload: false
 				});
 			});
 		</script>
 		<script>
 			$(document).ready(function() {
-				$("#inputfileIMG").fileinput({
+				$(".inputfileIMG").fileinput({
 					allowedFileExtensions: ["png", "jpg", "jpeg"],
-					previewClass: "bg-warning",
+					previewClass: "bg",
 					browseClass: "btn btn-primary",
 					removeClass: "btn btn-secondary",
+					showUpload: false
 				});
 			});
-		</script>inputfileIMG
+		</script>
 		<script>
 			$(function() {
 				$('.travel-date-group .default').datepicker({
@@ -333,6 +352,21 @@
 
 			});
 		</script>
+<!-- 
+		<script type="text/javascript">
+			$("#uploadFile").change(function() {
+				$('#image_preview').html("");
+				var total_file = document.getElementById("uploadFile").files.length;
+
+
+				for (var i = 0; i < total_file; i++) {
+					$('#image_preview').append("<img src='" + URL.createObjectURL(event.target.files[i]) + "' style='margin-bottom: 10px;'>");
+				}
+
+
+			});
+
+		</script> -->
 
 		</body>
 

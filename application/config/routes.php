@@ -19,6 +19,7 @@ $route['forget_step4']      = 'front-end/Register_ctr/reset_passwordProcess';
 $route['about']             = 'front-end/About_ctr';
 $route['ads']               = 'front-end/Ads_ctr';
 $route['insert_ads']        = 'front-end/Ads_ctr/insert_ads';
+$route['insert_ads_pdf']        = 'front-end/Ads_ctr/insert_ads_pdf';
 $route['payment']           = 'front-end/Payment_ctr';
 $route['credit']            = 'front-end/Credit_ctr';
 $route['check_user_credit'] = 'front-end/Credit_ctr/check_user_credit';

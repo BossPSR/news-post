@@ -1,6 +1,6 @@
 <div class="form-group" style="text-align: left;font-size:16px;">
     <b>ชื่อบริษัท / ชื่อหน่วยงาน</b>
-    <input type="companyฺB" class="form-control" placeholder="ชื่อบริษัท / ชื่อหน่วยงาน">
+    <input type="text"  name="companyฺB" class="form-control" placeholder="ชื่อบริษัท / ชื่อหน่วยงาน">
 </div>
 <div class="form-group" style="text-align: left;font-size:16px;">
     <b>เลขประจำตัวผู้เสียภาษี</b>

@@ -1,10 +1,17 @@
+<style type="text/css">
+	.thumbimage {
+		float: left;
+		width: 300px;
+		position: relative;
+		padding: 5px;
+	}
+</style>
 <!-- Content ============================================= -->
 <section id="content">
 
 	<div class="content-wrap clearfix">
 
 		<div class="container">
-
 			<div class="row">
 				<div class="col-12 mb-3">
 					<div class="feature-box fbox-small fbox-center fbox-plain fbox-large nobottomborder">
@@ -50,7 +57,7 @@
 										<form action="insert_ads" method="post">
 											<div class="form-group" style="text-align: left;font-size:16px;">
 												<b>เลือกหัวข้อ / เรื่อง</b>
-												<select class="form-control" name="topic" style="margin: 10px 0px 10px 0px;" id="op_title">
+												<select class="form-control topicK" name="topic" style="margin: 10px 0px 10px 0px;" id="op_title">
 													<option value="" selected disabled>** สามัญ **</option>
 													<option value="เชิญประชุมปิดงบประมาณ">เชิญประชุมปิดงบประมาณ</option>
 													<option value="กำหนดรายละเอียดการประชุมเอง">กำหนดรายละเอียดการประชุมเอง</option>
@@ -82,7 +89,7 @@
 												<?php include('option/texC.php'); ?>
 											</div>
 											<div class="text-left">
-												<button type="button" class="btn btn-info">ดูตัวอย่างโฆษณา</button>
+												<button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModalCenter">ดูตัวอย่างโฆษณา</button>
 												<button type="submit" class="btn btn-success">ลงโฆษณา</button>
 											</div>
 										</form>
@@ -93,10 +100,10 @@
 								<div class="row" style="margin-top:20px;display:none" id="myPDF">
 									<div class="col-1"></div>
 									<div class="col-10" style="margin: auto;">
-										<form action="">
+										<form action="insert_ads_pdf" method="post" enctype="multipart/form-data">
 											<div class="form-group" style="text-align: left;font-size:16px;">
 												<b>เลือกหัวข้อ / เรื่อง</b>
-												<select class="form-control" style="margin: 10px 0px 10px 0px;" id="op_title_PDF">
+												<select class="form-control" name="topicfile" style="margin: 10px 0px 10px 0px;" id="op_title_PDF">
 													<option value="" selected disabled>** กรุณาเลือก **</option>
 													<option value="แบบไฟล์PDF">แบบไฟล์ PDF (ขนาดไฟล์เท่ากับ A4 เท่านั้น)</option>
 													<option value="แนบรูปภาพ">แนบรูปภาพ (ขนาดไฟล์เท่ากับ A4 เท่านั้น)</option>
@@ -110,7 +117,7 @@
 											</div>
 
 											<div class="text-left">
-												<button type="submit" class="btn btn-success">ลงโฆษณา</button>
+												<button type="submit" class="btn btn-success" >ลงโฆษณา</button>
 											</div>
 										</form>
 									</div>
@@ -123,12 +130,38 @@
 
 			</div>
 		</div>
-
-
-
 	</div>
 
 </section><!-- #content end -->
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered" style="max-width: 700px;" role="document">
+		<div class="modal-content">
+			<div class="modal-header" style="    background: #f7f7f7;">
+				<h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<div style="border: 1px solid #eee; padding: 20px;">
+					<p class="text-right" id="detail0"></p>
+					<br>
+					<p id="detail1" style="text-align: center"></p>
+					<p id="detail2" style="margin-bottom: 0px;"></p>
+					<p id="detail3"></p>
+					<p id="detail4"></p>
+
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary">Save changes</button>
+			</div>
+		</div>
+	</div>
+</div>
 
 <script type="text/javascript">
 	$('#btTEM').click(function() {
@@ -202,4 +235,51 @@
 			$("#TEXTNUMBER3").val(ArabicNumberToText(value));
 		})
 		.keyup();
+</script>
+<script>
+	$(document).ready(function() {
+		$("#advertisementA").keyup(function() {
+			var value = $(this).val();
+
+			$("#detail1").text('วันที่ ' + value);
+		}).keyup();
+
+	});
+
+	$(document).ready(function() {
+		$("#companyA").keyup(function() {
+			var value = $(this).val();
+
+			$("#detail0").text(value);
+		}).keyup();
+
+	});
+
+	$(document).ready(function() {
+		$("#meetingA").keyup(function() {
+			var value = $(this).val();
+
+			$("#detail2").text('เรื่อง ขอเชิญประชุมวิสามัญผู้ถือหุ้น ครั้งที่ ' + value);
+		}).keyup();
+
+	});
+
+	$(document).ready(function() {
+		$("#announceA").keyup(function() {
+			var value = $(this).val();
+
+			$("#detail3").text('เรียน ' + value);
+		}).keyup();
+
+	});
+
+	$(document).ready(function() {
+		$("#meetingA").keyup(function() {
+			$( "#target" ).keyup(); 
+			var value = $(this).val();
+
+			$("#detail4").text('ด้วยคณะกรรมการของบริษัทมีมติให้เรียกประชุมวิสามัญผู้ถือหุ้น ครั้งที่ ' + value);
+		}).keyup();
+
+	});
 </script>
