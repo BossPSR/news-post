@@ -189,6 +189,15 @@
 		<script src="public/assets/front-end/js/components/daterangepicker.js"></script>
 		<!-- Bootstrap File Upload Plugin -->
 		<script src="public/assets/front-end/js/components/bs-filestyle.js"></script>
+
+		<script src="public/assets/front-end/ckeditor/ckeditor.js"></script>
+		<script>
+			CKEDITOR.replace('editor1', {
+				language: 'fr',
+			});
+
+
+		</script>
 		<script>
 			$(document).ready(function() {
 				$("#inputfile").fileinput({
@@ -216,6 +225,7 @@
 				$('.travel-date-group .default').datepicker({
 					autoclose: true,
 					startDate: "today",
+					format: "dd/mm/yyyy",
 				});
 
 				$('.travel-date-group .today').datepicker({
@@ -352,7 +362,7 @@
 
 			});
 		</script>
-<!-- 
+		<!-- 
 		<script type="text/javascript">
 			$("#uploadFile").change(function() {
 				$('#image_preview').html("");
