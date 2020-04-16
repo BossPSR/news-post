@@ -195,7 +195,7 @@ body.side-panel-open #side-panel {
 .customers-count { border-right: 1px solid rgba(0, 0, 0, 0.1); }
 
 .customers-count .counter {
-	font-family: 'Playfair Display', serif;
+	font-family: 'Kanit', sans-serif;
 	font-weight: 700;
 	color: #1d2c4c;
 	font-size: 64px;
@@ -266,7 +266,7 @@ body.side-panel-open #side-panel {
 }
 
 .story-box .story-box-info .story-title {
-	font-family: 'Playfair Display';
+	font-family: 'Kanit', sans-serif;
 	font-size: 26px;
 	line-height: 1.4;
 	font-weight: 700;
@@ -481,7 +481,7 @@ ul.tab-nav:not(.tab-nav-lg) li.ui-tabs-active a:after {
 }
 
 .review-title h3 {
-	font-family: 'PlayFair Display';
+	font-family: 'Kanit', sans-serif;
 	font-size: 28px;
 	color: #1d2c4c;
 	margin-bottom: 20px;

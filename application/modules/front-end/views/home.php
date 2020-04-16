@@ -6,7 +6,7 @@
 	}
 </style>
 <section id="slider" class="slider-element clearfix" style="height: 85vh; background: url('public/assets/front-end/images/3369337.jpg') center center no-repeat; background-size: cover;">
-	<div class="vertical-middle" >
+	<div class="vertical-middle">
 		<div class="container clearfix">
 			<!-- <div class="clearfix center divcenter" style="max-width: 700px;"> -->
 			<div class="clearfix center divcenter">
@@ -157,7 +157,7 @@
 					<!-- <div class="heading-block fancy-title nobottomborder title-bottom-border">
 					<h4>Our <span>Mission</span>.</h4>
 				</div> -->
-					<iframe src="https://www.youtube.com/embed/X8NFkUQNeek" frameborder="0" allow="autoplay; encrypted-media" style="    border-radius: 15px;" allowfullscreen></iframe>
+					<iframe src="https://www.youtube.com/embed/X8NFkUQNeek" frameborder="0" allow="autoplay; encrypted-media" style="border-radius: 15px;" allowfullscreen></iframe>
 
 				</div>
 
@@ -166,7 +166,7 @@
 					<!-- <div class="heading-block fancy-title nobottomborder title-bottom-border">
 					<h4>What we <span>Do</span>.</h4>
 				</div> -->
-					<iframe src="https://www.youtube.com/embed/ZeDP-rzOnAA" frameborder="0" allow="autoplay; encrypted-media" style="    border-radius: 15px;" allowfullscreen></iframe>
+					<iframe src="https://www.youtube.com/embed/ZeDP-rzOnAA" frameborder="0" allow="autoplay; encrypted-media" style="border-radius: 15px;" allowfullscreen></iframe>
 
 				</div>
 				<div>
@@ -181,157 +181,51 @@
 		<div class="container topmargin-lg bottommargin-lg clearfix">
 
 			<div class="divcenter" style="max-width: 960px">
-				<div class="heading-block center nobottomborder">
-					<h2 class="ls2 t700">หลักในการลงประกาศหนังสือพิมพ์</h2>
+				<div class="fancy-title title-border title-center">
+					<h3>หลักในการลงประกาศหนังสือพิมพ์</h3>
 				</div>
-				<div class="tabs tabs-alt tabs-responsive tabs-justify clearfix" id="tab">
 
-					<div class="tab-container">
+				<div id="oc-team-list" class="owl-carousel team-carousel carousel-widget" data-margin="30" data-nav="false" data-items-md="1" data-items-xl="2">
 
-						<div class="tab-content clearfix" id="tabs-1">
-							<div class="story-box description-left clearfix">
-								<div class="story-box-image">
-									<img src="https://www.accttaxnews.com/uploads/information/4673e68fff354c8080a5925533e6172c.jpeg" alt="story-image">
+					<div class="oc-item">
+						<div class="team team-list clearfix">
+							<div class="team-image">
+								<img src="https://www.accttaxnews.com/uploads/information/4673e68fff354c8080a5925533e6172c.jpeg" style="border-radius: 15px;">
+							</div>
+							<div class="team-desc">
+								<div class="team-title">
+									<h4>ต้องลงโฆษณาอย่างน้อย 1 ครั้ง</h4>
 								</div>
-								<div class="story-box-info">
-									<h3 class="story-title">ต้องลงโฆษณาอย่างน้อย 1 ครั้ง.</h3>
-									<div class="story-box-content">
-										<p>มติทั่วไป ต้องลงโฆษณาอย่างน้อย 1 ครั้ง ก่อนวันประชุมฯไม่น้อยกว่า 7 วัน (ต้อง + 8 วัน เนื่องจากไม่นับวันลงโฆษณาและวันประชุม) หรือตามที่กำหนดไว้ในข้อบังคับ</p>
-										<button class="t300 button noleftmargin button-rounded">รายละเอียด</button>
-									</div>
+								<div class="team-content" style="font-size: 15px;">
+									<p>มติทั่วไป ต้องลงโฆษณาอย่างน้อย 1 ครั้ง ก่อนวันประชุมฯไม่น้อยกว่า 7 วัน (ต้อง + 8 วัน เนื่องจากไม่นับวันลงโฆษณาและวันประชุม) หรือตามที่กำหนดไว้ในข้อบังคับ</p>
+								</div>
+								<div class="text-center" style="padding-top:10px;">
+									<button class="btn btn-primary">ดูรายละเอียด</button>
 								</div>
 							</div>
 						</div>
-
-						<div class="tab-content clearfix" id="tabs-4">
-							<div class="story-box clearfix">
-								<div class="story-box-image">
-									<img src="https://www.accttaxnews.com/uploads/information/3e5f3f888ed8421fcaa4aa4ea289c4df.jpeg" alt="story-image">
-								</div>
-								<div class="story-box-info">
-									<h3 class="story-title">มติพิเศษ ต้องลงโฆษณาอย่างน้อย 1 ครั้งก่อน</h3>
-									<div class="story-box-content">
-										<p>มติพิเศษ ต้องลงโฆษณาอย่างน้อย 1 ครั้งก่อนวันประชุมฯไม่น้อยกว่า 14 วัน (ต้อง + 15 วัน เนื่องจากไม่นับวันลงโฆษณาและวันประชุม) หรือตามที่กำหนดไว้ในข้อบังคับ</p>
-										<button class="t300 button noleftmargin button-rounded">รายละเอียด</button>
-									</div>
-								</div>
-							</div>
-						</div>
-
 					</div>
-
-				</div>
-			</div>
-
-		</div>
-
-		<div class="section bottommargin-lg dark" style="background: url('https://image.freepik.com/free-photo/caucasian-man-working-shoot_53876-30174.jpg') center 80%; background-size: cover; padding: 180px 0">
-			<div class="container clearfix">
-				<div class="emphasis-title divcenter center" style="max-width: 700px">
-					<h2 class="font-secondary ls1" style="font-size: 52px;">Welcome to a better way to Live your Life.</h2>
-				</div>
-			</div>
-		</div>
-
-		<div class="container clearfix">
-
-			<div class="emphasis-title center divcenter" style="max-width: 800px">
-				<h2 class="font-secondary nott t700">คำถามที่พบบ่อย</h2>
-			</div>
-
-			<div class="row bottommargin clearfix">
-		
-
-				<div class="clear"></div>
-
-				<div class="col-12 reviews-lists clearfix">
-
-					<div id="oc-team" class="owl-carousel team-carousel bottommargin carousel-widget" data-margin="0" data-pagi="false" data-items="1" data-loop="true" data-animate-in="fadeIn" data-animate-out="fadeOut" data-autoplay="5000">
-
-						<div class="oc-item">
-							<div class="row">
-								<div class="col-lg-10 offset-lg-1 col-12">
-									<div class="review clearfix">
-										<div class="row">
-											<div class="col-12 col-md-12">
-												<div class="review-title">
-													<h3>หนังสือพิมพ์ แอค แทกซ์ นิวส์ มีความน่าเชื่อถือขนาดไหน สามารถลงประกาศได้หรือไม่</h3>
-												</div>
-												<div class="review-content">
-													<p>หนังสือพิมพ์ แอค แทกซ์ นิวส์ ได้จดแจ้งการพิมพ์อย่างถูกต้อง และได้รับใบอนุญาตเลขที่ สสช 15/2561 ISSN 2586-999X</p>
-												</div>
-											</div>
-										</div>
-									</div>
+					<div class="oc-item">
+						<div class="team team-list">
+							<div class="team-image">
+								<img src="https://www.accttaxnews.com/uploads/information/3e5f3f888ed8421fcaa4aa4ea289c4df.jpeg" style="border-radius: 15px;">
+							</div>
+							<div class="team-desc">
+								<div class="team-title">
+									<h4>มติพิเศษ ต้องลงโฆษณาอย่างน้อย 1 ครั้งก่อน</h4>
+								</div>
+								<div class="team-content" style="font-size: 15px;">
+									<p>มติพิเศษ ต้องลงโฆษณาอย่างน้อย 1 ครั้งก่อนวันประชุมฯไม่น้อยกว่า 14 วัน (ต้อง + 15 วัน เนื่องจากไม่นับวันลงโฆษณาและวันประชุม) หรือตามที่กำหนดไว้ในข้อบังคับ</p>
+								</div>
+								<div class="text-center" style="padding-top:10px;">
+									<button class="btn btn-primary">ดูรายละเอียด</button>
 								</div>
 							</div>
 						</div>
-
-						<div class="oc-item">
-							<div class="row">
-								<div class="col-lg-10 offset-lg-1 col-12">
-									<div class="review clearfix">
-										<div class="row">
-											<div class="col-12 col-md-12">
-												<div class="review-title">
-													<h3>ทำไมขนาดของหนังสือพิมพ์เป็น A4</h3>
-												</div>
-												<div class="review-content">
-													<p>เราได้ขออนุญาตจัดพิมพ์เป็นแผ่น ดังนั้นเป็น A4 จึงใช้ได้ นอกจากนี้จัดทำเป็น A4 เพื่อง่ายต่อการเก็บรักษา</p>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<div class="oc-item">
-							<div class="row">
-								<div class="col-lg-10 offset-lg-1 col-12">
-									<div class="review clearfix">
-										<div class="row">
-									
-											<div class="col-12 col-md-12">
-												<div class="review-title">
-													<h3>หนังสือพิมพ์แห่งท้องถิ่น หมายถึงอะไร</h3>
-												</div>
-												<div class="review-content">
-													<p>หมายถึงหนังสือพิมพ์ที่มีจำหน่ายในท้องถิ่นนั้นๆ โดยหนังสือพิมพ์ แอค แทกซ์ นิวส์เปิดให้ประชาชนทั่วประเทศดาวน์โหลด ได้ ดังนั้นจึงถือเป็นหนังสือพิมพ์ที่สามารถลงประกาศได้ทั่วประเทศ</p>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<div class="oc-item">
-							<div class="row">
-								<div class="col-lg-10 offset-lg-1 col-12">
-									<div class="review clearfix">
-										<div class="row">
-									
-											<div class="col-12 col-md-12">
-												<div class="review-title">
-													<h3>ปัจจุบันยังคงต้องลงประกาศหนังสือพิมพ์เชิญประชุมหรือไม่</h3>
-												</div>
-												<div class="review-content">
-													<p>ตามประมวลกฏหมายแพ่งและพาณิชย์ มาตรา 1175 พ.ศ. 2551 ยังคงบังคับให้ลงประกาศหนังสือพิมพ์อย่างน้อย 1 ครั้ง ซึ่งถ้าบริษัทไม่ได้ลงประกาศจะมีความผิด เช่นในการชำระบัญชีถ้าไม่มีการลงประกาศหนังสือพิมพ์จะมีโทษปรับไม่เกิน 80,000 บาท</p>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						
 					</div>
 				</div>
 			</div>
-
 		</div>
-
 	</div>
 
 </section><!-- #content end -->

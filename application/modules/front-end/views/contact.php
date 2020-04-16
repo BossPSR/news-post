@@ -1,18 +1,3 @@
-<!-- Page Title
-		============================================= -->
-<section id="page-title" class="parallax page-title-dark center" style="background-image: url('public/assets/front-end/demos/interior-design/images/single/1.jpg'); background-size: cover; padding: 40px 0;" data-100-bottom-top="background-position:0px 200px;" data-top-bottom="background-position:0px -200px;">
-
-	<div class="container clearfix" style="z-index: 2">
-		<span class="before-heading" style="color: #FFF;">info@canvas.com</span>
-		<h2 class="font-body nott t500 mb-2" style="color: #FFF; font-size: 54px;">+91-800-9876-221</h2>
-		<a href=https://maps.google.com/maps?q=221B+Baker+Street,+London,+United+Kingdom&hl=en&t=v&hnear=221B+Baker+St,+London+NW1+6XE,+United+Kingdom" data-lightbox="iframe" class="d-inline-block"><i class="icon-map-marker mb-0 text-white notextshadow i-large i-plain dark divcenter d-block"></i><span class="text-white font-secondary lowercase font-italic ls1 mt-0"><u>Map</u></span></a>
-		<span class="t400 text-white font-secondary mt-4">795 Folsom Ave, Suite 600<br>San Francisco, CA 94107</span>
-	</div>
-
-	<div class="video-overlay" style="background: rgba(28,133,232,0.55); z-index: 1"></div>
-
-</section><!-- #page-title end -->
-
 <!-- Content
 		============================================= -->
 <section id="content">
@@ -20,54 +5,58 @@
 	<div class="content-wrap clearfix">
 
 		<div class="container">
+			<div class="row">
+				<div class="col-12 mb-3">
+					<h5><a href="index">หน้าแรก</a> / ติดต่อเรา</h5>
+					<div class="feature-box fbox-small fbox-plain fbox-large nobottomborder">
+						<form class="row" id="checkout-form" action="include/form.php" method="post" enctype="multipart/form-data">
+							<div class="form-process"></div>
+							<div class="col-lg-6">
+								<p style="font-size: 18px;color:#4A4A4A;margin-bottom:30px;font-weight:bold;">
+									บริษัท วันศิริ แอคเคาน์ติ้ง แอนด์ แทกซ์ จำกัด<br>
+									(Onesiri Accounting and Tax CO.,LTD)<br>
+									445 ถนนวิภาวดีรังสิต แขวงจอมพล เขตจตุจักร กรุงเทพมหานครฯ 10900 <br>
+								</p>
+								<p style="font-size: 18px;color:#4A4A4A;margin-bottom:30px;font-weight:bold;">
+									| ผู้พิมพ์ ผู้โฆษณา และบรรณาธิการ นายณัฐวัฒน์ โลหะพิทักษ์ |
+								</p>
+								<p style="font-size: 18px;color:#4A4A4A;margin-bottom:30px;font-weight:bold;">
+									ติดต่อสอบถาม <br>
+									โทร 098-281-1599<br>
+									วันจันทร์-ศุกร์ เวลา 8.30-17.30 น. <br>
+									E-mail: nlohapitak@gmail.com <br>
+								</p>
+							</div>
+							<div class="col-lg-6 mt-5 mt-lg-0">
+								<div class="row checkout-form-shipping">
+									<div class="col-12 form-group">
+										<label>ชื่อ - นามสกุล:</label>
+										<input type="text" name="name" class="form-control" placeholder="ชื่อ" autofocus required>
+									</div>
+									<div class="col-6 form-group">
+										<label>อีเมล์:</label><br>
+										<input type="email" name="email" class="form-control" placeholder="อีเมล์" required>
+									</div>
 
-			<div class="form-widget mt-5 divcenter" style="max-width: 750px">
+									<div class="col-6 form-group">
+										<label>โทรศัพท์:</label>
+										<input type="tel" name="phone" class="form-control" placeholder="เบอร์โทรติดต่อ" required>
+									</div>
+									<div class="col-12 form-group">
+										<label>ข้อความ:</label>
+										<textarea class="sm-form-control" id="message" name="message" rows="6" cols="30" placeholder="ข้อความ" required></textarea>
+									</div>
+								</div>
+							</div>
+							<div class="col-12" style="text-align:right;">
+								<div class="form-group">
+									<button type="submit" name="checkout-form-submit" class="btn btn-lg btn-primary">ส่งข้อความ</button>
+								</div>
 
-				<div class="form-result"></div>
-	<form action="contact_add" method="post">
-				<div class="form-process"></div>
-
-				<div class="col_half">
-					<label class="nott" for="template-contactform-name">ชื่อ - นามสกุล <small>*</small></label>
-					<input type="text" id="name" name="name" value="" class="sm-form-control " required/>
-					<span id="empty-name"></span>
+							</div>
+						</form>
+					</div>
 				</div>
-
-				<div class="col_half col_last">
-					<label class="nott" for="template-contactform-email">อีเมล์ <small>*</small></label>
-					<input type="text" id="email" name="email" value="" class="sm-form-control" required />
-					<span id="empty-email"></span>
-
-				</div>
-
-				<div class="clear"></div>
-
-				<div class="col_full">
-					<label class="nott" for="template-contactform-phone">เบอร์โทรติดต่อ</label>
-					<input type="text" id="phone" name="phone" value="" class="sm-form-control" required/>
-					<span id="empty-phone"></span>
-
-				</div>
-
-				<div class="clear"></div>
-
-				<div class="col_full">
-					<label class="nott" for="template-contactform-message">ข้อความ <small>*</small></label>
-					<textarea class=" sm-form-control" id="message" name="message" rows="6" cols="30" required></textarea>
-					<span id="empty-message"></span>
-
-				</div>
-
-				<!-- <div class="col_full hidden">
-						<input type="text" id="template-contactform-botcheck" name="template-contactform-botcheck" value="" class="sm-form-control" />
-					</div> -->
-
-				<div class="col_full">
-					<button class="button button-rounded button-large " id="submit_contact" type="submit" >สงข้อมูล</button>
-				</div>
-				</form>
-				<!-- <input type="hidden" name="prefix" value="template-contactform-"> -->
-
 
 			</div>
 
@@ -75,61 +64,4 @@
 
 	</div>
 
-</section><!-- #content end -->
-<!-- 
-<script type="text/javascript">
-	$('#submit_contact').click(function() {
-		var name = $("#name").val();
-		var email = $("#email").val();
-		var phone = $("#phone").val();
-		var message = $("#message").val();
-		if (name.length === 0) {
-			$('#empty-name').html('กรุณากรอกชื่อ !!').css('color', 'red');
-		}
-		if (email.length === 0) {
-			$('#empty-email').html('กรุณากรอกอีเมล์ !!').css('color', 'red');
-		}
-		if (message.length === 0) {
-			$('#empty-message').html('กรุณากรอกรายละเอียด !!').css('color', 'red');
-		}
-
-		if (name.length !== 0 && email.length !== 0 && message.length !== 0) {
-
-			$.ajax({
-				type: 'post',
-				url: 'contact_add',
-				data: {
-					name: name,
-					email: email,
-					phone: phone,
-					message: message
-				},
-				success: function(success) {
-					if (success == true) {
-						Swal.fire({
-							position: 'start-end',
-							icon: 'success',
-							title: 'ส่งข้อมูลติดต่อเรียบร้อย',
-							showConfirmButton: false,
-							timer: 2500
-						});
-						setTimeout("location.reload(true);" , 1000 );
-					} else  {
-						Swal.fire({
-							position: 'start-end',
-							icon: 'error',
-							title: 'ส่งข้อมูลติดต่อล้มเหลว กรุณาลองใหม่อีกครั้ง !!',
-							showConfirmButton: true,
-						});
-						setTimeout("location.reload(true);" , 1000 );
-					}
-					
-
-				}
-
-			});
-
-		}
-
-	});
-</script> -->
+</section>

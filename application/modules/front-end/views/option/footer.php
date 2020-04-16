@@ -1,81 +1,22 @@
 		<!-- Footer
 		============================================= -->
-		<footer id="footer" class="topmargin noborder" style="background-color: #F5F5F5;">
+		<footer id="footer" class="topmargin noborder" style="background-color: #1c85e8;">
 
 			<div class="container clearfix">
 
-				<!-- Footer Widgets
-				============================================= -->
+				<!-- Footer Widgets ============================================= -->
 				<div class="footer-widgets-wrap clearfix">
-
-					<div class="col_one_fourth">
-						<div class="widget clearfix">
-							<div class="t400 lowercase nobottommargin" style="font-size: 36px; letter-spacing: -1px">Canvas</div>
-							<p class="text-muted t300">@2017</p>
-
-							<div class="app-links">
-								<p>Get the app</p>
-								<a href="#" class="link"><i class="icon-android2"></i> <span>Download for Android</span></a><br>
-								<a href="#" class="link"><i class="icon-apple"></i> <span>Download for IOS</span></a><br>
-
-							</div>
+					<div class="row">
+						<div class="col-12 text-center" style="font-size:17px;color:#fff;">
+							<p><i class="icon-map-marker1"></i> บริษัท วัน ศิริ แอคเคาน์ติ้ง แอนด์ แทกซ์ จำกัด 445 ถนนวิภาวดีรังสิต แขวงจอมพล เขตจตุจักร กรุงเทพมหานครฯ 10900<br></p>
+							<p><i class="icon-phone3"></i> 098-281-1599 <i class="icon-email"></i> nlohapitak@gmail.com<br></p>
+							<p>&copy; Onesiri Accounting And Tax Co.,Ltd. All Right Reserved.</p>
 						</div>
 					</div>
-
-					<div class="col_one_fourth">
-						<div class="widget widget_links clearfix">
-							<h4>Blogroll</h4>
-							<ul>
-								<li><a href="#">Documentation</a></li>
-								<li><a href="#">Feedback</a></li>
-								<li><a href="#">Plugins</a></li>
-								<li><a href="#">Support Forums</a></li>
-								<li><a href="#">Themes</a></li>
-							</ul>
-						</div>
-					</div>
-
-					<div class="col_one_fourth">
-						<div class="widget widget_links clearfix">
-							<h4>Links</h4>
-							<ul>
-								<li><a href="#">About Us</a></li>
-								<li><a href="#">FAQs</a></li>
-								<li><a href="#">Licence</a></li>
-								<li><a href="#">Forums</a></li>
-								<li><a href="#">Terms</a></li>
-							</ul>
-						</div>
-					</div>
-
-					<div class="col_one_fourth col_last">
-						<div class="widget widget-twitter-feed clearfix">
-							<h4>Twitter Feed</h4>
-							<ul class="iconlist twitter-feed nobottommargin" data-username="envato" data-count="2">
-								<li></li>
-							</ul>
-						</div>
-					</div>
-
-				</div><!-- .footer-widgets-wrap end -->
+				</div>
+				<!-- .footer-widgets-wrap end -->
 
 			</div>
-
-			<div class="line nomargin"></div>
-
-			<!-- Copyrights
-			============================================= -->
-			<div id="copyrights" class="" style="background-color: #FFF">
-
-				<div class="container clearfix">
-
-					<div class="col_full center nomargin">
-						<span>Copyrights &copy; 2017 All Rights Reserved by Canvas Inc.</span>
-					</div>
-
-				</div>
-
-			</div><!-- #copyrights end -->
 
 		</footer><!-- #footer end -->
 
@@ -189,6 +130,16 @@
 		<script src="public/assets/front-end/js/components/daterangepicker.js"></script>
 		<!-- Bootstrap File Upload Plugin -->
 		<script src="public/assets/front-end/js/components/bs-filestyle.js"></script>
+		<script>
+			$(function() {
+				$("#side-navigation").tabs({
+					show: {
+						effect: "fade",
+						duration: 400
+					}
+				});
+			});
+		</script>
 		<script>
 			$(document).ready(function() {
 				$("#inputfile").fileinput({
@@ -352,7 +303,7 @@
 
 			});
 		</script>
-<!-- 
+		<!-- 
 		<script type="text/javascript">
 			$("#uploadFile").change(function() {
 				$('#image_preview').html("");

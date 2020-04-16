@@ -14,6 +14,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-12 mb-3">
+					<h5><a href="index">หน้าแรก</a> / ลงโฆษณา</h5>
 					<div class="feature-box fbox-small fbox-center fbox-plain fbox-large nobottomborder">
 						<!-- <div class="fbox-icon">
 							<i class="icon-line2-home"></i>
@@ -117,7 +118,7 @@
 											</div>
 
 											<div class="text-left">
-												<button type="submit" class="btn btn-success" >ลงโฆษณา</button>
+												<button type="submit" class="btn btn-success">ลงโฆษณา</button>
 											</div>
 										</form>
 									</div>
@@ -275,7 +276,7 @@
 
 	$(document).ready(function() {
 		$("#meetingA").keyup(function() {
-			$( "#target" ).keyup(); 
+			$("#target").keyup();
 			var value = $(this).val();
 
 			$("#detail4").text('ด้วยคณะกรรมการของบริษัทมีมติให้เรียกประชุมวิสามัญผู้ถือหุ้น ครั้งที่ ' + value);
