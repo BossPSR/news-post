@@ -196,7 +196,7 @@
 			$(function() {
 				$('.travel-date-group .default').datepicker({
 					autoclose: true,
-					startDate: "today",
+					endDate: "today"
 				});
 
 				$('.travel-date-group .today').datepicker({
