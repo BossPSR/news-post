@@ -7,7 +7,6 @@ class Register_ctr extends CI_Controller
   public function __construct()
   {
     parent::__construct();
-    $this->load->model('Dynamic_dependent_model');
     $this->load->model('Login_model');
   }
 
