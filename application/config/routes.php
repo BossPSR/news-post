@@ -31,6 +31,7 @@ $route['publish']           = 'front-end/Publish_ctr';
 $route['order-history']     = 'front-end/Order_history_ctr';
 $route['credit-history']    = 'front-end/Credit_history_ctr';
 $route['PDF']               = 'front-end/PDF_ctr';
+$route['PDF-F']               = 'front-end/CustomFpdf_ctr';
 
 $route['contact']           = 'front-end/Contact_ctr/index';
 $route['contact_add']       = 'front-end/Contact_ctr/contact_add';
