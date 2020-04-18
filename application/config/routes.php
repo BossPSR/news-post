@@ -27,7 +27,9 @@ $route['saveRecord_checkout'] = 'front-end/Credit_ctr/saveRecord_checkout';
 $route['paypal_success']    = 'front-end/Credit_ctr/paypal_success';
 $route['download']          = 'front-end/Download_ctr';
 $route['download-search']   = 'front-end/Download_ctr/download_search';
-
+$route['publish']           = 'front-end/Publish_ctr';
+$route['order-history']     = 'front-end/Order_history_ctr';
+$route['credit-history']    = 'front-end/Credit_history_ctr';
 $route['PDF']               = 'front-end/PDF_ctr';
 
 $route['contact']           = 'front-end/Contact_ctr/index';

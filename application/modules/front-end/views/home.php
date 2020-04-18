@@ -42,64 +42,9 @@
 <section id="content">
 	<div class="heading-block center nobottomborder" style="    margin-top: 50px;">
 		<span class="ls2 t700" style="color:#e74c3c;font-size:1.9rem">ติดต่อสอบถาม แจ้งปัญหาการใช้งาน</span>
-		<span class="ls2 t700" style="color:#e74c3c;font-size:1rem">กรุณาติดต่อ <span style="color:#2980b9;">092-562-3256</span><span style="color:#e74c3c;"> หรือ ส่งอีเมลมาที่ </span><span style="color:#2980b9;">infinityp.soft@gmail.com</span></span>
+		<span class="ls2 t700" style="color:#e74c3c;font-size:1rem">กรุณาติดต่อ <span style="color:#2980b9;">098-281-1599</span><span style="color:#e74c3c;"> หรือ ส่งอีเมลมาที่ </span><span style="color:#2980b9;">nlohapitak@gmail.com</span></span>
 	</div>
 	<div class="content-wrap notoppadding clearfix">
-
-		<!-- <div class="section notopmargin clearfix" style="padding: 80px 0">
-			<div class="container clearfix">
-
-				<div class="divcenter" style="max-width: 960px">
-					<div class="row clearfix">
-						<div class="col-12 col-md-4 center customers-count">
-							<div class="counter center counter-large font-primary"><span data-from="100" data-to="3583" data-refresh-interval="100" data-speed="2000" data-comma="true"></span></div>
-							<p>Happy Customers</p>
-						</div>
-						<div class="col-12 col-md-7 offset-md-1">
-							<blockquote class="quote nobottommargin">
-								<p>Efficiently synthesize magnetic niches via resource maximizing procrastinate adaptive web-readiness.</p>
-								<footer class="color">John Doe, Google Inc.</footer>
-							</blockquote>
-						</div>
-					</div>
-				</div>
-
-			</div>
-		</div> -->
-
-		<!-- <div class="section parallax" data-bottom-top="background-position:0px 100px;" data-top-bottom="background-position:0px -100px;">
-			<div class="heading-block center nobottomborder nobottommargin">
-				<div class="col_one_third">
-					<div class="feature-box fbox-center fbox-effect nobottomborder" data-animate="fadeIn">
-						<div class="fbox-icon">
-							<a href="#"><i class="icon-phone2"></i></a>
-						</div>
-						<h4>สมัครสมาชิก</h4>
-
-					</div>
-				</div>
-
-				<div class="col_one_third">
-					<div class="feature-box fbox-center fbox-effect nobottomborder" data-animate="fadeIn" data-delay="200">
-						<div class="fbox-icon">
-							<a href="#"><i class="icon-eye"></i></a>
-						</div>
-						<h4>เติมเครดิต</h4>
-
-					</div>
-				</div>
-
-				<div class="col_one_third col_last">
-					<div class="feature-box fbox-center fbox-effect nobottomborder" data-animate="fadeIn" data-delay="400">
-						<div class="fbox-icon">
-							<a href="#"><i class="icon-star2"></i></a>
-						</div>
-						<h4>ลงโฆษณา</h4>
-
-					</div>
-				</div>
-			</div>
-		</div> -->
 
 		<div class="container clearfix" style="margin-bottom: 80px;">
 			<div class="service-box margin-bottom-25">
@@ -178,52 +123,10 @@
 			<div class="clear"></div>
 
 		</div>
-		<div class="container topmargin-lg bottommargin-lg clearfix">
 
-			<div class="divcenter" style="max-width: 960px">
-				<div class="fancy-title title-border title-center">
-					<h3>หลักในการลงประกาศหนังสือพิมพ์</h3>
-				</div>
-
-				<div id="oc-team-list" class="owl-carousel team-carousel carousel-widget" data-margin="30" data-nav="false" data-items-md="1" data-items-xl="2">
-
-					<div class="oc-item">
-						<div class="team team-list clearfix">
-							<div class="team-image">
-								<img src="https://www.accttaxnews.com/uploads/information/4673e68fff354c8080a5925533e6172c.jpeg" style="border-radius: 15px;">
-							</div>
-							<div class="team-desc">
-								<div class="team-title">
-									<h4>ต้องลงโฆษณาอย่างน้อย 1 ครั้ง</h4>
-								</div>
-								<div class="team-content" style="font-size: 15px;">
-									<p>มติทั่วไป ต้องลงโฆษณาอย่างน้อย 1 ครั้ง ก่อนวันประชุมฯไม่น้อยกว่า 7 วัน (ต้อง + 8 วัน เนื่องจากไม่นับวันลงโฆษณาและวันประชุม) หรือตามที่กำหนดไว้ในข้อบังคับ</p>
-								</div>
-								<div class="text-center" style="padding-top:10px;">
-									<button class="btn btn-primary">ดูรายละเอียด</button>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="oc-item">
-						<div class="team team-list">
-							<div class="team-image">
-								<img src="https://www.accttaxnews.com/uploads/information/3e5f3f888ed8421fcaa4aa4ea289c4df.jpeg" style="border-radius: 15px;">
-							</div>
-							<div class="team-desc">
-								<div class="team-title">
-									<h4>มติพิเศษ ต้องลงโฆษณาอย่างน้อย 1 ครั้งก่อน</h4>
-								</div>
-								<div class="team-content" style="font-size: 15px;">
-									<p>มติพิเศษ ต้องลงโฆษณาอย่างน้อย 1 ครั้งก่อนวันประชุมฯไม่น้อยกว่า 14 วัน (ต้อง + 15 วัน เนื่องจากไม่นับวันลงโฆษณาและวันประชุม) หรือตามที่กำหนดไว้ในข้อบังคับ</p>
-								</div>
-								<div class="text-center" style="padding-top:10px;">
-									<button class="btn btn-primary">ดูรายละเอียด</button>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
+		<div class="row">
+			<div class="col-12 text-center">
+				<p style="font-size:20px;margin-top:20px;margin-bottom:-60px;">สนใจพื้นที่โฆษณา ติดต่อ 085-826-4498 , 02-140-0779</span>
 			</div>
 		</div>
 	</div>
