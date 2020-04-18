@@ -5,6 +5,8 @@
 
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<meta name="author" content="SemiColonWeb" />
+	<meta name="keyword" content="One Business ใช้งานง่าย สะดวก รวดเร็ว ประหยัด ลงประกาศโฆษณาออนไลน์ ลงโฆษณามากที่สุดเป็นลำดับต้นๆ ประกาศ หนังสือพิมพ์ ลงประกาศ ประชุม นัดประชุม ประกาศการประชุม ลงข่าว ลงหนังสือพิมพ์ วันบิสสิเนส">
+	<link rel="shortcut icon" href="public/assets/front-end/images/logo_new2.png" />
 
 	<!-- Stylesheets
 	============================================= -->
@@ -38,7 +40,7 @@
 
 	<!-- Document Title
 	============================================= -->
-	<title>Interior Design Studio | Canvas</title>
+	<title>One Business | ลงประกาศโฆษณาออนไลน์ ลงโฆษณามากที่สุดเป็นลำดับต้นๆ ใช้งานง่าย สะดวก รวดเร็ว ประหยัด</title>
 
 </head>
 <style>
@@ -58,12 +60,6 @@
 		<div class="side-panel-wrap">
 
 			<div class="widget clearfix">
-
-				<!-- <h4 class="t400">Login with Social</h4>
-
-				<a href="#" class="button button-rounded t400 btn-block center si-colored noleftmargin si-facebook">Facebook</a>
-				<a href="#" class="button button-rounded t400 btn-block center si-colored noleftmargin si-gplus">Google</a> -->
-
 				<div class="line line-sm"></div>
 
 				<form name="frmLogin" method="post">
@@ -177,7 +173,7 @@
 											<div>ลงโฆษณา</div>
 										</a>
 									</li>
-								
+
 									<li class="<?php if ($this->uri->segment(1) == "credit") {
 													echo 'current';
 												} ?>"><a href="credit">
@@ -196,14 +192,8 @@
 											<div>ติดต่อเรา</div>
 										</a>
 									</li>
-								
-									<?php if (!empty($user)) { ?>
-										<li class="h_menu">
 
-											<a href="#">
-												<div>เติม Coin</div>
-											</a>
-										</li>
+									<?php if (!empty($user)) { ?>
 										<li class="h_menu">
 											<a href="logout" style="color:red" onclick="return confirm('Are you sure to logout?');">
 												<div>ออกจากระบบ</div>
@@ -229,19 +219,32 @@
 								</div><!-- #top-search end -->
 
 							<?php } else { ?>
+								<?php
+								$omeise = $this->db->get_where('tbl_omise', ['id_user' => $user['id_user']])->result_array();
+								$point = 0;
+								foreach ($omeise as $omeise_point) {
+									$point += $omeise_point['count'];
+								}
+								?>
 								<div id="register_side">
-									<?php 
-										$omeise = $this->db->get_where('tbl_omise',['id_user' => $user['id_user']])->result_array(); 
-										$point = 0;
-										foreach ($omeise as $omeise_point) {
-											$point += $omeise_point['count'];
-										}
-									?>
-									<a href="#"><i class="icon-coins"></i> <?= $point; ?> Coin |</a>
+
+									<a href="logout" class="d-none d-lg-block"><i class="icon-coins"></i> เครดิต : <?= $point; ?> | </a>
 								</div>
 								<div id="register_side">
-									<a href="logout" class="d-none d-lg-block" style="color:red" onclick="return confirm('Are you sure to logout?');"> ออกจากระบบ</a>
+									<a class=" dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+										บัญชีผู้ใช้
+									</a>
+									<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+										<a class="dropdown-item" href="publish">โฆษณาของฉัน</a>
+										<a class="dropdown-item" href="order-history">ประวัติรายการสั่งซื้อ</a>
+										<a class="dropdown-item" href="credit-history">ประวัติการใช้เครดิต</a>
+										<div class="dropdown-divider"></div>
+										<a class="dropdown-item" href="logout" onclick="return confirm('Are you sure to logout?');">ออกจากระบบ</a>
+									</div>
+									<!-- 								
+									<a href="#"><i class="icon-coins"></i> <?= $point; ?> Credit |</a> -->
 								</div>
+
 							<?php } ?>
 						</div>
 						<?php if (empty($user)) { ?>

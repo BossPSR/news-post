@@ -136,8 +136,6 @@
 			CKEDITOR.replace('editor1', {
 				language: 'fr',
 			});
-
-
 		</script>
 		<script>
 			$(document).ready(function() {
