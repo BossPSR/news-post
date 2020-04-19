@@ -153,6 +153,10 @@ function drawData4page($pos, $data)
     
 }
 
+function map($x, $in_min, $in_max, $out_min, $out_max) {
+  return ($x - $in_min) * ($out_max - $out_min) / ($in_max - $in_min) + $out_min;
+}
+
 function drawPdfAndImage($pos, $pageNo = null, $file)
 {
     global $pdf;
@@ -167,17 +171,24 @@ function drawPdfAndImage($pos, $pageNo = null, $file)
             if($file_parts['extension'] == 'pdf')
             {
                 $pageId = $pdf->importPageAndRotation($pageNo, '/MediaBox');
-                $s = $pdf->useTemplate($pageId, 5.5, -24, 123);
+                $s = $pdf->useImportedPageCustom($pageId, 5.5, 417, 123);
+                // echo json_encode($s);
+                // exit();
             }
             else if($file_parts['extension'] == 'jpg')
             {
+                $size = getimagesize($file);
+
+                $percent_width = 123/$size[0];
+                $new_height = $percent_width * $size[1];
+
                 $x = 5;
                 $y = 150;
                 $w = 123;
                 $h = 200;
                 $angle = 90;
                 $pdf->Rotate($angle,$x,$y);
-                $pdf->Image($file,$x,$y,$w,$h);
+                $pdf->Image($file,$x,$y,$w,$new_height);
                 $pdf->Rotate(0);
             }
 
@@ -187,7 +198,7 @@ function drawPdfAndImage($pos, $pageNo = null, $file)
             if($file_parts['extension'] == 'pdf')
             {
                 $pageId = $pdf->importPageAndRotation($pageNo, '/MediaBox');
-                $s = $pdf->useTemplate($pageId, 5.5, 100, 123);
+                $s = $pdf->useImportedPageCustom($pageId, 5.5, 65, 123);
             }
             else if($file_parts['extension'] == 'jpg')
             {
@@ -252,15 +263,20 @@ $global_page_no++;
 
 // FILE OR IMAGE PAGE
 $files = [
-    // $prefix.'end.jpg',
-    // $prefix.'irene.jpg',
-    // $prefix.'test2.pdf',
-    // $prefix.'irene.jpg',
-    // $prefix.'germany.jpg',
+    $prefix.'small.pdf',
+    $prefix.'end.jpg',
+    $prefix.'irene.jpg',
+    $prefix.'test_rotate.pdf',
+    $prefix.'test2.pdf',
+    $prefix.'1.pdf',
+    $prefix.'irene.jpg',
+    $prefix.'germany.jpg',
     $prefix.'62E-com.pdf',
     $prefix.'2.pdf',
     $prefix.'3.pdf',
     $prefix.'5.pdf',
+    $prefix.'1_1.pdf',
+    $prefix.'ฉบับสัญญาการจ้างผู้พัฒนาซอฟแวร์เว็บไซต์สั่งอาหารออนไลน์2_12_2562.pdf',
 ];
 
 $pdf->AddPage();
@@ -314,6 +330,7 @@ foreach ($files as $file) {
             } 
             catch (Exception $e) 
             {
+                echo json_encode($e);
             }
             
         }
@@ -341,6 +358,7 @@ foreach ($files as $file) {
     }
 
 }
+// exit();
 
 
 $global_page_no++;
