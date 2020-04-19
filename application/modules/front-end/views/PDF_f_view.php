@@ -252,11 +252,15 @@ $global_page_no++;
 
 // FILE OR IMAGE PAGE
 $files = [
-    $prefix.'end.jpg',
-    $prefix.'irene.jpg',
-    $prefix.'test2.pdf',
-    $prefix.'irene.jpg',
-    $prefix.'germany.jpg',
+    // $prefix.'end.jpg',
+    // $prefix.'irene.jpg',
+    // $prefix.'test2.pdf',
+    // $prefix.'irene.jpg',
+    // $prefix.'germany.jpg',
+    $prefix.'62E-com.pdf',
+    $prefix.'2.pdf',
+    $prefix.'3.pdf',
+    $prefix.'5.pdf',
 ];
 
 $pdf->AddPage();
