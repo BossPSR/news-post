@@ -1,6 +1,16 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
+use setasign\Fpdi;
+use setasign\fpdf;
 
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+set_time_limit(2);
+date_default_timezone_set('UTC');
+$start = microtime(true);
+
+
+//$pdf = new Fpdi\TcpdfFpdi('L', 'mm', 'A3');
 class Ads_ctr extends CI_Controller
 {
 
@@ -193,7 +203,7 @@ class Ads_ctr extends CI_Controller
 
                 if ($_FILES['file']['name']) {
                     if ($this->upload->do_upload('file')) {
-                        $numPage = $this->numPage($name_file);
+                        $numPage = $this->numPagePDF($name_file);
                         if ($user['point'] < $numPage) {
                             $this->session->set_flashdata('point_user', TRUE);
                             redirect('ads');
@@ -243,6 +253,7 @@ class Ads_ctr extends CI_Controller
                     $image[] = array(
                         'topic'         => $topicfile,
                         'date'          => $dateimg_ex[2].'-'.$dateimg_ex[0].'-'.$dateimg_ex[1],
+                        'credit'        => 1,
                         'file_name'     => $dataInfo[$i]['file_name'],
                         'created_at'    => date('Y-m-d H:i:s'),
                         'id_user'           => $user['id_user'],
@@ -270,10 +281,14 @@ class Ads_ctr extends CI_Controller
         }
     }
 
-    private function numPage($name_file)
+    private function numPagePDF($name_file)
     {
-        $this->load->library('Pdf');
-        $data['name_file'] = $name_file;
-        $this->load->view('PDF_view',$data);
+        $this->load->library('CustomFpdf');
+        global $pdf;
+        $pdf = new Fpdi\Fpdi();
+        $pdfPage = "uploads/pdf/".$name_file.'.pdf';
+        $pdfPagePDF = $pdf->setSourceFile($pdfPage);
+        return $pdfPagePDF;
     }
+
 }
