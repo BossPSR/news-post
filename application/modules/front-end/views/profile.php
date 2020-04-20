@@ -26,13 +26,13 @@
                                                 <div class="data_register_detail border form-group">
                                                     <h4 class="t400 border-bottom">ที่อยู่ในการลงทะเบียน</h4>
                                                     <div class="row form-group">
-                                                        <div class="col-6">
+                                                        <div class="col-md-6 col-sm-12">
                                                             <label for="login-form-password" class="t400">เลขประจำตัวผู้เสียภาษี,สาขา:</label>
                                                             <input type="text" value="<?php echo $user['id_user']; ?>" name="userId" hidden>
                                                             <input type="text" id="login-tax" name="id_tax" class="form-control" value="<?php echo $user['id_taxs']; ?>" />
                                                             <span id="empty-tax"></span>
                                                         </div>
-                                                        <div class="col-6">
+                                                        <div class="col-md-6 col-sm-12">
                                                             <label for="login-form-password" class="t400">บริษัท:</label>
                                                             <input type="text" id="login-company" name="company" class="form-control" value="<?php echo $user['company']; ?>" />
                                                             <span id="empty-company"></span>
@@ -40,7 +40,7 @@
                                                     </div>
 
                                                     <div class="row form-group">
-                                                        <div class="col-12">
+                                                        <div class="col-md-12">
                                                             <label for="login-form-password" class="t400">ที่อยู่:</label>
                                                             <textarea id="login-address" name="address" class="form-control" cols="30" rows="5"><?php echo $user['address']; ?></textarea>
                                                             <span id="empty-address"></span>
