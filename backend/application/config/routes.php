@@ -20,8 +20,11 @@ $route['List_order_pdf']                  = 'Order_controller/list_order_pdf';
 $route['Main_order']                  = 'Order_controller/main_order';
 $route['pdf_add_com']                  = 'Order_controller/pdf_add_com';
 $route['pdf_edit_com']                  = 'Order_controller/pdf_edit_com';
+$route['textarea']                      = 'Order_controller/textarea';
 $route['delete_pdf']                     = 'Order_controller/delete_pdf';
 $route['List_Contact_us']                  = 'Contact_controller/list_Contact_us';
 $route['contact_us_com']                  = 'Contact_controller/contact_us_com';
 $route['contact_us_edit']                  = 'Contact_controller/contact_us_edit';
 $route['delete_contact_us']                  = 'Contact_controller/delete_contact_us';
+
+$route['insert_ads']                  = 'Order_controller/insert_ads';
