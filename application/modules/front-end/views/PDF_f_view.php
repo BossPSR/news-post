@@ -27,7 +27,8 @@ $pdf->AddFont('BrowalliaUPC','','BrowaUPC.php');
 function customHeader($page_no, $date_str)
 {
     global $pdf;
-    $prefix = "public/assets/front-end/pdf-files/";
+    //$prefix = "public/assets/front-end/pdf-files/";
+    $prefix = "uploads/pdf/";
 
     $pdf->SetFont('BrowalliaUPC','',15);
 
@@ -219,8 +220,8 @@ function drawPdfAndImage($pos, $pageNo = null, $file)
     }
 }
 
-$prefix = "public/assets/front-end/pdf-files/";
-
+//$prefix = "public/assets/front-end/pdf-files/";
+$prefix = "uploads/pdf/";
 $sample_templete = array(
     'company' => 'บริษัท สมาร์ท เมดิคัล เซอร์วิส จํากัด',
     'date' => '2 เมษายน 2563',
@@ -262,22 +263,30 @@ customFooter();
 $global_page_no++;
 
 // FILE OR IMAGE PAGE
-$files = [
-    $prefix.'small.pdf',
-    $prefix.'end.jpg',
-    $prefix.'irene.jpg',
-    $prefix.'test_rotate.pdf',
-    $prefix.'test2.pdf',
-    $prefix.'1.pdf',
-    $prefix.'irene.jpg',
-    $prefix.'germany.jpg',
-    $prefix.'62E-com.pdf',
-    $prefix.'2.pdf',
-    $prefix.'3.pdf',
-    $prefix.'5.pdf',
-    $prefix.'1_1.pdf',
-    $prefix.'ฉบับสัญญาการจ้างผู้พัฒนาซอฟแวร์เว็บไซต์สั่งอาหารออนไลน์2_12_2562.pdf',
-];
+$files = [];
+// $files = [
+//     $prefix.'small.pdf',
+//     $prefix.'end.jpg',
+//     $prefix.'irene.jpg',
+//     $prefix.'test_rotate.pdf',
+//     $prefix.'test2.pdf',
+//     $prefix.'1.pdf',
+//     $prefix.'irene.jpg',
+//     $prefix.'germany.jpg',
+//     $prefix.'62E-com.pdf',
+//     $prefix.'2.pdf',
+//     $prefix.'3.pdf',
+//     $prefix.'5.pdf',
+//     $prefix.'1_1.pdf',
+//     $prefix.'ฉบับสัญญาการจ้างผู้พัฒนาซอฟแวร์เว็บไซต์สั่งอาหารออนไลน์2_12_2562.pdf',
+// ];
+
+$pdfList = $this->db->get_where('tbl_pdf',['date'=>$date])->result_array();
+foreach ($pdfList as $pdfDetail) {
+    $files[] = $prefix.$pdfDetail['file_name'];
+}
+
+
 
 $pdf->AddPage();
 customHeader($global_page_no, $date_str);

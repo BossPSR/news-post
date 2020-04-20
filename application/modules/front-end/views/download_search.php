@@ -20,7 +20,7 @@
                                             <div class="form-group travel-date-group">
                                                 <p style="margin-bottom:10px;text-align:center;font-size:18px;color:#000;font-weight:bold;">ค้นหาหนังสือพิมพ์</p>
                                                 <div style="margin-bottom: 15px;font-size:17px;color:#4A4A4A;">หนังสือพิมพ์ ประจำวันที่ <?php echo $ex[1] . ' ' . $ex[0] . ' ' . $ex[2]; ?></div>
-                                                <button class="btn btn-info" style="border-color:#dbdbdb;width: 100%"><i class="icon-download-alt"></i> ดาวน์โหลด</button>
+                                                <a href="PDF-F?date=<?php echo $ex[2].'-'.$ex[1].'-'.$ex[0]; ?>"><button class="btn btn-info" style="border-color:#dbdbdb;width: 100%"><i class="icon-download-alt"></i> ดาวน์โหลด</button></a>
                                             </div>
                                             <div class="form-group" style="text-align:center;">
                                                 <a href="download" class="btn btn-defalut" style="border-color:#dbdbdb;width: 100%"><i class="icon-reply1"></i> ย้อนกลับ</a>

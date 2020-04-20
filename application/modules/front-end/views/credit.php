@@ -53,17 +53,20 @@
 								<div id="omise_detail">
 
 								</div>
+								<div id="omise_detail_price">
+								
+								</div>
 
-								<!-- <script type="text/javascript" src="https://cdn.omise.co/omise.js"
-						data-key="pkey_test_5jj79losaq3gdkmmo4x"
-						data-image=""
-						data-frame-label="One Business"
-						data-button-label="ชำระเงิน"
-						data-submit-label="ชำระเงิน"
-						data-amount="100.00"
-						data-currency="บาท"
-					>
-					</script> -->
+							<!-- <script type="text/javascript" src="https://cdn.omise.co/omise.js"
+								data-key="pkey_test_5jj79losaq3gdkmmo4x"
+								data-image=""
+								data-frame-label="One Business"
+								data-button-label="ชำระเงิน"
+								data-submit-label="ชำระเงิน"
+								data-amount="100.00"
+								data-currency="บาท"
+							>
+							</script> -->
 
 							</div>
 							<div class="modal-footer">
@@ -134,6 +137,9 @@
 					detailCredit += '</div>';
 
 					$('#detail_credit').html(detailCredit);
+
+					detail_omise_price = '<script type="text/javascript" src="https://cdn.omise.co/omise.js" data-key="pkey_test_5jj79losaq3gdkmmo4x" data-image=""data-frame-label="One Business"data-button-label="ชำระเงิน"data-submit-label="ชำระเงิน"data-amount="' + credit_new + '00"data-currency="บาท">' + '<' + '/script>';
+					$('#omise_detail_price').html(detail_omise_price);
 				}
 			}
 
@@ -165,8 +171,7 @@
 							detail_omise += '<input type="hidden" name="result_compony_address" value="' + compony_address + '">';
 							detail_omise += '<input type="hidden" name="result_detail_address" value="' + detail_address + '">';
 							detail_omise += '<input type="hidden" class="form-control" name="id_user" value="<?php echo $user['id_user']; ?>">';
-							detail_omise += '<script type="text/javascript" src="https://cdn.omise.co/omise.js" data-key="pkey_test_5jj79losaq3gdkmmo4x" data-image=""data-frame-label="One Business"data-button-label="ชำระเงิน"data-submit-label="ชำระเงิน"data-amount="' + price + '00"data-currency="บาท">' + '<' + '/script>';
-
+							detail_omise += '<div id="omise_detail_price"></div>';	
 							$('#omise_detail').html(detail_omise);
 						}
 
