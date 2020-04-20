@@ -404,7 +404,15 @@ trait FpdiTrait
         $f = -$bbox->getLly();
 
         $rotation = $page->getRotation();
-        $rotation = 270;
+
+        if($rotation == 0)
+            $rotation = 270;
+
+        if($rotation == 180)
+            $rotation = 270;
+
+        if($rotation == 90)
+            $rotation = 270;
 
         if ($rotation !== 0) {
             $rotation *= -1;
@@ -528,6 +536,25 @@ trait FpdiTrait
         $newSize = $this->getTemplateSize($pageId, $width, $height);
         if ($adjustPageSize) {
             $this->setPageFormat($newSize, $newSize['orientation']);
+        }   
+
+
+        if(round($originalSize['width']) != 210)
+        {
+            // if($y > 0)
+            //     $y+= (($newSize['width'] / $originalSize['width']) * 30)-$newSize['width'];
+            // else if($y <0)
+            //     $y-= (($newSize['width'] / $originalSize['width']) * 100)-$newSize['width'];
+
+            // echo "<hr>";
+            // echo "<br> W : ";
+            // echo json_encode($originalSize['width']);
+            // echo "<br> N W : ";
+            // echo json_encode($newSize['width']);
+            // echo "<br> OW / N W : ";
+            // echo json_encode($originalSize['width'] / $newSize['width']);
+            // echo "<br> Y : ";
+            // echo json_encode($y);
         }
 
         $this->_out(
@@ -537,7 +564,47 @@ trait FpdiTrait
                 ($newSize['width'] / $originalSize['width']),
                 ($newSize['height'] / $originalSize['height']),
                 $x * $this->k,
-                ($this->h - $y - $newSize['height']) * $this->k,
+                ($this->h - $y - $newSize['height']) ,
+                $importedPage['id']
+            )
+        );
+
+        return $newSize;
+    }
+
+     public function useImportedPageCustom($pageId, $x = 0, $y = 0, $width = null, $height = null, $adjustPageSize = false)
+    {
+        if (is_array($x)) {
+            unset($x['pageId']);
+            extract($x, EXTR_IF_EXISTS);
+            /** @noinspection NotOptimalIfConditionsInspection */
+            if (is_array($x)) {
+                $x = 0;
+            }
+        }
+
+        if (!isset($this->importedPages[$pageId])) {
+            throw new \InvalidArgumentException('Imported page does not exist!');
+        }
+
+        $importedPage = $this->importedPages[$pageId];
+
+        $originalSize = $this->getTemplateSize($pageId);
+        $newSize = $this->getTemplateSize($pageId, $width, $height);
+        if ($adjustPageSize) {
+            $this->setPageFormat($newSize, $newSize['orientation']);
+        }   
+
+
+
+        $this->_out(
+            // reset standard values, translate and scale
+            sprintf(
+                'q 0 J 1 w 0 j 0 G 0 g %.4F 0 0 %.4F %.4F %.4F cm /%s Do Q',
+                ($newSize['width'] / $originalSize['width']),
+                ($newSize['height'] / $originalSize['height']),
+                $x * $this->k,
+                ($y) ,
                 $importedPage['id']
             )
         );

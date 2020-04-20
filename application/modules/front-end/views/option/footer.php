@@ -35,6 +35,23 @@
 	============================================= -->
 		<script src="public/assets/front-end/js/functions.js"></script>
 		<script type="text/javascript">
+			<?php if ($this->session->flashdata('success_profile')) : ?>
+				Swal.fire({
+					position: 'start-end',
+					icon: 'success',
+					title: 'สำเร็จ',
+					showConfirmButton: false,
+					timer: 1500
+				});
+			<?php endif; ?>
+			<?php if ($this->session->flashdata('fail_profile')) : ?>
+				Swal.fire({
+					position: 'start-end',
+					icon: 'error',
+					title: 'เกิดข้อผิดพลาด',
+					showConfirmButton: true,
+				});
+			<?php endif; ?>
 			<?php if ($this->session->flashdata('success_login')) : ?>
 				Swal.fire({
 					position: 'start-end',
@@ -163,7 +180,7 @@
 			$(function() {
 				$('.travel-date-group .default').datepicker({
 					autoclose: true,
-					startDate: "today",
+					endDate: "yesterday",
 					format: "dd/mm/yyyy",
 				});
 
