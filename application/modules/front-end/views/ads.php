@@ -1,3 +1,5 @@
+<?php $user = $this->db->get_where('tbl_user', ['email' => $this->session->userdata('email')])->row_array(); ?>
+
 <style type="text/css">
 	.thumbimage {
 		float: left;
@@ -90,8 +92,13 @@
 												<?php include('option/texC.php'); ?>
 											</div>
 											<div class="text-left">
-												<button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModalCenter">ดูตัวอย่างโฆษณา</button>
-												<button type="submit" class="btn btn-success">ลงโฆษณา</button>
+												<?php if (!empty($user)) : ?>
+													<button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModalCenter">ดูตัวอย่างโฆษณา</button>
+													<button type="submit" class="btn btn-success">ลงโฆษณา</button>
+												<?php else : ?>
+													<button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModalCenter">ดูตัวอย่างโฆษณา</button>
+													<a class="btn btn-success" style="    color: white;" data-toggle="modal" data-target="#exampleModalLogin">ลงโฆษณา</a>
+												<?php endif; ?>
 											</div>
 										</form>
 									</div>
@@ -304,9 +311,9 @@
 
 		$('#op_title').change(function() {
 			let val_opTitle = $(this).val();
-				$('#txtA').css('display', 'none');
-				$('#txtB').css('display', 'none');
-				$('#txtC').css('display', 'none');
+			$('#txtA').css('display', 'none');
+			$('#txtB').css('display', 'none');
+			$('#txtC').css('display', 'none');
 			if (this.value == "ประกาศเลิกบริษัท") {
 
 				$('#txtB').css('display', 'block');
@@ -495,25 +502,25 @@
 
 				$('#txtA').css('display', 'block');
 				$('#agendaA').val("");
-				
-				let value_agenda = "";
-				if(val_opTitle == "เชิญประชุมปิดงบประมาณ") {
-					 	value_agenda = "1. รับรองรายงานการประชุมครั้งที่ผ่านมา";
-						value_agenda += "\n";
-						value_agenda += "2. รายงานผลการดำเนินงานของบริษัทและรับรองงบการเงินประจำปี";
-						value_agenda += "\n";
-						value_agenda += "3. พิจารณาแต่งตั้งผู้สอบบัญชีและกำหนดค่าตอบแทนประจำปี";
-						value_agenda += "\n";
-						value_agenda += "4. พิจารณาแต่งตั้งคณะกรรมการแทนกรรมการที่จะครบกำหนดออกตามวาระ";
-						value_agenda += "\n";
-						value_agenda += "5. พิจารณาเงินปันผล การจัดสรรทุนสำรองตามกฎหมายและบำเหน็จกรรมการ";
-						value_agenda += "\n";
-						value_agenda += "6. พิจารณาเรื่องอื่นๆ (ถ้ามี)";
 
-				}else if(val_opTitle == "กำหนดรายละเอียดการประชุมเอง"){
+				let value_agenda = "";
+				if (val_opTitle == "เชิญประชุมปิดงบประมาณ") {
+					value_agenda = "1. รับรองรายงานการประชุมครั้งที่ผ่านมา";
+					value_agenda += "\n";
+					value_agenda += "2. รายงานผลการดำเนินงานของบริษัทและรับรองงบการเงินประจำปี";
+					value_agenda += "\n";
+					value_agenda += "3. พิจารณาแต่งตั้งผู้สอบบัญชีและกำหนดค่าตอบแทนประจำปี";
+					value_agenda += "\n";
+					value_agenda += "4. พิจารณาแต่งตั้งคณะกรรมการแทนกรรมการที่จะครบกำหนดออกตามวาระ";
+					value_agenda += "\n";
+					value_agenda += "5. พิจารณาเงินปันผล การจัดสรรทุนสำรองตามกฎหมายและบำเหน็จกรรมการ";
+					value_agenda += "\n";
+					value_agenda += "6. พิจารณาเรื่องอื่นๆ (ถ้ามี)";
+
+				} else if (val_opTitle == "กำหนดรายละเอียดการประชุมเอง") {
 					value_agenda = "กำหนดรายละเอียดการประชุมเอง";
 
-				}else if(val_opTitle == "เชิญประชุมย้ายที่อยู่"){
+				} else if (val_opTitle == "เชิญประชุมย้ายที่อยู่") {
 					value_agenda = "1. พิจารณาแก้ไขที่ตั้งสำนักงานของบริษัท";
 					value_agenda += "\n";
 					value_agenda += "2. พิจารณาแก้ไขเพิ่มเติมหนังสือบริคณห์สนธิ ข้อ 2. ดังนี้";
@@ -522,7 +529,7 @@
 					value_agenda += "\n";
 					value_agenda += "3. พิจารณาเรื่องอื่นๆ (ถ้ามี)";
 
-				}else if(val_opTitle == "เชิญประชุมลดทุน"){
+				} else if (val_opTitle == "เชิญประชุมลดทุน") {
 					value_agenda = "1. พิจารณาอนุมัติการลดทุนจดทะเบียนของบริษัท จำนวน ..... บาท";
 					value_agenda += "\n";
 					value_agenda += "2. พิจารณาแก้ไขเพิ่มเติมหนังสือบริคณห์สนธิ ข้อ 5. (ทุน) ดังนี้";
@@ -531,7 +538,7 @@
 					value_agenda += "\n";
 					value_agenda += "3. พิจารณาเรื่องอื่นๆ (ถ้ามี)";
 
-				}else if(val_opTitle == "เชิญประชุมเปลี่ยนกรรมการ"){
+				} else if (val_opTitle == "เชิญประชุมเปลี่ยนกรรมการ") {
 					value_agenda = "1. พิจารณาแต่งตั้งกรรมการและอำนาจกรรมการ";
 					value_agenda += "\n";
 					value_agenda += "2. พิจารณาเปลี่ยนแปลงกรรมการเข้าและออก";
@@ -540,7 +547,7 @@
 					value_agenda += "\n";
 					value_agenda += "4. พิจารณาเรื่องอื่นๆ (ถ้ามี)";
 
-				}else if(val_opTitle == "เชิญประชุมเปลี่ยนชื่อบริษัท"){
+				} else if (val_opTitle == "เชิญประชุมเปลี่ยนชื่อบริษัท") {
 					value_agenda = "1. พิจารณาแก้ไขเปลี่ยนแปลงชื่อของบริษัท";
 					value_agenda += "\n";
 					value_agenda += "2. พิจารณาแก้ไขเพิ่มเติมหนังสือบริคณห์สนธิ ข้อ 1. ดังนี้";
@@ -549,7 +556,7 @@
 					value_agenda += "\n";
 					value_agenda += "3. พิจารณาเรื่องอื่นๆ (ถ้ามี)";
 
-				}else if(val_opTitle == "เชิญประชุมเพิ่มทุน"){
+				} else if (val_opTitle == "เชิญประชุมเพิ่มทุน") {
 					value_agenda = "1. พิจารณาอนุมัติการเพิ่มทุนจดทะเบียนของบริษัท จำนวน ..... บาท";
 					value_agenda += "\n";
 					value_agenda += "2. พิจารณาแก้ไขเพิ่มเติมหนังสือบริคณห์สนธิ ข้อ 5. (ทุน) ดังนี้";
@@ -558,7 +565,7 @@
 					value_agenda += "\n";
 					value_agenda += "3. พิจารณาเรื่องอื่นๆ (ถ้ามี)";
 
-				}else if(val_opTitle == "เชิญประชุมเพิ่มวัตถุประสงค์"){
+				} else if (val_opTitle == "เชิญประชุมเพิ่มวัตถุประสงค์") {
 					value_agenda = "1. พิจารณาแก้ไขเพิ่มเติมวัตถุประสงค์ของบริษัท";
 					value_agenda += "\n";
 					value_agenda += "2. พิจารณาแก้ไขเพิ่มเติมหนังสือบริคณห์สนธิ ข้อ 3. ดังนี้";
@@ -567,7 +574,7 @@
 					value_agenda += "\n";
 					value_agenda += "3. พิจารณาเรื่องอื่นๆ (ถ้ามี)";
 
-				}else if(val_opTitle == "เชิญประชุมเลิกบริษัท"){
+				} else if (val_opTitle == "เชิญประชุมเลิกบริษัท") {
 					value_agenda = "1. พิจารณาลงมติพิเศษเรื่องการเลิกบริษัท";
 					value_agenda += "\n";
 					value_agenda += "2. พิจารณาแต่งตั้งผู้ชำระบัญชี";
@@ -576,41 +583,41 @@
 					value_agenda += "\n";
 					value_agenda += "4. พิจารณาเรื่องอื่นๆ (ถ้ามี)";
 
-				}else if(val_opTitle == "เชิญประชุมเสร็จชำระบัญชี"){
+				} else if (val_opTitle == "เชิญประชุมเสร็จชำระบัญชี") {
 					value_agenda = "1. รับรองรายงานการประชุมวิสามัญผู้ถือหุ้นครั้งที่ .....";
 					value_agenda += "\n";
 					value_agenda += "2. พิจารณารายงานการชำระบัญชี";
 					value_agenda += "\n";
 					value_agenda += "3. พิจารณาเรื่องอื่นๆ (ถ้ามี)";
 
-				}else if(val_opTitle == "เชิญประชุมแก้ไขเพิ่มเติมตราบริษัท"){
+				} else if (val_opTitle == "เชิญประชุมแก้ไขเพิ่มเติมตราบริษัท") {
 					value_agenda = "1. พิจารณาแก้ไขเพิ่มเติมตราของบริษัท";
 					value_agenda += "\n";
 					value_agenda += "2. พิจารณาเรื่องอื่นๆ (ถ้ามี)";
 
-				}else if(val_opTitle == "เชิญประชุมอนุมัติเงินปันผล"){
+				} else if (val_opTitle == "เชิญประชุมอนุมัติเงินปันผล") {
 					value_agenda = "1. รับรองรายงานการประชุมครั้งที่ผ่านมา";
 					value_agenda += "\n";
 					value_agenda += "2. พิจารณาการอนุมัติการจ่ายเงินปันผลของบริษัท";
 					value_agenda += "\n";
 					value_agenda += "3. พิจารณาเรื่องอื่นๆ (ถ้ามี)";
 
-				}else if(val_opTitle == "เชิญประชุมแก้ไขข้อบังคับ"){
+				} else if (val_opTitle == "เชิญประชุมแก้ไขข้อบังคับ") {
 					value_agenda = "1. พิจารณาแก้ไขเพิ่มเติมข้อบังคับ";
 					value_agenda += "\n";
 					value_agenda += "2. พิจารณาเรื่องอื่นๆ (ถ้ามี)";
 
-				}else if(val_opTitle == "เชิญประชุมควบรวมบริษัท"){
+				} else if (val_opTitle == "เชิญประชุมควบรวมบริษัท") {
 					value_agenda = "1. พิจารณาการควบบริษัทจำกัด";
 					value_agenda += "\n";
 					value_agenda += "2. พิจารณาเรื่องอื่นๆ (ถ้ามี)";
 
-				}else if(val_opTitle == "กำหนดรายละเอียดการประชุมเอง"){
+				} else if (val_opTitle == "กำหนดรายละเอียดการประชุมเอง") {
 					value_agenda = "กำหนดรายละเอียดการประชุมเอง";
 
 				}
 
-				
+
 				$('#agendaA').val(value_agenda);
 
 				$("#advertisementA").change(function() {
@@ -661,10 +668,10 @@
 					$("#detail7").text(' ณ ' + value7 + ' เพื่อพิจารณาเรื่องต่างๆ ตามระเบียบวาระดังต่อไปนี้');
 				}).keyup();
 
-				
+
 
 				$("#agendaA").keyup(function() {
-					
+
 					$.ajax({
 						url: "textarea",
 						data: {
@@ -699,12 +706,12 @@
 
 <script type="text/javascript">
 	$('#op_title').change(function() {
-			$('.te1').css('display', 'none');
-			$('.te2').css('display', 'none');
-			$('.te3').css('display', 'none');
-			$('.te4').css('display', 'none');
+		$('.te1').css('display', 'none');
+		$('.te2').css('display', 'none');
+		$('.te3').css('display', 'none');
+		$('.te4').css('display', 'none');
 		if (this.value == "เชิญประชุมปิดงบประมาณ") {
-			$('.te1').css('display', 'block');	
+			$('.te1').css('display', 'block');
 		} else if (this.value == "กำหนดรายละเอียดการประชุมเอง") {
 			$('.te2').css('display', 'block');
 		} else if (this.value == "เชิญประชุมย้ายที่อยู่") {

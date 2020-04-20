@@ -21,7 +21,7 @@
     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
         <div class="form-group travel-date-group" style="text-align: left;font-size:16px;">
             <b>วันที่จัดประชุม</b>
-            <input type="text" name="announcedateA" id="announcedateA" value="<?php echo date('d/m/Y'); ?>" class="form-control tleft default" placeholder="วันที่จัดประชุม">
+            <input type="text" name="announcedateA" id="announcedateA" value="<?php echo date('d/m/Y'); ?>" class="form-control tleft today" placeholder="วันที่จัดประชุม">
         </div>
     </div>
     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
@@ -87,7 +87,7 @@
 </div>
 <div class="form-group travel-date-group" style="text-align: left;font-size:16px;">
     <b>วันที่ลงโฆษณา</b>
-    <input type="text" name="advertisementA" id="advertisementA" value="<?php echo date('d/m/Y'); ?>" class="form-control tleft default" placeholder="วันที่ลงโฆษณา">
+    <input type="text" name="advertisementA" id="advertisementA" value="<?php echo date('d/m/Y'); ?>" class="form-control tleft today" placeholder="วันที่ลงโฆษณา">
 </div>
 <div class="form-group" style="text-align: left;font-size:16px;">
     <b>ชื่อ-นามสกุลผู้ลงนาม (กรุณาใส่คำนำหน้าชื่อ)</b>

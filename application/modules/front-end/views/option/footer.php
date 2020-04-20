@@ -197,6 +197,7 @@
 				$('.travel-date-group .today').datepicker({
 					autoclose: true,
 					startDate: "today",
+					format: "dd/mm/yyyy",
 					todayHighlight: true
 				});
 

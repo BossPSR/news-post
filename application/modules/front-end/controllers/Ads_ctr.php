@@ -19,9 +19,12 @@ class Ads_ctr extends CI_Controller
     public function insert_ads()
     {
         
-        if ($this->session->userdata('email') != '') {
-
-            $topic = $this->input->post('topic');
+        if ($this->session->userdata('email') != '') {+
+            $user = $this->db->get_where('tbl_user',['email' => $this->session->userdata('email')])->row_array();
+            
+            $dateYa         = date('Y-m-d');
+            $dateYa_ex      = explode('-',$dateYa);
+            $topic          = $this->input->post('topic');
             
             if ($topic == 'ประกาศเลิกบริษัท') {
 
@@ -38,7 +41,15 @@ class Ads_ctr extends CI_Controller
                     'created_at'        => date('Y-m-d H:i:s'),
                 );
                 $success = $this->db->insert('tbl_advertise', $data);
+                $first   = $this->db->insert_id();
+                            
                 if ($success > 0) {
+                    $update = array(
+                        'id_order' => $dateYa_ex[0].''.$dateYa_ex[1].$first
+                    );
+                    $this->db->where('advertise_id', $first);
+                    $this->db->update('tbl_advertise', $update);
+                    
                     $this->session->set_flashdata('responseA', TRUE);
                     redirect('ads');
                 } else {
@@ -67,6 +78,12 @@ class Ads_ctr extends CI_Controller
                 );
                 $success = $this->db->insert('tbl_advertise', $data);
                 if ($success > 0) {
+                    $update = array(
+                        'id_order' => $dateYa_ex[0].''.$dateYa_ex[1].$first
+                    );
+                    $this->db->where('advertise_id', $first);
+                    $this->db->update('tbl_advertise', $update);
+
                     $this->session->set_flashdata('responseA', TRUE);
                     redirect('ads');
                 } else {
@@ -91,6 +108,12 @@ class Ads_ctr extends CI_Controller
                 );
                 $success = $this->db->insert('tbl_advertise', $data);
                 if ($success > 0) {
+                    $update = array(
+                        'id_order' => $dateYa_ex[0].''.$dateYa_ex[1].$first
+                    );
+                    $this->db->where('advertise_id', $first);
+                    $this->db->update('tbl_advertise', $update);
+
                     $this->session->set_flashdata('responseA', TRUE);
                     redirect('ads');
                 } else {
