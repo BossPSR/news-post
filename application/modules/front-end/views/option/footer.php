@@ -137,6 +137,16 @@
 					showConfirmButton: true,
 				});
 			<?php endif; ?>
+
+			<?php if ($suss = $this->session->flashdata('check_login')) : ?>
+				Swal.fire({
+					position: 'start-end',
+					icon: 'error',
+					title: 'ท่านยังไม่เข้าสู่ระบบ กรุณาเข้าสู่ระบบก่อนนะค่ะ!!',
+					showConfirmButton: true,
+				});
+			<?php endif; ?>
+			
 		</script>
 		<!-- Date & Time Picker JS -->
 		<script src="public/assets/front-end/js/components/moment.js"></script>
