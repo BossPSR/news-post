@@ -72,7 +72,7 @@
 													<option value="เชิญประชุมเลิกบริษัท">เชิญประชุมเลิกบริษัท</option>
 													<option value="เชิญประชุมเสร็จชำระบัญชี">เชิญประชุมเสร็จชำระบัญชี</option>
 													<option value="เชิญประชุมแก้ไขเพิ่มเติมตราบริษัท">เชิญประชุมแก้ไขเพิ่มเติมตราบริษัท</option>
-													<option value="เชิญประชุมอนุมัติงานปันผล">เชิญประชุมอนุมัติงานปันผล</option>
+													<option value="เชิญประชุมอนุมัติเงินปันผล">เชิญประชุมอนุมัติเงินปันผล</option>
 													<option value="เชิญประชุมแก้ไขข้อบังคับ">เชิญประชุมแก้ไขข้อบังคับ</option>
 													<option value="เชิญประชุมควบรวมบริษัท">เชิญประชุมควบรวมบริษัท</option>
 													<option value="ประกาศเลิกบริษัท">ประกาศเลิกบริษัท</option>
@@ -146,78 +146,78 @@
 				</button>
 			</div>
 			<div class="modal-body" style="padding: 30px;">
-				
-					<div id="txtA">
-						<p class="text-right" id="detail0"></p>
-						<p id="detail1" style="text-align: center"></p>
-						<p id="detail2" style="margin-bottom: 0px;"></p>
-						<p id="detail3"></p>
-						<!-- <p id=""></p> -->
-						<p style="margin-bottom: 0px;">
-							<span id="detail4"></span>
-							<span id="detail5"></span>
-							<span id="detail6"></span>
-							<span id="detail7"></span>
-						</p>
-						<div id="detail8"></div>
 
-						<div id="detail9" style="padding-top: 10px">
-							<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ดังนั้น จึงขอเรียนเชิญ <span id="detail10"></span> ไปประชุมตามวัน เวลา และสถานที่ดังกล่าวข้างต้นโดยพร้อมเพรียงกันด้วย จักขอบพระคุณยิ่ง</p>
-						</div>
-						<div class="text-center" style="float: right;width: 50%;">
-							<p id="detail11" style="margin-bottom: 0px;">ขอแสดงความนับถือ</p>
-							<p id="detail12" style="margin-bottom: 0px;"></p>
-							<p id="detail13" style="margin-bottom: 0px;"></p>
-						</div>
-					</div>
-					<div id="txtB">
-						<p class="text-center" id="detailB1" style="font-weight: 900;">ประกาศเลิกบริษัท</p>
-						<p class="text-center" id="detailB2" style="margin-bottom: 0px;"></p>
-						<p class="text-center" id="detailB3"></p>
-						<p style="margin-bottom: 0px;">
-							<span id="detailB4"></span>
-							<span id="detailB5"></span>
-							<span id="detailB6"></span>
-						</p>
-						<p id="detailB7"></p>
+				<div id="txtA">
+					<p class="text-right" id="detail0"></p>
+					<p id="detail1" style="text-align: center"></p>
+					<p id="detail2" style="margin-bottom: 0px;"></p>
+					<p id="detail3"></p>
+					<!-- <p id=""></p> -->
+					<p style="margin-bottom: 0px;">
+						<span id="detail4"></span>
+						<span id="detail5"></span>
+						<span id="detail6"></span>
+						<span id="detail7"></span>
+					</p>
+					<div id="detail8"></div>
 
-						<div class="text-center" style="float: right;width: 50%;">
-							<p id="detailB8"></p>
-							<p id="detailB9" style="margin-bottom: 0px;"></p>
-							<p id="detailB10" style="margin-bottom: 0px;"></p>
-						</div>
+					<div id="detail9" style="padding-top: 10px">
+						<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ดังนั้น จึงขอเรียนเชิญ <span id="detail10"></span> ไปประชุมตามวัน เวลา และสถานที่ดังกล่าวข้างต้นโดยพร้อมเพรียงกันด้วย จักขอบพระคุณยิ่ง</p>
 					</div>
-					<div id="txtC">
-						<p class="text-right" id="detailฺC1" style="margin-bottom: 15px;"></p>
-						<p class="text-center" id="detailฺC2" style="margin-bottom: 0px;"></p>
-						<p id="detailฺC3" style="margin-bottom: 0px;">เรื่อง จ่ายเงินปันผลระหว่างกาล</p>
-						<p style="margin-bottom: 15px;">
-							<span id="detailฺC4"></span>
-							<span id='detailฺC5'></span>
-						</p>
-						<p style="margin-bottom: 15px;">
-							<span id="detailฺC6"></span>
-							<span id="detailฺC7"></span>
-							<span id="detailฺC8"></span>
-							<span id="detailฺC9"></span>
-							<span id="detailฺC10"></span>
-							<span id="detailฺC11"></span>
-							<span id="detailฺC12"></span>
-							<span id="detailฺC13"></span>
-							<span id="detailฺC13"></span>
-							<span id="detailฺC15"></span>
-							<span id="detailฺC16"></span>
-							<span id="detailฺC17"></span>
-						</p>
-						<p id="detailฺC18" ></p>
-						<div class="text-center" style="float: right;width: 50%;">
-							<p style="margin-bottom: 15px;">จึงเรียนมาเพื่อทราบ</p>
-							<p id="detailฺC19" style="margin-bottom: 15px;"></p>
-							<p id="detailฺC20" style="margin-bottom: 0px;"></p>
-							<p id="detailฺC21" ></p>
-						</div>
+					<div class="text-center" style="float: right;width: 50%;">
+						<p id="detail11" style="margin-bottom: 0px;">ขอแสดงความนับถือ</p>
+						<p id="detail12" style="margin-bottom: 0px;"></p>
+						<p id="detail13" style="margin-bottom: 0px;"></p>
 					</div>
-				
+				</div>
+				<div id="txtB">
+					<p class="text-center" id="detailB1" style="font-weight: 900;">ประกาศเลิกบริษัท</p>
+					<p class="text-center" id="detailB2" style="margin-bottom: 0px;"></p>
+					<p class="text-center" id="detailB3"></p>
+					<p style="margin-bottom: 0px;">
+						<span id="detailB4"></span>
+						<span id="detailB5"></span>
+						<span id="detailB6"></span>
+					</p>
+					<p id="detailB7"></p>
+
+					<div class="text-center" style="float: right;width: 50%;">
+						<p id="detailB8"></p>
+						<p id="detailB9" style="margin-bottom: 0px;"></p>
+						<p id="detailB10" style="margin-bottom: 0px;"></p>
+					</div>
+				</div>
+				<div id="txtC">
+					<p class="text-right" id="detailฺC1" style="margin-bottom: 15px;"></p>
+					<p class="text-center" id="detailฺC2" style="margin-bottom: 0px;"></p>
+					<p id="detailฺC3" style="margin-bottom: 0px;">เรื่อง จ่ายเงินปันผลระหว่างกาล</p>
+					<p style="margin-bottom: 15px;">
+						<span id="detailฺC4"></span>
+						<span id='detailฺC5'></span>
+					</p>
+					<p style="margin-bottom: 15px;">
+						<span id="detailฺC6"></span>
+						<span id="detailฺC7"></span>
+						<span id="detailฺC8"></span>
+						<span id="detailฺC9"></span>
+						<span id="detailฺC10"></span>
+						<span id="detailฺC11"></span>
+						<span id="detailฺC12"></span>
+						<span id="detailฺC13"></span>
+						<span id="detailฺC13"></span>
+						<span id="detailฺC15"></span>
+						<span id="detailฺC16"></span>
+						<span id="detailฺC17"></span>
+					</p>
+					<p id="detailฺC18"></p>
+					<div class="text-center" style="float: right;width: 50%;">
+						<p style="margin-bottom: 15px;">จึงเรียนมาเพื่อทราบ</p>
+						<p id="detailฺC19" style="margin-bottom: 15px;"></p>
+						<p id="detailฺC20" style="margin-bottom: 0px;"></p>
+						<p id="detailฺC21"></p>
+					</div>
+				</div>
+
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-secondary" data-dismiss="modal">ปิดหน้าต่าง</button>
@@ -303,11 +303,13 @@
 	$(document).ready(function() {
 
 		$('#op_title').change(function() {
+			let val_opTitle = $(this).val();
+				$('#txtA').css('display', 'none');
+				$('#txtB').css('display', 'none');
+				$('#txtC').css('display', 'none');
 			if (this.value == "ประกาศเลิกบริษัท") {
 
-				$('#txtA').css('display', 'none');
 				$('#txtB').css('display', 'block');
-				$('#txtC').css('display', 'none');
 
 				$("#companyฺB").keyup(function() {
 					var value = $(this).val();
@@ -365,8 +367,6 @@
 
 			} else if (this.value == "ประกาศจ่ายเงินปันผล") {
 
-				$('#txtA').css('display', 'none');
-				$('#txtB').css('display', 'none');
 				$('#txtC').css('display', 'block');
 
 				$("#companyC").keyup(function() {
@@ -445,43 +445,43 @@
 				$("#moneyC").keyup(function() {
 					var value = $(this).val();
 
-					$("#detailฺC14").text(' คิดเป็นเงิน ' + value );
+					$("#detailฺC14").text(' คิดเป็นเงิน ' + value);
 				}).keyup();
 
 				$("#stockC").keyup(function() {
 					var value = $(this).val();
 
-					$("#detailฺC15").text('(' + value + ') บาท'  );
+					$("#detailฺC15").text('(' + value + ') บาท');
 				}).keyup();
 
 				$("#reserveC").keyup(function() {
 					var value = $(this).val();
 
-					$("#detailฺC16").text(' และจัดสรรเป็นเงินกองทุนสำรอง ' + value );
+					$("#detailฺC16").text(' และจัดสรรเป็นเงินกองทุนสำรอง ' + value);
 				}).keyup();
 
 				$("#characterC").keyup(function() {
 					var value = $(this).val();
 
-					$("#detailฺC17").text( ' (' + value + ') บาท' );
+					$("#detailฺC17").text(' (' + value + ') บาท');
 				}).keyup();
 
 				$("#paymentC").change(function() {
 					var value = $(this).val();
 
-					$("#detailฺC18").html( ' &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;โดยบริษัทฯ กำหนดจะจ่ายเงินปันผลให้กับผู้ถือหุ้นภายในวันที่ วันที่ ' + value );
+					$("#detailฺC18").html(' &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;โดยบริษัทฯ กำหนดจะจ่ายเงินปันผลให้กับผู้ถือหุ้นภายในวันที่ วันที่ ' + value);
 				}).keyup();
 
 				$("#dateC").change(function() {
 					var value = $(this).val();
 
-					$("#detailฺC19").text( ' ประกาศ ณ วันที่ ' + value );
+					$("#detailฺC19").text(' ประกาศ ณ วันที่ ' + value);
 				}).keyup();
 
 				$("#signerC").change(function() {
 					var value = $(this).val();
 
-					$("#detailฺC20").text( '(' + value + ')');
+					$("#detailฺC20").text('(' + value + ')');
 				}).keyup();
 
 				$("#positionC").keyup(function() {
@@ -494,9 +494,124 @@
 			} else {
 
 				$('#txtA').css('display', 'block');
-				$('#txtB').css('display', 'none');
-				$('#txtC').css('display', 'none');
+				$('#agendaA').val("");
+				
+				let value_agenda = "";
+				if(val_opTitle == "เชิญประชุมปิดงบประมาณ") {
+					 	value_agenda = "1. รับรองรายงานการประชุมครั้งที่ผ่านมา";
+						value_agenda += "\n";
+						value_agenda += "2. รายงานผลการดำเนินงานของบริษัทและรับรองงบการเงินประจำปี";
+						value_agenda += "\n";
+						value_agenda += "3. พิจารณาแต่งตั้งผู้สอบบัญชีและกำหนดค่าตอบแทนประจำปี";
+						value_agenda += "\n";
+						value_agenda += "4. พิจารณาแต่งตั้งคณะกรรมการแทนกรรมการที่จะครบกำหนดออกตามวาระ";
+						value_agenda += "\n";
+						value_agenda += "5. พิจารณาเงินปันผล การจัดสรรทุนสำรองตามกฎหมายและบำเหน็จกรรมการ";
+						value_agenda += "\n";
+						value_agenda += "6. พิจารณาเรื่องอื่นๆ (ถ้ามี)";
 
+				}else if(val_opTitle == "กำหนดรายละเอียดการประชุมเอง"){
+					value_agenda = "กำหนดรายละเอียดการประชุมเอง";
+
+				}else if(val_opTitle == "เชิญประชุมย้ายที่อยู่"){
+					value_agenda = "1. พิจารณาแก้ไขที่ตั้งสำนักงานของบริษัท";
+					value_agenda += "\n";
+					value_agenda += "2. พิจารณาแก้ไขเพิ่มเติมหนังสือบริคณห์สนธิ ข้อ 2. ดังนี้";
+					value_agenda += "\n";
+					value_agenda += "ข้อ 2. สำนักงานของบริษัทตั้งอยู่ ณ จังหวัด .....";
+					value_agenda += "\n";
+					value_agenda += "3. พิจารณาเรื่องอื่นๆ (ถ้ามี)";
+
+				}else if(val_opTitle == "เชิญประชุมลดทุน"){
+					value_agenda = "1. พิจารณาอนุมัติการลดทุนจดทะเบียนของบริษัท จำนวน ..... บาท";
+					value_agenda += "\n";
+					value_agenda += "2. พิจารณาแก้ไขเพิ่มเติมหนังสือบริคณห์สนธิ ข้อ 5. (ทุน) ดังนี้";
+					value_agenda += "\n";
+					value_agenda += "ข้อ 5. ทุนของบริษัทกำหนดไว้เป็นจำนวน ..... บาท (.....) แบ่งออกเป็น ..... หุ้น (.....) มูลค่าหุ้นละ ..... บาท (.....)";
+					value_agenda += "\n";
+					value_agenda += "3. พิจารณาเรื่องอื่นๆ (ถ้ามี)";
+
+				}else if(val_opTitle == "เชิญประชุมเปลี่ยนกรรมการ"){
+					value_agenda = "1. พิจารณาแต่งตั้งกรรมการและอำนาจกรรมการ";
+					value_agenda += "\n";
+					value_agenda += "2. พิจารณาเปลี่ยนแปลงกรรมการเข้าและออก";
+					value_agenda += "\n";
+					value_agenda += "3. พิจารณาการเปลี่ยนแปลงบัญชีรายชื่อผู้ถือหุ้น";
+					value_agenda += "\n";
+					value_agenda += "4. พิจารณาเรื่องอื่นๆ (ถ้ามี)";
+
+				}else if(val_opTitle == "เชิญประชุมเปลี่ยนชื่อบริษัท"){
+					value_agenda = "1. พิจารณาแก้ไขเปลี่ยนแปลงชื่อของบริษัท";
+					value_agenda += "\n";
+					value_agenda += "2. พิจารณาแก้ไขเพิ่มเติมหนังสือบริคณห์สนธิ ข้อ 1. ดังนี้";
+					value_agenda += "\n";
+					value_agenda += "ข้อ 1. ชื่อบริษัท ..... จำกัด";
+					value_agenda += "\n";
+					value_agenda += "3. พิจารณาเรื่องอื่นๆ (ถ้ามี)";
+
+				}else if(val_opTitle == "เชิญประชุมเพิ่มทุน"){
+					value_agenda = "1. พิจารณาอนุมัติการเพิ่มทุนจดทะเบียนของบริษัท จำนวน ..... บาท";
+					value_agenda += "\n";
+					value_agenda += "2. พิจารณาแก้ไขเพิ่มเติมหนังสือบริคณห์สนธิ ข้อ 5. (ทุน) ดังนี้";
+					value_agenda += "\n";
+					value_agenda += "ข้อ 5. ทุนของบริษัทกำหนดไว้เป็นจำนวน ..... บาท (.....) แบ่งออกเป็น ..... หุ้น (.....) มูลค่าหุ้นละ ..... บาท (.....)";
+					value_agenda += "\n";
+					value_agenda += "3. พิจารณาเรื่องอื่นๆ (ถ้ามี)";
+
+				}else if(val_opTitle == "เชิญประชุมเพิ่มวัตถุประสงค์"){
+					value_agenda = "1. พิจารณาแก้ไขเพิ่มเติมวัตถุประสงค์ของบริษัท";
+					value_agenda += "\n";
+					value_agenda += "2. พิจารณาแก้ไขเพิ่มเติมหนังสือบริคณห์สนธิ ข้อ 3. ดังนี้";
+					value_agenda += "\n";
+					value_agenda += "ข้อ 3. วัตถุประสงค์ทั้งหลายของบริษัทมี 29 ข้อ ดังปรากฎในแบบ ว. ที่แนบ";
+					value_agenda += "\n";
+					value_agenda += "3. พิจารณาเรื่องอื่นๆ (ถ้ามี)";
+
+				}else if(val_opTitle == "เชิญประชุมเลิกบริษัท"){
+					value_agenda = "1. พิจารณาลงมติพิเศษเรื่องการเลิกบริษัท";
+					value_agenda += "\n";
+					value_agenda += "2. พิจารณาแต่งตั้งผู้ชำระบัญชี";
+					value_agenda += "\n";
+					value_agenda += "3. พิจารณาแต่งตั้งผู้สอบบัญชี (ถ้ามี)";
+					value_agenda += "\n";
+					value_agenda += "4. พิจารณาเรื่องอื่นๆ (ถ้ามี)";
+
+				}else if(val_opTitle == "เชิญประชุมเสร็จชำระบัญชี"){
+					value_agenda = "1. รับรองรายงานการประชุมวิสามัญผู้ถือหุ้นครั้งที่ .....";
+					value_agenda += "\n";
+					value_agenda += "2. พิจารณารายงานการชำระบัญชี";
+					value_agenda += "\n";
+					value_agenda += "3. พิจารณาเรื่องอื่นๆ (ถ้ามี)";
+
+				}else if(val_opTitle == "เชิญประชุมแก้ไขเพิ่มเติมตราบริษัท"){
+					value_agenda = "1. พิจารณาแก้ไขเพิ่มเติมตราของบริษัท";
+					value_agenda += "\n";
+					value_agenda += "2. พิจารณาเรื่องอื่นๆ (ถ้ามี)";
+
+				}else if(val_opTitle == "เชิญประชุมอนุมัติเงินปันผล"){
+					value_agenda = "1. รับรองรายงานการประชุมครั้งที่ผ่านมา";
+					value_agenda += "\n";
+					value_agenda += "2. พิจารณาการอนุมัติการจ่ายเงินปันผลของบริษัท";
+					value_agenda += "\n";
+					value_agenda += "3. พิจารณาเรื่องอื่นๆ (ถ้ามี)";
+
+				}else if(val_opTitle == "เชิญประชุมแก้ไขข้อบังคับ"){
+					value_agenda = "1. พิจารณาแก้ไขเพิ่มเติมข้อบังคับ";
+					value_agenda += "\n";
+					value_agenda += "2. พิจารณาเรื่องอื่นๆ (ถ้ามี)";
+
+				}else if(val_opTitle == "เชิญประชุมควบรวมบริษัท"){
+					value_agenda = "1. พิจารณาการควบบริษัทจำกัด";
+					value_agenda += "\n";
+					value_agenda += "2. พิจารณาเรื่องอื่นๆ (ถ้ามี)";
+
+				}else if(val_opTitle == "กำหนดรายละเอียดการประชุมเอง"){
+					value_agenda = "กำหนดรายละเอียดการประชุมเอง";
+
+				}
+
+				
+				$('#agendaA').val(value_agenda);
 
 				$("#advertisementA").change(function() {
 					var value = $(this).val();
@@ -546,7 +661,10 @@
 					$("#detail7").text(' ณ ' + value7 + ' เพื่อพิจารณาเรื่องต่างๆ ตามระเบียบวาระดังต่อไปนี้');
 				}).keyup();
 
+				
+
 				$("#agendaA").keyup(function() {
+					
 					$.ajax({
 						url: "textarea",
 						data: {
@@ -554,6 +672,7 @@
 						},
 						success: function(getData) {
 							var value4 = getData;
+							console.log(value4)
 							$("#detail8").html(value4);
 						}
 					});
@@ -575,5 +694,23 @@
 
 
 		});
+	});
+</script>
+
+<script type="text/javascript">
+	$('#op_title').change(function() {
+			$('.te1').css('display', 'none');
+			$('.te2').css('display', 'none');
+			$('.te3').css('display', 'none');
+			$('.te4').css('display', 'none');
+		if (this.value == "เชิญประชุมปิดงบประมาณ") {
+			$('.te1').css('display', 'block');	
+		} else if (this.value == "กำหนดรายละเอียดการประชุมเอง") {
+			$('.te2').css('display', 'block');
+		} else if (this.value == "เชิญประชุมย้ายที่อยู่") {
+			$('.te3').css('display', 'block');
+		} else if (this.value == "เชิญประชุมลดทุน") {
+			$('.te4').css('display', 'block');
+		}
 	});
 </script>
