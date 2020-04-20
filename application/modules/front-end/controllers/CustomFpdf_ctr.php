@@ -11,8 +11,9 @@ class CustomFpdf_ctr extends CI_Controller
 
     public function index()
     {
+        $data['date'] = $this->input->get('date');
         $this->load->library('CustomFpdf');
-        $this->load->view('PDF_f_view');
+        $this->load->view('PDF_f_view',$data);
     }
 
   

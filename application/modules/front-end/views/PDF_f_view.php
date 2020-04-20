@@ -27,7 +27,8 @@ $pdf->AddFont('BrowalliaUPC','','BrowaUPC.php');
 function customHeader($page_no, $date_str)
 {
     global $pdf;
-    $prefix = "public/assets/front-end/pdf-files/";
+    //$prefix = "public/assets/front-end/pdf-files/";
+    $prefix = "uploads/pdf/";
 
     $pdf->SetFont('BrowalliaUPC','',15);
 
@@ -219,36 +220,63 @@ function drawPdfAndImage($pos, $pageNo = null, $file)
     }
 }
 
-$prefix = "public/assets/front-end/pdf-files/";
+//$prefix = "public/assets/front-end/pdf-files/";
+$prefix = "uploads/pdf/";
+$cutDate = explode('-',$date);
+$advertiseList = $this->db->get_where('tbl_advertise',['post_date'=> $cutDate[2].'/'.$cutDate[1].'/'.$cutDate[0]])->result_array();
 
-$sample_templete = array(
-    'company' => 'บริษัท สมาร์ท เมดิคัล เซอร์วิส จํากัด',
-    'date' => '2 เมษายน 2563',
-    'title' => 'เรื่อง การประชุมสามัญผู้ถือหุ้น ประจำปี 2563',
-    'to' => 'เรียน ผู้ถือหุ้น',
-    'description' => 'ในการประชุมคณะกรรมการ ทอท. ครั้งที่ 2/2563 เมื่อวันจันทร์ที่ 3 กุมภาพันธ์ 2563 ณ ห้องประ ชุมคณะกรรมการ ทอท. ชั้น 7 อาคารสํานักงานใหญ่ ทอท. ที่ประชุมมีมติแต่งตั้งคณะกรรมการชุดย่อย ตามข้อบังคับ ทอท. โดยมีผลตั้งแต่วันที่ 3 กุมภาพันธ์ 2563 เป็นต้นไป ดังนี้',
-    'list' => array(
-        '1. นายวราห์ ทองประสินธุ์ ดํารงตําแหน่งประธานกรรมการตรวจสอบ ',
-        '2. นายวราห์ ทองประสินธุ์ ดํารงตําแหน่งประธานกรรมการตรวจสอบ ',
-        '3. นายวราห์ ทองประสินธุ์ ดํารงตําแหน่งประธานกรรมการตรวจสอบ ',
-        '4. นายวราห์ ทองประสินธุ์ ดํารงตําแหน่งประธานกรรมการตรวจสอบ ',
-        '5. นายวราห์ ทองประสินธุ์ ดํารงตําแหน่งประธานกรรมการตรวจสอบ ',
-        '6. นายวราห์ ทองประสินธุ์ ดํารงตําแหน่งประธานกรรมการตรวจสอบ ',
-        '7. นายวราห์ ทองประสินธุ์ ดํารงตําแหน่งประธานกรรมการตรวจสอบ ',
-    ),
-    'end' => 'จึงเรียนมาเพื่อโปรดทราบและดาเนินการต่อไปด้วยจะขอบคุณยิ่ง',
-    'signature_title' => 'ขอแสดงความนับถือ',
-    'signature_name' => 'บังอรสุวรรณี  จรัสแสงแขนภาไขศรี',
-    'signature_position' => 'กรรมการผู้มีอำนาจลงนาม',
-);
-
+// $sample_templete = array(
+//     'company' => 'บริษัท สมาร์ท เมดิคัล เซอร์วิส จํากัด',
+//     'date' => '2 เมษายน 2563',
+    
+//     'title' => 'เรื่อง การประชุมสามัญผู้ถือหุ้น ประจำปี 2563',
+//     'to' => 'เรียน ผู้ถือหุ้น',
+//     'description' => 'ในการประชุมคณะกรรมการ ทอท. ครั้งที่ 2/2563 เมื่อวันจันทร์ที่ 3 กุมภาพันธ์ 2563 ณ ห้องประ ชุมคณะกรรมการ ทอท. ชั้น 7 อาคารสํานักงานใหญ่ ทอท. ที่ประชุมมีมติแต่งตั้งคณะกรรมการชุดย่อย ตามข้อบังคับ ทอท. โดยมีผลตั้งแต่วันที่ 3 กุมภาพันธ์ 2563 เป็นต้นไป ดังนี้',
+//     'list' => array(
+//         '1. นายวราห์ ทองประสินธุ์ ดํารงตําแหน่งประธานกรรมการตรวจสอบ ',
+//         '2. นายวราห์ ทองประสินธุ์ ดํารงตําแหน่งประธานกรรมการตรวจสอบ ',
+//         '3. นายวราห์ ทองประสินธุ์ ดํารงตําแหน่งประธานกรรมการตรวจสอบ ',
+//         '4. นายวราห์ ทองประสินธุ์ ดํารงตําแหน่งประธานกรรมการตรวจสอบ ',
+//         '5. นายวราห์ ทองประสินธุ์ ดํารงตําแหน่งประธานกรรมการตรวจสอบ ',
+//         '6. นายวราห์ ทองประสินธุ์ ดํารงตําแหน่งประธานกรรมการตรวจสอบ ',
+//         '7. นายวราห์ ทองประสินธุ์ ดํารงตําแหน่งประธานกรรมการตรวจสอบ ',
+//     ),
+//     'end' => 'จึงเรียนมาเพื่อโปรดทราบและดาเนินการต่อไปด้วยจะขอบคุณยิ่ง',
+//     'signature_title' => 'ขอแสดงความนับถือ',
+//     'signature_name' => 'บังอรสุวรรณี  จรัสแสงแขนภาไขศรี',
+//     'signature_position' => 'กรรมการผู้มีอำนาจลงนาม',
+// );
 $data_list = array();
-
-for ($i=0; $i < 11; $i++) 
+foreach ($advertiseList as $advertiseDetail) {
+    $sample_templete = array();
+    $sample_templete = [
+        'company' => $advertiseDetail['company_name'],
+        'date' => $advertiseDetail['post_date'],
+        
+        'title' => 'เรื่อง ขอเชิญประชุมสามัญผู้ถือหุ้น ครั้งที่ '.$advertiseDetail['meeting'],
+        'to' => 'เรียน '.$advertiseDetail['announcement_to'],
+        'description' => 'ด้วยคณะกรรมการของบริษัทมีมติให้เรียกประชุมสามัญผู้ถือหุ้นครั้งที่ '.$advertiseDetail['meeting'].' ในวันที่ '.$advertiseDetail['meeting_date'].' เวลา '.$advertiseDetail['meeting_time'].' ณ '.$advertiseDetail['meeting_place'].' เพื่อพิจารณาเรื่องต่างๆ ตามระเบียบวาระดังต่อไปนี้',
+        'list' => [
+                    $advertiseDetail['agenda']
+                  ],
+        'end' => 'จึงเรียนมาเพื่อโปรดทราบและดาเนินการต่อไปด้วยจะขอบคุณยิ่ง',
+        'signature_title' => 'ขอแสดงความนับถือ',
+        'signature_name' => $advertiseDetail['name_surname'],
+        'signature_position' => $advertiseDetail['position'],
+    ];
+    
     array_push($data_list, $sample_templete);
+}
 
 
-$date_str = "1 เมษายน 2563";
+
+
+
+//for ($i=0; $i < 11; $i++) 
+    
+
+
+$date_str = $date;
 $global_page_no = 1;
 
 
@@ -262,22 +290,30 @@ customFooter();
 $global_page_no++;
 
 // FILE OR IMAGE PAGE
-$files = [
-    $prefix.'small.pdf',
-    $prefix.'end.jpg',
-    $prefix.'irene.jpg',
-    $prefix.'test_rotate.pdf',
-    $prefix.'test2.pdf',
-    $prefix.'1.pdf',
-    $prefix.'irene.jpg',
-    $prefix.'germany.jpg',
-    $prefix.'62E-com.pdf',
-    $prefix.'2.pdf',
-    $prefix.'3.pdf',
-    $prefix.'5.pdf',
-    $prefix.'1_1.pdf',
-    $prefix.'ฉบับสัญญาการจ้างผู้พัฒนาซอฟแวร์เว็บไซต์สั่งอาหารออนไลน์2_12_2562.pdf',
-];
+$files = [];
+// $files = [
+//     $prefix.'small.pdf',
+//     $prefix.'end.jpg',
+//     $prefix.'irene.jpg',
+//     $prefix.'test_rotate.pdf',
+//     $prefix.'test2.pdf',
+//     $prefix.'1.pdf',
+//     $prefix.'irene.jpg',
+//     $prefix.'germany.jpg',
+//     $prefix.'62E-com.pdf',
+//     $prefix.'2.pdf',
+//     $prefix.'3.pdf',
+//     $prefix.'5.pdf',
+//     $prefix.'1_1.pdf',
+//     $prefix.'ฉบับสัญญาการจ้างผู้พัฒนาซอฟแวร์เว็บไซต์สั่งอาหารออนไลน์2_12_2562.pdf',
+// ];
+
+$pdfList = $this->db->get_where('tbl_pdf',['date'=>$date])->result_array();
+foreach ($pdfList as $pdfDetail) {
+    $files[] = $prefix.$pdfDetail['file_name'];
+}
+
+
 
 $pdf->AddPage();
 customHeader($global_page_no, $date_str);

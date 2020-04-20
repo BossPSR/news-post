@@ -46,14 +46,11 @@
                                 <span id="empty-address"></span>
                             </div>
                         </div>
+                        <div class="col_full nobottommargin">
+                            <button class="button button-rounded t400 nomargin" id="login-register" name="login-form-submit" value="login">สมัครสมาชิก</button>
+                        </div>
                     </div>
                 </form>
-
-                <div class="col_full nobottommargin">
-                    <button class="button button-rounded t400 nomargin" id="login-register" name="login-form-submit" value="login">สมัครสมาชิก</button>
-                </div>
-
-
             </div>
         </div>
     </div>
