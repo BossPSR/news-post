@@ -29,7 +29,6 @@ $route['download']          = 'front-end/Download_ctr';
 $route['download-search']   = 'front-end/Download_ctr/download_search';
 $route['publish']           = 'front-end/Publish_ctr';
 $route['order-history']     = 'front-end/Order_history_ctr';
-$route['credit-history']    = 'front-end/Credit_history_ctr';
 $route['PDF']               = 'front-end/PDF_ctr';
 $route['PDF-F']               = 'front-end/CustomFpdf_ctr';
 

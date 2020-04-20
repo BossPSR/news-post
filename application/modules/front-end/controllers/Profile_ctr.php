@@ -11,34 +11,43 @@ class Profile_ctr extends CI_Controller
 
 	public function profile()
 	{
+		$session                    = $this->db->get_where('tbl_user', ['email' => $this->session->userdata('email')])->row_array();
 		$data['user'] = $this->db->get_where('tbl_user', ['email' => $this->session->userdata('email')])->row_array();
-
-		$this->load->view('option/header');
-		$this->load->view('profile', $data);
-		$this->load->view('option/footer');
+		if (empty($session)) {
+			redirect('index');
+		} else {
+			$this->load->view('option/header');
+			$this->load->view('profile', $data);
+			$this->load->view('option/footer');
+		}
 	}
 
 	public function profile_edit()
 	{
-		$userId		= $this->input->post('userId');
-		$id_tax		= $this->input->post('id_tax');
-		$company	= $this->input->post('company');
-		$address	= $this->input->post('address');
-
-		$data = array(
-			'id_taxs'		=> $this->input->post('id_tax'),
-			'company'		=> $this->input->post('company'),
-			'address'		=> $this->input->post('address'),
-			'update_times'	=> date('Y-m-d H:i:s'),
-		);
-
-		$this->db->where('id_user', $userId);
-		if ($this->db->update('tbl_user', $data)) {
-			$this->session->set_flashdata('success_profile', TRUE);
-			redirect('profile');
+		$session                    = $this->db->get_where('tbl_user', ['email' => $this->session->userdata('email')])->row_array();
+		if (empty($session)) {
+			redirect('index');
 		} else {
-			$this->session->set_flashdata('fail_profile', TRUE);
-			redirect('profile');
+			$userId		= $this->input->post('userId');
+			$id_tax		= $this->input->post('id_tax');
+			$company	= $this->input->post('company');
+			$address	= $this->input->post('address');
+
+			$data = array(
+				'id_taxs'		=> $this->input->post('id_tax'),
+				'company'		=> $this->input->post('company'),
+				'address'		=> $this->input->post('address'),
+				'update_times'	=> date('Y-m-d H:i:s'),
+			);
+
+			$this->db->where('id_user', $userId);
+			if ($this->db->update('tbl_user', $data)) {
+				$this->session->set_flashdata('success_profile', TRUE);
+				redirect('profile');
+			} else {
+				$this->session->set_flashdata('fail_profile', TRUE);
+				redirect('profile');
+			}
 		}
 	}
 }

@@ -112,6 +112,37 @@
 			</div>
 		</div>
 	</div>
+
+	<!-- ModalLogin -->
+	<div class="modal fade" id="exampleModalLogin" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<form action="loginMe" method="POST">
+					<div class="modal-body">
+						<div class="text-center"><img src="public/assets/front-end/images/logo_new1.png" alt="Canvas Logo" style="width: 100px;height: auto;    max-width: none !important;"></div>
+						<div class="form-group">
+							<label for="exampleInputEmail1">Email: </label>
+							<input type="email" class="form-control" id="" placeholder="Enter email">
+						</div>
+
+						<div class="form-group">
+							<label for="exampleInputEmail1">Password: </label>
+							<input type="password" class="form-control" id="" placeholder="Enter Password">
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
+						<button type="submit" class="btn btn-primary">เข้าสู่ระบบ</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
 	<!-- Document Wrapper
 	============================================= -->
 	<div id="wrapper" class="clearfix">
@@ -146,10 +177,28 @@
 								<ul>
 									<?php if (!empty($user)) { ?>
 										<li class="h_menu">
+											<a href="#">
+												<div><?= $user['email']; ?></div>
+											</a>
+											<ul>
+												<li>
+													<a href="profile">
+														<div>ข้อมูลส่วนตัว</div>
+													</a>
+													<a href="publish">
+														<div>โฆษณาของฉัน</div>
+													</a>
+													<a href="order-history">
+														<div>ประวัติรายการสั่งซื้อ</div>
+													</a>
+												</li>
+											</ul>
+										</li>
+										<!-- <li class="h_menu">
 											<a href="">
 												<div><?= $user['email']; ?></div>
 											</a>
-										</li>
+										</li> -->
 										<li class="h_menu">
 											<a href="">
 												<div><i class="icon-coins"></i> <?= $user['point']; ?> Coin </div>
@@ -239,7 +288,6 @@
 										<a class="dropdown-item" href="profile">ข้อมูลส่วนตัว</a>
 										<a class="dropdown-item" href="publish">โฆษณาของฉัน</a>
 										<a class="dropdown-item" href="order-history">ประวัติรายการสั่งซื้อ</a>
-										<a class="dropdown-item" href="credit-history">ประวัติการใช้เครดิต</a>
 										<div class="dropdown-divider"></div>
 										<a class="dropdown-item" href="logout" onclick="return confirm('Are you sure to logout?');">ออกจากระบบ</a>
 									</div>
