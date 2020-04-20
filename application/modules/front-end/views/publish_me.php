@@ -24,28 +24,35 @@
                                         <div class="row">
                                             <div class="col-lg-12 col-xd-12 col-sm-12" style="overflow: auto;white-space: nowrap;">
                                                 <div class="card-content">
-                                                    <table class="table table-striped table-bordered" style="width:100%">
-                                                        <thead>
-                                                            <tr>
-                                                                <th>No.</th>
-                                                                <th>หัวข้อ</th>
-                                                                <th>วันที่ทำรายการ</th>
-                                                                <th>วันที่ลงโฆษณา</th>
-                                                                <th>ฟังก์ชั่น</th>
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                            <tr>
-                                                                <td>1</td>
-                                                                <td>เชิญประชุมย้ายที่อยู่</td>
-                                                                <td>6 มีนาคม 2563</td>
-                                                                <td>30 มีนาคม 2563</td>
-                                                                <td>
-                                                                    <a href="#" class="button button-mini button-circle button-green"><i class="icon-download"></i>ดาวน์โหลด</a>
-                                                                </td>
-                                                            </tr>
-                                                        </tbody>
-                                                    </table>
+                                                    <?php if (!empty($show_template)) { ?>
+                                                        <table class="table table-striped table-bordered" style="width:100%">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>No.</th>
+                                                                    <th>หัวข้อ</th>
+                                                                    <th>วันที่ทำรายการ</th>
+                                                                    <th>วันที่ลงโฆษณา</th>
+                                                                    <th>ฟังก์ชั่น</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <?php $y = 1; ?>
+                                                                <?php foreach ($show_template as $show_template) { ?>
+                                                                    <tr>
+                                                                        <td><?= $y++; ?></td>
+                                                                        <td><?= $show_template['topic']; ?></td>
+                                                                        <td><?= $show_template['created_at']; ?></td>
+                                                                        <td><?= $show_template['meeting_date']; ?></td>
+                                                                        <td>
+                                                                            <a href="#" class="button button-mini button-circle button-green"><i class="icon-download"></i>ดาวน์โหลด</a>
+                                                                        </td>
+                                                                    </tr>
+                                                                <?php } ?>
+                                                            </tbody>
+                                                        </table>
+                                                    <?php } else { ?>
+                                                        <p style="color:red;margin-bottom:20px;"><b>ไม่มีข้อมูล</b></p>
+                                                    <?php } ?>
                                                 </div>
                                             </div>
                                         </div>

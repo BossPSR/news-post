@@ -22,7 +22,7 @@ class Order_controller extends CI_Controller
         $admin = $this->db->get_where('tbl_admin', ['username' => $this->session->userdata('username'), 'status' => 1])->row_array();
         $data['admin'] = $admin;
         if ($admin == true) {
-
+            $data['advertise'] = $this->db->get('tbl_advertise')->result_array();
             $this->load->view('list_order', $data);
         } else {
             $this->session->set_flashdata('dont_click', TRUE);
@@ -224,4 +224,107 @@ class Order_controller extends CI_Controller
         }
         return redirect('List_order_pdf');
     }
+
+    public function textarea()
+    {
+        
+        echo mb_ereg_replace('\n','<br>',$this->input->get('data'));
+
+    }
+
+    public function insert_ads()
+    {
+        
+        if ($this->session->userdata('username') != '') {
+
+            $topic = $this->input->post('topic');
+
+            if ($topic == 'ประกาศเลิกบริษัท') {
+
+                $data = array(
+                    'topic'             => $this->input->post('topic'),
+                    'company_name'      => $this->input->post('companyฺB'),
+                    'tax'               => $this->input->post('TaxpayerB'),
+                    'meeting'           => $this->input->post('meetingB'),
+                    'out_date'          => $this->input->post('dissolveB'),
+                    'meeting_place'     => $this->input->post('addressB'),
+                    'post_date'         => $this->input->post('postB'),
+                    'name_surname'      => $this->input->post('signerB'),
+                    'position'          => $this->input->post('positionB'),
+                    'id_user'           => 'Admin',
+                    'status'            => 1,
+                    'created_at'        => date('Y-m-d H:i:s'),
+                );
+                $success = $this->db->insert('tbl_advertise', $data);
+                if ($success > 0) {
+                    $this->session->set_flashdata('save_ss2', 'บันทึกการลง template เรียบร้อยแล้ว !!.');
+                    redirect('List-Order');
+                } else {
+                    $this->session->set_flashdata('del_ss2', 'ล้มเหลวในการบันทึก กรุณาลองใหม่อีกครั้ง');
+                    redirect('List-Order');
+                }
+            } elseif ($topic == 'ประกาศจ่ายเงินปันผล') {
+
+                $data = array(
+                    'topic'             => $this->input->post('topic'),
+                    'company_name'      => $this->input->post('companyC'),
+                    'meeting'           => $this->input->post('meetingC'),
+                    'announcement_to'   => $this->input->post('announcementC'),
+                    'meeting_date'      => $this->input->post('meetingDateC'),
+                    'meeting_time'      => $this->input->post('meetingTimeC'),
+                    'meeting_place'     => $this->input->post('addressC'),
+                    'stock_appove'      => $this->input->post('approveC'),
+                    'all_shares'        => $this->input->post('allshares'),
+                    'dividend'          => $this->input->post('moneyC'),
+                    'reserve'           => $this->input->post('reserveC'),
+                    'dividend_payment'  => $this->input->post('paymentC'),
+                    'post_date'         => $this->input->post('dateC'),
+                    'name_surname'      => $this->input->post('signerC'),
+                    'position'          => $this->input->post('positionC'),
+                    'id_user'           => 'Admin',
+                    'status'            => 1,
+                    'created_at'        => date('Y-m-d H:i:s'),
+                );
+                $success = $this->db->insert('tbl_advertise', $data);
+                if ($success > 0) {
+                    $this->session->set_flashdata('save_ss2', 'บันทึกการลง template เรียบร้อยแล้ว !!.');
+                    redirect('List-Order');
+                } else {
+                    $this->session->set_flashdata('del_ss2', 'ล้มเหลวในการบันทึก กรุณาลองใหม่อีกครั้ง');
+                    redirect('List-Order');
+                }
+            } else {
+
+                $data = array(
+                    'topic'             => $this->input->post('topic'),
+                    'agenda'            => $this->input->post('agendaA'),
+                    'company_name'      => $this->input->post('companyA'),
+                    'meeting'           => $this->input->post('meetingA'),
+                    'announcement_to'   => $this->input->post('announceA'),
+                    'meeting_date'      => $this->input->post('announcedateA'),
+                    'meeting_time'      => $this->input->post('timeA'),
+                    'meeting_place'     => $this->input->post('placeA'),
+                    'post_date'         => $this->input->post('advertisementA'),
+                    'name_surname'      => $this->input->post('signA'),
+                    'position'          => $this->input->post('positionA'),
+                    'id_user'           => 'Admin',
+                    'status'            => 1,
+                    'created_at'        => date('Y-m-d H:i:s'),
+                );
+                $success = $this->db->insert('tbl_advertise', $data);
+                if ($success > 0) {
+                    $this->session->set_flashdata('save_ss2', 'บันทึกการลง template เรียบร้อยแล้ว !!.');
+                    redirect('List-Order');
+                } else {
+                    $this->session->set_flashdata('del_ss2', 'ล้มเหลวในการบันทึก กรุณาลองใหม่อีกครั้ง');
+                    redirect('List-Order');
+                }
+            }
+
+        } else {
+            $this->session->set_flashdata('del_ss2', 'ล้มเหลวในการบันทึก กรุณาลองใหม่อีกครั้ง');
+            redirect('List-Order');
+        }
+    }
+
 }
