@@ -72,7 +72,7 @@
 													<option value="เชิญประชุมเลิกบริษัท">เชิญประชุมเลิกบริษัท</option>
 													<option value="เชิญประชุมเสร็จชำระบัญชี">เชิญประชุมเสร็จชำระบัญชี</option>
 													<option value="เชิญประชุมแก้ไขเพิ่มเติมตราบริษัท">เชิญประชุมแก้ไขเพิ่มเติมตราบริษัท</option>
-													<option value="เชิญประชุมอนุมัติงานปันผล">เชิญประชุมอนุมัติงานปันผล</option>
+													<option value="เชิญประชุมอนุมัติเงินปันผล">เชิญประชุมอนุมัติเงินปันผล</option>
 													<option value="เชิญประชุมแก้ไขข้อบังคับ">เชิญประชุมแก้ไขข้อบังคับ</option>
 													<option value="เชิญประชุมควบรวมบริษัท">เชิญประชุมควบรวมบริษัท</option>
 													<option value="ประกาศเลิกบริษัท">ประกาศเลิกบริษัท</option>
@@ -303,11 +303,14 @@
 	$(document).ready(function() {
 
 		$('#op_title').change(function() {
+			let val_opTitle = $(this).val();
+			
+				$('#txtA').css('display', 'none');
+				$('#txtB').css('display', 'none');
+				$('#txtC').css('display', 'none');
 			if (this.value == "ประกาศเลิกบริษัท") {
 
-				$('#txtA').css('display', 'none');
 				$('#txtB').css('display', 'block');
-				$('#txtC').css('display', 'none');
 
 				$("#companyฺB").keyup(function() {
 					var value = $(this).val();
@@ -365,8 +368,6 @@
 
 			} else if (this.value == "ประกาศจ่ายเงินปันผล") {
 
-				$('#txtA').css('display', 'none');
-				$('#txtB').css('display', 'none');
 				$('#txtC').css('display', 'block');
 
 				$("#companyC").keyup(function() {
@@ -494,9 +495,123 @@
 			} else {
 
 				$('#txtA').css('display', 'block');
-				$('#txtB').css('display', 'none');
-				$('#txtC').css('display', 'none');
 
+				let value_agenda = "";
+				if(val_opTitle == "เชิญประชุมปิดงบประมาณ") {
+					 	value_agenda = "1. รับรองรายงานการประชุมครั้งที่ผ่านมา";
+						value_agenda += "\n";
+						value_agenda += "2. รายงานผลการดำเนินงานของบริษัทและรับรองงบการเงินประจำปี";
+						value_agenda += "\n";
+						value_agenda += "3. พิจารณาแต่งตั้งผู้สอบบัญชีและกำหนดค่าตอบแทนประจำปี";
+						value_agenda += "\n";
+						value_agenda += "4. พิจารณาแต่งตั้งคณะกรรมการแทนกรรมการที่จะครบกำหนดออกตามวาระ";
+						value_agenda += "\n";
+						value_agenda += "5. พิจารณาเงินปันผล การจัดสรรทุนสำรองตามกฎหมายและบำเหน็จกรรมการ";
+						value_agenda += "\n";
+						value_agenda += "6. พิจารณาเรื่องอื่นๆ (ถ้ามี)";
+
+				}else if(val_opTitle == "กำหนดรายละเอียดการประชุมเอง"){
+					value_agenda = "กำหนดรายละเอียดการประชุมเอง";
+
+				}else if(val_opTitle == "เชิญประชุมย้ายที่อยู่"){
+					value_agenda = "1. พิจารณาแก้ไขที่ตั้งสำนักงานของบริษัท";
+					value_agenda += "\n";
+					value_agenda += "2. พิจารณาแก้ไขเพิ่มเติมหนังสือบริคณห์สนธิ ข้อ 2. ดังนี้";
+					value_agenda += "\n";
+					value_agenda += "ข้อ 2. สำนักงานของบริษัทตั้งอยู่ ณ จังหวัด .....";
+					value_agenda += "\n";
+					value_agenda += "3. พิจารณาเรื่องอื่นๆ (ถ้ามี)";
+
+				}else if(val_opTitle == "เชิญประชุมลดทุน"){
+					value_agenda = "1. พิจารณาอนุมัติการลดทุนจดทะเบียนของบริษัท จำนวน ..... บาท";
+					value_agenda += "\n";
+					value_agenda += "2. พิจารณาแก้ไขเพิ่มเติมหนังสือบริคณห์สนธิ ข้อ 5. (ทุน) ดังนี้";
+					value_agenda += "\n";
+					value_agenda += "ข้อ 5. ทุนของบริษัทกำหนดไว้เป็นจำนวน ..... บาท (.....) แบ่งออกเป็น ..... หุ้น (.....) มูลค่าหุ้นละ ..... บาท (.....)";
+					value_agenda += "\n";
+					value_agenda += "3. พิจารณาเรื่องอื่นๆ (ถ้ามี)";
+
+				}else if(val_opTitle == "เชิญประชุมเปลี่ยนกรรมการ"){
+					value_agenda = "1. พิจารณาแต่งตั้งกรรมการและอำนาจกรรมการ";
+					value_agenda += "\n";
+					value_agenda += "2. พิจารณาเปลี่ยนแปลงกรรมการเข้าและออก";
+					value_agenda += "\n";
+					value_agenda += "3. พิจารณาการเปลี่ยนแปลงบัญชีรายชื่อผู้ถือหุ้น";
+					value_agenda += "\n";
+					value_agenda += "4. พิจารณาเรื่องอื่นๆ (ถ้ามี)";
+
+				}else if(val_opTitle == "เชิญประชุมเปลี่ยนชื่อบริษัท"){
+					value_agenda = "1. พิจารณาแก้ไขเปลี่ยนแปลงชื่อของบริษัท";
+					value_agenda += "\n";
+					value_agenda += "2. พิจารณาแก้ไขเพิ่มเติมหนังสือบริคณห์สนธิ ข้อ 1. ดังนี้";
+					value_agenda += "\n";
+					value_agenda += "ข้อ 1. ชื่อบริษัท ..... จำกัด";
+					value_agenda += "\n";
+					value_agenda += "3. พิจารณาเรื่องอื่นๆ (ถ้ามี)";
+
+				}else if(val_opTitle == "เชิญประชุมเพิ่มทุน"){
+					value_agenda = "1. พิจารณาอนุมัติการเพิ่มทุนจดทะเบียนของบริษัท จำนวน ..... บาท";
+					value_agenda += "\n";
+					value_agenda += "2. พิจารณาแก้ไขเพิ่มเติมหนังสือบริคณห์สนธิ ข้อ 5. (ทุน) ดังนี้";
+					value_agenda += "\n";
+					value_agenda += "ข้อ 5. ทุนของบริษัทกำหนดไว้เป็นจำนวน ..... บาท (.....) แบ่งออกเป็น ..... หุ้น (.....) มูลค่าหุ้นละ ..... บาท (.....)";
+					value_agenda += "\n";
+					value_agenda += "3. พิจารณาเรื่องอื่นๆ (ถ้ามี)";
+
+				}else if(val_opTitle == "เชิญประชุมเพิ่มวัตถุประสงค์"){
+					value_agenda = "1. พิจารณาแก้ไขเพิ่มเติมวัตถุประสงค์ของบริษัท";
+					value_agenda += "\n";
+					value_agenda += "2. พิจารณาแก้ไขเพิ่มเติมหนังสือบริคณห์สนธิ ข้อ 3. ดังนี้";
+					value_agenda += "\n";
+					value_agenda += "ข้อ 3. วัตถุประสงค์ทั้งหลายของบริษัทมี 29 ข้อ ดังปรากฎในแบบ ว. ที่แนบ";
+					value_agenda += "\n";
+					value_agenda += "3. พิจารณาเรื่องอื่นๆ (ถ้ามี)";
+
+				}else if(val_opTitle == "เชิญประชุมเลิกบริษัท"){
+					value_agenda = "1. พิจารณาลงมติพิเศษเรื่องการเลิกบริษัท";
+					value_agenda += "\n";
+					value_agenda += "2. พิจารณาแต่งตั้งผู้ชำระบัญชี";
+					value_agenda += "\n";
+					value_agenda += "3. พิจารณาแต่งตั้งผู้สอบบัญชี (ถ้ามี)";
+					value_agenda += "\n";
+					value_agenda += "4. พิจารณาเรื่องอื่นๆ (ถ้ามี)";
+
+				}else if(val_opTitle == "เชิญประชุมเสร็จชำระบัญชี"){
+					value_agenda = "1. รับรองรายงานการประชุมวิสามัญผู้ถือหุ้นครั้งที่ .....";
+					value_agenda += "\n";
+					value_agenda += "2. พิจารณารายงานการชำระบัญชี";
+					value_agenda += "\n";
+					value_agenda += "3. พิจารณาเรื่องอื่นๆ (ถ้ามี)";
+
+				}else if(val_opTitle == "เชิญประชุมแก้ไขเพิ่มเติมตราบริษัท"){
+					value_agenda = "1. พิจารณาแก้ไขเพิ่มเติมตราของบริษัท";
+					value_agenda += "\n";
+					value_agenda += "2. พิจารณาเรื่องอื่นๆ (ถ้ามี)";
+
+				}else if(val_opTitle == "เชิญประชุมอนุมัติเงินปันผล"){
+					value_agenda = "1. รับรองรายงานการประชุมครั้งที่ผ่านมา";
+					value_agenda += "\n";
+					value_agenda += "2. พิจารณาการอนุมัติการจ่ายเงินปันผลของบริษัท";
+					value_agenda += "\n";
+					value_agenda += "3. พิจารณาเรื่องอื่นๆ (ถ้ามี)";
+
+				}else if(val_opTitle == "เชิญประชุมแก้ไขข้อบังคับ"){
+					value_agenda = "1. พิจารณาแก้ไขเพิ่มเติมข้อบังคับ";
+					value_agenda += "\n";
+					value_agenda += "2. พิจารณาเรื่องอื่นๆ (ถ้ามี)";
+
+				}else if(val_opTitle == "เชิญประชุมควบรวมบริษัท"){
+					value_agenda = "1. พิจารณาการควบบริษัทจำกัด";
+					value_agenda += "\n";
+					value_agenda += "2. พิจารณาเรื่องอื่นๆ (ถ้ามี)";
+
+				}else if(val_opTitle == "กำหนดรายละเอียดการประชุมเอง"){
+					value_agenda = "กำหนดรายละเอียดการประชุมเอง";
+
+				}
+
+				
+				$('#agendaA').html(value_agenda);
 
 				$("#advertisementA").change(function() {
 					var value = $(this).val();
@@ -546,8 +661,10 @@
 					$("#detail7").text(' ณ ' + value7 + ' เพื่อพิจารณาเรื่องต่างๆ ตามระเบียบวาระดังต่อไปนี้');
 				}).keyup();
 
+				
+
 				$("#agendaA").keyup(function() {
-					console.log($(this).val())
+					
 					$.ajax({
 						url: "textarea",
 						data: {
@@ -555,6 +672,7 @@
 						},
 						success: function(getData) {
 							var value4 = getData;
+							console.log(value4)
 							$("#detail8").html(value4);
 						}
 					});
