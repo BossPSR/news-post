@@ -42,7 +42,13 @@
                                                                         <td><?= $show_template['created_at']; ?></td>
                                                                         <td>1 เครดิต</td>
                                                                         <td>45 บาท</td>
-                                                                        <td>ชำระเงินเรียบร้อย</td>
+                                                                        <td>
+                                                                            <?php if ($show_template['status'] == 0) { ?>
+                                                                                <span class="badge badge-danger">รอการอนุมัติ</span>
+                                                                            <?php } else { ?>
+                                                                                <span class="badge badge-success">ชำระเงินเรียบร้อย</span>
+                                                                            <?php } ?>
+                                                                        </td>
                                                                         <td>
                                                                             <a href="#" class="button button-mini button-circle button-green"><i class="icon-download"></i>พิมพ์ใบเสร็จรับเงิน</a>
                                                                         </td>
@@ -66,24 +72,28 @@
                                                             <thead>
                                                                 <tr>
                                                                     <th>#เลขที่สั่งซื้อ</th>
-                                                                    <th>หัวข้อ</th>
+                                                                    <th>วันที่ทำรายการ</th>
                                                                     <th>เครดิต</th>
                                                                     <th>ยอดรวม</th>
-                                                                    <th>วันที่ทำรายการ</th>
-                                                                    <th>วันที่ลงโฆษณา</th>
-                                                                    <th>ฟังก์ชั่น</th>
+                                                                    <th>สถานะ</th>
+                                                                    <th>ใบเสร็จรับเงิน</th>
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
                                                                 <?php $i = 1; ?>
                                                                 <?php foreach ($show_ppdf as $show_ppdf) { ?>
                                                                     <tr>
-                                                                        <td></td>
-                                                                        <td><?= $show_ppdf['topic']; ?></td>
-                                                                        <td><?= number_format($show_ppdf['credit']); ?></td>
-                                                                        <td><?= number_format($show_ppdf['credit'] * 45); ?></td>
+                                                                        <td><?= $show_ppdf['id_order']; ?></td>
                                                                         <td><?= $show_ppdf['created_at']; ?></td>
-                                                                        <td><?= $show_ppdf['date']; ?></td>
+                                                                        <td><?= number_format($show_ppdf['credit']); ?> เครดิต</td>
+                                                                        <td><?= number_format($show_ppdf['credit'] * 45); ?> บาท</td>
+                                                                        <td>
+                                                                            <?php if ($show_template['status'] == 0) { ?>
+                                                                                <span class="badge badge-danger">รอการอนุมัติ</span>
+                                                                            <?php } else { ?>
+                                                                                <span class="badge badge-success">ชำระเงินเรียบร้อย</span>
+                                                                            <?php } ?>
+                                                                        </td>
                                                                         <td>
                                                                             <a href="#" class="button button-mini button-circle button-green"><i class="icon-download"></i>พิมพ์ใบเสร็จรับเงิน</a>
                                                                         </td>
