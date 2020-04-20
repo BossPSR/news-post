@@ -1,7 +1,6 @@
-
 <div class="form-group" style="text-align: left;font-size:16px;">
     <b>วาระการประชุม <span style="color:red;">( เพื่อความถูกต้องของข้อมูล แนะนำให้พิมพ์เท่านั้น !! ) จำกัดจำนวนบรรทัด 10 บรรทัด</span></b>
-    <textarea class="form-control" name="agendaA" id="agendaA" rows="10" placeholder="สถานที่จัดประชุม / ที่อยู่บริษัท (กรณีเลิกบริษัท)"></textarea>
+    <textarea class="form-control" name="agendaA" id="agendaA"  placeholder="สถานที่จัดประชุม / ที่อยู่บริษัท (กรณีเลิกบริษัท)"></textarea>
 </div>
 <div class="form-group" style="text-align: left;font-size:16px;">
     <b>ชื่อบริษัท / ชื่อหน่วยงาน</b>
@@ -85,7 +84,7 @@
 </div>
 <div class="form-group travel-date-group" style="text-align: left;font-size:16px;">
     <b>วันที่ลงโฆษณา</b>
-    <input type="text" name="advertisementA" id="advertisementA"  value="<?php echo date('d/m/Y'); ?>" class="form-control tleft default" placeholder="วันที่ลงโฆษณา">
+    <input type="text" name="advertisementA" id="advertisementA" value="<?php echo date('d/m/Y'); ?>" class="form-control tleft default" placeholder="วันที่ลงโฆษณา">
 </div>
 <div class="form-group" style="text-align: left;font-size:16px;">
     <b>ชื่อ-นามสกุลผู้ลงนาม (กรุณาใส่คำนำหน้าชื่อ)</b>

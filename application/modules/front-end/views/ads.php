@@ -146,78 +146,78 @@
 				</button>
 			</div>
 			<div class="modal-body" style="padding: 30px;">
-				
-					<div id="txtA">
-						<p class="text-right" id="detail0"></p>
-						<p id="detail1" style="text-align: center"></p>
-						<p id="detail2" style="margin-bottom: 0px;"></p>
-						<p id="detail3"></p>
-						<!-- <p id=""></p> -->
-						<p style="margin-bottom: 0px;">
-							<span id="detail4"></span>
-							<span id="detail5"></span>
-							<span id="detail6"></span>
-							<span id="detail7"></span>
-						</p>
-						<div id="detail8"></div>
 
-						<div id="detail9" style="padding-top: 10px">
-							<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ดังนั้น จึงขอเรียนเชิญ <span id="detail10"></span> ไปประชุมตามวัน เวลา และสถานที่ดังกล่าวข้างต้นโดยพร้อมเพรียงกันด้วย จักขอบพระคุณยิ่ง</p>
-						</div>
-						<div class="text-center" style="float: right;width: 50%;">
-							<p id="detail11" style="margin-bottom: 0px;">ขอแสดงความนับถือ</p>
-							<p id="detail12" style="margin-bottom: 0px;"></p>
-							<p id="detail13" style="margin-bottom: 0px;"></p>
-						</div>
-					</div>
-					<div id="txtB">
-						<p class="text-center" id="detailB1" style="font-weight: 900;">ประกาศเลิกบริษัท</p>
-						<p class="text-center" id="detailB2" style="margin-bottom: 0px;"></p>
-						<p class="text-center" id="detailB3"></p>
-						<p style="margin-bottom: 0px;">
-							<span id="detailB4"></span>
-							<span id="detailB5"></span>
-							<span id="detailB6"></span>
-						</p>
-						<p id="detailB7"></p>
+				<div id="txtA">
+					<p class="text-right" id="detail0"></p>
+					<p id="detail1" style="text-align: center"></p>
+					<p id="detail2" style="margin-bottom: 0px;"></p>
+					<p id="detail3"></p>
+					<!-- <p id=""></p> -->
+					<p style="margin-bottom: 0px;">
+						<span id="detail4"></span>
+						<span id="detail5"></span>
+						<span id="detail6"></span>
+						<span id="detail7"></span>
+					</p>
+					<div id="detail8"></div>
 
-						<div class="text-center" style="float: right;width: 50%;">
-							<p id="detailB8"></p>
-							<p id="detailB9" style="margin-bottom: 0px;"></p>
-							<p id="detailB10" style="margin-bottom: 0px;"></p>
-						</div>
+					<div id="detail9" style="padding-top: 10px">
+						<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ดังนั้น จึงขอเรียนเชิญ <span id="detail10"></span> ไปประชุมตามวัน เวลา และสถานที่ดังกล่าวข้างต้นโดยพร้อมเพรียงกันด้วย จักขอบพระคุณยิ่ง</p>
 					</div>
-					<div id="txtC">
-						<p class="text-right" id="detailฺC1" style="margin-bottom: 15px;"></p>
-						<p class="text-center" id="detailฺC2" style="margin-bottom: 0px;"></p>
-						<p id="detailฺC3" style="margin-bottom: 0px;">เรื่อง จ่ายเงินปันผลระหว่างกาล</p>
-						<p style="margin-bottom: 15px;">
-							<span id="detailฺC4"></span>
-							<span id='detailฺC5'></span>
-						</p>
-						<p style="margin-bottom: 15px;">
-							<span id="detailฺC6"></span>
-							<span id="detailฺC7"></span>
-							<span id="detailฺC8"></span>
-							<span id="detailฺC9"></span>
-							<span id="detailฺC10"></span>
-							<span id="detailฺC11"></span>
-							<span id="detailฺC12"></span>
-							<span id="detailฺC13"></span>
-							<span id="detailฺC13"></span>
-							<span id="detailฺC15"></span>
-							<span id="detailฺC16"></span>
-							<span id="detailฺC17"></span>
-						</p>
-						<p id="detailฺC18" ></p>
-						<div class="text-center" style="float: right;width: 50%;">
-							<p style="margin-bottom: 15px;">จึงเรียนมาเพื่อทราบ</p>
-							<p id="detailฺC19" style="margin-bottom: 15px;"></p>
-							<p id="detailฺC20" style="margin-bottom: 0px;"></p>
-							<p id="detailฺC21" ></p>
-						</div>
+					<div class="text-center" style="float: right;width: 50%;">
+						<p id="detail11" style="margin-bottom: 0px;">ขอแสดงความนับถือ</p>
+						<p id="detail12" style="margin-bottom: 0px;"></p>
+						<p id="detail13" style="margin-bottom: 0px;"></p>
 					</div>
-				
+				</div>
+				<div id="txtB">
+					<p class="text-center" id="detailB1" style="font-weight: 900;">ประกาศเลิกบริษัท</p>
+					<p class="text-center" id="detailB2" style="margin-bottom: 0px;"></p>
+					<p class="text-center" id="detailB3"></p>
+					<p style="margin-bottom: 0px;">
+						<span id="detailB4"></span>
+						<span id="detailB5"></span>
+						<span id="detailB6"></span>
+					</p>
+					<p id="detailB7"></p>
+
+					<div class="text-center" style="float: right;width: 50%;">
+						<p id="detailB8"></p>
+						<p id="detailB9" style="margin-bottom: 0px;"></p>
+						<p id="detailB10" style="margin-bottom: 0px;"></p>
+					</div>
+				</div>
+				<div id="txtC">
+					<p class="text-right" id="detailฺC1" style="margin-bottom: 15px;"></p>
+					<p class="text-center" id="detailฺC2" style="margin-bottom: 0px;"></p>
+					<p id="detailฺC3" style="margin-bottom: 0px;">เรื่อง จ่ายเงินปันผลระหว่างกาล</p>
+					<p style="margin-bottom: 15px;">
+						<span id="detailฺC4"></span>
+						<span id='detailฺC5'></span>
+					</p>
+					<p style="margin-bottom: 15px;">
+						<span id="detailฺC6"></span>
+						<span id="detailฺC7"></span>
+						<span id="detailฺC8"></span>
+						<span id="detailฺC9"></span>
+						<span id="detailฺC10"></span>
+						<span id="detailฺC11"></span>
+						<span id="detailฺC12"></span>
+						<span id="detailฺC13"></span>
+						<span id="detailฺC13"></span>
+						<span id="detailฺC15"></span>
+						<span id="detailฺC16"></span>
+						<span id="detailฺC17"></span>
+					</p>
+					<p id="detailฺC18"></p>
+					<div class="text-center" style="float: right;width: 50%;">
+						<p style="margin-bottom: 15px;">จึงเรียนมาเพื่อทราบ</p>
+						<p id="detailฺC19" style="margin-bottom: 15px;"></p>
+						<p id="detailฺC20" style="margin-bottom: 0px;"></p>
+						<p id="detailฺC21"></p>
+					</div>
+				</div>
+
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-secondary" data-dismiss="modal">ปิดหน้าต่าง</button>
@@ -445,43 +445,43 @@
 				$("#moneyC").keyup(function() {
 					var value = $(this).val();
 
-					$("#detailฺC14").text(' คิดเป็นเงิน ' + value );
+					$("#detailฺC14").text(' คิดเป็นเงิน ' + value);
 				}).keyup();
 
 				$("#stockC").keyup(function() {
 					var value = $(this).val();
 
-					$("#detailฺC15").text('(' + value + ') บาท'  );
+					$("#detailฺC15").text('(' + value + ') บาท');
 				}).keyup();
 
 				$("#reserveC").keyup(function() {
 					var value = $(this).val();
 
-					$("#detailฺC16").text(' และจัดสรรเป็นเงินกองทุนสำรอง ' + value );
+					$("#detailฺC16").text(' และจัดสรรเป็นเงินกองทุนสำรอง ' + value);
 				}).keyup();
 
 				$("#characterC").keyup(function() {
 					var value = $(this).val();
 
-					$("#detailฺC17").text( ' (' + value + ') บาท' );
+					$("#detailฺC17").text(' (' + value + ') บาท');
 				}).keyup();
 
 				$("#paymentC").change(function() {
 					var value = $(this).val();
 
-					$("#detailฺC18").html( ' &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;โดยบริษัทฯ กำหนดจะจ่ายเงินปันผลให้กับผู้ถือหุ้นภายในวันที่ วันที่ ' + value );
+					$("#detailฺC18").html(' &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;โดยบริษัทฯ กำหนดจะจ่ายเงินปันผลให้กับผู้ถือหุ้นภายในวันที่ วันที่ ' + value);
 				}).keyup();
 
 				$("#dateC").change(function() {
 					var value = $(this).val();
 
-					$("#detailฺC19").text( ' ประกาศ ณ วันที่ ' + value );
+					$("#detailฺC19").text(' ประกาศ ณ วันที่ ' + value);
 				}).keyup();
 
 				$("#signerC").change(function() {
 					var value = $(this).val();
 
-					$("#detailฺC20").text( '(' + value + ')');
+					$("#detailฺC20").text('(' + value + ')');
 				}).keyup();
 
 				$("#positionC").keyup(function() {
@@ -547,6 +547,7 @@
 				}).keyup();
 
 				$("#agendaA").keyup(function() {
+					console.log($(this).val())
 					$.ajax({
 						url: "textarea",
 						data: {
@@ -575,5 +576,23 @@
 
 
 		});
+	});
+</script>
+
+<script type="text/javascript">
+	$('#op_title').change(function() {
+			$('.te1').css('display', 'none');
+			$('.te2').css('display', 'none');
+			$('.te3').css('display', 'none');
+			$('.te4').css('display', 'none');
+		if (this.value == "เชิญประชุมปิดงบประมาณ") {
+			$('.te1').css('display', 'block');	
+		} else if (this.value == "กำหนดรายละเอียดการประชุมเอง") {
+			$('.te2').css('display', 'block');
+		} else if (this.value == "เชิญประชุมย้ายที่อยู่") {
+			$('.te3').css('display', 'block');
+		} else if (this.value == "เชิญประชุมลดทุน") {
+			$('.te4').css('display', 'block');
+		}
 	});
 </script>

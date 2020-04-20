@@ -37,6 +37,8 @@
 	<link rel="stylesheet" href="public/assets/front-end/css/colors.php?color=1c85e8" type="text/css" />
 	<script src="public/assets/front-end/js/jquery.js"></script>
 	<script src="public/assets/front-end/sweetalert2.js"></script>
+	<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+  	<script>tinymce.init({selector:'textarea'});</script>
 
 	<!-- Document Title
 	============================================= -->
