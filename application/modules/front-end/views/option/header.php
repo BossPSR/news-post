@@ -177,10 +177,28 @@
 								<ul>
 									<?php if (!empty($user)) { ?>
 										<li class="h_menu">
+											<a href="#">
+												<div><?= $user['email']; ?></div>
+											</a>
+											<ul>
+												<li>
+													<a href="profile">
+														<div>ข้อมูลส่วนตัว</div>
+													</a>
+													<a href="publish">
+														<div>โฆษณาของฉัน</div>
+													</a>
+													<a href="order-history">
+														<div>ประวัติรายการสั่งซื้อ</div>
+													</a>
+												</li>
+											</ul>
+										</li>
+										<!-- <li class="h_menu">
 											<a href="">
 												<div><?= $user['email']; ?></div>
 											</a>
-										</li>
+										</li> -->
 										<li class="h_menu">
 											<a href="">
 												<div><i class="icon-coins"></i> <?= $user['point']; ?> Coin </div>
@@ -270,7 +288,6 @@
 										<a class="dropdown-item" href="profile">ข้อมูลส่วนตัว</a>
 										<a class="dropdown-item" href="publish">โฆษณาของฉัน</a>
 										<a class="dropdown-item" href="order-history">ประวัติรายการสั่งซื้อ</a>
-										<a class="dropdown-item" href="credit-history">ประวัติการใช้เครดิต</a>
 										<div class="dropdown-divider"></div>
 										<a class="dropdown-item" href="logout" onclick="return confirm('Are you sure to logout?');">ออกจากระบบ</a>
 									</div>

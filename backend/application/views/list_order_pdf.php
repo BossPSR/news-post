@@ -91,7 +91,7 @@
                                                                     <a href="../uploads/pdf/<?php echo $pdf['file_name']; ?>" target="_blank"><i class="feather icon-file-text" style="font-size: 25px; cursor: pointer;"></i></a>
                                                                 <?php endif; ?>
 
-                                                                
+
                                                             </td>
                                                             <td><?php echo $pdf['topic']; ?></td>
                                                             <td><?php echo $pdf['date']; ?></td>
@@ -119,12 +119,12 @@
                                                                                             <select name="topic" class="form-control">
                                                                                                 <option value="0" selected disabled>กรุณาเลือก</option>
 
-                                                                                                <option value="แบบไฟล์ PDF (ขนาดไฟล์เท่ากับ A4 เท่านั้น)" <?php if ($pdf['topic'] == "แบบไฟล์ PDF (ขนาดไฟล์เท่ากับ A4 เท่านั้น)") {
+                                                                                                <option value="แบบไฟล์PDF" <?php if ($pdf['topic'] == "แบบไฟล์PDF") {
                                                                                                                                                                 echo "selected='selected'";
-                                                                                                                                                            } ?>>แบบไฟล์ PDF (ขนาดไฟล์เท่ากับ A4 เท่านั้น)</option>
-                                                                                                <option value="แบบรูปภาพ (ขนาดไฟล์เท่ากับ A4 เท่านั้น)" <?php if ($pdf['topic'] == "แบบรูปภาพ (ขนาดไฟล์เท่ากับ A4 เท่านั้น)") {
+                                                                                                                                                            } ?>>แบบไฟล์ PDF</option>
+                                                                                                <option value="แบบรูปภาพ" <?php if ($pdf['topic'] == "แบบรูปภาพ") {
                                                                                                                                                             echo "selected='selected'";
-                                                                                                                                                        } ?>>แบบรูปภาพ (ขนาดไฟล์เท่ากับ A4 เท่านั้น)</option>
+                                                                                                                                                        } ?>>แบบรูปภาพ</option>
                                                                                             </select>
                                                                                         </div>
                                                                                     </div>
@@ -195,27 +195,24 @@
                                     <div class="col-xl-12 col-md-6 col-12 mb-1">
                                         <div class="form-group">
                                             <label for="helpInputTop">เลือกหัวข้อ/เรื่อง</label>
-                                            <select name="topic" class="form-control">
+                                            <select name="topic" class="form-control" id="op_title_PDF">
                                                 <option value="0" selected disabled>กรุณาเลือก</option>
-                                                <option value="แบบไฟล์ PDF (ขนาดไฟล์เท่ากับ A4 เท่านั้น)">แบบไฟล์ PDF (ขนาดไฟล์เท่ากับ A4 เท่านั้น)</option>
-                                                <option value="แบบรูปภาพ (ขนาดไฟล์เท่ากับ A4 เท่านั้น)">แบบรูปภาพ (ขนาดไฟล์เท่ากับ A4 เท่านั้น)</option>
-
+                                                <option value="แบบไฟล์PDF">แบบไฟล์ PDF</option>
+                                                <option value="แบบรูปภาพ">แบบรูปภาพ</option>
                                             </select>
                                         </div>
                                     </div>
 
                                     <div class="col-xl-12 col-md-6 col-12 mb-1">
-                                        <div class="form-group">
-                                            <label for="helpInputTop">วันที่ลงโฆษณา</label>
-                                            <input type="date" name="date" value="" min="<?php echo date('Y-m-d') ?>" class="form-control">
+                                        <div class="form-group " id="pdfA" style="display: none">
+                                            <?php include('option/pdfA.php'); ?>
                                         </div>
                                     </div>
                                     <div class="col-xl-12 col-md-6 col-12 mb-1">
-                                        <div class="form-group">
-                                            <label for="helpInputTop">File name</label>
-                                            <input type="file" class="form-control" name="file_name" id="image-source" onchange="previewImage();" placeholder="Enter file_name">
+                                        <div class="form-group" id="pdfB" style="display: none">
+                                            <?php include('option/pdfB.php'); ?>
                                         </div>
-                                        <img id="image-preview" alt="image preview" style="width:auto;height: 200px;">
+
                                     </div>
                                     <div class="modal-footer">
                                         <div class="add-data-footer d-flex justify-content-around px-3 mt-2">
@@ -240,6 +237,24 @@
 
     <?php include('option/footer.php'); ?>
     <?php include('option/script.php'); ?>
+
+    <script type="text/javascript">
+        $('#op_title_PDF').change(function() {
+            $('#pdfA').css('display', 'none');
+            $('#pdfB').css('display', 'none');
+
+            if (this.value == "แบบไฟล์PDF") {
+                $('#pdfA').css('display', 'block');
+                $('#pdfB').css('display', 'none');
+            } else {
+                $('#pdfA').css('display', 'none');
+                $('#pdfB').css('display', 'block');
+            }
+        });
+
+        // $('.ee').css('display', 'none');
+        // $('.gg').css('display', 'flex');
+    </script>
 </body>
 <!-- END: Body-->
 
