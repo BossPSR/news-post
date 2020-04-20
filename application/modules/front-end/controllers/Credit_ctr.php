@@ -63,6 +63,11 @@ class Credit_ctr extends CI_Controller
                 ];
 
                 $success =  $this->db->insert('tbl_omise', $data);
+                $user = $this->db->get_where('tbl_user',['email' => $this->session->userdata('email')])->row_array();
+                $newPoint = $user['point'] + $result_count;
+                $dataUser['point'] = $newPoint;
+                $this->db->where('id_user',$user['id_user']);
+                $this->db->update('tbl_user',$dataUser);
 
                 if ($success > 0) {
                     $this->session->set_flashdata('response', 'การสั่งซื้อสินค้าเรียบร้อยแล้ว.');
