@@ -33,6 +33,8 @@ $route['credit-history']    = 'front-end/Credit_history_ctr';
 $route['PDF']               = 'front-end/PDF_ctr';
 $route['PDF-F']               = 'front-end/CustomFpdf_ctr';
 
+$route['profile']           = 'front-end/Profile_ctr/profile';
+$route['profile-update']    = 'front-end/Profile_ctr/profile_edit';
 $route['contact']           = 'front-end/Contact_ctr/index';
 $route['contact_add']       = 'front-end/Contact_ctr/contact_add';
 
