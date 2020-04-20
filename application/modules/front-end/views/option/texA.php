@@ -89,9 +89,9 @@
 </div>
 <div class="form-group" style="text-align: left;font-size:16px;">
     <b>ชื่อ-นามสกุลผู้ลงนาม (กรุณาใส่คำนำหน้าชื่อ)</b>
-    <input type="text" name="signA" class="form-control" placeholder="ชื่อ-นามสกุลผู้ลงนาม (กรุณาใส่คำนำหน้าชื่อ)">
+    <input type="text" name="signA" id="signA" class="form-control" placeholder="ชื่อ-นามสกุลผู้ลงนาม (กรุณาใส่คำนำหน้าชื่อ)">
 </div>
 <div class="form-group" style="text-align: left;font-size:16px;">
     <b>ตำแหน่งผู้ลงนาม</b>
-    <input type="text" name="positionA" class="form-control" placeholder="กรรมการผู้มีอำนาจลงนาม" value="กรรมการผู้มีอำนาจลงนาม">
+    <input type="text" name="positionA" id="positionA" class="form-control" placeholder="กรรมการผู้มีอำนาจลงนาม" value="กรรมการผู้มีอำนาจลงนาม">
 </div>

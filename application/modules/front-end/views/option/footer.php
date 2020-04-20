@@ -180,7 +180,7 @@
 			$(function() {
 				$('.travel-date-group .default').datepicker({
 					autoclose: true,
-					startDate: "today",
+					endDate: "yesterday",
 					format: "dd/mm/yyyy",
 				});
 

@@ -145,33 +145,82 @@
 					<span aria-hidden="true">&times;</span>
 				</button>
 			</div>
-			<div class="modal-body">
-				<div style="border: 1px solid #eee; padding: 20px;">
-					<p class="text-right" id="detail0"></p>
-					<br>
-					<p id="detail1" style="text-align: center"></p>
-					<p id="detail2" style="margin-bottom: 0px;"></p>
-					<p id="detail3"></p>
-					<!-- <p id=""></p> -->
-					<p style="margin-bottom: 0px;">
-						<span id="detail4"></span>
-						<span id="detail5"></span>
-						<span id="detail6"></span>
-						<span id="detail7"></span>
-					</p>
-					<div id="detail8"></div>
-					
-					<div id="detail9" style="padding-top: 10px"><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ดังนั้น จึงขอเรียนเชิญ <span id="detail10"></span> ไปประชุมตามวัน เวลา และสถานที่ดังกล่าวข้างต้นโดยพร้อมเพรียงกันด้วย จักขอบพระคุณยิ่ง</p></div>
-					<div class="text-center" style="float: right;width: 50%;" >
-						<p id="detail11" style="margin-bottom: 0px;">ขอแสดงความนับถือ</p>
-						<p id="detail12" style="margin-bottom: 0px;">(นายทดสอบ)</p>
-						<p id="detail13" style="margin-bottom: 0px;">กรรมการผู้มีอำนาจลงนาม tETS</p>
+			<div class="modal-body" style="padding: 30px;">
+				
+					<div id="txtA">
+						<p class="text-right" id="detail0"></p>
+						<p id="detail1" style="text-align: center"></p>
+						<p id="detail2" style="margin-bottom: 0px;"></p>
+						<p id="detail3"></p>
+						<!-- <p id=""></p> -->
+						<p style="margin-bottom: 0px;">
+							<span id="detail4"></span>
+							<span id="detail5"></span>
+							<span id="detail6"></span>
+							<span id="detail7"></span>
+						</p>
+						<div id="detail8"></div>
+
+						<div id="detail9" style="padding-top: 10px">
+							<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ดังนั้น จึงขอเรียนเชิญ <span id="detail10"></span> ไปประชุมตามวัน เวลา และสถานที่ดังกล่าวข้างต้นโดยพร้อมเพรียงกันด้วย จักขอบพระคุณยิ่ง</p>
+						</div>
+						<div class="text-center" style="float: right;width: 50%;">
+							<p id="detail11" style="margin-bottom: 0px;">ขอแสดงความนับถือ</p>
+							<p id="detail12" style="margin-bottom: 0px;"></p>
+							<p id="detail13" style="margin-bottom: 0px;"></p>
+						</div>
 					</div>
-				</div>
+					<div id="txtB">
+						<p class="text-center" id="detailB1" style="font-weight: 900;">ประกาศเลิกบริษัท</p>
+						<p class="text-center" id="detailB2" style="margin-bottom: 0px;"></p>
+						<p class="text-center" id="detailB3"></p>
+						<p style="margin-bottom: 0px;">
+							<span id="detailB4"></span>
+							<span id="detailB5"></span>
+							<span id="detailB6"></span>
+						</p>
+						<p id="detailB7"></p>
+
+						<div class="text-center" style="float: right;width: 50%;">
+							<p id="detailB8"></p>
+							<p id="detailB9" style="margin-bottom: 0px;"></p>
+							<p id="detailB10" style="margin-bottom: 0px;"></p>
+						</div>
+					</div>
+					<div id="txtC">
+						<p class="text-right" id="detailฺC1" style="margin-bottom: 15px;"></p>
+						<p class="text-center" id="detailฺC2" style="margin-bottom: 0px;"></p>
+						<p id="detailฺC3" style="margin-bottom: 0px;">เรื่อง จ่ายเงินปันผลระหว่างกาล</p>
+						<p style="margin-bottom: 15px;">
+							<span id="detailฺC4"></span>
+							<span id='detailฺC5'></span>
+						</p>
+						<p style="margin-bottom: 15px;">
+							<span id="detailฺC6"></span>
+							<span id="detailฺC7"></span>
+							<span id="detailฺC8"></span>
+							<span id="detailฺC9"></span>
+							<span id="detailฺC10"></span>
+							<span id="detailฺC11"></span>
+							<span id="detailฺC12"></span>
+							<span id="detailฺC13"></span>
+							<span id="detailฺC13"></span>
+							<span id="detailฺC15"></span>
+							<span id="detailฺC16"></span>
+							<span id="detailฺC17"></span>
+						</p>
+						<p id="detailฺC18" ></p>
+						<div class="text-center" style="float: right;width: 50%;">
+							<p style="margin-bottom: 15px;">จึงเรียนมาเพื่อทราบ</p>
+							<p id="detailฺC19" style="margin-bottom: 15px;"></p>
+							<p id="detailฺC20" style="margin-bottom: 0px;"></p>
+							<p id="detailฺC21" ></p>
+						</div>
+					</div>
+				
 			</div>
 			<div class="modal-footer">
-				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-				<button type="button" class="btn btn-primary">Save changes</button>
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">ปิดหน้าต่าง</button>
 			</div>
 		</div>
 	</div>
@@ -231,121 +280,300 @@
 	// $('.gg').css('display', 'flex');
 </script>
 <script>
-	$("#NUMBER")
-		.keyup(function() {
-			var value = $(this).val();
-			$("#TEXTNUMBER").val(ArabicNumberToText(value));
-		})
-		.keyup();
-	$("#NUMBER2")
-		.keyup(function() {
-			var value = $(this).val();
-			$("#TEXTNUMBER2").val(ArabicNumberToText(value));
-		})
-		.keyup();
-	$("#NUMBER3")
-		.keyup(function() {
-			var value = $(this).val();
-			$("#TEXTNUMBER3").val(ArabicNumberToText(value));
-		})
-		.keyup();
+	// $("#NUMBER")
+	// 	.keyup(function() {
+	// 		var value = $(this).val();
+	// 		$("#TEXTNUMBER").val(ArabicNumberToText(value));
+	// 	})
+	// 	.keyup();
+	// $("#NUMBER2")
+	// 	.keyup(function() {
+	// 		var value = $(this).val();
+	// 		$("#TEXTNUMBER2").val(ArabicNumberToText(value));
+	// 	})
+	// 	.keyup();
+	// $("#NUMBER3")
+	// 	.keyup(function() {
+	// 		var value = $(this).val();
+	// 		$("#TEXTNUMBER3").val(ArabicNumberToText(value));
+	// 	})
+	// 	.keyup();
 </script>
 <script>
 	$(document).ready(function() {
-		$("#advertisementA").keyup(function() {
-			var value = $(this).val();
 
-			$("#detail1").text('วันที่ ' + value);
-		}).keyup();
+		$('#op_title').change(function() {
+			if (this.value == "ประกาศเลิกบริษัท") {
 
-	});
+				$('#txtA').css('display', 'none');
+				$('#txtB').css('display', 'block');
+				$('#txtC').css('display', 'none');
 
-	$(document).ready(function() {
-		$("#companyA").keyup(function() {
-			var value = $(this).val();
+				$("#companyฺB").keyup(function() {
+					var value = $(this).val();
 
-			$("#detail0").text(value);
-		}).keyup();
+					$("#detailB2").text(value);
+				}).keyup();
 
-	});
+				$("#TaxpayerB").keyup(function() {
+					var value = $(this).val();
 
-	$(document).ready(function() {
-		$("#meetingA").keyup(function() {
-			var value = $(this).val();
+					$("#detailB3").text('ทะเบียนเลขที่ ' + value);
+				}).keyup();
 
-			$("#detail2").text('เรื่อง ขอเชิญประชุมวิสามัญผู้ถือหุ้น ครั้งที่ ' + value);
-		}).keyup();
+				$("#meetingB").keyup(function() {
+					var value = $(this).val();
 
-	});
+					$("#detailB4").html('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ขอประกาศให้ทราบโดยทั่วกันว่าที่ประชุมวิสามัญผู้ถือหุ้น ครั้งที่ ' + value);
+				}).keyup();
 
-	$(document).ready(function() {
-		$("#announceA").keyup(function() {
-			var value = $(this).val();
+				$("#companyฺB").keyup(function() {
+					var value = $(this).val();
 
-			$("#detail3").text('เรียน ' + value);
-		}).keyup();
+					$("#detailB5").text(' ของ ' + value);
+				}).keyup();
 
-	});
+				$("#dissolveB").keyup(function() {
+					var value = $(this).val();
+
+					$("#detailB6").text(' ได้มีมติให้เลิกบริษัทฯ นี้ ตั้งแต่ วันที่ ' + value + ' เป็นต้นไป ');
+				}).keyup();
+
+				$("#addressB").keyup(function() {
+					var value = $(this).val();
+
+					$("#detailB7").html('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; จึงประกาศให้บรรดาลูกหนี้และเจ้าหนี้ทั้งหลายของบริษัทฯ นี้ ได้โปรดติดต่อชำระหนี้หรือยื่นคำทวงหนี้ต่อข้าพเจ้า ณ สำนักงานของผู้ชำระบัญชีเลขที่ ' + value + ' ภายในกำหนด 7 วัน นับแต่วันประกาศเป็นต้นไป');
+				}).keyup();
+
+				$("#postB").keyup(function() {
+					var value = $(this).val();
+
+					$("#detailB8").html(' ประกาศ ณ วันที่ ' + value);
+				}).keyup();
+
+				$("#signerB").keyup(function() {
+					var value = $(this).val();
+
+					$("#detailB9").text('(' + value + ')');
+				}).keyup();
+
+				$("#positionB").keyup(function() {
+					var value = $(this).val();
+
+					$("#detailB10").text(value);
+				}).keyup();
+
+			} else if (this.value == "ประกาศจ่ายเงินปันผล") {
+
+				$('#txtA').css('display', 'none');
+				$('#txtB').css('display', 'none');
+				$('#txtC').css('display', 'block');
+
+				$("#companyC").keyup(function() {
+					var value = $(this).val();
+
+					$("#detailฺC1").text(value);
+				}).keyup();
+
+				$("#dateC").change(function() {
+					var value = $(this).val();
+
+					$("#detailฺC2").text('วันที่ ' + value);
+				}).keyup();
+
+				$("#announcementC").keyup(function() {
+					var value = $(this).val();
+
+					$("#detailฺC4").text('เรียน ' + value);
+				}).keyup();
+
+				$("#companyC").keyup(function() {
+					var value = $(this).val();
+
+					$("#detailฺC5").text(' ' + value);
+				}).keyup();
+
+				$("#meetingC").keyup(function() {
+					var value = $(this).val();
+
+					$("#detailฺC6").html('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ด้วยมติที่ประชุมคณะกรรมการของบริษัท ครั้งที่ ' + value);
+				}).keyup();
+
+				$("#meetingDateC").change(function() {
+					var value = $(this).val();
+
+					$("#detailฺC7").text(' เมื่อ วันที่ ' + value);
+				}).keyup();
+
+				$("#meetingTimeC").change(function() {
+					var value = $(this).val();
+
+					$("#detailฺC8").text(' เวลา ' + value);
+				}).keyup();
+
+				$("#addressC").keyup(function() {
+					var value = $(this).val();
+
+					$("#detailฺC9").text(' ณ ' + value);
+				}).keyup();
+
+				$(".numberso").keyup(function() {
+					var value = $(this).val();
+
+					$("#detailฺC10").html(' ได้อนุมัติให้จ่ายเงินปันผลระหว่างกาลให้กับผู้ถือหุ้นในอัตราหุ้นละ ' + value);
+				}).keyup();
+
+				$(".TEXTNUMBERs").keyup(function() {
+					var value = $(this).val();
+
+					$("#detailฺC11").text('(' + value + ') บาท');
+				}).keyup();
+
+				$("#meetingDateC").change(function() {
+					var value = $(this).val();
+
+					$("#detailฺC12").text(' ปรากฏตามรายชื่อผู้ถือหุ้น ณ วันที่ ' + value);
+				}).keyup();
 
 
-	$(document).ready(function() {
-		$("#meetingA").keyup(function() {
-			var value = $(this).val();
+				$("#allshares").keyup(function() {
+					var value = $(this).val();
 
-			$("#detail4").html('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ด้วยคณะกรรมการของบริษัทมีมติให้เรียกประชุมวิสามัญผู้ถือหุ้น ครั้งที่ ' + value);
-		}).keyup();
+					$("#detailฺC13").text(' ปรากฏตามรายชื่อผู้ถือหุ้น ณ วันที่ ' + value + ' หุ้น ');
+				}).keyup();
 
-	});
+				$("#moneyC").keyup(function() {
+					var value = $(this).val();
 
-	$(document).ready(function() {
-		$("#announcedateA").keyup(function() {
-			var value2 = $(this).val();
+					$("#detailฺC14").text(' คิดเป็นเงิน ' + value );
+				}).keyup();
 
-			$("#detail5").text(' ใน วันที่ ' + value2);
-		}).keyup();
+				$("#stockC").keyup(function() {
+					var value = $(this).val();
 
-	});
+					$("#detailฺC15").text('(' + value + ') บาท'  );
+				}).keyup();
 
-	$(document).ready(function() {
-		$("#timeA").change(function() {
-			var value3 = $(this).val();
+				$("#reserveC").keyup(function() {
+					var value = $(this).val();
 
-			$("#detail6").text(' เวลา ' + value3 + ' น.');
-		}).keyup();
+					$("#detailฺC16").text(' และจัดสรรเป็นเงินกองทุนสำรอง ' + value );
+				}).keyup();
 
-	});
+				$("#characterC").keyup(function() {
+					var value = $(this).val();
 
-	$(document).ready(function() {
-		$("#placeA").keyup(function() {
-			var value4 = $(this).val();
+					$("#detailฺC17").text( ' (' + value + ') บาท' );
+				}).keyup();
 
-			$("#detail7").text(' ณ ' + value4 + ' เพื่อพิจารณาเรื่องต่างๆ ตามระเบียบวาระดังต่อไปนี้');
-		}).keyup();
+				$("#paymentC").change(function() {
+					var value = $(this).val();
 
-	});
+					$("#detailฺC18").html( ' &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;โดยบริษัทฯ กำหนดจะจ่ายเงินปันผลให้กับผู้ถือหุ้นภายในวันที่ วันที่ ' + value );
+				}).keyup();
 
-	
-	$(document).ready(function() {
-		$("#agendaA").keyup(function() {
-			$.ajax({
-				url: "textarea",
-				data: {
-					data: $(this).val()
-				},
-				success: function(getData) {
-					var value4 = getData;
-					$("#detail8").html(value4);
-				}
-			});
-		}).keyup();
-	});
+				$("#dateC").change(function() {
+					var value = $(this).val();
 
-	$(document).ready(function() {
-		$("#announceA").keyup(function() {
-			var value = $(this).val();
+					$("#detailฺC19").text( ' ประกาศ ณ วันที่ ' + value );
+				}).keyup();
 
-			$("#detail10").text(value);
-		}).keyup();
+				$("#signerC").change(function() {
+					var value = $(this).val();
 
+					$("#detailฺC20").text( '(' + value + ')');
+				}).keyup();
+
+				$("#positionC").keyup(function() {
+					var value = $(this).val();
+
+					$("#detailฺC21").text(value);
+				}).keyup();
+
+
+			} else {
+
+				$('#txtA').css('display', 'block');
+				$('#txtB').css('display', 'none');
+				$('#txtC').css('display', 'none');
+
+
+				$("#advertisementA").change(function() {
+					var value = $(this).val();
+
+					$("#detail1").text('วันที่ ' + value);
+				}).keyup();
+
+				$("#companyA").keyup(function() {
+					var value1 = $(this).val();
+
+					$("#detail0").text(value1);
+				}).keyup();
+
+				$("#meetingA").keyup(function() {
+					var value2 = $(this).val();
+
+					$("#detail2").text('เรื่อง ขอเชิญประชุมวิสามัญผู้ถือหุ้น ครั้งที่ ' + value2);
+				}).keyup();
+
+				$("#announceA").keyup(function() {
+					var value3 = $(this).val();
+
+					$("#detail3").text('เรียน ' + value3);
+				}).keyup();
+
+				$("#meetingA").keyup(function() {
+					var value4 = $(this).val();
+
+					$("#detail4").html('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ด้วยคณะกรรมการของบริษัทมีมติให้เรียกประชุมวิสามัญผู้ถือหุ้น ครั้งที่ ' + value4);
+				}).keyup();
+
+				$("#announcedateA").change(function() {
+					var value5 = $(this).val();
+
+					$("#detail5").text(' ใน วันที่ ' + value5);
+				}).keyup();
+
+				$("#timeA").change(function() {
+					var value6 = $(this).val();
+
+					$("#detail6").text(' เวลา ' + value6 + ' น.');
+				}).keyup();
+
+				$("#placeA").keyup(function() {
+					var value7 = $(this).val();
+
+					$("#detail7").text(' ณ ' + value7 + ' เพื่อพิจารณาเรื่องต่างๆ ตามระเบียบวาระดังต่อไปนี้');
+				}).keyup();
+
+				$("#agendaA").keyup(function() {
+					$.ajax({
+						url: "textarea",
+						data: {
+							data: $(this).val()
+						},
+						success: function(getData) {
+							var value4 = getData;
+							$("#detail8").html(value4);
+						}
+					});
+				}).keyup();
+
+				$("#signA").keyup(function() {
+					var value8 = $(this).val();
+
+					$("#detail12").text(value8);
+				}).keyup();
+
+				$("#positionA").keyup(function() {
+					var value8 = $(this).val();
+
+					$("#detail13").text(value8);
+				}).keyup();
+
+			}
+
+
+		});
 	});
 </script>
