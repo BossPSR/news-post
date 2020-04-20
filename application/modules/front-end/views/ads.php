@@ -304,7 +304,6 @@
 
 		$('#op_title').change(function() {
 			let val_opTitle = $(this).val();
-			
 				$('#txtA').css('display', 'none');
 				$('#txtB').css('display', 'none');
 				$('#txtC').css('display', 'none');
@@ -495,7 +494,8 @@
 			} else {
 
 				$('#txtA').css('display', 'block');
-
+				$('#agendaA').val("");
+				
 				let value_agenda = "";
 				if(val_opTitle == "เชิญประชุมปิดงบประมาณ") {
 					 	value_agenda = "1. รับรองรายงานการประชุมครั้งที่ผ่านมา";
@@ -611,7 +611,7 @@
 				}
 
 				
-				$('#agendaA').html(value_agenda);
+				$('#agendaA').val(value_agenda);
 
 				$("#advertisementA").change(function() {
 					var value = $(this).val();
