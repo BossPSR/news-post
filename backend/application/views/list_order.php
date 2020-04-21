@@ -70,38 +70,221 @@
                                                         <th>ชื่อผู้ลง</th>
                                                         <th>วันที่ลงหนังสือพิมพ์</th>
                                                         <th>วันที่สร้าง</th>
-                                                        <th>สถานะ</th>
+
                                                         <th>เครื่องมือ</th>
                                                     </tr>
                                                 </thead>
-                                                <?php $i = 1 ; ?>
+                                                <?php $i = 1; ?>
                                                 <tbody>
                                                     <?php foreach ($advertise as $key => $advertise) : ?>
-                                                    <tr>
-                                                        <td><?php echo $i++ ?></td>
-                                                        <td>
-                                                            <?php if ($advertise['id_user'] == 'Admin') : ?>
-                                                                <?php echo $advertise['id_user'] ; ?>
-                                                            <?php else : ?>
-                                                                <?php $the = $this->db->get_where('tbl_user',['id_user' => $advertise['id_user']])->row_array(); ?>
-                                                                <?php echo $the['company'] ; ?>
-                                                            <?php endif ; ?>
-                                                        </td>
-                                                        <td><?php echo $advertise['post_date'] ; ?></td>
-                                                        <td><?php echo $advertise['created_at'] ; ?></td>
-                                                        <td>
-                                                            <?php if ($advertise['status'] == '0') : ?>
-                                                                <span class="badge badge-pill badge-warning">Warning</span>
-                                                            <?php else: ?>
-                                                                <span class="badge badge-pill badge-success">Success</span>
-                                                            <?php endif; ?>
-                                                        </td>
-                                                        <td>
-                                                            <button class="btn btn-info" data-toggle="modal" data-target="#">รายละเอียด</button>
-                                                            <button class="btn btn-warning" data-toggle="modal" data-target="#">แก้ไข</button>
-                                                            <button class="btn btn-danger" >ลบ</button>
-                                                        </td>
-                                                    </tr>
+                                                        <tr>
+                                                            <td><?php echo $i++ ?></td>
+                                                            <td>
+                                                                <?php if ($advertise['id_user'] == 'Admin') : ?>
+                                                                    <?php echo $advertise['id_user']; ?>
+                                                                <?php else : ?>
+                                                                    <?php $the = $this->db->get_where('tbl_user', ['id_user' => $advertise['id_user']])->row_array(); ?>
+                                                                    <?php echo $the['company']; ?>
+                                                                <?php endif; ?>
+                                                            </td>
+                                                            <td><?php echo $advertise['post_date']; ?></td>
+                                                            <td><?php echo $advertise['created_at']; ?></td>
+
+                                                            <td>
+                                                                <button class="btn btn-info" data-toggle="modal" data-target="#exampleModalde<?php echo $advertise['advertise_id']; ?>">รายละเอียด</button>
+                                                                <div class="modal fade" id="exampleModalde<?php echo $advertise['advertise_id']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                                    <div class="modal-dialog" role="document">
+                                                                        <form action="pdf_edit_com" method="post" class="form-horizontal" enctype="multipart/form-data">
+                                                                            <div class="modal-content">
+                                                                                <div class="modal-header">
+                                                                                    <h5 class="modal-title" id="exampleModalLabel">ลงตาม template</h5>
+                                                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                                        <span aria-hidden="true">&times;</span>
+                                                                                    </button>
+                                                                                </div>
+
+
+                                                                                <div class="modal-body">
+                                                                                      <input type="text" name="" value="<?php echo $advertise['advertise_id']; ?>">
+                                                                                    <div class="form-group" style="text-align: left;font-size:16px;">
+                                                                                        <b>วาระการประชุม <span style="color:red;">( เพื่อความถูกต้องของข้อมูล แนะนำให้พิมพ์เท่านั้น !! ) จำกัดจำนวนบรรทัด 10 บรรทัด</span></b>
+                                                                                        <textarea class="form-control" name="agendaA" id="agendaA" rows="9" placeholder="สถานที่จัดประชุม / ที่อยู่บริษัท (กรณีเลิกบริษัท)">
+
+                                                                                        </textarea>
+
+                                                                                    </div>
+                                                                                    <div class="form-group" style="text-align: left;font-size:16px;">
+                                                                                        <b>ชื่อบริษัท / ชื่อหน่วยงาน</b>
+                                                                                        <input type="text" name="companyA" id="companyA" class="form-control" placeholder="ชื่อบริษัท / ชื่อหน่วยงาน">
+                                                                                    </div>
+                                                                                    <div class="form-group" style="text-align: left;font-size:16px;">
+                                                                                        <b>เลขประจำตัวผู้เสียภาษี</b>
+                                                                                        <input type="text" name="TaxpayerB" id="TaxpayerB" class="form-control" placeholder="เลขประจำตัวผู้เสียภาษี">
+                                                                                    </div>
+                                                                                    <div class="form-group" style="text-align: left;font-size:16px;">
+                                                                                        <b>ครั้งที่ประชุม</b>
+                                                                                        <input type="text" name="meetingA" id="meetingA" class="form-control" value="1 / <?= date('Y') + 543; ?>" placeholder="ครั้งที่ประชุม">
+                                                                                    </div>
+                                                                                    <div class="form-group" style="text-align: left;font-size:16px;">
+                                                                                        <b>ประกาศถึง</b>
+                                                                                        <input type="text" name="announceA" id="announceA" class="form-control" value="ท่านผู้ถือหุ้นของบริษัท" placeholder="ประกาศถึง">
+                                                                                    </div>
+                                                                                    <div class="form-group travel-date-group" style="text-align: left;font-size:16px;">
+                                                                                        <b>วันที่ประกาศเลิกบริษัท</b>
+                                                                                        <input type="text" name="dissolveB" id="dissolveB" value="<?php echo date('d/m/Y'); ?>" class="form-control tleft default" placeholder="วันที่ประกาศเลิกบริษัท">
+                                                                                    </div>
+                                                                                    <div class="row">
+                                                                                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                                                                            <div class="form-group travel-date-group" style="text-align: left;font-size:16px;">
+                                                                                                <b>วันที่จัดประชุม</b>
+                                                                                                <input type="date" name="announcedateA" id="announcedateA" value="<?php echo date('Y-m-d'); ?>" min="<?php echo date('Y-m-d'); ?>" class="form-control tleft default" placeholder="วันที่จัดประชุม">
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                                                                            <div class="form-group" style="text-align: left;font-size:16px;">
+                                                                                                <b>เวลาจัดประชุม</b>
+                                                                                                <select class="form-control" name="timeA" id="timeA">
+                                                                                                    <option selected disabled>--- เลือกเวลาจัดประชุม ---</option>
+                                                                                                    <option value="0:00">0:00</option>
+                                                                                                    <option value="0:30">0:30</option>
+                                                                                                    <option value="1:00">1:00</option>
+                                                                                                    <option value="1:30">1:30</option>
+                                                                                                    <option value="2:00">2:00</option>
+                                                                                                    <option value="2:30">2:30</option>
+                                                                                                    <option value="3:00">3:00</option>
+                                                                                                    <option value="3:30">3:30</option>
+                                                                                                    <option value="4:00">4:00</option>
+                                                                                                    <option value="4:30">4:30</option>
+                                                                                                    <option value="5:00">5:00</option>
+                                                                                                    <option value="5:30">5:30</option>
+                                                                                                    <option value="6:00">6:00</option>
+                                                                                                    <option value="6:30">6:30</option>
+                                                                                                    <option value="7:00">7:00</option>
+                                                                                                    <option value="7:30">7:30</option>
+                                                                                                    <option value="8:00">8:00</option>
+                                                                                                    <option value="8:30">8:30</option>
+                                                                                                    <option value="9:00">9:00</option>
+                                                                                                    <option value="9:30">9:30</option>
+                                                                                                    <option value="10:00">10:00</option>
+                                                                                                    <option value="10:30">10:30</option>
+                                                                                                    <option value="11:00">11:00</option>
+                                                                                                    <option value="11:30">11:30</option>
+                                                                                                    <option value="12:00">12:00</option>
+                                                                                                    <option value="12:30">12:30</option>
+                                                                                                    <option value="13:00">13:00</option>
+                                                                                                    <option value="13:30">13:30</option>
+                                                                                                    <option value="14:00">14:00</option>
+                                                                                                    <option value="14:30">14:30</option>
+                                                                                                    <option value="15:00">15:00</option>
+                                                                                                    <option value="15:30">15:30</option>
+                                                                                                    <option value="16:00">16:00</option>
+                                                                                                    <option value="16:30">16:30</option>
+                                                                                                    <option value="17:00">17:00</option>
+                                                                                                    <option value="17:30">17:30</option>
+                                                                                                    <option value="18:00">18:00</option>
+                                                                                                    <option value="18:30">18:30</option>
+                                                                                                    <option value="19:00">19:00</option>
+                                                                                                    <option value="19:30">19:30</option>
+                                                                                                    <option value="20:00">20:00</option>
+                                                                                                    <option value="20:30">20:30</option>
+                                                                                                    <option value="21:00">21:00</option>
+                                                                                                    <option value="21:30">21:30</option>
+                                                                                                    <option value="22:00">22:00</option>
+                                                                                                    <option value="22:30">22:30</option>
+                                                                                                    <option value="23:00">23:00</option>
+                                                                                                    <option value="23:30">23:30</option>
+                                                                                                </select>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="form-group" style="text-align: left;font-size:16px;">
+                                                                                        <b>สถานที่จัดประชุม / ที่อยู่บริษัท (กรณีเลิกบริษัท)</b>
+                                                                                        <textarea class="form-control" name="placeA" id="placeA" rows="5" placeholder="สถานที่จัดประชุม / ที่อยู่บริษัท (กรณีเลิกบริษัท)"></textarea>
+                                                                                    </div>
+                                                                                    <div class="row">
+                                                                                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                                                                            <div class="form-group" style="text-align: left;font-size:16px;">
+                                                                                                <b>อนุมัติปันผลในอัตราหุ้นละ (ตัวเลข)</b>
+                                                                                                <input type="number" name="approveC" class="form-control numberso" id="NUMBER" placeholder="อนุมัติปันผลในอัตราหุ้นละ (ตัวเลข)">
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                                                                            <div class="form-group" style="text-align: left;font-size:16px;">
+                                                                                                <b>อนุมัติปันผลในอัตราหุ้นละ (ตัวอักษร)</b>
+                                                                                                <input type="text" name="shareC" class="form-control TEXTNUMBERs " id="TEXTNUMBER" placeholder="อนุมัติปันผลในอัตราหุ้นละ (ตัวเลข)">
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="form-group" style="text-align: left;font-size:16px;">
+                                                                                        <b>หุ้นทั้งหมด</b>
+                                                                                        <input type="text" name="allshares" id="allshares" class="form-control  " placeholder="หุ้นทั้งหมด">
+                                                                                    </div>
+                                                                                    <div class="row">
+                                                                                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                                                                            <div class="form-group " style="text-align: left;font-size:16px;">
+                                                                                                <b>เงินปันผลทั้งหมดคิดเป็นเงิน (ตัวเลข)</b>
+                                                                                                <input type="number" name="moneyC" id="moneyC" class="form-control" id="NUMBER2" placeholder="เงินปันผลทั้งหมดคิดเป็นเงิน (ตัวเลข)">
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                                                                            <div class="form-group" style="text-align: left;font-size:16px;">
+                                                                                                <b>อนุมัติปันผลในอัตราหุ้นละ (ตัวอักษร)</b>
+                                                                                                <input type="text" name="stockC" id="stockC" class="form-control" id="TEXTNUMBER2" placeholder="อนุมัติปันผลในอัตราหุ้นละ (ตัวเลข)">
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="row">
+                                                                                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                                                                            <div class="form-group " style="text-align: left;font-size:16px;">
+                                                                                                <b>ทุนสำรอง (ตัวเลข)</b>
+                                                                                                <input type="number" name="reserveC" id="reserveC" class="form-control" id="NUMBER3" placeholder="ทุนสำรอง (ตัวเลข)">
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                                                                            <div class="form-group " style="text-align: left;font-size:16px;">
+                                                                                                <b>ทุนสำรอง (ตัวอักษร)</b>
+                                                                                                <input type="text" name="characterC" id="characterC" class="form-control" id="TEXTNUMBER3" placeholder="ทุนสำรอง (ตัวอักษร)">
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="form-group travel-date-group" style="text-align: left;font-size:16px;">
+                                                                                        <b>จ่ายเงินปันผลภายในวันที่</b>
+                                                                                        <input type="text" name="paymentC" id="paymentC" class="form-control tleft default" placeholder="จ่ายเงินปันผลภายในวันที่">
+                                                                                    </div>
+                                                                                    <div class="form-group travel-date-group" style="text-align: left;font-size:16px;">
+                                                                                        <b>วันที่ลงโฆษณา</b>
+                                                                                        <input type="date" name="advertisementA" id="advertisementA" value="<?php echo date('Y-m-d'); ?>" min="<?php echo date('Y-m-d'); ?>" class="form-control tleft default" placeholder="วันที่ลงโฆษณา">
+                                                                                    </div>
+                                                                                    <div class="form-group" style="text-align: left;font-size:16px;">
+                                                                                        <b>ชื่อ-นามสกุลผู้ลงนาม (กรุณาใส่คำนำหน้าชื่อ)</b>
+                                                                                        <input type="text" name="signA" id="signA" class="form-control" placeholder="ชื่อ-นามสกุลผู้ลงนาม (กรุณาใส่คำนำหน้าชื่อ)">
+                                                                                    </div>
+                                                                                    <div class="form-group" style="text-align: left;font-size:16px;">
+                                                                                        <b>ตำแหน่งผู้ลงนาม</b>
+                                                                                        <input type="text" name="positionA" id="positionA" class="form-control" placeholder="กรรมการผู้มีอำนาจลงนาม" value="กรรมการผู้มีอำนาจลงนาม">
+                                                                                    </div>
+
+                                                                                </div>
+                                                                                <div class="modal-footer">
+                                                                                    <div class="add-data-footer d-flex justify-content-around px-3 mt-2">
+                                                                                        <div class="add-data-btn mr-1">
+                                                                                            <button type="submit" class="btn btn-primary">submit</button>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </form>
+                                                                    </div>
+                                                                </div>
+
+
+                                                                <button data-toggle="modal" data-target="#exampleModala<?php echo $advertise['advertise_id']; ?>" type="button" class="btn btn-warning">แก้ไข</button>
+
+                                                                <button onclick="confirmalertdelete_template('<?php echo $advertise['advertise_id']; ?>')" class="btn btn-danger " type="button" aria-haspopup="true" aria-expanded="false">
+                                                                    ลบ
+                                                                </button>
+                                                            </td>
+                                                        </tr>
                                                     <?php endforeach; ?>
                                                 </tbody>
                                             </table>

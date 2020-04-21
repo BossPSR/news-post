@@ -116,5 +116,22 @@
         })
     }
 </script>
+<script>
+    function confirmalertdelete_template(data3) {
+
+        swal({
+            title: "แน่ใจใช่ไหมที่จะลบ template",
+            text: "แน่ใจใช่ไหมที่จะลบ template",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        }).then(function(isConfirm) {
+            if (isConfirm) {
+                window.location = 'delete_template?id=' + data3;
+            }
+        })
+    }
+</script>
+
 
 

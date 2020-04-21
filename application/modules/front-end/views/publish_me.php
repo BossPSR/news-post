@@ -44,7 +44,7 @@
                                                                         <td><?= $show_template['created_at']; ?></td>
                                                                         <td><?= $show_template['meeting_date']; ?></td>
                                                                         <td>
-                                                                            <a href="#" class="button button-mini button-circle button-green"><i class="icon-download"></i>ดาวน์โหลด</a>
+                                                                            <a href="publish-download-template?advertise_id=<?= base64_encode($show_template['advertise_id']); ?>" class="button button-mini button-circle button-green"><i class="icon-download"></i>ดาวน์โหลด</a>
                                                                         </td>
                                                                     </tr>
                                                                 <?php } ?>
@@ -82,7 +82,7 @@
                                                                         <td><?= $show_ppdf['created_at']; ?></td>
                                                                         <td><?= $show_ppdf['date']; ?></td>
                                                                         <td>
-                                                                            <a href="#" class="button button-mini button-circle button-green"><i class="icon-download"></i>ดาวน์โหลด</a>
+                                                                            <a href="publish-download-template?advertise_id=<?= base64_encode($show_ppdf['id']); ?>" class="button button-mini button-circle button-green"><i class="icon-download"></i>ดาวน์โหลด</a>
                                                                         </td>
                                                                     </tr>
                                                                 <?php } ?>
