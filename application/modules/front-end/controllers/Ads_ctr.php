@@ -1,6 +1,16 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
+use setasign\Fpdi;
+use setasign\fpdf;
 
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+set_time_limit(2);
+date_default_timezone_set('UTC');
+$start = microtime(true);
+
+
+//$pdf = new Fpdi\TcpdfFpdi('L', 'mm', 'A3');
 class Ads_ctr extends CI_Controller
 {
 
@@ -19,9 +29,12 @@ class Ads_ctr extends CI_Controller
     public function insert_ads()
     {
         
-        if ($this->session->userdata('email') != '') {+
+        if ($this->session->userdata('email') != '') {
             $user = $this->db->get_where('tbl_user',['email' => $this->session->userdata('email')])->row_array();
-            
+            if ($user['point'] == 0) {
+                $this->session->set_flashdata('point_user', TRUE);
+                redirect('ads');
+            }
             $dateYa         = date('Y-m-d');
             $dateYa_ex      = explode('-',$dateYa);
             $topic          = $this->input->post('topic');
@@ -39,6 +52,7 @@ class Ads_ctr extends CI_Controller
                     'name_surname'      => $this->input->post('signerB'),
                     'position'          => $this->input->post('positionB'),
                     'created_at'        => date('Y-m-d H:i:s'),
+                    'id_user'           => $user['id_user'],
                 );
                 $success = $this->db->insert('tbl_advertise', $data);
                 $first   = $this->db->insert_id();
@@ -49,6 +63,10 @@ class Ads_ctr extends CI_Controller
                     );
                     $this->db->where('advertise_id', $first);
                     $this->db->update('tbl_advertise', $update);
+
+                    $pointUser['point'] = $user['point'] - 1;
+                    $this->db->where('id_user', $user['id_user']);
+                    $this->db->update('tbl_user', $pointUser);
                     
                     $this->session->set_flashdata('responseA', TRUE);
                     redirect('ads');
@@ -75,14 +93,20 @@ class Ads_ctr extends CI_Controller
                     'name_surname'      => $this->input->post('signerC'),
                     'position'          => $this->input->post('positionC'),
                     'created_at'        => date('Y-m-d H:i:s'),
+                    'id_user'           => $user['id_user'],
                 );
                 $success = $this->db->insert('tbl_advertise', $data);
+                $first   = $this->db->insert_id();
                 if ($success > 0) {
                     $update = array(
                         'id_order' => $dateYa_ex[0].''.$dateYa_ex[1].$first
                     );
                     $this->db->where('advertise_id', $first);
                     $this->db->update('tbl_advertise', $update);
+
+                    $pointUser['point'] = $user['point'] - 1;
+                    $this->db->where('id_user', $user['id_user']);
+                    $this->db->update('tbl_user', $pointUser);
 
                     $this->session->set_flashdata('responseA', TRUE);
                     redirect('ads');
@@ -105,14 +129,20 @@ class Ads_ctr extends CI_Controller
                     'name_surname'      => $this->input->post('signA'),
                     'position'          => $this->input->post('positionA'),
                     'created_at'        => date('Y-m-d H:i:s'),
+                    'id_user'           => $user['id_user'],
                 );
                 $success = $this->db->insert('tbl_advertise', $data);
+                $first   = $this->db->insert_id();
                 if ($success > 0) {
                     $update = array(
                         'id_order' => $dateYa_ex[0].''.$dateYa_ex[1].$first
                     );
                     $this->db->where('advertise_id', $first);
                     $this->db->update('tbl_advertise', $update);
+
+                    $pointUser['point'] = $user['point'] - 1;
+                    $this->db->where('id_user', $user['id_user']);
+                    $this->db->update('tbl_user', $pointUser);
 
                     $this->session->set_flashdata('responseA', TRUE);
                     redirect('ads');
@@ -145,6 +175,11 @@ class Ads_ctr extends CI_Controller
     public function insert_ads_pdf()
     {
         if ($this->session->userdata('email') != '') {
+            $user = $this->db->get_where('tbl_user',['email' => $this->session->userdata('email')])->row_array();
+            if ($user['point'] == 0) {
+                $this->session->set_flashdata('point_user', TRUE);
+                redirect('ads');
+            }
         
             $topicfile   = $this->input->post('topicfile');
         
@@ -170,15 +205,21 @@ class Ads_ctr extends CI_Controller
 
                 if ($_FILES['file']['name']) {
                     if ($this->upload->do_upload('file')) {
+                        $numPage = $this->numPagePDF($name_file);
+                        if ($user['point'] < $numPage) {
+                            $this->session->set_flashdata('point_user', TRUE);
+                            redirect('ads');
+                        }
 
                         $gamber     = $this->upload->data();
                         $data = array(
 
                             'topic'         => $topicfile,
                             'date'          => $datepdf_ex[2].'-'.$datepdf_ex[0].'-'.$datepdf_ex[1],
+                            'credit'        => $numPage,
                             'file_name'     => $gamber['file_name'],
                             'created_at'    => date('Y-m-d H:i:s'),
-
+                            'id_user'           => $user['id_user'],
                         );
                         $resultsedit = $this->db->insert('tbl_pdf', $data);
                         if ($resultsedit > 0) {
@@ -214,8 +255,10 @@ class Ads_ctr extends CI_Controller
                     $image[] = array(
                         'topic'         => $topicfile,
                         'date'          => $dateimg_ex[2].'-'.$dateimg_ex[0].'-'.$dateimg_ex[1],
+                        'credit'        => 1,
                         'file_name'     => $dataInfo[$i]['file_name'],
-                        'created_at'    => date('Y-m-d H:i:s')
+                        'created_at'    => date('Y-m-d H:i:s'),
+                        'id_user'           => $user['id_user'],
                     );
 
                     if (!$this->upload->do_upload('userfile')) {
@@ -239,4 +282,15 @@ class Ads_ctr extends CI_Controller
             redirect('ads');
         }
     }
+
+    private function numPagePDF($name_file)
+    {
+        $this->load->library('CustomFpdf');
+        global $pdf;
+        $pdf = new Fpdi\Fpdi();
+        $pdfPage = "uploads/pdf/".$name_file.'.pdf';
+        $pdfPagePDF = $pdf->setSourceFile($pdfPage);
+        return $pdfPagePDF;
+    }
+
 }

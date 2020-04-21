@@ -146,6 +146,15 @@
 					showConfirmButton: true,
 				});
 			<?php endif; ?>
+
+			<?php if ($suss = $this->session->flashdata('point_user')) : ?>
+				Swal.fire({
+					position: 'start-end',
+					icon: 'error',
+					title: 'เครดิตของท่านไม่เพียงพอ กรุณาเติมเครดิตด้วยค่ะ!!',
+					showConfirmButton: true,
+				});
+			<?php endif; ?>
 			
 		</script>
 		<!-- Date & Time Picker JS -->

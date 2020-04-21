@@ -176,7 +176,7 @@ function drawPdfAndImage($pos, $pageNo = null, $file)
                 // echo json_encode($s);
                 // exit();
             }
-            else if($file_parts['extension'] == 'jpg')
+            else if($file_parts['extension'] == 'jpg' || $file_parts['extension'] == 'png' || $file_parts['extension'] == 'jpeg')
             {
                 $size = getimagesize($file);
 
@@ -201,7 +201,7 @@ function drawPdfAndImage($pos, $pageNo = null, $file)
                 $pageId = $pdf->importPageAndRotation($pageNo, '/MediaBox');
                 $s = $pdf->useImportedPageCustom($pageId, 5.5, 65, 123);
             }
-            else if($file_parts['extension'] == 'jpg')
+            else if($file_parts['extension'] == 'jpg' || $file_parts['extension'] == 'png' || $file_parts['extension'] == 'jpeg')
             {
                 $x = 5;
                 $y = 274;
@@ -309,8 +309,10 @@ $files = [];
 // ];
 
 $pdfList = $this->db->get_where('tbl_pdf',['date'=>$date])->result_array();
+
 foreach ($pdfList as $pdfDetail) {
     $files[] = $prefix.$pdfDetail['file_name'];
+
 }
 
 
@@ -345,7 +347,6 @@ foreach ($files as $file) {
     {
         $pageCount = $pdf->setSourceFile($file);
 
-
         for ($pageNo = 1; $pageNo <= $pageCount; $pageNo++) 
         {
             if($position == 1)
@@ -368,10 +369,9 @@ foreach ($files as $file) {
             {
                 echo json_encode($e);
             }
-            
         }
     }
-    else if($file_parts['extension'] == 'jpg')
+    else if($file_parts['extension'] == 'jpg' || $file_parts['extension'] == 'png' || $file_parts['extension'] == 'jpeg')
     {
         if($position == 1)
         {
@@ -392,8 +392,8 @@ foreach ($files as $file) {
          {
          }
     }
-
 }
+
 // exit();
 
 
