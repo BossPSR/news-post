@@ -225,6 +225,22 @@ class Order_controller extends CI_Controller
         return redirect('List_order_pdf');
     }
 
+    public function  delete_template()
+    {
+        $id = $this->input->get('id');
+
+
+        $this->db->where('advertise_id', $id);
+        $resultsedit = $this->db->delete('tbl_advertise', ['advertise_id' => $id]);
+
+        if ($resultsedit > 0) {
+            $this->session->set_flashdata('save_ss2', ' ลบข้อมูล template สำเร็จ !!.');
+        } else {
+            $this->session->set_flashdata('del_ss2', 'ลบข้อมูล template ไม่สำเร็จ');
+        }
+        return redirect('List-Order');
+    }
+
     public function textarea()
     {
         
