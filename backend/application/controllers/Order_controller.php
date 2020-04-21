@@ -150,63 +150,57 @@ class Order_controller extends CI_Controller
     {
 
         $id =  $this->input->post('id');
+        $topic =  $this->input->post('topic');
+        $agendaA = $this->input->post('agendaA');
+        $companyA = $this->input->post('companyA');
+        $TaxpayerB = $this->input->post('TaxpayerB');
+        $meetingA = $this->input->post('meetingA');
+        $announceA = $this->input->post('announceA');
+        $dissolveB = $this->input->post('dissolveB');
+        $announcedateA = $this->input->post('announcedateA');
+        $timeA = $this->input->post('timeA');
+        $placeA = $this->input->post('placeA');
+        $approveC = $this->input->post('approveC');
+        $shareC = $this->input->post('shareC');
+        $allshares = $this->input->post('allshares');
+        $moneyC = $this->input->post('moneyC');
+        $stockC = $this->input->post('stockC');
+        $reserveC = $this->input->post('reserveC');
+        $characterC = $this->input->post('characterC');
+        $paymentC = $this->input->post('paymentC');
+        $advertisementA = $this->input->post('advertisementA');
+        $signA = $this->input->post('signA');
+        $positionA = $this->input->post('positionA');
 
-        $this->load->library('upload');
-
-        // |xlsx|pdf|docx
-        $config['upload_path'] = '../uploads/pdf';
-        $config['allowed_types'] = 'gif|jpg|png|jpeg';
-        $config['max_size']     = '200480';
-        $config['max_width'] = '5000';
-        $config['max_height'] = '5000';
-        $name_file = "poster-" . time();
-        $config['file_name'] = $name_file;
-
-        $this->upload->initialize($config);
-
-        $data = array();
-
-
-        if ($_FILES['file_name']['name']) {
-            if ($this->upload->do_upload('file_name')) {
-
-                $gamber     = $this->upload->data();
-                $data = array(
-
-
-                    'topic'     => $this->input->post('topic'),
-                    'date'     => $this->input->post('date'),
-                    'file_name'     => $gamber['file_name'],
-                    'update_at'     => date('Y-m-d H:i:s')
-
-
-                );
-                $this->db->where('id', $id);
-                $resultsedit = $this->db->update('tbl_pdf', $data);
-            }
-        } else {
-            $data = array(
-
-
-                'topic'     => $this->input->post('topic'),
-                'date'     => $this->input->post('date'),
-                'update_at'     => date('Y-m-d H:i:s')
-
-
-            );
-
-            $this->db->where('id', $id);
-            $resultsedit = $this->db->update('tbl_pdf', $data);
-        }
-
-
-
+        $data = [
+            'topic' => $topic,
+            'agenda' => $agendaA,
+            'company_name' => $companyA,
+            'tax' => $TaxpayerB,
+            'meeting' => $meetingA,
+            'announcement_to' => $announceA,
+            'out_date' => $dissolveB,
+            'meeting_date' => $announcedateA,
+            'meeting_time' => $timeA,
+            'meeting_place' => $placeA,
+            'stock_appove' => $approveC,
+            'updated_at' => date('Y-m-d H:i:s'),
+            'all_shares' => $allshares,
+            'dividend' => $moneyC,
+            'reserve' => $reserveC,
+            'dividend_payment' => $paymentC,
+            'post_date' => $advertisementA,
+            'name_surname' => $signA,
+            'position' => $positionA,
+        ];
+        $this->db->where('advertise_id',$id);
+        $resultsedit = $this->db->update('tbl_advertise',$data);
         if ($resultsedit > 0) {
-            $this->session->set_flashdata('save_ss2', 'Successfully แก้ไข pdf/และรูปภาพ information !!.');
+            $this->session->set_flashdata('save_ss2', 'Successfully แก้ไขออเดอร์ลงตามtemplate สำเร็จ!!.');
         } else {
-            $this->session->set_flashdata('del_ss2', 'Not Successfully แก้ไข pdf/และรูปภาพ information');
+            $this->session->set_flashdata('del_ss2', 'Not Successfully แก้ไขออเดอร์ลงตามtemplate ไม่สำเร็จ กรุณาลองใหม่อีกครั้งค่ะ !!.');
         }
-        return redirect('List_order_pdf');
+        return redirect('List-Order');
     }
 
     public function  delete_pdf()
