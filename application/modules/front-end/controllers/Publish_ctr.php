@@ -29,7 +29,7 @@ class Publish_ctr extends CI_Controller
     public function download_template()
     {
         $session                    = $this->db->get_where('tbl_user', ['email' => $this->session->userdata('email')])->row_array();
-        $data['advertise_id']       = $this->input->get('advertise_id');
+        $data['advertise_id']       = base64_decode($this->input->get('advertise_id'));
 
         if (empty($session)) {
             redirect('index');
