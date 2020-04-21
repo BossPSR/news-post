@@ -359,7 +359,7 @@ class Ads_ctr extends CI_Controller
                 if (!empty($uploaded)) {
                     echo explode('<br>', $error);
                 } else {
-                    $pointUser = $user['point'] - 1;
+                    $pointUser = $user['point'] - $cpt;
                     $this->db->where('id_user', $user['id_user']);
                     $this->db->update('tbl_user', ['point' => $pointUser]);
 

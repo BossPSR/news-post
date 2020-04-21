@@ -94,10 +94,10 @@
                                                                 <button class="btn btn-info" data-toggle="modal" data-target="#exampleModalde<?php echo $advertise['advertise_id']; ?>">รายละเอียด</button>
                                                                 <div class="modal fade" id="exampleModalde<?php echo $advertise['advertise_id']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                                     <div class="modal-dialog" role="document">
-                                                                        <form action="pdf_edit_com" method="post" class="form-horizontal" enctype="multipart/form-data">
+                                                                        <form action="" method="post" class="form-horizontal" enctype="multipart/form-data">
                                                                             <div class="modal-content">
                                                                                 <div class="modal-header">
-                                                                                    <h5 class="modal-title" id="exampleModalLabel">ลงตาม template</h5>
+                                                                                    <h5 class="modal-title" id="exampleModalLabel">รายละเอียด</h5>
                                                                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                                                         <span aria-hidden="true">&times;</span>
                                                                                     </button>
@@ -105,170 +105,432 @@
 
 
                                                                                 <div class="modal-body">
-                                                                                      <input type="text" name="" value="<?php echo $advertise['advertise_id']; ?>">
+                                                                                      <input type="text" name="" value="<?php echo $advertise['advertise_id']; ?>" hidden>
+                                                                                      <?php if($advertise['topic']!=""):?>    
+                                                                                        <div class="form-group" style="text-align: left;font-size:16px;">
+                                                                                            <b>หัวข้อ / เรื่อง</b>
+                                                                                            <input type="text" name="topic" id="topic"  value="<?php echo $advertise['topic']; ?>" class="form-control" placeholder="ชื่อบริษัท / ชื่อหน่วยงาน" disabled>
+                                                                                        </div>
+                                                                                       <?php endif;?>
+                                                                                      <?php if($advertise['agenda']!=""):?>
                                                                                     <div class="form-group" style="text-align: left;font-size:16px;">
                                                                                         <b>วาระการประชุม <span style="color:red;">( เพื่อความถูกต้องของข้อมูล แนะนำให้พิมพ์เท่านั้น !! ) จำกัดจำนวนบรรทัด 10 บรรทัด</span></b>
-                                                                                        <textarea class="form-control" name="agendaA" id="agendaA" rows="9" placeholder="สถานที่จัดประชุม / ที่อยู่บริษัท (กรณีเลิกบริษัท)">
-
+                                                                                        <textarea class="form-control" name="agendaA" id="agendaA" rows="9" placeholder="สถานที่จัดประชุม / ที่อยู่บริษัท (กรณีเลิกบริษัท)" disabled>
+                                                                                        <?php echo $advertise['agenda']; ?>
                                                                                         </textarea>
 
                                                                                     </div>
+                                                                                      <?php endif;?>
+                                                                                      <?php if($advertise['company_name']!=""):?>    
                                                                                     <div class="form-group" style="text-align: left;font-size:16px;">
                                                                                         <b>ชื่อบริษัท / ชื่อหน่วยงาน</b>
-                                                                                        <input type="text" name="companyA" id="companyA" class="form-control" placeholder="ชื่อบริษัท / ชื่อหน่วยงาน">
+                                                                                        <input type="text" name="companyA" id="companyA"  value="<?php echo $advertise['company_name']; ?>" class="form-control" placeholder="ชื่อบริษัท / ชื่อหน่วยงาน" disabled>
                                                                                     </div>
+                                                                                    <?php endif;?>
+                                                                                    <?php if($advertise['tax']!=""):?>    
                                                                                     <div class="form-group" style="text-align: left;font-size:16px;">
                                                                                         <b>เลขประจำตัวผู้เสียภาษี</b>
-                                                                                        <input type="text" name="TaxpayerB" id="TaxpayerB" class="form-control" placeholder="เลขประจำตัวผู้เสียภาษี">
+                                                                                        <input type="text" name="TaxpayerB" id="TaxpayerB" class="form-control" value="<?php echo $advertise['tax']; ?>"  placeholder="เลขประจำตัวผู้เสียภาษี" disabled>
                                                                                     </div>
+                                                                                    <?php endif;?>
+                                                                                    <?php if($advertise['meeting']!=""):?> 
                                                                                     <div class="form-group" style="text-align: left;font-size:16px;">
                                                                                         <b>ครั้งที่ประชุม</b>
-                                                                                        <input type="text" name="meetingA" id="meetingA" class="form-control" value="1 / <?= date('Y') + 543; ?>" placeholder="ครั้งที่ประชุม">
+                                                                                        <input type="text" name="meetingA" id="meetingA" class="form-control" value="<?php echo $advertise['meeting']; ?>" placeholder="ครั้งที่ประชุม" disabled>
                                                                                     </div>
+                                                                                    <?php endif;?>
+                                                                                    <?php if($advertise['announcement_to']!=""):?> 
                                                                                     <div class="form-group" style="text-align: left;font-size:16px;">
                                                                                         <b>ประกาศถึง</b>
-                                                                                        <input type="text" name="announceA" id="announceA" class="form-control" value="ท่านผู้ถือหุ้นของบริษัท" placeholder="ประกาศถึง">
+                                                                                        <input type="text" name="announceA" id="announceA" class="form-control"  value="<?php echo $advertise['announcement_to']; ?>" placeholder="ประกาศถึง" disabled>
                                                                                     </div>
+                                                                                    <?php endif;?>
+                                                                                    <?php if($advertise['out_date']!=""):?> 
                                                                                     <div class="form-group travel-date-group" style="text-align: left;font-size:16px;">
                                                                                         <b>วันที่ประกาศเลิกบริษัท</b>
-                                                                                        <input type="text" name="dissolveB" id="dissolveB" value="<?php echo date('d/m/Y'); ?>" class="form-control tleft default" placeholder="วันที่ประกาศเลิกบริษัท">
+                                                                                        <input type="text" name="dissolveB" id="dissolveB" value="<?php echo $advertise['out_date']; ?>" class="form-control tleft default" placeholder="วันที่ประกาศเลิกบริษัท" disabled>
                                                                                     </div>
+                                                                                    <?php endif;?>
+                                                                                    <?php if($advertise['meeting_date']!=""):?> 
                                                                                     <div class="row">
                                                                                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                                                                                             <div class="form-group travel-date-group" style="text-align: left;font-size:16px;">
                                                                                                 <b>วันที่จัดประชุม</b>
-                                                                                                <input type="date" name="announcedateA" id="announcedateA" value="<?php echo date('Y-m-d'); ?>" min="<?php echo date('Y-m-d'); ?>" class="form-control tleft default" placeholder="วันที่จัดประชุม">
+                                                                                                <input type="date" name="announcedateA" id="announcedateA" value="<?php echo $advertise['meeting_date']; ?>" min="<?php echo date('Y-m-d'); ?>" class="form-control tleft default" placeholder="วันที่จัดประชุม" disabled>
                                                                                             </div>
                                                                                         </div>
+                                                                                        <?php endif;?>
+                                                                                        <?php if($advertise['meeting_time']!=""):?> 
                                                                                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                                                                                             <div class="form-group" style="text-align: left;font-size:16px;">
                                                                                                 <b>เวลาจัดประชุม</b>
-                                                                                                <select class="form-control" name="timeA" id="timeA">
+                                                                                                <select class="form-control" name="timeA" id="timeA" disabled>
                                                                                                     <option selected disabled>--- เลือกเวลาจัดประชุม ---</option>
-                                                                                                    <option value="0:00">0:00</option>
-                                                                                                    <option value="0:30">0:30</option>
-                                                                                                    <option value="1:00">1:00</option>
-                                                                                                    <option value="1:30">1:30</option>
-                                                                                                    <option value="2:00">2:00</option>
-                                                                                                    <option value="2:30">2:30</option>
-                                                                                                    <option value="3:00">3:00</option>
-                                                                                                    <option value="3:30">3:30</option>
-                                                                                                    <option value="4:00">4:00</option>
-                                                                                                    <option value="4:30">4:30</option>
-                                                                                                    <option value="5:00">5:00</option>
-                                                                                                    <option value="5:30">5:30</option>
-                                                                                                    <option value="6:00">6:00</option>
-                                                                                                    <option value="6:30">6:30</option>
-                                                                                                    <option value="7:00">7:00</option>
-                                                                                                    <option value="7:30">7:30</option>
-                                                                                                    <option value="8:00">8:00</option>
-                                                                                                    <option value="8:30">8:30</option>
-                                                                                                    <option value="9:00">9:00</option>
-                                                                                                    <option value="9:30">9:30</option>
-                                                                                                    <option value="10:00">10:00</option>
-                                                                                                    <option value="10:30">10:30</option>
-                                                                                                    <option value="11:00">11:00</option>
-                                                                                                    <option value="11:30">11:30</option>
-                                                                                                    <option value="12:00">12:00</option>
-                                                                                                    <option value="12:30">12:30</option>
-                                                                                                    <option value="13:00">13:00</option>
-                                                                                                    <option value="13:30">13:30</option>
-                                                                                                    <option value="14:00">14:00</option>
-                                                                                                    <option value="14:30">14:30</option>
-                                                                                                    <option value="15:00">15:00</option>
-                                                                                                    <option value="15:30">15:30</option>
-                                                                                                    <option value="16:00">16:00</option>
-                                                                                                    <option value="16:30">16:30</option>
-                                                                                                    <option value="17:00">17:00</option>
-                                                                                                    <option value="17:30">17:30</option>
-                                                                                                    <option value="18:00">18:00</option>
-                                                                                                    <option value="18:30">18:30</option>
-                                                                                                    <option value="19:00">19:00</option>
-                                                                                                    <option value="19:30">19:30</option>
-                                                                                                    <option value="20:00">20:00</option>
-                                                                                                    <option value="20:30">20:30</option>
-                                                                                                    <option value="21:00">21:00</option>
-                                                                                                    <option value="21:30">21:30</option>
-                                                                                                    <option value="22:00">22:00</option>
-                                                                                                    <option value="22:30">22:30</option>
-                                                                                                    <option value="23:00">23:00</option>
-                                                                                                    <option value="23:30">23:30</option>
+                                                                                                 
+                                                                                                    <option value="0:00" <?php if ($advertise['meeting_time'] == "0:00") {echo "selected='selected'";} ?>>0:00</option>
+                                                                                                    <option value="0:30" <?php if ($advertise['meeting_time'] == "0:30") {echo "selected='selected'";} ?>>0:30</option>
+                                                                                                    <option value="1:00" <?php if ($advertise['meeting_time'] == "1:00") {echo "selected='selected'";} ?>>1:00</option>
+                                                                                                    <option value="1:30" <?php if ($advertise['meeting_time'] == "1:30") {echo "selected='selected'";} ?>>1:30</option>
+                                                                                                    <option value="2:00" <?php if ($advertise['meeting_time'] == "2:00") {echo "selected='selected'";} ?>>2:00</option>
+                                                                                                    <option value="2:30" <?php if ($advertise['meeting_time'] == "2:30") {echo "selected='selected'";} ?>>2:30</option>
+                                                                                                    <option value="3:00" <?php if ($advertise['meeting_time'] == "3:00") {echo "selected='selected'";} ?>>3:00</option>
+                                                                                                    <option value="3:30" <?php if ($advertise['meeting_time'] == "3:30") {echo "selected='selected'";} ?>>3:30</option>
+                                                                                                    <option value="4:00" <?php if ($advertise['meeting_time'] == "4:00") {echo "selected='selected'";} ?>>4:00</option>
+                                                                                                    <option value="4:30" <?php if ($advertise['meeting_time'] == "4:30") {echo "selected='selected'";} ?>>4:30</option>
+                                                                                                    <option value="5:00" <?php if ($advertise['meeting_time'] == "5:00") {echo "selected='selected'";} ?>>5:00</option>
+                                                                                                    <option value="5:30" <?php if ($advertise['meeting_time'] == "5:30") {echo "selected='selected'";} ?>>5:30</option>
+                                                                                                    <option value="6:00" <?php if ($advertise['meeting_time'] == "6:00") {echo "selected='selected'";} ?>>6:00</option>
+                                                                                                    <option value="6:30" <?php if ($advertise['meeting_time'] == "6:30") {echo "selected='selected'";} ?>>6:30</option>
+                                                                                                    <option value="7:00" <?php if ($advertise['meeting_time'] == "7:00") {echo "selected='selected'";} ?>>7:00</option>
+                                                                                                    <option value="7:30" <?php if ($advertise['meeting_time'] == "7:30") {echo "selected='selected'";} ?>>7:30</option>
+                                                                                                    <option value="8:00" <?php if ($advertise['meeting_time'] == "8:00") {echo "selected='selected'";} ?>>8:00</option>
+                                                                                                    <option value="8:30" <?php if ($advertise['meeting_time'] == "8:30") {echo "selected='selected'";} ?>>8:30</option>
+                                                                                                    <option value="9:00" <?php if ($advertise['meeting_time'] == "9:00") {echo "selected='selected'";} ?>>9:00</option>
+                                                                                                    <option value="9:30" <?php if ($advertise['meeting_time'] == "9:30") {echo "selected='selected'";} ?>>9:30</option>
+                                                                                                    <option value="10:00" <?php if ($advertise['meeting_time'] == "10:00") {echo "selected='selected'";} ?>>10:00</option>
+                                                                                                    <option value="10:30" <?php if ($advertise['meeting_time'] == "10:30") {echo "selected='selected'";} ?>>10:30</option>
+                                                                                                    <option value="11:00" <?php if ($advertise['meeting_time'] == "11:00") {echo "selected='selected'";} ?>>11:00</option>
+                                                                                                    <option value="11:30" <?php if ($advertise['meeting_time'] == "11:30") {echo "selected='selected'";} ?>>11:30</option>
+                                                                                                    <option value="12:00" <?php if ($advertise['meeting_time'] == "12:00") {echo "selected='selected'";} ?>>12:00</option>
+                                                                                                    <option value="12:30"<?php if ($advertise['meeting_time'] == "12:30") {echo "selected='selected'";} ?>>12:30</option>
+                                                                                                    <option value="13:00"<?php if ($advertise['meeting_time'] == "13:00") {echo "selected='selected'";} ?>>13:00</option>
+                                                                                                    <option value="13:30"<?php if ($advertise['meeting_time'] == "13:30") {echo "selected='selected'";} ?>>13:30</option>
+                                                                                                    <option value="14:00"<?php if ($advertise['meeting_time'] == "14:00") {echo "selected='selected'";} ?>>14:00</option>
+                                                                                                    <option value="14:30"<?php if ($advertise['meeting_time'] == "14:30") {echo "selected='selected'";} ?>>14:30</option>
+                                                                                                    <option value="15:00"<?php if ($advertise['meeting_time'] == "15:00") {echo "selected='selected'";} ?>>15:00</option>
+                                                                                                    <option value="15:30"<?php if ($advertise['meeting_time'] == "15:30") {echo "selected='selected'";} ?>>15:30</option>
+                                                                                                    <option value="16:00"<?php if ($advertise['meeting_time'] == "16:00") {echo "selected='selected'";} ?>>16:00</option>
+                                                                                                    <option value="16:30"<?php if ($advertise['meeting_time'] == "16:30") {echo "selected='selected'";} ?>>16:30</option>
+                                                                                                    <option value="17:00"<?php if ($advertise['meeting_time'] == "17:00") {echo "selected='selected'";} ?>>17:00</option>
+                                                                                                    <option value="17:30"<?php if ($advertise['meeting_time'] == "17:30") {echo "selected='selected'";} ?>>17:30</option>
+                                                                                                    <option value="18:00"<?php if ($advertise['meeting_time'] == "18:00") {echo "selected='selected'";} ?>>18:00</option>
+                                                                                                    <option value="18:30"<?php if ($advertise['meeting_time'] == "18:30") {echo "selected='selected'";} ?>>18:30</option>
+                                                                                                    <option value="19:00"<?php if ($advertise['meeting_time'] == "19:00") {echo "selected='selected'";} ?>>19:00</option>
+                                                                                                    <option value="19:30"<?php if ($advertise['meeting_time'] == "19:30") {echo "selected='selected'";} ?>>19:30</option>
+                                                                                                    <option value="20:00"<?php if ($advertise['meeting_time'] == "20:00") {echo "selected='selected'";} ?>>20:00</option>
+                                                                                                    <option value="20:30"<?php if ($advertise['meeting_time'] == "20:30") {echo "selected='selected'";} ?>>20:30</option>
+                                                                                                    <option value="21:00"<?php if ($advertise['meeting_time'] == "21:00") {echo "selected='selected'";} ?>>21:00</option>
+                                                                                                    <option value="21:30"<?php if ($advertise['meeting_time'] == "21:30") {echo "selected='selected'";} ?>>21:30</option>
+                                                                                                    <option value="22:00"<?php if ($advertise['meeting_time'] == "22:00") {echo "selected='selected'";} ?>>22:00</option>
+                                                                                                    <option value="22:30"<?php if ($advertise['meeting_time'] == "22:30") {echo "selected='selected'";} ?>>22:30</option>
+                                                                                                    <option value="23:00"<?php if ($advertise['meeting_time'] == "23:00") {echo "selected='selected'";} ?>>23:00</option>
+                                                                                                    <option value="23:30"<?php if ($advertise['meeting_time'] == "23:30") {echo "selected='selected'";} ?>>23:30</option>
                                                                                                 </select>
                                                                                             </div>
                                                                                         </div>
                                                                                     </div>
+                                                                                    <?php endif;?>
+                                                                                    <?php if($advertise['meeting_time']!=""):?>  
                                                                                     <div class="form-group" style="text-align: left;font-size:16px;">
                                                                                         <b>สถานที่จัดประชุม / ที่อยู่บริษัท (กรณีเลิกบริษัท)</b>
-                                                                                        <textarea class="form-control" name="placeA" id="placeA" rows="5" placeholder="สถานที่จัดประชุม / ที่อยู่บริษัท (กรณีเลิกบริษัท)"></textarea>
+                                                                                        <textarea class="form-control" name="placeA" id="placeA" rows="5" value=""  placeholder="สถานที่จัดประชุม / ที่อยู่บริษัท (กรณีเลิกบริษัท)" disabled><?php echo $advertise['meeting_place']; ?></textarea>
                                                                                     </div>
+                                                                                    <?php endif;?>
+                                                                                    <?php if($advertise['stock_appove']!="" ):?>  
                                                                                     <div class="row">
                                                                                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                                                                                             <div class="form-group" style="text-align: left;font-size:16px;">
                                                                                                 <b>อนุมัติปันผลในอัตราหุ้นละ (ตัวเลข)</b>
-                                                                                                <input type="number" name="approveC" class="form-control numberso" id="NUMBER" placeholder="อนุมัติปันผลในอัตราหุ้นละ (ตัวเลข)">
+                                                                                                <input type="number" name="approveC" class="form-control numberso" value="<?php echo $advertise['stock_appove']; ?>" id="NUMBER" placeholder="อนุมัติปันผลในอัตราหุ้นละ (ตัวเลข)" disabled>
                                                                                             </div>
                                                                                         </div>
                                                                                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                                                                                             <div class="form-group" style="text-align: left;font-size:16px;">
                                                                                                 <b>อนุมัติปันผลในอัตราหุ้นละ (ตัวอักษร)</b>
-                                                                                                <input type="text" name="shareC" class="form-control TEXTNUMBERs " id="TEXTNUMBER" placeholder="อนุมัติปันผลในอัตราหุ้นละ (ตัวเลข)">
+                                                                                                <input type="text" name="shareC" class="form-control TEXTNUMBERs " id="TEXTNUMBER" placeholder="อนุมัติปันผลในอัตราหุ้นละ (ตัวเลข)" disabled>
                                                                                             </div>
                                                                                         </div>
                                                                                     </div>
+                                                                                    <?php endif;?>
+                                                                                    <?php if($advertise['all_shares']!="" ):?>  
                                                                                     <div class="form-group" style="text-align: left;font-size:16px;">
                                                                                         <b>หุ้นทั้งหมด</b>
-                                                                                        <input type="text" name="allshares" id="allshares" class="form-control  " placeholder="หุ้นทั้งหมด">
+                                                                                        <input type="text" name="allshares" id="allshares" class="form-control"   value="<?php echo $advertise['all_shares']; ?>" placeholder="หุ้นทั้งหมด" disabled>
                                                                                     </div>
+                                                                                    <?php endif;?>
+                                                                                    <?php if($advertise['dividend']!="" ):?>  
                                                                                     <div class="row">
                                                                                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                                                                                             <div class="form-group " style="text-align: left;font-size:16px;">
                                                                                                 <b>เงินปันผลทั้งหมดคิดเป็นเงิน (ตัวเลข)</b>
-                                                                                                <input type="number" name="moneyC" id="moneyC" class="form-control" id="NUMBER2" placeholder="เงินปันผลทั้งหมดคิดเป็นเงิน (ตัวเลข)">
+                                                                                                <input type="number" name="moneyC" id="moneyC" class="form-control" value="<?php echo $advertise['dividend']; ?>" id="NUMBER2" placeholder="เงินปันผลทั้งหมดคิดเป็นเงิน (ตัวเลข)" disabled>
                                                                                             </div>
                                                                                         </div>
                                                                                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                                                                                             <div class="form-group" style="text-align: left;font-size:16px;">
                                                                                                 <b>อนุมัติปันผลในอัตราหุ้นละ (ตัวอักษร)</b>
-                                                                                                <input type="text" name="stockC" id="stockC" class="form-control" id="TEXTNUMBER2" placeholder="อนุมัติปันผลในอัตราหุ้นละ (ตัวเลข)">
+                                                                                                <input type="text" name="stockC" id="stockC" class="form-control" id="TEXTNUMBER2" placeholder="อนุมัติปันผลในอัตราหุ้นละ (ตัวเลข)" disabled>
                                                                                             </div>
                                                                                         </div>
                                                                                     </div>
+                                                                                    <?php endif;?>
+                                                                                    <?php if($advertise['reserve']!="" ):?>  
                                                                                     <div class="row">
                                                                                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                                                                                             <div class="form-group " style="text-align: left;font-size:16px;">
                                                                                                 <b>ทุนสำรอง (ตัวเลข)</b>
-                                                                                                <input type="number" name="reserveC" id="reserveC" class="form-control" id="NUMBER3" placeholder="ทุนสำรอง (ตัวเลข)">
+                                                                                                <input type="number" name="reserveC" id="reserveC" class="form-control"   value="<?php echo $advertise['reserve']; ?>" id="NUMBER3" placeholder="ทุนสำรอง (ตัวเลข)" disabled>
                                                                                             </div>
                                                                                         </div>
                                                                                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                                                                                             <div class="form-group " style="text-align: left;font-size:16px;">
                                                                                                 <b>ทุนสำรอง (ตัวอักษร)</b>
-                                                                                                <input type="text" name="characterC" id="characterC" class="form-control" id="TEXTNUMBER3" placeholder="ทุนสำรอง (ตัวอักษร)">
+                                                                                                <input type="text" name="characterC" id="characterC" class="form-control" id="TEXTNUMBER3" placeholder="ทุนสำรอง (ตัวอักษร)" disabled>
                                                                                             </div>
                                                                                         </div>
                                                                                     </div>
+                                                                                    <?php endif;?>
+                                                                                    <?php if($advertise['dividend_payment']!="" ):?>  
                                                                                     <div class="form-group travel-date-group" style="text-align: left;font-size:16px;">
                                                                                         <b>จ่ายเงินปันผลภายในวันที่</b>
-                                                                                        <input type="text" name="paymentC" id="paymentC" class="form-control tleft default" placeholder="จ่ายเงินปันผลภายในวันที่">
+                                                                                        <input type="text" name="paymentC" id="paymentC" value="<?php echo $advertise['dividend_payment']; ?>" class="form-control tleft default" placeholder="จ่ายเงินปันผลภายในวันที่" disabled>
                                                                                     </div>
+                                                                                    <?php endif;?>
+                                                                                    <?php if($advertise['post_date']!="" ):?>  
                                                                                     <div class="form-group travel-date-group" style="text-align: left;font-size:16px;">
                                                                                         <b>วันที่ลงโฆษณา</b>
-                                                                                        <input type="date" name="advertisementA" id="advertisementA" value="<?php echo date('Y-m-d'); ?>" min="<?php echo date('Y-m-d'); ?>" class="form-control tleft default" placeholder="วันที่ลงโฆษณา">
+                                                                                        <input type="date" name="advertisementA" id="advertisementA" value="<?php echo $advertise['post_date']; ?>" min="<?php echo date('Y-m-d'); ?>" class="form-control tleft default" placeholder="วันที่ลงโฆษณา" disabled>
                                                                                     </div>
+                                                                                    <?php endif;?>
+                                                                                    <?php if($advertise['name_surname']!="" ):?>  
                                                                                     <div class="form-group" style="text-align: left;font-size:16px;">
                                                                                         <b>ชื่อ-นามสกุลผู้ลงนาม (กรุณาใส่คำนำหน้าชื่อ)</b>
-                                                                                        <input type="text" name="signA" id="signA" class="form-control" placeholder="ชื่อ-นามสกุลผู้ลงนาม (กรุณาใส่คำนำหน้าชื่อ)">
+                                                                                        <input type="text" name="signA" id="signA" class="form-control" value="<?php echo $advertise['name_surname']; ?>"  placeholder="ชื่อ-นามสกุลผู้ลงนาม (กรุณาใส่คำนำหน้าชื่อ)" disabled>
                                                                                     </div>
+                                                                                    <?php endif;?>
+                                                                                    <?php if($advertise['position']!="" ):?>
                                                                                     <div class="form-group" style="text-align: left;font-size:16px;">
                                                                                         <b>ตำแหน่งผู้ลงนาม</b>
-                                                                                        <input type="text" name="positionA" id="positionA" class="form-control" placeholder="กรรมการผู้มีอำนาจลงนาม" value="กรรมการผู้มีอำนาจลงนาม">
+                                                                                        <input type="text" name="positionA" id="positionA" class="form-control" value="<?php echo $advertise['position']; ?>"  placeholder="กรรมการผู้มีอำนาจลงนาม" value="กรรมการผู้มีอำนาจลงนาม" disabled>
                                                                                     </div>
+                                                                                    <?php endif;?>
+                                                                                </div>
+                                                                                
+                                                                            </div>
+                                                                        </form>
+                                                                    </div>
+                                                                </div>
+                                                                <!-- แก้ไข -->
+                                                                <?php if($advertise['id_user'] == "" || $advertise['id_user'] == 0 || $advertise['id_user'] === null){ ?>
+                                                                <button data-toggle="modal" data-target="#exampleModal_edit<?php echo $advertise['advertise_id']; ?>" type="button" class="btn btn-warning">แก้ไข</button>
+                                                                
+                                                                <div class="modal fade" id="exampleModal_edit<?php echo $advertise['advertise_id']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                                    <div class="modal-dialog" role="document">
+                                                                        <form action="pdf_edit_com" method="post" class="form-horizontal" enctype="multipart/form-data">
+                                                                            <div class="modal-content">
+                                                                                <div class="modal-header">
+                                                                                    <h5 class="modal-title" id="exampleModalLabel">แก้ไข</h5>
+                                                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                                        <span aria-hidden="true">&times;</span>
+                                                                                    </button>
+                                                                                </div>
 
+
+                                                                                <div class="modal-body">
+                                                                                      <input type="text" name="id" value="<?php echo $advertise['advertise_id']; ?>" hidden>
+                                                                                      <?php if($advertise['topic']!=""):?>    
+                                                                                        <div class="form-group" style="text-align: left;font-size:16px;">
+                                                                                            <b>หัวข้อ / เรื่อง</b>
+                                                                                            <input type="text" name="topic" id="topic"  value="<?php echo $advertise['topic']; ?>" class="form-control" placeholder="ชื่อบริษัท / ชื่อหน่วยงาน" >
+                                                                                        </div>
+                                                                                       <?php endif;?>
+                                                                                      <?php if($advertise['agenda']!=""):?>
+                                                                                    <div class="form-group" style="text-align: left;font-size:16px;">
+                                                                                        <b>วาระการประชุม <span style="color:red;">( เพื่อความถูกต้องของข้อมูล แนะนำให้พิมพ์เท่านั้น !! ) จำกัดจำนวนบรรทัด 10 บรรทัด</span></b>
+                                                                                        <textarea class="form-control" name="agendaA" id="agendaA" rows="9" placeholder="สถานที่จัดประชุม / ที่อยู่บริษัท (กรณีเลิกบริษัท)" >
+                                                                                        <?php echo $advertise['agenda']; ?>
+                                                                                        </textarea>
+
+                                                                                    </div>
+                                                                                      <?php endif;?>
+                                                                                      <?php if($advertise['company_name']!=""):?>    
+                                                                                    <div class="form-group" style="text-align: left;font-size:16px;">
+                                                                                        <b>ชื่อบริษัท / ชื่อหน่วยงาน</b>
+                                                                                        <input type="text" name="companyA" id="companyA"  value="<?php echo $advertise['company_name']; ?>" class="form-control" placeholder="ชื่อบริษัท / ชื่อหน่วยงาน" >
+                                                                                    </div>
+                                                                                    <?php endif;?>
+                                                                                    <?php if($advertise['tax']!=""):?>    
+                                                                                    <div class="form-group" style="text-align: left;font-size:16px;">
+                                                                                        <b>เลขประจำตัวผู้เสียภาษี</b>
+                                                                                        <input type="text" name="TaxpayerB" id="TaxpayerB" class="form-control" value="<?php echo $advertise['tax']; ?>"  placeholder="เลขประจำตัวผู้เสียภาษี" >
+                                                                                    </div>
+                                                                                    <?php endif;?>
+                                                                                    <?php if($advertise['meeting']!=""):?> 
+                                                                                    <div class="form-group" style="text-align: left;font-size:16px;">
+                                                                                        <b>ครั้งที่ประชุม</b>
+                                                                                        <input type="text" name="meetingA" id="meetingA" class="form-control" value="<?php echo $advertise['meeting']; ?>" placeholder="ครั้งที่ประชุม" >
+                                                                                    </div>
+                                                                                    <?php endif;?>
+                                                                                    <?php if($advertise['announcement_to']!=""):?> 
+                                                                                    <div class="form-group" style="text-align: left;font-size:16px;">
+                                                                                        <b>ประกาศถึง</b>
+                                                                                        <input type="text" name="announceA" id="announceA" class="form-control"  value="<?php echo $advertise['announcement_to']; ?>" placeholder="ประกาศถึง" >
+                                                                                    </div>
+                                                                                    <?php endif;?>
+                                                                                    <?php if($advertise['out_date']!=""):?> 
+                                                                                    <div class="form-group travel-date-group" style="text-align: left;font-size:16px;">
+                                                                                        <b>วันที่ประกาศเลิกบริษัท</b>
+                                                                                        <input type="text" name="dissolveB" id="dissolveB" value="<?php echo $advertise['out_date']; ?>" class="form-control tleft default" placeholder="วันที่ประกาศเลิกบริษัท" >
+                                                                                    </div>
+                                                                                    <?php endif;?>
+                                                                                    <?php if($advertise['meeting_date']!=""):?> 
+                                                                                    <div class="row">
+                                                                                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                                                                            <div class="form-group travel-date-group" style="text-align: left;font-size:16px;">
+                                                                                                <b>วันที่จัดประชุม</b>
+                                                                                                <input type="date" name="announcedateA" id="announcedateA" value="<?php echo $advertise['meeting_date']; ?>" min="<?php echo date('Y-m-d'); ?>" class="form-control tleft default" placeholder="วันที่จัดประชุม" >
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <?php endif;?>
+                                                                                        <?php if($advertise['meeting_time']!=""):?> 
+                                                                                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                                                                            <div class="form-group" style="text-align: left;font-size:16px;">
+                                                                                                <b>เวลาจัดประชุม</b>
+                                                                                                <select class="form-control" name="timeA" id="timeA" >
+                                                                                                    <option selected >--- เลือกเวลาจัดประชุม ---</option>
+                                                                                                 
+                                                                                                    <option value="0:00" <?php if ($advertise['meeting_time'] == "0:00") {echo "selected='selected'";} ?>>0:00</option>
+                                                                                                    <option value="0:30" <?php if ($advertise['meeting_time'] == "0:30") {echo "selected='selected'";} ?>>0:30</option>
+                                                                                                    <option value="1:00" <?php if ($advertise['meeting_time'] == "1:00") {echo "selected='selected'";} ?>>1:00</option>
+                                                                                                    <option value="1:30" <?php if ($advertise['meeting_time'] == "1:30") {echo "selected='selected'";} ?>>1:30</option>
+                                                                                                    <option value="2:00" <?php if ($advertise['meeting_time'] == "2:00") {echo "selected='selected'";} ?>>2:00</option>
+                                                                                                    <option value="2:30" <?php if ($advertise['meeting_time'] == "2:30") {echo "selected='selected'";} ?>>2:30</option>
+                                                                                                    <option value="3:00" <?php if ($advertise['meeting_time'] == "3:00") {echo "selected='selected'";} ?>>3:00</option>
+                                                                                                    <option value="3:30" <?php if ($advertise['meeting_time'] == "3:30") {echo "selected='selected'";} ?>>3:30</option>
+                                                                                                    <option value="4:00" <?php if ($advertise['meeting_time'] == "4:00") {echo "selected='selected'";} ?>>4:00</option>
+                                                                                                    <option value="4:30" <?php if ($advertise['meeting_time'] == "4:30") {echo "selected='selected'";} ?>>4:30</option>
+                                                                                                    <option value="5:00" <?php if ($advertise['meeting_time'] == "5:00") {echo "selected='selected'";} ?>>5:00</option>
+                                                                                                    <option value="5:30" <?php if ($advertise['meeting_time'] == "5:30") {echo "selected='selected'";} ?>>5:30</option>
+                                                                                                    <option value="6:00" <?php if ($advertise['meeting_time'] == "6:00") {echo "selected='selected'";} ?>>6:00</option>
+                                                                                                    <option value="6:30" <?php if ($advertise['meeting_time'] == "6:30") {echo "selected='selected'";} ?>>6:30</option>
+                                                                                                    <option value="7:00" <?php if ($advertise['meeting_time'] == "7:00") {echo "selected='selected'";} ?>>7:00</option>
+                                                                                                    <option value="7:30" <?php if ($advertise['meeting_time'] == "7:30") {echo "selected='selected'";} ?>>7:30</option>
+                                                                                                    <option value="8:00" <?php if ($advertise['meeting_time'] == "8:00") {echo "selected='selected'";} ?>>8:00</option>
+                                                                                                    <option value="8:30" <?php if ($advertise['meeting_time'] == "8:30") {echo "selected='selected'";} ?>>8:30</option>
+                                                                                                    <option value="9:00" <?php if ($advertise['meeting_time'] == "9:00") {echo "selected='selected'";} ?>>9:00</option>
+                                                                                                    <option value="9:30" <?php if ($advertise['meeting_time'] == "9:30") {echo "selected='selected'";} ?>>9:30</option>
+                                                                                                    <option value="10:00" <?php if ($advertise['meeting_time'] == "10:00") {echo "selected='selected'";} ?>>10:00</option>
+                                                                                                    <option value="10:30" <?php if ($advertise['meeting_time'] == "10:30") {echo "selected='selected'";} ?>>10:30</option>
+                                                                                                    <option value="11:00" <?php if ($advertise['meeting_time'] == "11:00") {echo "selected='selected'";} ?>>11:00</option>
+                                                                                                    <option value="11:30" <?php if ($advertise['meeting_time'] == "11:30") {echo "selected='selected'";} ?>>11:30</option>
+                                                                                                    <option value="12:00" <?php if ($advertise['meeting_time'] == "12:00") {echo "selected='selected'";} ?>>12:00</option>
+                                                                                                    <option value="12:30"<?php if ($advertise['meeting_time'] == "12:30") {echo "selected='selected'";} ?>>12:30</option>
+                                                                                                    <option value="13:00"<?php if ($advertise['meeting_time'] == "13:00") {echo "selected='selected'";} ?>>13:00</option>
+                                                                                                    <option value="13:30"<?php if ($advertise['meeting_time'] == "13:30") {echo "selected='selected'";} ?>>13:30</option>
+                                                                                                    <option value="14:00"<?php if ($advertise['meeting_time'] == "14:00") {echo "selected='selected'";} ?>>14:00</option>
+                                                                                                    <option value="14:30"<?php if ($advertise['meeting_time'] == "14:30") {echo "selected='selected'";} ?>>14:30</option>
+                                                                                                    <option value="15:00"<?php if ($advertise['meeting_time'] == "15:00") {echo "selected='selected'";} ?>>15:00</option>
+                                                                                                    <option value="15:30"<?php if ($advertise['meeting_time'] == "15:30") {echo "selected='selected'";} ?>>15:30</option>
+                                                                                                    <option value="16:00"<?php if ($advertise['meeting_time'] == "16:00") {echo "selected='selected'";} ?>>16:00</option>
+                                                                                                    <option value="16:30"<?php if ($advertise['meeting_time'] == "16:30") {echo "selected='selected'";} ?>>16:30</option>
+                                                                                                    <option value="17:00"<?php if ($advertise['meeting_time'] == "17:00") {echo "selected='selected'";} ?>>17:00</option>
+                                                                                                    <option value="17:30"<?php if ($advertise['meeting_time'] == "17:30") {echo "selected='selected'";} ?>>17:30</option>
+                                                                                                    <option value="18:00"<?php if ($advertise['meeting_time'] == "18:00") {echo "selected='selected'";} ?>>18:00</option>
+                                                                                                    <option value="18:30"<?php if ($advertise['meeting_time'] == "18:30") {echo "selected='selected'";} ?>>18:30</option>
+                                                                                                    <option value="19:00"<?php if ($advertise['meeting_time'] == "19:00") {echo "selected='selected'";} ?>>19:00</option>
+                                                                                                    <option value="19:30"<?php if ($advertise['meeting_time'] == "19:30") {echo "selected='selected'";} ?>>19:30</option>
+                                                                                                    <option value="20:00"<?php if ($advertise['meeting_time'] == "20:00") {echo "selected='selected'";} ?>>20:00</option>
+                                                                                                    <option value="20:30"<?php if ($advertise['meeting_time'] == "20:30") {echo "selected='selected'";} ?>>20:30</option>
+                                                                                                    <option value="21:00"<?php if ($advertise['meeting_time'] == "21:00") {echo "selected='selected'";} ?>>21:00</option>
+                                                                                                    <option value="21:30"<?php if ($advertise['meeting_time'] == "21:30") {echo "selected='selected'";} ?>>21:30</option>
+                                                                                                    <option value="22:00"<?php if ($advertise['meeting_time'] == "22:00") {echo "selected='selected'";} ?>>22:00</option>
+                                                                                                    <option value="22:30"<?php if ($advertise['meeting_time'] == "22:30") {echo "selected='selected'";} ?>>22:30</option>
+                                                                                                    <option value="23:00"<?php if ($advertise['meeting_time'] == "23:00") {echo "selected='selected'";} ?>>23:00</option>
+                                                                                                    <option value="23:30"<?php if ($advertise['meeting_time'] == "23:30") {echo "selected='selected'";} ?>>23:30</option>
+                                                                                                </select>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <?php endif;?>
+                                                                                    <?php if($advertise['meeting_time']!=""):?>  
+                                                                                    <div class="form-group" style="text-align: left;font-size:16px;">
+                                                                                        <b>สถานที่จัดประชุม / ที่อยู่บริษัท (กรณีเลิกบริษัท)</b>
+                                                                                        <textarea class="form-control" name="placeA" id="placeA" rows="5" value=""  placeholder="สถานที่จัดประชุม / ที่อยู่บริษัท (กรณีเลิกบริษัท)" ><?php echo $advertise['meeting_place']; ?></textarea>
+                                                                                    </div>
+                                                                                    <?php endif;?>
+                                                                                    <?php if($advertise['stock_appove']!="" ):?>  
+                                                                                    <div class="row">
+                                                                                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                                                                            <div class="form-group" style="text-align: left;font-size:16px;">
+                                                                                                <b>อนุมัติปันผลในอัตราหุ้นละ (ตัวเลข)</b>
+                                                                                                <input type="number" name="approveC" class="form-control numberso" value="<?php echo $advertise['stock_appove']; ?>" id="NUMBER" placeholder="อนุมัติปันผลในอัตราหุ้นละ (ตัวเลข)" >
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                                                                            <div class="form-group" style="text-align: left;font-size:16px;">
+                                                                                                <b>อนุมัติปันผลในอัตราหุ้นละ (ตัวอักษร)</b>
+                                                                                                <input type="text" name="shareC" class="form-control TEXTNUMBERs " id="TEXTNUMBER" placeholder="อนุมัติปันผลในอัตราหุ้นละ (ตัวเลข)" >
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <?php endif;?>
+                                                                                    <?php if($advertise['all_shares']!="" ):?>  
+                                                                                    <div class="form-group" style="text-align: left;font-size:16px;">
+                                                                                        <b>หุ้นทั้งหมด</b>
+                                                                                        <input type="text" name="allshares" id="allshares" class="form-control"   value="<?php echo $advertise['all_shares']; ?>" placeholder="หุ้นทั้งหมด" >
+                                                                                    </div>
+                                                                                    <?php endif;?>
+                                                                                    <?php if($advertise['dividend']!="" ):?>  
+                                                                                    <div class="row">
+                                                                                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                                                                            <div class="form-group " style="text-align: left;font-size:16px;">
+                                                                                                <b>เงินปันผลทั้งหมดคิดเป็นเงิน (ตัวเลข)</b>
+                                                                                                <input type="number" name="moneyC" id="moneyC" class="form-control" value="<?php echo $advertise['dividend']; ?>" id="NUMBER2" placeholder="เงินปันผลทั้งหมดคิดเป็นเงิน (ตัวเลข)" >
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                                                                            <div class="form-group" style="text-align: left;font-size:16px;">
+                                                                                                <b>อนุมัติปันผลในอัตราหุ้นละ (ตัวอักษร)</b>
+                                                                                                <input type="text" name="stockC" id="stockC" class="form-control" id="TEXTNUMBER2" placeholder="อนุมัติปันผลในอัตราหุ้นละ (ตัวเลข)" >
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <?php endif;?>
+                                                                                    <?php if($advertise['reserve']!="" ):?>  
+                                                                                    <div class="row">
+                                                                                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                                                                            <div class="form-group " style="text-align: left;font-size:16px;">
+                                                                                                <b>ทุนสำรอง (ตัวเลข)</b>
+                                                                                                <input type="number" name="reserveC" id="reserveC" class="form-control"   value="<?php echo $advertise['reserve']; ?>" id="NUMBER3" placeholder="ทุนสำรอง (ตัวเลข)" >
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                                                                            <div class="form-group " style="text-align: left;font-size:16px;">
+                                                                                                <b>ทุนสำรอง (ตัวอักษร)</b>
+                                                                                                <input type="text" name="characterC" id="characterC" class="form-control" id="TEXTNUMBER3" placeholder="ทุนสำรอง (ตัวอักษร)" >
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <?php endif;?>
+                                                                                    <?php if($advertise['dividend_payment']!="" ):?>  
+                                                                                    <div class="form-group travel-date-group" style="text-align: left;font-size:16px;">
+                                                                                        <b>จ่ายเงินปันผลภายในวันที่</b>
+                                                                                        <input type="text" name="paymentC" id="paymentC" value="<?php echo $advertise['dividend_payment']; ?>" class="form-control tleft default" placeholder="จ่ายเงินปันผลภายในวันที่" >
+                                                                                    </div>
+                                                                                    <?php endif;?>
+                                                                                    <?php if($advertise['post_date']!="" ):?>  
+                                                                                    <div class="form-group travel-date-group" style="text-align: left;font-size:16px;">
+                                                                                        <b>วันที่ลงโฆษณา</b>
+                                                                                        <input type="date" name="advertisementA" id="advertisementA" value="<?php echo $advertise['post_date']; ?>" min="<?php echo date('Y-m-d'); ?>" class="form-control tleft default" placeholder="วันที่ลงโฆษณา" >
+                                                                                    </div>
+                                                                                    <?php endif;?>
+                                                                                    <?php if($advertise['name_surname']!="" ):?>  
+                                                                                    <div class="form-group" style="text-align: left;font-size:16px;">
+                                                                                        <b>ชื่อ-นามสกุลผู้ลงนาม (กรุณาใส่คำนำหน้าชื่อ)</b>
+                                                                                        <input type="text" name="signA" id="signA" class="form-control" value="<?php echo $advertise['name_surname']; ?>"  placeholder="ชื่อ-นามสกุลผู้ลงนาม (กรุณาใส่คำนำหน้าชื่อ)">
+                                                                                    </div>
+                                                                                    <?php endif;?>
+                                                                                    <?php if($advertise['position']!="" ):?>
+                                                                                    <div class="form-group" style="text-align: left;font-size:16px;">
+                                                                                        <b>ตำแหน่งผู้ลงนาม</b>
+                                                                                        <input type="text" name="positionA" id="positionA" class="form-control" value="<?php echo $advertise['position']; ?>"  placeholder="กรรมการผู้มีอำนาจลงนาม" value="กรรมการผู้มีอำนาจลงนาม">
+                                                                                    </div>
+                                                                                    <?php endif;?>
                                                                                 </div>
                                                                                 <div class="modal-footer">
-                                                                                    <div class="add-data-footer d-flex justify-content-around px-3 mt-2">
+                                                                                    <div class="add-data-footer d-flex justify-content-around ">
                                                                                         <div class="add-data-btn mr-1">
-                                                                                            <button type="submit" class="btn btn-primary">submit</button>
+                                                                                            <button type="submit" class="btn btn-primary">แก้ไขข้อมูล</button>
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
@@ -276,10 +538,7 @@
                                                                         </form>
                                                                     </div>
                                                                 </div>
-
-
-                                                                <button data-toggle="modal" data-target="#exampleModala<?php echo $advertise['advertise_id']; ?>" type="button" class="btn btn-warning">แก้ไข</button>
-
+                                                                <?php } ?>
                                                                 <button onclick="confirmalertdelete_template('<?php echo $advertise['advertise_id']; ?>')" class="btn btn-danger " type="button" aria-haspopup="true" aria-expanded="false">
                                                                     ลบ
                                                                 </button>

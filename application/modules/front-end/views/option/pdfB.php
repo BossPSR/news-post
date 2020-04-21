@@ -1,6 +1,6 @@
 <hr>
 <div class="form-group travel-date-group" style="text-align: left;font-size:16px;">
-    <b>วันที่ลงโฆษณา</b>
+    <b>วันที่ลงโฆษณา <span style="color:red;">**สามารถลงได้มากกว่า 1 รูป**</sapn></b>
     <input type="text" name="dateimg" class="form-control tleft default">
 </div>
 <div class="row">

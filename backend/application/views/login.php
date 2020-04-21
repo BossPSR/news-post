@@ -88,7 +88,6 @@
                                                         <label for="user-password">Password</label>
                                                     </fieldset>
                                                     <div class="form-group d-flex justify-content-between align-items-center">
-                                                        <div class="text-right"><a href="auth-forgot-password.html" class="card-link">Forgot Password?</a></div>
                                                         <button type="button" id="send_login" class="btn btn-primary float-right btn-inline">Login</button>
                                                     </div>
                                                 </form>
