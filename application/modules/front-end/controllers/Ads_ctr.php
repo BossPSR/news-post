@@ -41,9 +41,6 @@ class Ads_ctr extends CI_Controller
             $topic          = $this->input->post('topic');
 
 
-
-
-
             if ($topic == 'ประกาศเลิกบริษัท') {
 
                 $topicB     = $this->input->post('topic');
@@ -51,8 +48,12 @@ class Ads_ctr extends CI_Controller
                 $TaxpayerB  = $this->input->post('TaxpayerB');
                 $meetingB   = $this->input->post('meetingB');
                 $dissolveB  = $this->input->post('dissolveB');
+                $dissolveB_ex   = explode('/', $dissolveB);
+
                 $addressB   = $this->input->post('addressB');
                 $postB      = $this->input->post('postB');
+                $postB_ex   = explode('/', $postB);
+
                 $signerB    = $this->input->post('signerB');
                 $positionB  = $this->input->post('positionB');
 
@@ -67,9 +68,9 @@ class Ads_ctr extends CI_Controller
                         'company_name'      => $this->input->post('companyฺB'),
                         'tax'               => $this->input->post('TaxpayerB'),
                         'meeting'           => $this->input->post('meetingB'),
-                        'out_date'          => $this->input->post('dissolveB'),
+                        'out_date'          => $dissolveB_ex[2].'-'.$dissolveB_ex[1].'-'.$dissolveB_ex[0],
                         'meeting_place'     => $this->input->post('addressB'),
-                        'post_date'         => $this->input->post('postB'),
+                        'post_date'         => $postB_ex[2].'-'.$postB_ex[1].'-'.$postB_ex[0],
                         'name_surname'      => $this->input->post('signerB'),
                         'position'          => $this->input->post('positionB'),
                         'created_at'        => date('Y-m-d H:i:s'),
@@ -79,11 +80,12 @@ class Ads_ctr extends CI_Controller
                     $success = $this->db->insert('tbl_advertise', $data);
                     $first   = $this->db->insert_id();
                     if ($success > 0) {
+
                         $update = array(
                             'id_order' => $dateYa_ex[0] . '' . $dateYa_ex[1] . $first
                         );
-                        $success = $this->db->insert('tbl_advertise', $data);
-                        $first   = $this->db->insert_id();
+                        $this->db->where('advertise_id', $first);
+                        $this->db->update('tbl_advertise', $update);
 
                         $pointUser = $user['point'] - 1;
                         $this->db->where('id_user', $user['id_user']);
@@ -102,7 +104,9 @@ class Ads_ctr extends CI_Controller
                 $companyC       = $this->input->post('companyC');
                 $meetingC       = $this->input->post('meetingC');
                 $announcementC  = $this->input->post('announcementC');
-                $meetingDateC   = $this->input->post('meetingDateC');
+                $meetingDateC      = $this->input->post('meetingDateC');
+                $meetingDateC_ex   = explode('/', $meetingDateC);
+
                 $meetingTimeC   = $this->input->post('meetingTimeC');
                 $addressC       = $this->input->post('addressC');
                 $approveC       = $this->input->post('approveC');
@@ -111,6 +115,8 @@ class Ads_ctr extends CI_Controller
                 $reserveC       = $this->input->post('reserveC');
                 $paymentC       = $this->input->post('paymentC');
                 $dateC          = $this->input->post('dateC');
+                $dateC_ex       = explode('/', $dateC);
+
                 $signerC        = $this->input->post('signerC');
                 $positionC      = $this->input->post('positionC');
 
@@ -128,7 +134,7 @@ class Ads_ctr extends CI_Controller
                         'company_name'      => $this->input->post('companyC'),
                         'meeting'           => $this->input->post('meetingC'),
                         'announcement_to'   => $this->input->post('announcementC'),
-                        'meeting_date'      => $this->input->post('meetingDateC'),
+                        'meeting_date'      => $meetingDateC_ex[2].'-'.$meetingDateC_ex[1].'-'.$meetingDateC_ex[0],
                         'meeting_time'      => $this->input->post('meetingTimeC'),
                         'meeting_place'     => $this->input->post('addressC'),
                         'stock_appove'      => $this->input->post('approveC'),
@@ -136,7 +142,7 @@ class Ads_ctr extends CI_Controller
                         'dividend'          => $this->input->post('moneyC'),
                         'reserve'           => $this->input->post('reserveC'),
                         'dividend_payment'  => $this->input->post('paymentC'),
-                        'post_date'         => $this->input->post('dateC'),
+                        'post_date'         => $dateC_ex[2].'-'.$dateC_ex[1].'-'.$dateC_ex[0],
                         'name_surname'      => $this->input->post('signerC'),
                         'position'          => $this->input->post('positionC'),
                         'created_at'        => date('Y-m-d H:i:s'),
@@ -145,29 +151,23 @@ class Ads_ctr extends CI_Controller
                     );
                     $success = $this->db->insert('tbl_advertise', $data);
                     $first   = $this->db->insert_id();
+
                     if ($success > 0) {
                         $update = array(
-                            'id_order' => $dateYa_ex[0] . '' . $dateYa_ex[1] . $first
+                            'id_order' => 'OD' . $dateYa_ex[0] . '' . $dateYa_ex[1] . $first
                         );
-                        $success = $this->db->insert('tbl_advertise', $data);
-                        $first   = $this->db->insert_id();
-                        if ($success > 0) {
-                            $update = array(
-                                'id_order' => 'OD' . $dateYa_ex[0] . '' . $dateYa_ex[1] . $first
-                            );
-                            $this->db->where('advertise_id', $first);
-                            $this->db->update('tbl_advertise', $update);
+                        $this->db->where('advertise_id', $first);
+                        $this->db->update('tbl_advertise', $update);
 
-                            $pointUser = $user['point'] - 1;
-                            $this->db->where('id_user', $user['id_user']);
-                            $this->db->update('tbl_user', ['point' => $pointUser]);
+                        $pointUser = $user['point'] - 1;
+                        $this->db->where('id_user', $user['id_user']);
+                        $this->db->update('tbl_user', ['point' => $pointUser]);
 
-                            $this->session->set_flashdata('responseA', TRUE);
-                            redirect('ads');
-                        } else {
-                            $this->session->set_flashdata('msgA', TRUE);
-                            redirect('ads');
-                        }
+                        $this->session->set_flashdata('responseA', TRUE);
+                        redirect('ads');
+                    } else {
+                        $this->session->set_flashdata('msgA', TRUE);
+                        redirect('ads');
                     }
                 }
             } else {
@@ -177,9 +177,13 @@ class Ads_ctr extends CI_Controller
                 $meetingA           = $this->input->post('meetingA');
                 $announceA          = $this->input->post('announceA');
                 $announcedateA      = $this->input->post('announcedateA');
+                $announcedateA_ex   = explode('/', $announcedateA);
+
                 $timeA              = $this->input->post('timeA');
                 $placeA             = $this->input->post('placeA');
                 $advertisementA     = $this->input->post('advertisementA');
+                $advertisementA_ex   = explode('/', $advertisementA);
+
                 $signA              = $this->input->post('signA');
                 $positionA          = $this->input->post('positionA');
 
@@ -197,10 +201,10 @@ class Ads_ctr extends CI_Controller
                         'company_name'      => $this->input->post('companyA'),
                         'meeting'           => $this->input->post('meetingA'),
                         'announcement_to'   => $this->input->post('announceA'),
-                        'meeting_date'      => $this->input->post('announcedateA'),
+                        'meeting_date'      => $announcedateA_ex[2].'-'.$announcedateA_ex[1].'-'.$announcedateA_ex[0],
                         'meeting_time'      => $this->input->post('timeA'),
                         'meeting_place'     => $this->input->post('placeA'),
-                        'post_date'         => $this->input->post('advertisementA'),
+                        'post_date'         => $advertisementA_ex[2].'-'.$advertisementA_ex[1].'-'.$advertisementA_ex[0],
                         'name_surname'      => $this->input->post('signA'),
                         'position'          => $this->input->post('positionA'),
                         'created_at'        => date('Y-m-d H:i:s'),
@@ -211,27 +215,20 @@ class Ads_ctr extends CI_Controller
                     $first   = $this->db->insert_id();
                     if ($success > 0) {
                         $update = array(
-                            'id_order' => $dateYa_ex[0] . '' . $dateYa_ex[1] . $first
+                            'id_order' => 'OD' . $dateYa_ex[0] . '' . $dateYa_ex[1] . $first
                         );
-                        $success = $this->db->insert('tbl_advertise', $data);
-                        $first   = $this->db->insert_id();
-                        if ($success > 0) {
-                            $update = array(
-                                'id_order' => 'OD' . $dateYa_ex[0] . '' . $dateYa_ex[1] . $first
-                            );
-                            $this->db->where('advertise_id', $first);
-                            $this->db->update('tbl_advertise', $update);
+                        $this->db->where('advertise_id', $first);
+                        $this->db->update('tbl_advertise', $update);
 
-                            $pointUser = $user['point'] - 1;
-                            $this->db->where('id_user', $user['id_user']);
-                            $this->db->update('tbl_user', ['point' => $pointUser]);
+                        $pointUser = $user['point'] - 1;
+                        $this->db->where('id_user', $user['id_user']);
+                        $this->db->update('tbl_user', ['point' => $pointUser]);
 
-                            $this->session->set_flashdata('responseA', TRUE);
-                            redirect('ads');
-                        } else {
-                            $this->session->set_flashdata('msgA', TRUE);
-                            redirect('ads');
-                        }
+                        $this->session->set_flashdata('responseA', TRUE);
+                        redirect('ads');
+                    } else {
+                        $this->session->set_flashdata('msgA', TRUE);
+                        redirect('ads');
                     }
                 }
             }

@@ -127,12 +127,12 @@
 						<div class="text-center"><img src="public/assets/front-end/images/logo_new1.png" alt="Canvas Logo" style="width: 100px;height: auto;    max-width: none !important;"></div>
 						<div class="form-group">
 							<label for="exampleInputEmail1">Email: </label>
-							<input type="email" class="form-control" id="" placeholder="Enter email">
+							<input type="email" name="email" class="form-control" id="" placeholder="Enter email">
 						</div>
 
 						<div class="form-group">
 							<label for="exampleInputEmail1">Password: </label>
-							<input type="password" class="form-control" id="" placeholder="Enter Password">
+							<input type="password" name="password" class="form-control" id="" placeholder="Enter Password">
 						</div>
 					</div>
 					<div class="modal-footer">
