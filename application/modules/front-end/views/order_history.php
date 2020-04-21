@@ -43,11 +43,7 @@
                                                                         <td>1 เครดิต</td>
                                                                         <td>45 บาท</td>
                                                                         <td>
-                                                                            <?php if ($show_template['status'] == 0) { ?>
-                                                                                <span class="badge badge-danger">รอการอนุมัติ</span>
-                                                                            <?php } else { ?>
-                                                                                <span class="badge badge-success">ชำระเงินเรียบร้อย</span>
-                                                                            <?php } ?>
+                                                                            <span class="badge badge-success">อนุมัติเรียบร้อย</span>
                                                                         </td>
                                                                         <td>
                                                                             <a href="#" class="button button-mini button-circle button-green"><i class="icon-download"></i>พิมพ์ใบเสร็จรับเงิน</a>
@@ -88,11 +84,7 @@
                                                                         <td><?= number_format($show_ppdf['credit']); ?> เครดิต</td>
                                                                         <td><?= number_format($show_ppdf['credit'] * 45); ?> บาท</td>
                                                                         <td>
-                                                                            <?php if ($show_template['status'] == 0) { ?>
-                                                                                <span class="badge badge-danger">รอการอนุมัติ</span>
-                                                                            <?php } else { ?>
-                                                                                <span class="badge badge-success">ชำระเงินเรียบร้อย</span>
-                                                                            <?php } ?>
+                                                                            <span class="badge badge-success">อนุมัติเรียบร้อย</span>
                                                                         </td>
                                                                         <td>
                                                                             <a href="#" class="button button-mini button-circle button-green"><i class="icon-download"></i>พิมพ์ใบเสร็จรับเงิน</a>

@@ -109,7 +109,7 @@
     width: 100%; }
   .horizontal-menu .header-navbar.navbar-brand-center .navbar-header {
     position: absolute;
-    left: 50%;
+    left: 5%;
     margin-left: -65px;
     padding: 0;
     z-index: 1000; }
@@ -118,7 +118,7 @@
       align-items: center;
       margin-right: 0; }
       .horizontal-menu .header-navbar.navbar-brand-center .navbar-header .navbar-brand .brand-logo {
-        background: url("../../../../../app-assets/images/logo/vuexy-logo.png") no-repeat;
+        background: url("../../../../../app-assets/images/logo/logo_new1.png") no-repeat;
         background-position: -65px -54px;
         height: 24px;
         width: 35px; }

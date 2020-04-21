@@ -23,12 +23,12 @@
                 <div class="content-header-left col-md-9 col-12 mb-2">
                     <div class="row breadcrumbs-top">
                         <div class="col-12">
-                            <h2 class="content-header-title float-left mb-0">Order ลงตาม template</h2>
+                            <h2 class="content-header-title float-left mb-0">ออเดอร์ ลงตาม template</h2>
                             <div class="breadcrumb-wrapper col-12">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="Dashboard">Dashboard</a>
                                     </li>
-                                    <li class="breadcrumb-item active">Order ลงตาม template
+                                    <li class="breadcrumb-item active">ออเดอร์ ลงตาม template
                                     </li>
                                 </ol>
                             </div>
@@ -52,9 +52,9 @@
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h4 class="card-title">List Order ลงตาม template</h4>
+                                    <h4 class="card-title">ออเดอร์ ลงตาม template</h4>
                                     <div>
-                                        <button type="button" class="btn btn-primary mr-1 mb-1" data-toggle="modal" data-target="#exampleModal">+ เพิ่ม List Order ลงตาม template</button></a>
+                                        <button type="button" class="btn btn-primary mr-1 mb-1" data-toggle="modal" data-target="#exampleModal">+ เพิ่ม ออเดอร์ ลงตาม template</button></a>
 
                                     </div>
                                 </div>

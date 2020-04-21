@@ -94,7 +94,7 @@
 											<div class="text-left">
 												<?php if (!empty($user)) : ?>
 													<button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModalCenter">ดูตัวอย่างโฆษณา</button>
-													<button type="submit" class="btn btn-success">ลงโฆษณา</button>
+													<button type="submit" id="sand_ads" class="btn btn-success">ลงโฆษณา</button>
 												<?php else : ?>
 													<button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModalCenter">ดูตัวอย่างโฆษณา</button>
 													<a class="btn btn-success" style="    color: white;" data-toggle="modal" data-target="#exampleModalLogin">ลงโฆษณา</a>
