@@ -56,7 +56,7 @@
 				Swal.fire({
 					position: 'start-end',
 					icon: 'success',
-					title: 'Wellcome',
+					title: 'Welcome',
 					showConfirmButton: false,
 					timer: 1500
 				});
@@ -162,6 +162,24 @@
 					position: 'start-end',
 					icon: 'error',
 					title: 'เครดิตของท่านไม่เพียงพอ กรุณาเติมเครดิตด้วยค่ะ!!',
+					showConfirmButton: true,
+				});
+			<?php endif; ?>
+
+			<?php if ($this->session->flashdata('response_contact')) : ?>
+				Swal.fire({
+					position: 'start-end',
+					icon: 'success',
+					title: 'การส่งข้อความเรียบร้อยแล้ว',
+					showConfirmButton: false,
+					timer: 1500
+				});
+			<?php endif; ?>
+			<?php if ($this->session->flashdata('msg_contact')) : ?>
+				Swal.fire({
+					position: 'start-end',
+					icon: 'error',
+					title: 'ล้มเหลวในการส่งข้อความ กรุณาลองใหม่อีกครั้ง!!',
 					showConfirmButton: true,
 				});
 			<?php endif; ?>

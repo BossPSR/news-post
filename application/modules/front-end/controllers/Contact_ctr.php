@@ -28,6 +28,13 @@ class Contact_ctr extends CI_Controller
 
         $success = $this->db->insert('tbl_contact', $data);
 
-        echo $success ;
+        if ($success > 0) {
+            $this->session->set_flashdata('response_contact', TRUE);
+            redirect('/');
+        } else {
+            $this->session->set_flashdata('msg_contact', TRUE);
+            redirect('/');
+        }
+        
     }
 }
