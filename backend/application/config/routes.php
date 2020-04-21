@@ -26,5 +26,9 @@ $route['List_Contact_us']                  = 'Contact_controller/list_Contact_us
 $route['contact_us_com']                  = 'Contact_controller/contact_us_com';
 $route['contact_us_edit']                  = 'Contact_controller/contact_us_edit';
 $route['delete_contact_us']                  = 'Contact_controller/delete_contact_us';
+$route['delete_template']                  = 'Order_controller/delete_template';
+  
+
+
 
 $route['insert_ads']                  = 'Order_controller/insert_ads';
