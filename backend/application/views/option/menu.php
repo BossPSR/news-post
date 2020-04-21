@@ -23,20 +23,20 @@
                     <li class="nav-item <?php if ($this->uri->segment(1) == "List-admin") {
                                                 echo 'active';
                                             } ?>">
-                 <a href="List-admin"><i class="feather icon-users"></i><span data-i18n="Dashboard">User</span></a>
+                 <a href="List-admin"><i class="feather icon-users"></i><span data-i18n="Dashboard">ผู้ใช้งาน</span></a>
             </li>  
                 <?php } ?>
 
                 <li class="nav-item <?php if ($this->uri->segment(1) == "Main_order") {
                                                 echo 'active';
                                             } ?>">
-                 <a href="Main_order"><i class="feather icon-copy"></i><span data-i18n="Dashboard">Order</span></a>
+                 <a href="Main_order"><i class="feather icon-copy"></i><span data-i18n="Dashboard">ออเดอร์</span></a>
             </li>
 
             <li class="nav-item <?php if ($this->uri->segment(1) == "List-omise") {
                                                 echo 'active';
                                             } ?>">
-                 <a href="List-omise"><i class="feather icon-book"></i><span data-i18n="List-omise">ผู้ใช้งานที่เติมเครดิต</span></a>
+                 <a href="List-omise"><i class="feather icon-at-sign"></i><span data-i18n="List-omise">ผู้ใช้งานที่เติมเครดิต</span></a>
             </li> 
             <li class="nav-item <?php if ($this->uri->segment(1) == "List_Contact_us") {
                                                 echo 'active';
@@ -47,7 +47,7 @@
                 <li class="nav-item <?php if ($this->uri->segment(1) == "List-Contact") {
                                                 echo 'active';
                                             } ?>">
-                 <a href="List-Contact"><i class="feather icon-home"></i><span data-i18n="Dashboard">Contact</span></a>
+                 <a href="List-Contact"><i class="feather icon-home"></i><span data-i18n="Dashboard">ติดต่อเรา</span></a>
             </li>
 
 

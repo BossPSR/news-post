@@ -1,13 +1,7 @@
 <!-- BEGIN: Header-->
 <nav class="header-navbar navbar-expand-lg navbar navbar-with-menu bg-primary navbar-fixed navbar-shadow navbar-brand-center">
     <div class="navbar-header d-xl-block d-none">
-        <ul class="nav navbar-nav flex-row">
-            <li class="nav-item">
-                <a class="navbar-brand" href="dashboard">
-                    <div class="brand-logo"></div>
-                </a>
-            </li>
-        </ul>
+       <img src="assets/app-assets/images/logo/logo_new1.png" alt="">
     </div>
     <div class="navbar-wrapper">
         <div class="navbar-container content">
