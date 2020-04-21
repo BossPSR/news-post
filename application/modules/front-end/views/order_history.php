@@ -32,7 +32,7 @@
                                                                     <th>เครดิต</th>
                                                                     <th>ยอดรวม</th>
                                                                     <th>สถานะ</th>
-                                                                    <th>ใบเสร็จรับเงิน</th>
+                                                                    <!-- <th>ใบเสร็จรับเงิน</th> -->
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
@@ -45,9 +45,9 @@
                                                                         <td>
                                                                             <span class="badge badge-success">อนุมัติเรียบร้อย</span>
                                                                         </td>
-                                                                        <td>
+                                                                        <!-- <td>
                                                                             <a href="#" class="button button-mini button-circle button-green"><i class="icon-download"></i>พิมพ์ใบเสร็จรับเงิน</a>
-                                                                        </td>
+                                                                        </td> -->
                                                                     </tr>
                                                                 <?php } ?>
                                                             </tbody>
@@ -72,7 +72,7 @@
                                                                     <th>เครดิต</th>
                                                                     <th>ยอดรวม</th>
                                                                     <th>สถานะ</th>
-                                                                    <th>ใบเสร็จรับเงิน</th>
+                                                                    <!-- <th>ใบเสร็จรับเงิน</th> -->
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
@@ -86,9 +86,9 @@
                                                                         <td>
                                                                             <span class="badge badge-success">อนุมัติเรียบร้อย</span>
                                                                         </td>
-                                                                        <td>
+                                                                        <!-- <td>
                                                                             <a href="#" class="button button-mini button-circle button-green"><i class="icon-download"></i>พิมพ์ใบเสร็จรับเงิน</a>
-                                                                        </td>
+                                                                        </td> -->
                                                                     </tr>
                                                                 <?php } ?>
                                                             </tbody>
