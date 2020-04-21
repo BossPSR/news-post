@@ -23,12 +23,12 @@
                 <div class="content-header-left col-md-9 col-12 mb-2">
                     <div class="row breadcrumbs-top">
                         <div class="col-12">
-                            <h2 class="content-header-title float-left mb-0">User</h2>
+                            <h2 class="content-header-title float-left mb-0">ผู้ใช้งาน</h2>
                             <div class="breadcrumb-wrapper col-12">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="Dashboard">Dashboard</a>
                                     </li>
-                                    <li class="breadcrumb-item active">User
+                                    <li class="breadcrumb-item active">ผู้ใช้งาน
                                     </li>
                                 </ol>
                             </div>
@@ -52,7 +52,7 @@
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h4 class="card-title">List User</h4>
+                                    <h4 class="card-title">รายชื่อผู้ใช้งาน</h4>
                                 </div>
                                 <div class="card-content">
                                     <div class="card-body card-dashboard">
