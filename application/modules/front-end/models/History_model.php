@@ -26,7 +26,6 @@ class History_model extends CI_Model
         $this->db->select('*');
         $this->db->from('tbl_pdf');
         $this->db->where('id_user', $userId);
-        $this->db->where('status', 1);
         $this->db->order_by('created_at', 'desc');
 
         $data = $this->db->get();
@@ -37,8 +36,6 @@ class History_model extends CI_Model
     {
         $this->db->select('*');
         $this->db->from('tbl_advertise');
-        $this->db->where('id_user', $userId);
-        $this->db->where('status', 1);
         $this->db->order_by('created_at', 'desc');
 
         $data = $this->db->get();
