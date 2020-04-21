@@ -82,7 +82,7 @@
                                                                         <td><?= $show_ppdf['created_at']; ?></td>
                                                                         <td><?= $show_ppdf['date']; ?></td>
                                                                         <td>
-                                                                            <a href="publish-download-template?advertise_id=<?= base64_encode($show_ppdf['id']); ?>" class="button button-mini button-circle button-green"><i class="icon-download"></i>ดาวน์โหลด</a>
+                                                                            <a href="uploads/pdf/<?= $show_ppdf['file_name']; ?>" download class="button button-mini button-circle button-green"><i class="icon-download"></i>ดาวน์โหลด</a>
                                                                         </td>
                                                                     </tr>
                                                                 <?php } ?>
