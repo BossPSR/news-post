@@ -25,4 +25,18 @@ class Publish_ctr extends CI_Controller
             $this->load->view('option/footer');
         }
     }
+
+    public function download_template()
+    {
+        $session                    = $this->db->get_where('tbl_user', ['email' => $this->session->userdata('email')])->row_array();
+        $data['advertise_id']       = $this->input->get('advertise_id');
+
+        if (empty($session)) {
+            redirect('index');
+        } else {
+            $data['date'] = $this->input->get('date');
+            $this->load->library('CustomFpdf');
+            $this->load->view('publish_tem', $data);
+        }
+    }
 }
