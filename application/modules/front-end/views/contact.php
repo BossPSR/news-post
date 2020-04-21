@@ -9,7 +9,7 @@
 				<div class="col-12 mb-3">
 					<h5><a href="index">หน้าแรก</a> / ติดต่อเรา</h5>
 					<div class="feature-box fbox-small fbox-plain fbox-large nobottomborder">
-						<form class="row" id="checkout-form" action="include/form.php" method="post" enctype="multipart/form-data">
+						<form class="row" id="checkout-form" action="contact_add" method="post" enctype="multipart/form-data">
 							<div class="form-process"></div>
 							<div class="col-lg-6">
 								<p style="font-size: 18px;color:#4A4A4A;margin-bottom:30px;font-weight:bold;">

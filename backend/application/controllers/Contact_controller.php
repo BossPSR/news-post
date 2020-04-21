@@ -13,7 +13,7 @@ class Contact_controller extends CI_Controller
             $this->load->view('contact', $data);
         } else {
             $this->session->set_flashdata('dont_click', TRUE);
-            redirect('Dashboard');
+            redirect('Login');
         }
     }
 
@@ -27,14 +27,16 @@ class Contact_controller extends CI_Controller
             $this->load->view('list_contact_us', $data);
         } else {
             $this->session->set_flashdata('dont_click', TRUE);
-            redirect('Dashboard');
+            redirect('Login');
         }
     }
 
 
     public function contact_us_com()
     {
-       
+        $admin = $this->db->get_where('tbl_admin', ['username' => $this->session->userdata('username'), 'status' => 1])->row_array();
+        $data['admin'] = $admin;
+        if ($admin == true) {
                 $data = array(
 
                     'topic'     => $this->input->post('topic') ,
@@ -52,12 +54,18 @@ class Contact_controller extends CI_Controller
             
            return redirect('List_Contact_us');
         
-       
+        } else {
+            $this->session->set_flashdata('dont_click', TRUE);
+            redirect('Login');
+        }
     
     }
 
     public function contact_us_edit()
     {
+        $admin = $this->db->get_where('tbl_admin', ['username' => $this->session->userdata('username'), 'status' => 1])->row_array();
+        $data['admin'] = $admin;
+        if ($admin == true) {
         $id = $this->input->post('id');
 
                 $data = array(
@@ -79,12 +87,18 @@ class Contact_controller extends CI_Controller
             
            return redirect('List_Contact_us');
         
-       
+        } else {
+            $this->session->set_flashdata('dont_click', TRUE);
+            redirect('Login');
+        }
     
     }
 
     public function  delete_contact_us()
     {
+        $admin = $this->db->get_where('tbl_admin', ['username' => $this->session->userdata('username'), 'status' => 1])->row_array();
+        $data['admin'] = $admin;
+        if ($admin == true) {
         $id = $this->input->get('id');
        
 
@@ -97,6 +111,11 @@ class Contact_controller extends CI_Controller
             $this->session->set_flashdata('del_ss2', 'Not Successfully delete คำถามที่พบบ่อย information');
         }
         return redirect('List_Contact_us');
+
+        } else {
+            $this->session->set_flashdata('dont_click', TRUE);
+            redirect('Login');
+        }
     }
 
 
