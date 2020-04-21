@@ -1,5 +1,6 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
+
 use setasign\Fpdi;
 use setasign\fpdf;
 
@@ -28,130 +29,197 @@ class Ads_ctr extends CI_Controller
 
     public function insert_ads()
     {
-        
+
         if ($this->session->userdata('email') != '') {
-            $user = $this->db->get_where('tbl_user',['email' => $this->session->userdata('email')])->row_array();
+            $user = $this->db->get_where('tbl_user', ['email' => $this->session->userdata('email')])->row_array();
             if ($user['point'] == 0) {
                 $this->session->set_flashdata('point_user', TRUE);
                 redirect('ads');
             }
             $dateYa         = date('Y-m-d');
-            $dateYa_ex      = explode('-',$dateYa);
+            $dateYa_ex      = explode('-', $dateYa);
             $topic          = $this->input->post('topic');
-            
+
             if ($topic == 'ประกาศเลิกบริษัท') {
 
-                $data = array(
-                    'topic'             => $this->input->post('topic'),
-                    'company_name'      => $this->input->post('companyฺB'),
-                    'tax'               => $this->input->post('TaxpayerB'),
-                    'meeting'           => $this->input->post('meetingB'),
-                    'out_date'          => $this->input->post('dissolveB'),
-                    'meeting_place'     => $this->input->post('addressB'),
-                    'post_date'         => $this->input->post('postB'),
-                    'name_surname'      => $this->input->post('signerB'),
-                    'position'          => $this->input->post('positionB'),
-                    'created_at'        => date('Y-m-d H:i:s'),
-                    'id_user'           => $user['id_user'],
-                );
-                $success = $this->db->insert('tbl_advertise', $data);
-                $first   = $this->db->insert_id();
-                            
-                if ($success > 0) {
-                    $update = array(
-                        'id_order' => $dateYa_ex[0].''.$dateYa_ex[1].$first
-                    );
-                    $this->db->where('advertise_id', $first);
-                    $this->db->update('tbl_advertise', $update);
+                $topicB     = $this->input->post('topic');
+                $companyฺB   = $this->input->post('companyฺB');
+                $TaxpayerB  = $this->input->post('TaxpayerB');
+                $meetingB   = $this->input->post('meetingB');
+                $dissolveB  = $this->input->post('dissolveB');
+                $addressB   = $this->input->post('addressB');
+                $postB      = $this->input->post('postB');
+                $signerB    = $this->input->post('signerB');
+                $positionB  = $this->input->post('positionB');
 
-                    $pointUser['point'] = $user['point'] - 1;
-                    $this->db->where('id_user', $user['id_user']);
-                    $this->db->update('tbl_user', $pointUser);
-                    
-                    $this->session->set_flashdata('responseA', TRUE);
-                    redirect('ads');
+                if ($topicB == '' || $companyฺB == '' || $TaxpayerB == '' || $meetingB == '' || $dissolveB == '' || $addressB == '' || $postB == '' || $signerB == '' || $positionB == '') {
+                    $this->session->set_flashdata('msgB', TRUE);
+                    return redirect('ads');
                 } else {
-                    $this->session->set_flashdata('msgA', TRUE);
-                    redirect('ads');
+
+                    $data = array(
+                        'topic'             => $this->input->post('topic'),
+                        'company_name'      => $this->input->post('companyฺB'),
+                        'tax'               => $this->input->post('TaxpayerB'),
+                        'meeting'           => $this->input->post('meetingB'),
+                        'out_date'          => $this->input->post('dissolveB'),
+                        'meeting_place'     => $this->input->post('addressB'),
+                        'post_date'         => $this->input->post('postB'),
+                        'name_surname'      => $this->input->post('signerB'),
+                        'position'          => $this->input->post('positionB'),
+                        'created_at'        => date('Y-m-d H:i:s'),
+                        'id_user'           => $user['id_user'],
+                        'credit'            => 1
+                    );
+                    $success = $this->db->insert('tbl_advertise', $data);
+                    $first   = $this->db->insert_id();
+
+                    if ($success > 0) {
+                        $update = array(
+                            'id_order' => 'OD' . $dateYa_ex[0] . '' . $dateYa_ex[1] . $first
+                        );
+                        $this->db->where('advertise_id', $first);
+                        $this->db->update('tbl_advertise', $update);
+
+                        $pointUser['point'] = $user['point'] - 1;
+                        $this->db->where('id_user', $user['id_user']);
+                        $this->db->update('tbl_user', $pointUser);
+
+                        $this->session->set_flashdata('responseA', TRUE);
+                        redirect('ads');
+                    } else {
+                        $this->session->set_flashdata('msgA', TRUE);
+                        redirect('ads');
+                    }
                 }
             } elseif ($topic == 'ประกาศจ่ายเงินปันผล') {
 
-                $data = array(
-                    'topic'             => $this->input->post('topic'),
-                    'company_name'      => $this->input->post('companyC'),
-                    'meeting'           => $this->input->post('meetingC'),
-                    'announcement_to'   => $this->input->post('announcementC'),
-                    'meeting_date'      => $this->input->post('meetingDateC'),
-                    'meeting_time'      => $this->input->post('meetingTimeC'),
-                    'meeting_place'     => $this->input->post('addressC'),
-                    'stock_appove'      => $this->input->post('approveC'),
-                    'all_shares'        => $this->input->post('allshares'),
-                    'dividend'          => $this->input->post('moneyC'),
-                    'reserve'           => $this->input->post('reserveC'),
-                    'dividend_payment'  => $this->input->post('paymentC'),
-                    'post_date'         => $this->input->post('dateC'),
-                    'name_surname'      => $this->input->post('signerC'),
-                    'position'          => $this->input->post('positionC'),
-                    'created_at'        => date('Y-m-d H:i:s'),
-                    'id_user'           => $user['id_user'],
-                );
-                $success = $this->db->insert('tbl_advertise', $data);
-                $first   = $this->db->insert_id();
-                if ($success > 0) {
-                    $update = array(
-                        'id_order' => $dateYa_ex[0].''.$dateYa_ex[1].$first
-                    );
-                    $this->db->where('advertise_id', $first);
-                    $this->db->update('tbl_advertise', $update);
+                $topicC         = $this->input->post('topic');
+                $companyC       = $this->input->post('companyC');
+                $meetingC       = $this->input->post('meetingC');
+                $announcementC  = $this->input->post('announcementC');
+                $meetingDateC   = $this->input->post('meetingDateC');
+                $meetingTimeC   = $this->input->post('meetingTimeC');
+                $addressC       = $this->input->post('addressC');
+                $approveC       = $this->input->post('approveC');
+                $allshares      = $this->input->post('allshares');
+                $moneyC         = $this->input->post('moneyC');
+                $reserveC       = $this->input->post('reserveC');
+                $paymentC       = $this->input->post('paymentC');
+                $dateC          = $this->input->post('dateC');
+                $signerC        = $this->input->post('signerC');
+                $positionC      = $this->input->post('positionC');
 
-                    $pointUser['point'] = $user['point'] - 1;
-                    $this->db->where('id_user', $user['id_user']);
-                    $this->db->update('tbl_user', $pointUser);
-
-                    $this->session->set_flashdata('responseA', TRUE);
-                    redirect('ads');
+                if (
+                    $topicC == '' || $companyC == '' || $meetingC == '' || $announcementC == '' || $meetingDateC == '' ||
+                    $meetingTimeC == '' || $addressC == '' || $approveC == '' || $moneyC == '' || $allshares == '' ||  $reserveC == '' ||
+                    $paymentC == '' || $dateC == '' || $signerC == '' || $positionC == ''
+                ) {
+                    $this->session->set_flashdata('msgB', TRUE);
+                    return redirect('ads');
                 } else {
-                    $this->session->set_flashdata('msgA', TRUE);
-                    redirect('ads');
+
+                    $data = array(
+                        'topic'             => $this->input->post('topic'),
+                        'company_name'      => $this->input->post('companyC'),
+                        'meeting'           => $this->input->post('meetingC'),
+                        'announcement_to'   => $this->input->post('announcementC'),
+                        'meeting_date'      => $this->input->post('meetingDateC'),
+                        'meeting_time'      => $this->input->post('meetingTimeC'),
+                        'meeting_place'     => $this->input->post('addressC'),
+                        'stock_appove'      => $this->input->post('approveC'),
+                        'all_shares'        => $this->input->post('allshares'),
+                        'dividend'          => $this->input->post('moneyC'),
+                        'reserve'           => $this->input->post('reserveC'),
+                        'dividend_payment'  => $this->input->post('paymentC'),
+                        'post_date'         => $this->input->post('dateC'),
+                        'name_surname'      => $this->input->post('signerC'),
+                        'position'          => $this->input->post('positionC'),
+                        'created_at'        => date('Y-m-d H:i:s'),
+                        'id_user'           => $user['id_user'],
+                        'credit'            => 1
+
+                    );
+                    $success = $this->db->insert('tbl_advertise', $data);
+                    $first   = $this->db->insert_id();
+                    if ($success > 0) {
+                        $update = array(
+                            'id_order' => 'OD' . $dateYa_ex[0] . '' . $dateYa_ex[1] . $first
+                        );
+                        $this->db->where('advertise_id', $first);
+                        $this->db->update('tbl_advertise', $update);
+
+                        $pointUser['point'] = $user['point'] - 1;
+                        $this->db->where('id_user', $user['id_user']);
+                        $this->db->update('tbl_user', $pointUser);
+
+                        $this->session->set_flashdata('responseA', TRUE);
+                        redirect('ads');
+                    } else {
+                        $this->session->set_flashdata('msgA', TRUE);
+                        redirect('ads');
+                    }
                 }
             } else {
 
-                $data = array(
-                    'topic'             => $this->input->post('topic'),
-                    'agenda'            => $this->input->post('agendaA'),
-                    'company_name'      => $this->input->post('companyA'),
-                    'meeting'           => $this->input->post('meetingA'),
-                    'announcement_to'   => $this->input->post('announceA'),
-                    'meeting_date'      => $this->input->post('announcedateA'),
-                    'meeting_time'      => $this->input->post('timeA'),
-                    'meeting_place'     => $this->input->post('placeA'),
-                    'post_date'         => $this->input->post('advertisementA'),
-                    'name_surname'      => $this->input->post('signA'),
-                    'position'          => $this->input->post('positionA'),
-                    'created_at'        => date('Y-m-d H:i:s'),
-                    'id_user'           => $user['id_user'],
-                );
-                $success = $this->db->insert('tbl_advertise', $data);
-                $first   = $this->db->insert_id();
-                if ($success > 0) {
-                    $update = array(
-                        'id_order' => $dateYa_ex[0].''.$dateYa_ex[1].$first
-                    );
-                    $this->db->where('advertise_id', $first);
-                    $this->db->update('tbl_advertise', $update);
-
-                    $pointUser['point'] = $user['point'] - 1;
-                    $this->db->where('id_user', $user['id_user']);
-                    $this->db->update('tbl_user', $pointUser);
-
-                    $this->session->set_flashdata('responseA', TRUE);
-                    redirect('ads');
+                $topicA             = $this->input->post('topic');
+                $agendaA            = $this->input->post('agendaA');
+                $companyA           = $this->input->post('companyA');
+                $meetingA           = $this->input->post('meetingA');
+                $announceA          = $this->input->post('announceA');
+                $announcedateA      = $this->input->post('announcedateA');
+                $timeA              = $this->input->post('timeA');
+                $placeA             = $this->input->post('placeA');
+                $advertisementA     = $this->input->post('advertisementA');
+                $signA              = $this->input->post('signA');
+                $positionA          = $this->input->post('positionA');
+              
+                if (
+                    $topicA == '' || $agendaA == '' || $companyA == '' || $meetingA == '' || $announceA == '' ||
+                    $announcedateA == '' || $timeA == '' || $placeA == '' || $advertisementA == '' || $signA == '' ||  $positionA == ''
+                ) {
+                    $this->session->set_flashdata('msgB', TRUE);
+                    return redirect('ads');
                 } else {
-                    $this->session->set_flashdata('msgA', TRUE);
-                    redirect('ads');
+
+                    $data = array(
+                        'topic'             => $this->input->post('topic'),
+                        'agenda'            => $this->input->post('agendaA'),
+                        'company_name'      => $this->input->post('companyA'),
+                        'meeting'           => $this->input->post('meetingA'),
+                        'announcement_to'   => $this->input->post('announceA'),
+                        'meeting_date'      => $this->input->post('announcedateA'),
+                        'meeting_time'      => $this->input->post('timeA'),
+                        'meeting_place'     => $this->input->post('placeA'),
+                        'post_date'         => $this->input->post('advertisementA'),
+                        'name_surname'      => $this->input->post('signA'),
+                        'position'          => $this->input->post('positionA'),
+                        'created_at'        => date('Y-m-d H:i:s'),
+                        'id_user'           => $user['id_user'],
+                        'credit'            => 1
+
+                    );
+                    $success = $this->db->insert('tbl_advertise', $data);
+                    $first   = $this->db->insert_id();
+                    if ($success > 0) {
+                        $update = array(
+                            'id_order' => 'OD' . $dateYa_ex[0] . '' . $dateYa_ex[1] . $first
+                        );
+                        $this->db->where('advertise_id', $first);
+                        $this->db->update('tbl_advertise', $update);
+
+                        $pointUser['point'] = $user['point'] - 1;
+                        $this->db->where('id_user', $user['id_user']);
+                        $this->db->update('tbl_user', $pointUser);
+
+                        $this->session->set_flashdata('responseA', TRUE);
+                        redirect('ads');
+                    } else {
+                        $this->session->set_flashdata('msgA', TRUE);
+                        redirect('ads');
+                    }
                 }
             }
-
         } else {
             $this->session->set_flashdata('check_login', TRUE);
             redirect('ads');
@@ -175,18 +243,18 @@ class Ads_ctr extends CI_Controller
     public function insert_ads_pdf()
     {
         if ($this->session->userdata('email') != '') {
-            $user = $this->db->get_where('tbl_user',['email' => $this->session->userdata('email')])->row_array();
+            $user = $this->db->get_where('tbl_user', ['email' => $this->session->userdata('email')])->row_array();
             if ($user['point'] == 0) {
                 $this->session->set_flashdata('point_user', TRUE);
                 redirect('ads');
             }
-        
+
             $topicfile   = $this->input->post('topicfile');
-        
+
             if ($topicfile == 'แบบไฟล์PDF') {
 
                 $datepdf     = $this->input->post('datepdf');
-                $datepdf_ex  = explode('/',$datepdf);
+                $datepdf_ex  = explode('/', $datepdf);
 
                 $this->load->library('upload');
 
@@ -215,7 +283,7 @@ class Ads_ctr extends CI_Controller
                         $data = array(
 
                             'topic'         => $topicfile,
-                            'date'          => $datepdf_ex[2].'-'.$datepdf_ex[0].'-'.$datepdf_ex[1],
+                            'date'          => $datepdf_ex[2] . '-' . $datepdf_ex[0] . '-' . $datepdf_ex[1],
                             'credit'        => $numPage,
                             'file_name'     => $gamber['file_name'],
                             'created_at'    => date('Y-m-d H:i:s'),
@@ -233,7 +301,7 @@ class Ads_ctr extends CI_Controller
                 }
             } else {
                 $dateimg = $this->input->post('dateimg');
-                $dateimg_ex  = explode('/',$dateimg);
+                $dateimg_ex  = explode('/', $dateimg);
 
                 $this->load->library('upload');
                 $dataInfo = array();
@@ -254,7 +322,7 @@ class Ads_ctr extends CI_Controller
 
                     $image[] = array(
                         'topic'         => $topicfile,
-                        'date'          => $dateimg_ex[2].'-'.$dateimg_ex[0].'-'.$dateimg_ex[1],
+                        'date'          => $dateimg_ex[2] . '-' . $dateimg_ex[0] . '-' . $dateimg_ex[1],
                         'credit'        => 1,
                         'file_name'     => $dataInfo[$i]['file_name'],
                         'created_at'    => date('Y-m-d H:i:s'),
@@ -276,7 +344,6 @@ class Ads_ctr extends CI_Controller
                     redirect('ads');
                 }
             }
-
         } else {
             $this->session->set_flashdata('check_login', TRUE);
             redirect('ads');
@@ -288,9 +355,8 @@ class Ads_ctr extends CI_Controller
         $this->load->library('CustomFpdf');
         global $pdf;
         $pdf = new Fpdi\Fpdi();
-        $pdfPage = "uploads/pdf/".$name_file.'.pdf';
+        $pdfPage = "uploads/pdf/" . $name_file . '.pdf';
         $pdfPagePDF = $pdf->setSourceFile($pdfPage);
         return $pdfPagePDF;
     }
-
 }

@@ -112,11 +112,21 @@
 					showConfirmButton: true,
 				});
 			<?php endif; ?>
+
 			<?php if ($error = $this->session->flashdata('msgA')) : ?>
 				Swal.fire({
 					position: 'start-end',
 					icon: 'error',
 					title: 'ล้มเหลวในการลงโฆษณาตาม template กรุณาลงใหม่อีกครั้ง!!',
+					showConfirmButton: true,
+				});
+			<?php endif; ?>
+
+			<?php if ($error = $this->session->flashdata('msgB')) : ?>
+				Swal.fire({
+					position: 'start-end',
+					icon: 'warning',
+					title: 'กรุณากรอกข้อมูลให้ครบ !!',
 					showConfirmButton: true,
 				});
 			<?php endif; ?>
@@ -157,6 +167,7 @@
 			<?php endif; ?>
 			
 		</script>
+		
 		<!-- Date & Time Picker JS -->
 		<script src="public/assets/front-end/js/components/moment.js"></script>
 		<script src="public/assets/front-end/js/components/datepicker.js"></script>
