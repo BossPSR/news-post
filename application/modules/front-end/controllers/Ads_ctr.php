@@ -96,6 +96,7 @@ class Ads_ctr extends CI_Controller
                     'id_user'           => $user['id_user'],
                 );
                 $success = $this->db->insert('tbl_advertise', $data);
+                $first   = $this->db->insert_id();
                 if ($success > 0) {
                     $update = array(
                         'id_order' => $dateYa_ex[0].''.$dateYa_ex[1].$first
@@ -131,6 +132,7 @@ class Ads_ctr extends CI_Controller
                     'id_user'           => $user['id_user'],
                 );
                 $success = $this->db->insert('tbl_advertise', $data);
+                $first   = $this->db->insert_id();
                 if ($success > 0) {
                     $update = array(
                         'id_order' => $dateYa_ex[0].''.$dateYa_ex[1].$first

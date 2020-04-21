@@ -1,33 +1,33 @@
 <div class="form-group" style="text-align: left;font-size:16px;">
     <b>วาระการประชุม <span style="color:red;">( เพื่อความถูกต้องของข้อมูล แนะนำให้พิมพ์เท่านั้น !! ) จำกัดจำนวนบรรทัด 10 บรรทัด</span></b>
-    <textarea class="form-control" name="agendaA" id="agendaA" rows="9"  placeholder="สถานที่จัดประชุม / ที่อยู่บริษัท (กรณีเลิกบริษัท)">
+    <textarea class="form-control" name="agendaA" id="agendaA" rows="9" placeholder="สถานที่จัดประชุม / ที่อยู่บริษัท (กรณีเลิกบริษัท)" required>
 
     </textarea>
 
 </div>
 <div class="form-group" style="text-align: left;font-size:16px;">
     <b>ชื่อบริษัท / ชื่อหน่วยงาน</b>
-    <input type="text" name="companyA" id="companyA" class="form-control" placeholder="ชื่อบริษัท / ชื่อหน่วยงาน">
+    <input type="text" name="companyA" id="companyA" class="form-control" placeholder="ชื่อบริษัท / ชื่อหน่วยงาน" required>
 </div>
 <div class="form-group" style="text-align: left;font-size:16px;">
     <b>ครั้งที่ประชุม</b>
-    <input type="text" name="meetingA" id="meetingA" class="form-control" value="1 / <?= date('Y') + 543; ?>" placeholder="ครั้งที่ประชุม">
+    <input type="text" name="meetingA" id="meetingA" class="form-control" value="1 / <?= date('Y') + 543; ?>" placeholder="ครั้งที่ประชุม" required>
 </div>
 <div class="form-group" style="text-align: left;font-size:16px;">
     <b>ประกาศถึง</b>
-    <input type="text" name="announceA" id="announceA" class="form-control" value="ท่านผู้ถือหุ้นของบริษัท" placeholder="ประกาศถึง">
+    <input type="text" name="announceA" id="announceA" class="form-control" value="ท่านผู้ถือหุ้นของบริษัท" placeholder="ประกาศถึง" required>
 </div>
 <div class="row">
     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
         <div class="form-group travel-date-group" style="text-align: left;font-size:16px;">
             <b>วันที่จัดประชุม</b>
-            <input type="text" name="announcedateA" id="announcedateA" value="<?php echo date('d/m/Y'); ?>" class="form-control tleft today" placeholder="วันที่จัดประชุม">
+            <input type="text" name="announcedateA" id="announcedateA" value="<?php echo date('d/m/Y'); ?>" class="form-control tleft today" placeholder="วันที่จัดประชุม" required>
         </div>
     </div>
     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
         <div class="form-group" style="text-align: left;font-size:16px;">
             <b>เวลาจัดประชุม</b>
-            <select class="form-control" name="timeA" id="timeA">
+            <select class="form-control" name="timeA" id="timeA" required>
                 <option selected disabled>--- เลือกเวลาจัดประชุม ---</option>
                 <option value="0:00">0:00</option>
                 <option value="0:30">0:30</option>
@@ -83,17 +83,44 @@
 </div>
 <div class="form-group" style="text-align: left;font-size:16px;">
     <b>สถานที่จัดประชุม / ที่อยู่บริษัท (กรณีเลิกบริษัท)</b>
-    <textarea class="form-control" name="placeA" id="placeA" rows="5" placeholder="สถานที่จัดประชุม / ที่อยู่บริษัท (กรณีเลิกบริษัท)"></textarea>
+    <textarea class="form-control" name="placeA" id="placeA" rows="5" placeholder="สถานที่จัดประชุม / ที่อยู่บริษัท (กรณีเลิกบริษัท)" required></textarea>
 </div>
 <div class="form-group travel-date-group" style="text-align: left;font-size:16px;">
     <b>วันที่ลงโฆษณา</b>
-    <input type="text" name="advertisementA" id="advertisementA" value="<?php echo date('d/m/Y'); ?>" class="form-control tleft today" placeholder="วันที่ลงโฆษณา">
+    <input type="text" name="advertisementA" id="advertisementA" value="<?php echo date('d/m/Y'); ?>" class="form-control tleft today" placeholder="วันที่ลงโฆษณา" required>
 </div>
 <div class="form-group" style="text-align: left;font-size:16px;">
     <b>ชื่อ-นามสกุลผู้ลงนาม (กรุณาใส่คำนำหน้าชื่อ)</b>
-    <input type="text" name="signA" id="signA" class="form-control" placeholder="ชื่อ-นามสกุลผู้ลงนาม (กรุณาใส่คำนำหน้าชื่อ)">
+    <input type="text" name="signA" id="signA" class="form-control" placeholder="ชื่อ-นามสกุลผู้ลงนาม (กรุณาใส่คำนำหน้าชื่อ)" required>
 </div>
 <div class="form-group" style="text-align: left;font-size:16px;">
     <b>ตำแหน่งผู้ลงนาม</b>
-    <input type="text" name="positionA" id="positionA" class="form-control" placeholder="กรรมการผู้มีอำนาจลงนาม" value="กรรมการผู้มีอำนาจลงนาม">
+    <input type="text" name="positionA" id="positionA" class="form-control" placeholder="กรรมการผู้มีอำนาจลงนาม" value="กรรมการผู้มีอำนาจลงนาม" required>
 </div>
+
+<div class="alert alert-danger" id="empty" role="alert"></div>
+
+<script type="text/javascript">
+    $('#sand_ads').click(function() {
+        var companyA = $("#companyA").val();
+        var meetingA = $("#meetingA").val();
+        var announceA = $("#announceA").val();
+        var announcedateA = $("#announcedateA").val();
+        var timeA = $("#timeA").val();
+
+        if (companyA.length === 0) {
+            $('#empty').html('กรุณากรอกข้อมูลให้ครบ.').css('color', 'red');
+        } else if (companyA.length !== 0) {
+            $('#empty').html('').css('color', 'red');
+        }
+    
+
+        // if (email.length != 0 && password.length !== 0) {
+        //     frmLogin.action = 'loginMe'
+        //     frmLogin.submit();
+        // } else {
+
+        // }
+
+    });
+</script>
