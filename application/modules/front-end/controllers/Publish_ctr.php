@@ -36,7 +36,7 @@ class Publish_ctr extends CI_Controller
         } else {
             $data['date'] = $this->input->get('date');
             $this->load->library('CustomFpdf');
-            $this->load->view('publish_pdf', $data);
+            $this->load->view('publish_tem', $data);
         }
     }
 }
