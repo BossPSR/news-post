@@ -1,4 +1,57 @@
 <?php
+$month = array(
+    '01'  => 'มกราคม', '02'  => 'กุมภาพันธ์', '03'  => 'มีนาคม',
+    '04'  => 'เมษายน', '05'  => 'พฤษภาคม', '06'  => 'มิถุนายน',
+    '07'  => 'กรกฎาคม', '08'  => 'สิงหาคม', '09'  => 'กันยายน',
+    '10'  => 'ตุลาคม', '11'  => 'พฤศจิกายน', '12'  => 'ธันวาคม',
+);
+function thaiDate($date)
+{
+    // list($date, $time) = explode(' ', $datetime); // แยกวันที่ กับ เวลาออกจากกัน
+    // list($H, $i, $s) = explode(':', $time); // แยกเวลา ออกเป็น ชั่วโมง นาที วินาที
+    list($Y, $m, $d) = explode('-', $date); // แยกวันเป็น ปี เดือน วัน
+    $Y = $Y + 543; // เปลี่ยน ค.ศ. เป็น พ.ศ.
+    switch ($m) {
+        case "01":
+            $m = "ม.ค.";
+            break;
+        case "02":
+            $m = "ก.พ.";
+            break;
+        case "03":
+            $m = "มี.ค.";
+            break;
+        case "04":
+            $m = "เม.ย.";
+            break;
+        case "05":
+            $m = "พ.ค.";
+            break;
+        case "06":
+            $m = "มิ.ย.";
+            break;
+        case "07":
+            $m = "ก.ค.";
+            break;
+        case "08":
+            $m = "ส.ค.";
+            break;
+        case "09":
+            $m = "ก.ย.";
+            break;
+        case "10":
+            $m = "ต.ค.";
+            break;
+        case "11":
+            $m = "พ.ย.";
+            break;
+        case "12":
+            $m = "ธ.ค.";
+            break;
+    }
+    return $d . " " . $m . " " . $Y;
+}
+
 use setasign\Fpdi;
 use setasign\fpdf;
 
@@ -9,19 +62,17 @@ date_default_timezone_set('UTC');
 $start = microtime(true);
 
 global $pdf;
-$pdf = new Fpdi\Fpdi('P','mm','A4');
+$pdf = new Fpdi\Fpdi('P', 'mm', 'A4');
 //$pdf = new Fpdi\TcpdfFpdi('L', 'mm', 'A3');
 
 if ($pdf instanceof \TCPDF) {
     $pdf->SetProtection(['print'], '', 'owner');
     $pdf->setPrintHeader(false);
     $pdf->setPrintFooter(false);
-
-    
 }
 
 $pdf->SetAutoPageBreak(false, 0);
-$pdf->AddFont('BrowalliaUPC','','BrowaUPC.php');
+$pdf->AddFont('BrowalliaUPC', '', 'BrowaUPC.php');
 
 
 function customHeader($page_no, $date_str)
@@ -30,17 +81,17 @@ function customHeader($page_no, $date_str)
     //$prefix = "public/assets/front-end/pdf-files/";
     $prefix = "uploads/pdf/";
 
-    $pdf->SetFont('BrowalliaUPC','',15);
+    $pdf->SetFont('BrowalliaUPC', '', 15);
 
-    $pdf->image($prefix."logo_pdf.png", 5, 7, 40);
+    $pdf->image($prefix . "logo_pdf.png", 5, 7, 40);
 
     $pdf->setY(14);
 
     $pdf->setX(80);
-    $pdf->cell(50, 6, iconv('UTF-8', 'cp874', "วันที่ ".$date_str), 0, 0, 'C');
+    // $pdf->cell(50, 6, iconv('UTF-8', 'cp874', "วันที่ ".$date_str), 0, 0, 'C');
 
     $pdf->setX(155);
-    $pdf->cell(50, 6, iconv('UTF-8', 'cp874', "หน้้า ".$page_no), 0, 0, 'R');
+    $pdf->cell(50, 6, iconv('UTF-8', 'cp874', "หน้้า " . $page_no), 0, 0, 'R');
 
     $pdf->SetFillColor(156, 155, 156);
     $pdf->Rect(4, 22.7, 202, 0.45, "F");
@@ -51,7 +102,7 @@ function customFooter()
 
     $footer_text = "โดย บริษัท วัน ศิริ แอคเคาน์ติ้ง แอนด์ แทกซ์ จำกัด / ผู้พิมพ์ ผู้โฆษณา และบรรณาธิการ นายณัฐวัฒน์ โลหะพิทักษ์
 สำนักงาน 445 ถนนวิภาวดีรังสิต แขวงจอมพล เขตจตุจักร กรุงเทพมหานครฯ 10900 โทร 098-2811599";
-    $pdf->SetFont('BrowalliaUPC','',13);
+    $pdf->SetFont('BrowalliaUPC', '', 13);
 
     $pdf->SetFillColor(0, 0, 0);
     $pdf->Rect(4, 279, 202, 0.1, "F");
@@ -69,9 +120,9 @@ function drawData4page($pos, $data)
 
     switch ($pos) {
         case 1:
-            $pdf->Rect(5, 26.5, 99.5, 124, "");
-            $adjust_x = 0;
-            $adjust_y = 0;
+            $pdf->Rect(10, 40, 190, 220, "");
+            $adjust_x = 10;
+            $adjust_y = 10;
             break;
         case 2:
             $pdf->Rect(106, 26.5, 99.5, 124, "");
@@ -88,74 +139,71 @@ function drawData4page($pos, $data)
             $adjust_x = 101;
             $adjust_y = 125;
             break;
-        
+
         default:
             break;
     }
 
     $pdf->SetLineWidth(0.01);
-    $pdf->SetFont('BrowalliaUPC','',9);
+    $pdf->SetFont('BrowalliaUPC', '', 14);
 
 
     $pdf->setY($adjust_y + 32);
-    $pdf->setX($adjust_x + 5);
-    $pdf->MultiCell(97, 5.4, iconv('UTF-8', 'cp874', $data['company']), 0, 'R');
+    // $pdf->setX($adjust_x + 100);
+    $pdf->MultiCell(0, 8.4, iconv('UTF-8', 'cp874', $data['company']), 0, 'R');
 
-    $pdf->setY($adjust_y + 45);
-    $pdf->setX($adjust_x + 5);
-    $pdf->MultiCell(99.5, 5.4, iconv('UTF-8', 'cp874', $data['date']), 0, 'C');
+    // $pdf->setY($adjust_y + 35);
+    // $pdf->setX($adjust_x + 118.5);
+    // $pdf->MultiCell(99.5, 25.4, iconv('UTF-8', 'cp874', thaiDate($data['date'])), 0, 'C');
+
+    $pdf->setY($adjust_y + 40);
+    $pdf->setX($adjust_x + 8);
+    $pdf->MultiCell(99.5, 25.7, iconv('UTF-8', 'cp874', $data['title']), 0, 'L');
 
     $pdf->setY($adjust_y + 50);
     $pdf->setX($adjust_x + 8);
-    $pdf->MultiCell(99.5, 3.7, iconv('UTF-8', 'cp874', $data['title']), 0, 'L');
+    $pdf->MultiCell(99.5, 25.7, iconv('UTF-8', 'cp874', $data['to']), 0, 'L');
+
+    $pdf->setY($adjust_y + 80);
+    $pdf->setX($adjust_x + 8);
+    $pdf->MultiCell(175, 10, iconv('UTF-8', 'cp874', '        ' . $data['description']), 0, 'L');
 
     $pdf->setX($adjust_x + 8);
-    $pdf->MultiCell(99.5, 3.7, iconv('UTF-8', 'cp874', $data['to']), 0, 'L');
-
-    $pdf->setY($adjust_y + 65);
-    $pdf->setX($adjust_x + 8);
-
-    // $nb= wordwrap($data['description'],120);
-
-    $pdf->MultiCell(93.5, 3.7, iconv('UTF-8', 'cp874', '        '.$data['description']), 0, 'L');
+    $pdf->MultiCell(0, 0, iconv('UTF-8', 'cp874', ""), 0, 'L');
 
     $pdf->setX($adjust_x + 8);
-    $pdf->MultiCell(99.5, 2, iconv('UTF-8', 'cp874', ""), 0, 'L');
-
-    $pdf->setX($adjust_x + 15);
 
     $list = "";
-    if($data['list'])
-    {
-        foreach ($data['list'] as $txt) 
-            $list.= $txt."\r\n";
+    if ($data['list']) {
+        foreach ($data['list'] as $txt)
+            $list .= $txt . "\r\n";
     }
 
-    $pdf->MultiCell(93.5, 3.7, iconv('UTF-8', 'cp874', $list), 0, 'L');
+    $pdf->MultiCell(194, 10, iconv('UTF-8', 'cp874', $list), 0, 'L');
+    // MultiCell(float w, float h, string txt [, mixed border [, string align [, boolean fill]]])
+
+    // $pdf->setX($adjust_x + 8);
+    // $pdf->MultiCell(0, 4, iconv('UTF-8', 'cp874', ""), 0, 'L');
 
     $pdf->setX($adjust_x + 8);
-    $pdf->MultiCell(99.5, 2, iconv('UTF-8', 'cp874', ""), 0, 'L');
+    $pdf->MultiCell(167, 10, iconv('UTF-8', 'cp874', '        ' . $data['end']), 0, 'L');
 
     $pdf->setX($adjust_x + 8);
-    $pdf->MultiCell(93.5, 3.7, iconv('UTF-8', 'cp874', '        '.$data['end']), 0, 'L');
+    $pdf->MultiCell(99.5, 20, iconv('UTF-8', 'cp874', ""), 0, 'L');
 
-    $pdf->setX($adjust_x + 8);
-    $pdf->MultiCell(99.5, 4, iconv('UTF-8', 'cp874', ""), 0, 'L');
-
-    $pdf->setX($adjust_x + 53);
-    $pdf->MultiCell(50, 3.7, iconv('UTF-8', 'cp874', $data['signature_title']), 0, 'C');
-    $pdf->setX($adjust_x + 53);
+    $pdf->setX($adjust_x + 70);
+    $pdf->MultiCell(50, 7.7, iconv('UTF-8', 'cp874', $data['signature_title']), 0, 'C');
+    $pdf->setX($adjust_x + 70);
     $pdf->MultiCell(50, 3, iconv('UTF-8', 'cp874', ""), 0, 'L');
-    $pdf->setX($adjust_x + 53);
-    $pdf->MultiCell(50, 3.7, iconv('UTF-8', 'cp874', "( ".$data['signature_name']." )"), 0, 'C');
-    $pdf->setX($adjust_x + 53);
-    $pdf->MultiCell(50, 3.7, iconv('UTF-8', 'cp874', $data['signature_position']), 0, 'C');
-
-    
+    $pdf->setX($adjust_x + 70);
+    $pdf->MultiCell(50, 7.7, iconv('UTF-8', 'cp874', "( " . $data['signature_name'] . " )"), 0, 'C');
+    $pdf->setX($adjust_x + 70);
+    $pdf->MultiCell(50, 10.7, iconv('UTF-8', 'cp874', $data['signature_position']), 0, 'C');
 }
 
-function map($x, $in_min, $in_max, $out_min, $out_max) {
-  return ($x - $in_min) * ($out_max - $out_min) / ($in_max - $in_min) + $out_min;
+function map($x, $in_min, $in_max, $out_min, $out_max)
+{
+    return ($x - $in_min) * ($out_max - $out_min) / ($in_max - $in_min) + $out_min;
 }
 
 function drawPdfAndImage($pos, $pageNo = null, $file)
@@ -169,18 +217,15 @@ function drawPdfAndImage($pos, $pageNo = null, $file)
 
     switch ($pos) {
         case 1:
-            if($file_parts['extension'] == 'pdf')
-            {
+            if ($file_parts['extension'] == 'pdf') {
                 $pageId = $pdf->importPageAndRotation($pageNo, '/MediaBox');
                 $s = $pdf->useImportedPageCustom($pageId, 5.5, 417, 123);
                 // echo json_encode($s);
                 // exit();
-            }
-            else if($file_parts['extension'] == 'jpg' || $file_parts['extension'] == 'png' || $file_parts['extension'] == 'jpeg')
-            {
+            } else if ($file_parts['extension'] == 'jpg' || $file_parts['extension'] == 'png' || $file_parts['extension'] == 'jpeg') {
                 $size = getimagesize($file);
 
-                $percent_width = 123/$size[0];
+                $percent_width = 123 / $size[0];
                 $new_height = $percent_width * $size[1];
 
                 $x = 5;
@@ -188,28 +233,25 @@ function drawPdfAndImage($pos, $pageNo = null, $file)
                 $w = 123;
                 $h = 200;
                 $angle = 90;
-                $pdf->Rotate($angle,$x,$y);
-                $pdf->Image($file,$x,$y,$w,$new_height);
+                $pdf->Rotate($angle, $x, $y);
+                $pdf->Image($file, $x, $y, $w, $new_height);
                 $pdf->Rotate(0);
             }
 
             $pdf->Rect(5, 26.5, 200, 124, "");
             break;
         case 2:
-            if($file_parts['extension'] == 'pdf')
-            {
+            if ($file_parts['extension'] == 'pdf') {
                 $pageId = $pdf->importPageAndRotation($pageNo, '/MediaBox');
                 $s = $pdf->useImportedPageCustom($pageId, 5.5, 65, 123);
-            }
-            else if($file_parts['extension'] == 'jpg' || $file_parts['extension'] == 'png' || $file_parts['extension'] == 'jpeg')
-            {
+            } else if ($file_parts['extension'] == 'jpg' || $file_parts['extension'] == 'png' || $file_parts['extension'] == 'jpeg') {
                 $x = 5;
                 $y = 274;
                 $w = 123;
                 $h = 200;
                 $angle = 90;
-                $pdf->Rotate($angle,$x,$y);
-                $pdf->Image($file,$x,$y,$w,$h);
+                $pdf->Rotate($angle, $x, $y);
+                $pdf->Image($file, $x, $y, $w, $h);
                 $pdf->Rotate(0);
             }
 
@@ -222,56 +264,35 @@ function drawPdfAndImage($pos, $pageNo = null, $file)
 
 //$prefix = "public/assets/front-end/pdf-files/";
 $prefix = "uploads/pdf/";
-$cutDate = explode('-',$date);
-$advertiseDetail = $this->db->get_where('tbl_advertise',['advertise_id'=> $advertise_id])->row_array();
+$cutDate = explode('-', $date);
+$advertiseDetail = $this->db->get_where('tbl_advertise', ['advertise_id' => $advertise_id])->row_array();
 
-// $sample_templete = array(
-//     'company' => 'บริษัท สมาร์ท เมดิคัล เซอร์วิส จํากัด',
-//     'date' => '2 เมษายน 2563',
-    
-//     'title' => 'เรื่อง การประชุมสามัญผู้ถือหุ้น ประจำปี 2563',
-//     'to' => 'เรียน ผู้ถือหุ้น',
-//     'description' => 'ในการประชุมคณะกรรมการ ทอท. ครั้งที่ 2/2563 เมื่อวันจันทร์ที่ 3 กุมภาพันธ์ 2563 ณ ห้องประ ชุมคณะกรรมการ ทอท. ชั้น 7 อาคารสํานักงานใหญ่ ทอท. ที่ประชุมมีมติแต่งตั้งคณะกรรมการชุดย่อย ตามข้อบังคับ ทอท. โดยมีผลตั้งแต่วันที่ 3 กุมภาพันธ์ 2563 เป็นต้นไป ดังนี้',
-//     'list' => array(
-//         '1. นายวราห์ ทองประสินธุ์ ดํารงตําแหน่งประธานกรรมการตรวจสอบ ',
-//         '2. นายวราห์ ทองประสินธุ์ ดํารงตําแหน่งประธานกรรมการตรวจสอบ ',
-//         '3. นายวราห์ ทองประสินธุ์ ดํารงตําแหน่งประธานกรรมการตรวจสอบ ',
-//         '4. นายวราห์ ทองประสินธุ์ ดํารงตําแหน่งประธานกรรมการตรวจสอบ ',
-//         '5. นายวราห์ ทองประสินธุ์ ดํารงตําแหน่งประธานกรรมการตรวจสอบ ',
-//         '6. นายวราห์ ทองประสินธุ์ ดํารงตําแหน่งประธานกรรมการตรวจสอบ ',
-//         '7. นายวราห์ ทองประสินธุ์ ดํารงตําแหน่งประธานกรรมการตรวจสอบ ',
-//     ),
-//     'end' => 'จึงเรียนมาเพื่อโปรดทราบและดาเนินการต่อไปด้วยจะขอบคุณยิ่ง',
-//     'signature_title' => 'ขอแสดงความนับถือ',
-//     'signature_name' => 'บังอรสุวรรณี  จรัสแสงแขนภาไขศรี',
-//     'signature_position' => 'กรรมการผู้มีอำนาจลงนาม',
-// );
 $data_list = array();
-    $sample_templete = array();
-    $sample_templete = [
-        'company' => $advertiseDetail['company_name'],
-        'date' => $advertiseDetail['post_date'],
-        
-        'title' => 'เรื่อง ขอเชิญประชุมสามัญผู้ถือหุ้น ครั้งที่ '.$advertiseDetail['meeting'],
-        'to' => 'เรียน '.$advertiseDetail['announcement_to'],
-        'description' => 'ด้วยคณะกรรมการของบริษัทมีมติให้เรียกประชุมสามัญผู้ถือหุ้นครั้งที่ '.$advertiseDetail['meeting'].' ในวันที่ '.$advertiseDetail['meeting_date'].' เวลา '.$advertiseDetail['meeting_time'].' ณ '.$advertiseDetail['meeting_place'].' เพื่อพิจารณาเรื่องต่างๆ ตามระเบียบวาระดังต่อไปนี้',
-        'list' => [
-                    $advertiseDetail['agenda']
-                  ],
-        'end' => 'จึงเรียนมาเพื่อโปรดทราบและดาเนินการต่อไปด้วยจะขอบคุณยิ่ง',
-        'signature_title' => 'ขอแสดงความนับถือ',
-        'signature_name' => $advertiseDetail['name_surname'],
-        'signature_position' => $advertiseDetail['position'],
-    ];
-    
-    array_push($data_list, $sample_templete);
+$sample_templete = array();
+$sample_templete = [
+    'company' => $advertiseDetail['company_name'],
+    'date' => $advertiseDetail['post_date'],
+
+    'title' => 'เรื่อง ขอเชิญประชุมผู้ถือหุ้น ครั้งที่ ' . $advertiseDetail['meeting'],
+    'to' => 'เรียน ' . $advertiseDetail['announcement_to'],
+    'description' => 'ด้วยคณะกรรมการของบริษัทมีมติให้เรียกประชุมผู้ถือหุ้นครั้งที่ ' . $advertiseDetail['meeting'] . ' ในวันที่ ' . thaiDate($advertiseDetail['meeting_date']) . ' เวลา ' . $advertiseDetail['meeting_time'] . ' ณ ' . $advertiseDetail['meeting_place'] . ' เพื่อพิจารณาเรื่องต่างๆ ตามระเบียบวาระดังต่อไปนี้',
+    'list' => [
+        $advertiseDetail['agenda']
+    ],
+    'end' => 'ดังนั้น จึงขอเรียนเชิญ ไปประชุมตามวัน เวลา และสถานที่ดังกล่าวข้างต้นโดยพร้อมเพรียงกันด้วย จักขอบพระคุณยิ่ง',
+    'signature_title' => 'ขอแสดงความนับถือ',
+    'signature_name' => $advertiseDetail['name_surname'],
+    'signature_position' => $advertiseDetail['position'],
+];
+
+array_push($data_list, $sample_templete);
 
 
 
 
 
 //for ($i=0; $i < 11; $i++) 
-    
+
 
 
 $date_str = $date;
@@ -279,11 +300,11 @@ $global_page_no = 1;
 
 
 // // ADD COVER
-$pdf->setSourceFile($prefix."cover_pdf.pdf");
+$pdf->setSourceFile($prefix . "cover_pdf.pdf");
 
 $pdf->AddPage();
 $pageId = $pdf->importPage(1, '/MediaBox');
-$s = $pdf->useTemplate($pageId, 5, 5, 200);
+$s = $pdf->useTemplate($pageId, 10, -10, 190, 280);
 customFooter();
 $global_page_no++;
 
@@ -320,12 +341,10 @@ customHeader($global_page_no, $date_str);
 customFooter();
 
 $index = 1;
-foreach ($data_list as $data) 
-{
-    drawData4page($index, $data);
+foreach ($data_list as $data) {
+    drawData4page($index, $data, $sample_templete);
     $index++;
-    if($index > 4)
-    {
+    if ($index > 4) {
         $index = 1;
         $global_page_no++;
         $pdf->AddPage();
@@ -341,54 +360,41 @@ foreach ($files as $file) {
 
     $file_parts = pathinfo($file);
 
-    if($file_parts['extension'] == 'pdf')
-    {
+    if ($file_parts['extension'] == 'pdf') {
         $pageCount = $pdf->setSourceFile($file);
 
-        for ($pageNo = 1; $pageNo <= $pageCount; $pageNo++) 
-        {
-            if($position == 1)
-            {
+        for ($pageNo = 1; $pageNo <= $pageCount; $pageNo++) {
+            if ($position == 1) {
                 $global_page_no++;
                 $pdf->AddPage();
                 customHeader($global_page_no, $date_str);
                 customFooter();
             }
-            try 
-            {
+            try {
                 drawPdfAndImage($position, $pageNo, $file);
 
-                $position ++;
-                if($position > 2)
+                $position++;
+                if ($position > 2)
                     $position = 1;
-
-            } 
-            catch (Exception $e) 
-            {
+            } catch (Exception $e) {
                 echo json_encode($e);
             }
         }
-    }
-    else if($file_parts['extension'] == 'jpg' || $file_parts['extension'] == 'png' || $file_parts['extension'] == 'jpeg')
-    {
-        if($position == 1)
-        {
+    } else if ($file_parts['extension'] == 'jpg' || $file_parts['extension'] == 'png' || $file_parts['extension'] == 'jpeg') {
+        if ($position == 1) {
             $global_page_no++;
             $pdf->AddPage();
             customHeader($global_page_no, $date_str);
             customFooter();
         }
-        try 
-        {
+        try {
             drawPdfAndImage($position, null, $file);
-            $position ++;
+            $position++;
 
-            if($position > 2)
+            if ($position > 2)
                 $position = 1;
-         } 
-         catch (Exception $e) 
-         {
-         }
+        } catch (Exception $e) {
+        }
     }
 }
 
@@ -402,9 +408,9 @@ $pdf->AddPage();
 customHeader($global_page_no, $date_str);
 customFooter();
 
-$pdf->image($prefix."end.jpg", 15, 33, 180);
+$pdf->image($prefix . "end.jpg", 15, 33, 180);
 
 
-$file = uniqid().'.pdf';
+$file = uniqid() . '.pdf';
 $pdf->Output('I', 'simple.pdf');
 //$pdf->Output('output/'.$file, 'I');
