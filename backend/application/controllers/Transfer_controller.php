@@ -34,7 +34,7 @@ class Transfer_controller extends CI_Controller
         $this->db->where('transfer_id', $id);
        $resultsedit = $this->db->update('tbl_transfer', $data);
 
-
+        if($status==1){
       
         if ($resultsedit > 0) {
 
@@ -57,8 +57,22 @@ class Transfer_controller extends CI_Controller
         } else {
             $this->session->set_flashdata('del_ss2', 'ไม่สามรถเปลี่ยนสถานะได้เสร็จสิ้น');
         }
-        return redirect('list_transfer');
     }
+    elseif($status==2){
+        if ($resultsedit > 0) {
+            $this->session->set_flashdata('save_ss2', 'เปลี่ยนสถานะเสร็จสิ้น');
+        }else{
+            $this->session->set_flashdata('del_ss2', 'ไม่สามรถเปลี่ยนสถานะได้เสร็จสิ้น');
+        }
+        
+   
+        
+    }
+    return redirect('list_transfer');
+    }
+
+        
+    
 
     
 
