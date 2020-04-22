@@ -24,6 +24,7 @@ $route['payment']           = 'front-end/Payment_ctr';
 $route['credit']            = 'front-end/Credit_ctr';
 $route['check_user_credit'] = 'front-end/Credit_ctr/check_user_credit';
 $route['saveRecord_checkout'] = 'front-end/Credit_ctr/saveRecord_checkout';
+$route['transfer_money']    = 'front-end/Credit_ctr/transfer_money';
 $route['paypal_success']    = 'front-end/Credit_ctr/paypal_success';
 $route['download']          = 'front-end/Download_ctr';
 $route['download-search']   = 'front-end/Download_ctr/download_search';
@@ -39,3 +40,7 @@ $route['contact']           = 'front-end/Contact_ctr/index';
 $route['contact_add']       = 'front-end/Contact_ctr/contact_add';
 
 $route['textarea']          = 'front-end/Home_ctr/textarea';
+
+$route['transfer']    = 'front-end/Transfer_history_ctr';
+$route['transfer_insert']    = 'front-end/Transfer_history_ctr/transfer_insert';
+

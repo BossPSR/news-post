@@ -183,6 +183,42 @@
 					showConfirmButton: true,
 				});
 			<?php endif; ?>
+
+			<?php if ($suss = $this->session->flashdata('responseG')) : ?>
+				Swal.fire({
+					position: 'start-end',
+					icon: 'success',
+					title: 'บันทึกออเดอร์เครดิตของคุณเรียบร้อยแล้ว กรุณาตราขสอบที่ประวัติการเติมเครดิตของตุณ!!',
+					showConfirmButton: true,
+				});
+			<?php endif; ?>
+
+			<?php if ($error = $this->session->flashdata('msgG')) : ?>
+				Swal.fire({
+					position: 'start-end',
+					icon: 'error',
+					title: 'การเติมเครดิตของคุณล้มเหลว กรุณาลองใหม่อีกครั้ง!!',
+					showConfirmButton: true,
+				});
+			<?php endif; ?>
+
+			<?php if ($suss = $this->session->flashdata('responseH')) : ?>
+				Swal.fire({
+					position: 'start-end',
+					icon: 'success',
+					title: 'แจ้งการชำระเงินเรียบร้อย กรุณารอ Admin อนุมัติภายใน 24 ชั่วโมง!!',
+					showConfirmButton: true,
+				});
+			<?php endif; ?>
+
+			<?php if ($error = $this->session->flashdata('msgH')) : ?>
+				Swal.fire({
+					position: 'start-end',
+					icon: 'error',
+					title: 'ล้มเหลวการแจ้งชำระเงิน กรุณาลองใหม่อีกครั้ง!!',
+					showConfirmButton: true,
+				});
+			<?php endif; ?>
 			
 		</script>
 		
@@ -224,6 +260,7 @@
 				});
 			});
 		</script>
+		
 		<script>
 			$(function() {
 				$('.travel-date-group .default').datepicker({

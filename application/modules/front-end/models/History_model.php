@@ -36,6 +36,7 @@ class History_model extends CI_Model
     {
         $this->db->select('*');
         $this->db->from('tbl_advertise');
+        $this->db->where('id_user', $userId);
         $this->db->order_by('created_at', 'desc');
 
         $data = $this->db->get();

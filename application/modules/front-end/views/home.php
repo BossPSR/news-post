@@ -13,6 +13,7 @@
 				<div class="emphasis-title">
 					<h1 class="font-secondary" style="color: #123262;font-size: 2.5rem; font-weight: 900; text-shadow: 0 7px 10px rgba(0,0,0,0.07), 0 4px 4px rgba(0,0,0,0.2);margin-bottom: 1.5rem;">ลงประกาศโฆษณาเชิญประชุมผู้ถือหุ้น กรอบละ <span style="color:#FF0000;">45</span> บาท</h1>
 					<p style="font-weight: 300; font-size: 1.75rem; opacity: .7; color: #4A4A4A; text-shadow: 0 -4px 30px rgba(0, 0, 0, .25);margin-top:15px;"><b>ใช้งานง่าย สะดวก รวดเร็ว ประหยัด ดาวน์โหลดหนังสือพิมพ์ได้ในวันถัดไป</b></p>
+					<p style="font-weight: 300; font-size: 1.65rem; opacity: .7; color: #ff0000; text-shadow: 0 -4px 30px rgba(0, 0, 0, .25);margin-top:15px;"><b>หนังสือพิมพ์ วันบิสสิเนส ใบอนุญาตเลขที่ สสช 76/2562</b></p>
 				</div>
 				<div class="subscribe-widget" data-loader="button">
 					<div class="widget-subscribe-form-result"></div>
@@ -65,7 +66,7 @@
 			</div> -->
 			<div class="container" style="    font-size: 20px;">
 				<div style="color:#fff;">
-					หนังสือพิมพ์ แอค แทกซ์ นิวส์ เป็นหนังสือพิมพ์รายวันออนไลน์ ที่มีผู้ลงโฆษณามากที่สุดเป็นลำดับต้นๆ
+					หนังสือพิมพ์ วัน บิสสิเนส เป็นหนังสือพิมพ์รายวันออนไลน์ ที่มีผู้ลงโฆษณามากที่สุดเป็นลำดับต้นๆ
 
 					สามารถลงประกาศโฆษณาออนไลน์ได้ตลอด 24 ชั่วโมง โดยเลือกลงประกาศโฆษณาได้ 3 แบบ ดังนี้
 				</div>
@@ -85,39 +86,89 @@
 			</div>
 			<br>
 			<br>
+
 			<div class="container">
-				<h4 class="text-center" style="color:#fff;    font-size: 28px;">วิดิโอสาธิตการลงโฆษณา 3 วิธี</h4>
-				<div class="col_one_third nobottommargin">
-
-					<!-- <div class="heading-block fancy-title nobottomborder title-bottom-border">
-					<h4>Why choose <span>Us</span>.</h4>
-				</div> -->
-					<iframe src="https://www.youtube.com/embed/AynSfsJPzhk" frameborder="0" allow="autoplay; encrypted-media" style="    border-radius: 15px;" allowfullscreen></iframe>
-					<!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi quidem minus id omnis, nam expedita, ea fuga commodi voluptas iusto, hic autem deleniti dolores explicabo labore enim repellat earum perspiciatis.</p> -->
-
-				</div>
-
-				<div class="col_one_third nobottommargin">
-
-					<!-- <div class="heading-block fancy-title nobottomborder title-bottom-border">
-					<h4>Our <span>Mission</span>.</h4>
-				</div> -->
-					<iframe src="https://www.youtube.com/embed/X8NFkUQNeek" frameborder="0" allow="autoplay; encrypted-media" style="border-radius: 15px;" allowfullscreen></iframe>
-
-				</div>
-
-				<div class="col_one_third nobottommargin col_last">
-
-					<!-- <div class="heading-block fancy-title nobottomborder title-bottom-border">
-					<h4>What we <span>Do</span>.</h4>
-				</div> -->
-					<iframe src="https://www.youtube.com/embed/ZeDP-rzOnAA" frameborder="0" allow="autoplay; encrypted-media" style="border-radius: 15px;" allowfullscreen></iframe>
-
-				</div>
-				<div>
-
+				<h4 class="text-center" style="color:#fff;    font-size: 28px;">วิดิโอสาธิตการลงโฆษณา</h4>
+				<div class="row">
+					<div class="col-1"></div>
+					<div class="col-10">
+						<iframe src="https://www.youtube.com/embed/X8NFkUQNeek" frameborder="0" allow="autoplay; encrypted-media" style="border-radius: 15px;" allowfullscreen></iframe>
+					</div>
+					<div class="col-1"></div>
 				</div>
 			</div>
+
+			<div class="clear"></div>
+
+		</div>
+
+		<div class="clearfix" style="padding: 100px 0;background-size: cover;    background: #f7f7f7;">
+
+			<div class="container" style="    font-size: 20px;">
+				<h2 style="text-align: center">หลักในการลงประกาศหนังสือพิมพ์</h2>
+				<div>
+					<div>
+						มติทั่วไป ลงประกาศหนังสือพิมพ์ 1 ครั้ง ก่อนวันจัดประชุมไม่น้อยกว่า 7 วัน ได้แก่
+					</div>
+
+					<div> - เชิญประชุมผู้ถือหุ้นประจำปี </div>
+
+					<div>- เปลี่ยนแปลงรายชื่อผู้ถือหุ้น </div>
+
+					<div>- เปลี่ยนแปลงกรรมการ หรือ อำนาจกรรมการ </div>
+
+					<div>- เปลี่ยนแปลงตราประทับบริษัท </div>
+
+					<div>- ชำระบัญชี </div>
+				</div>
+				<hr>
+				<div>
+					<div> มติพิเศษ ลงประกาศหนังสือพิมพ์ 1 ครั้ง ก่อนวันจัดประชุมไม่น้อยกว่า 14 วัน ได้แก่</div>
+
+					<div>- เปลี่ยนแปลงหนังสือบริคณห์สนธิ, แก้ไขข้อบังคับ</div>
+
+					<div>- การเพิ่มทุน หรือ ลดทุนจดทะเบียน</div>
+
+					<div>- แก้ไขชื่อ, ย้ายที่ตั้งสำนักงาน</div>
+
+					<div>- เปลี่ยนแปลงวัตถุประสงค์</div>
+
+					<div>- เลิกกิจการ, ควบกิจการ</div>
+				</div>
+				<div>
+					<p>หมายเหตุ: สำหรับงบการเงินสิ้นสุดรอบ 31 ธันวาคม 2560 จะต้องลงโฆษณาหนังสือพิมพ์ช้าสุดไม่เกินวันที่ 22 เมษายน 2561 </p>
+				</div>
+				<p>
+					<div>
+						<p>คำถามที่พบบ่อย</p>
+						<p>1. หนังสือพิมพ์ เครือข่ายบัญชีมีความน่าเชื่อถือขนาดไหน สามารถลงประกาศได้หรือไม่</p>
+						<p>ตอบ หนังสือพิมพ์ เครือข่ายบัญชี ได้จดแจ้งการพิมพ์อย่างถูกต้อง และได้รับใบอนุญาตเลขที่ใบอนุญาต สสช27/2558 ISSN 2408-2015</p>
+						<p>2. ทำไมขนาดของหนังสือพิมพ์เป็น A4</p>
+
+						<p>ตอบ เราได้ขออนุญาตจัดพิมพ์เป็นแผ่น ดังนั้นเป็น A4 จึงใช้ได้ นอกจากนี้จัดทำเป็น A4 เพื่อง่ายต่อการเก็บรักษา กระดาษ A4 มีความคงทนกว่ากระดาษหนังสือพิมพ์</p>
+
+						<p>3. หนังสือพิมพ์แห่งท้องถิ่น หมายถึงอะไร</p>
+
+						<p>ตอบ หมายถึงหนังสือพิมพ์ที่มีจำหน่ายในท้องถิ่นนั้นๆ โดยหนังสือพิมพ์ เครือข่ายบัญชี เปิดให้ประชาชนทั่วประเทศดาวโหลดได้ ดังนั้นจึงถือเป็นหนังสือพิมพ์ที่สามารถลงประกาศได้ทั่วประเทศ</p>
+
+						<p>4. ปัจจุบันยังคงต้องลงประกาศหนังสือพิมพ์เชิญประชุมหรือไม่</p>
+
+						<p>ตอบ ตามประมวลกฏหมายแพ่งและพาณิชย์ มาตรา 1175 พ.ศ. 2551 ยังคงบังคับให้ลงประกาศหนังสือพิมพ์อย่างน้อย 1 ครั้ง ซึ่งถ้าบริษัทไม่ได้ลงประกาศจะมีความผิด เช่น ในการชำระบัญชีถ้าไม่มีการลงประกาศหนังสือพิมพ์จะมีโทษปรับไม่เกิน 80,000 บาท โดยค่าปรับอื่นๆ ศึกษาเพิ่มเติมได้ที่ ตารางค่าปรับกรมพัฒน์</p>
+
+						<p>5.แปลงไฟล์ .PDF เป็นไฟล์รูปภาพ .JPG เพื่อเอามาลงลงประกาศแบบรูปภาพยังไง</p>
+
+						<p>ตอบ สามารถแปลงไฟล์ได้ง่ายๆ ผ่าน Web site https://jinapdf.com/thai/pdf-to-jpg-file.php</p>
+
+						<p>6.เราจะค้นหาประกาศที่ลงได้หรือไม่ ว่าประกาศของเราอยู่ที่หน้าใดของหนังสือพิมพ์</p>
+
+						<p>ตอบ ให้ลูกค้ากดเปิดไฟล์หนังสือพิมพ์ของวันที่ลงประกาศ แล้วกด Ctrl +F ที่แป้งพิมพ์ จะมีช่องเล็กๆให้พิมพ์ชื่อบริษัทเพื่อค้นหา โปรแกรมจะค้นหาให้ ในกรณีนี้ใช้ได้เฉพาะลงประกาศที่ Template ของ Web site เท่านั้น</p>
+
+						<p>หากเป็นการลงประกาศแบบไฟล์รูปภาพ .JPG จะไม่สามารถค้นหาได้</p>
+					</div>
+				</p>
+			</div>
+			<br>
+
 
 
 			<div class="clear"></div>
@@ -126,7 +177,7 @@
 
 		<div class="row">
 			<div class="col-12 text-center">
-				<p style="font-size:20px;margin-top:20px;margin-bottom:-60px;">สนใจพื้นที่โฆษณา ติดต่อ 085-826-4498 , 02-140-0779</span>
+				<p style="font-size:20px;margin-top:20px;margin-bottom:-60px;">สนใจพื้นที่โฆษณา ติดต่อ 098-2811599 หรือ Email : nlohapitak@gmail.com</span>
 			</div>
 		</div>
 	</div>
