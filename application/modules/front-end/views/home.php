@@ -14,6 +14,7 @@
 					<div class="emphasis-title">
 						<h1 class="font-secondary" style="color: #123262;font-size: 2.5rem; font-weight: 900; text-shadow: 0 7px 10px rgba(0,0,0,0.07), 0 4px 4px rgba(0,0,0,0.2);margin-bottom: 1.5rem;">ลงประกาศโฆษณาเชิญประชุมผู้ถือหุ้น กรอบละ <span style="color:#FF0000;">45</span> บาท</h1>
 						<p style="font-weight: 300; font-size: 1.75rem; opacity: .7; color: #4A4A4A; text-shadow: 0 -4px 30px rgba(0, 0, 0, .25);margin-top:15px;"><b>ใช้งานง่าย สะดวก รวดเร็ว ประหยัด ดาวน์โหลดหนังสือพิมพ์ได้ในวันถัดไป</b></p>
+						<p style="font-weight: 300; font-size: 1.65rem; opacity: .7; color: #ff0000; text-shadow: 0 -4px 30px rgba(0, 0, 0, .25);margin-top:15px;"><b>หนังสือพิมพ์ วันบิสสิเนส ใบอนุญาตเลขที่ สสช 76/2562</b></p>
 					</div>
 					<div class="subscribe-widget">
 						<!-- <div class="widget-subscribe-form-result"></div> -->
