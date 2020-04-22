@@ -65,13 +65,15 @@ class Register_ctr extends CI_Controller
 
       $this->sendEmail($email, $emailDetail, $token);
       $this->session->set_flashdata('save_ss2', 'ยืนยัน Email เรียบร้อยแล้ว.กรุณาตั้งค่ารหัสผ่านใหม่ของท่าน');
+      redirect('index');
     } else {
       $this->session->set_flashdata('del_ss2', 'ไม่พบ E-mail ที่ท่านกรอกมา กรุณาตรวจสอบใหม่ค่ะ!!');
+      redirect('index');
     }
   }
 
 
-  private function sendEmail($userEmail, $emailDetail, $token)
+  private function sendEmail($email, $emailDetail, $token)
   {
 
     $subject = 'ตั้งค่ารหัสผ่านใหม่ Report';
@@ -89,8 +91,8 @@ class Register_ctr extends CI_Controller
     $config['protocol'] = 'smtp';
     $config['smtp_host'] = 'smtp.gmail.com';
     $config['smtp_port'] = '2002';
-    $config['smtp_user'] = 'infinityp.soft@gmail.com';
-    $config['smtp_pass'] = 'P@Ssw0rd';  //sender's password
+    $config['smtp_user'] = 'nlohapitak@1siri.com';
+    $config['smtp_pass'] = 'Nuraks_11';  //sender's password
     $config['mailtype'] = 'html';
     $config['charset'] = 'utf-8';
     $config['wordwrap'] = 'TRUE';
@@ -100,8 +102,8 @@ class Register_ctr extends CI_Controller
     //$file_path = 'uploads/' . $file_name;
     $this->load->library('email', $config);
     $this->email->set_newline("\r\n");
-    $this->email->from('infinityp.soft@gmail.com');
-    $this->email->to($userEmail);
+    $this->email->from('nlohapitak@1siri.com');
+    $this->email->to('jame0925623256@gmail.com');
     $this->email->subject($subject);
     $this->email->message($message);
     $this->email->set_mailtype('html');

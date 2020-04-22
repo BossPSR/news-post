@@ -101,7 +101,7 @@
 					<div class="modal-body">
 						<div class="form-group">
 							<label for="exampleInputEmail1">Email address</label>
-							<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+							<input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
 						</div>
 					</div>
 					<div class="modal-footer">
@@ -276,7 +276,7 @@
 								?>
 								<div id="register_side">
 
-									<a href="logout" class="d-none d-lg-block"><i class="icon-coins"></i> เครดิต : <?= $point; ?> | </a>
+									<a href="#" class="d-none d-lg-block"><i class="icon-coins"></i> เครดิต : <?= $point; ?> | </a>
 								</div>
 								<div id="register_side">
 									<a class=" dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

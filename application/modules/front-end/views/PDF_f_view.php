@@ -1,4 +1,57 @@
 <?php
+$month = array(
+    '01'  => 'มกราคม', '02'  => 'กุมภาพันธ์', '03'  => 'มีนาคม',
+    '04'  => 'เมษายน', '05'  => 'พฤษภาคม', '06'  => 'มิถุนายน',
+    '07'  => 'กรกฎาคม', '08'  => 'สิงหาคม', '09'  => 'กันยายน',
+    '10'  => 'ตุลาคม', '11'  => 'พฤศจิกายน', '12'  => 'ธันวาคม',
+);
+function thaiDate($date)
+{
+    // list($date, $time) = explode(' ', $datetime); // แยกวันที่ กับ เวลาออกจากกัน
+    // list($H, $i, $s) = explode(':', $time); // แยกเวลา ออกเป็น ชั่วโมง นาที วินาที
+    list($Y, $m, $d) = explode('-', $date); // แยกวันเป็น ปี เดือน วัน
+    $Y = $Y + 543; // เปลี่ยน ค.ศ. เป็น พ.ศ.
+    switch ($m) {
+        case "01":
+            $m = "ม.ค.";
+            break;
+        case "02":
+            $m = "ก.พ.";
+            break;
+        case "03":
+            $m = "มี.ค.";
+            break;
+        case "04":
+            $m = "เม.ย.";
+            break;
+        case "05":
+            $m = "พ.ค.";
+            break;
+        case "06":
+            $m = "มิ.ย.";
+            break;
+        case "07":
+            $m = "ก.ค.";
+            break;
+        case "08":
+            $m = "ส.ค.";
+            break;
+        case "09":
+            $m = "ก.ย.";
+            break;
+        case "10":
+            $m = "ต.ค.";
+            break;
+        case "11":
+            $m = "พ.ย.";
+            break;
+        case "12":
+            $m = "ธ.ค.";
+            break;
+    }
+    return $d . " " . $m . " " . $Y;
+}
+
 use setasign\Fpdi;
 use setasign\fpdf;
 
@@ -37,7 +90,7 @@ function customHeader($page_no, $date_str)
     $pdf->setY(14);
 
     $pdf->setX(80);
-    $pdf->cell(50, 6, iconv('UTF-8', 'cp874', "วันที่ ".$date_str), 0, 0, 'C');
+    $pdf->cell(50, 6, iconv('UTF-8', 'cp874', "วันที่ ".thaiDate($date_str)), 0, 0, 'C');
 
     $pdf->setX(155);
     $pdf->cell(50, 6, iconv('UTF-8', 'cp874', "หน้้า ".$page_no), 0, 0, 'R');
@@ -103,7 +156,7 @@ function drawData4page($pos, $data)
 
     $pdf->setY($adjust_y + 45);
     $pdf->setX($adjust_x + 5);
-    $pdf->MultiCell(99.5, 5.4, iconv('UTF-8', 'cp874', $data['date']), 0, 'C');
+    $pdf->MultiCell(99.5, 5.4, iconv('UTF-8', 'cp874', thaiDate($data['date'])), 0, 'C');
 
     $pdf->setY($adjust_y + 50);
     $pdf->setX($adjust_x + 8);
@@ -223,7 +276,7 @@ function drawPdfAndImage($pos, $pageNo = null, $file)
 //$prefix = "public/assets/front-end/pdf-files/";
 $prefix = "uploads/pdf/";
 $cutDate = explode('-',$date);
-$advertiseList = $this->db->get_where('tbl_advertise',['post_date'=> $cutDate[2].'/'.$cutDate[1].'/'.$cutDate[0]])->result_array();
+$advertiseList = $this->db->get_where('tbl_advertise',['post_date'=> $date])->result_array();
 
 // $sample_templete = array(
 //     'company' => 'บริษัท สมาร์ท เมดิคัล เซอร์วิส จํากัด',
@@ -255,7 +308,7 @@ foreach ($advertiseList as $advertiseDetail) {
         
         'title' => 'เรื่อง ขอเชิญประชุมสามัญผู้ถือหุ้น ครั้งที่ '.$advertiseDetail['meeting'],
         'to' => 'เรียน '.$advertiseDetail['announcement_to'],
-        'description' => 'ด้วยคณะกรรมการของบริษัทมีมติให้เรียกประชุมสามัญผู้ถือหุ้นครั้งที่ '.$advertiseDetail['meeting'].' ในวันที่ '.$advertiseDetail['meeting_date'].' เวลา '.$advertiseDetail['meeting_time'].' ณ '.$advertiseDetail['meeting_place'].' เพื่อพิจารณาเรื่องต่างๆ ตามระเบียบวาระดังต่อไปนี้',
+        'description' => 'ด้วยคณะกรรมการของบริษัทมีมติให้เรียกประชุมสามัญผู้ถือหุ้นครั้งที่ '.$advertiseDetail['meeting'].' ในวันที่ '.thaiDate($advertiseDetail['meeting_date']).' เวลา '.$advertiseDetail['meeting_time'].' ณ '.$advertiseDetail['meeting_place'].' เพื่อพิจารณาเรื่องต่างๆ ตามระเบียบวาระดังต่อไปนี้',
         'list' => [
                     $advertiseDetail['agenda']
                   ],

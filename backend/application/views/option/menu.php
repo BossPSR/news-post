@@ -38,6 +38,11 @@
                                             } ?>">
                  <a href="List-omise"><i class="feather icon-at-sign"></i><span data-i18n="List-omise">ผู้ใช้งานที่เติมเครดิต</span></a>
             </li> 
+            <li class="nav-item <?php if ($this->uri->segment(1) == "list_transfer") {
+                                                echo 'active';
+                                            } ?>">
+                 <a href="list_transfer"><i class="feather icon-at-sign"></i><span data-i18n="list_transfer">ผู้ใช้งานที่โอนเข้ามา</span></a>
+            </li> 
             <li class="nav-item <?php if ($this->uri->segment(1) == "List_Contact_us") {
                                                 echo 'active';
                                             } ?>">
