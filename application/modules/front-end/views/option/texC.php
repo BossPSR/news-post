@@ -130,7 +130,7 @@
 </div>
 <div class="form-group travel-date-group" style="text-align: left;font-size:16px;">
     <b>วันที่ลงโฆษณา</b>
-    <input type="text" name="dateC" id="dateC" class="form-control tleft default" placeholder="วันที่ลงโฆษณา">
+    <input type="text" name="dateC" id="dateC" value="<?php echo date('d/m/Y'); ?>" class="form-control tleft default" placeholder="วันที่ลงโฆษณา">
 </div>
 <div class="form-group" style="text-align: left;font-size:16px;">
     <b>ชื่อ-นามสกุลผู้ลงนาม (กรุณาใส่คำนำหน้าชื่อ)</b>

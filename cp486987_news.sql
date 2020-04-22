@@ -1,35 +1,26 @@
--- phpMyAdmin SQL Dump
--- version 4.8.3
--- https://www.phpmyadmin.net/
---
--- Host: localhost:3306
--- Generation Time: Apr 22, 2020 at 10:24 AM
--- Server version: 5.6.43
--- PHP Version: 7.2.7
+/*
+Navicat MySQL Data Transfer
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
-SET time_zone = "+00:00";
+Source Server         : cp486987_thesis
+Source Server Version : 50643
+Source Host           : 163.44.198.63:3306
+Source Database       : cp486987_news
 
+Target Server Type    : MYSQL
+Target Server Version : 50643
+File Encoding         : 65001
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+Date: 2020-04-21 16:56:04
+*/
 
---
--- Database: `cp486987_news`
---
+SET FOREIGN_KEY_CHECKS=0;
 
--- --------------------------------------------------------
-
---
--- Table structure for table `tbl_admin`
---
-
+-- ----------------------------
+-- Table structure for `tbl_admin`
+-- ----------------------------
+DROP TABLE IF EXISTS `tbl_admin`;
 CREATE TABLE `tbl_admin` (
-  `Id_admin` int(11) NOT NULL,
+  `Id_admin` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT NULL,
   `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
@@ -40,24 +31,21 @@ CREATE TABLE `tbl_admin` (
   `create_times` datetime NOT NULL,
   `update_times` datetime DEFAULT NULL,
   `create_by` int(11) DEFAULT NULL,
-  `update_by` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `update_by` int(11) DEFAULT NULL,
+  PRIMARY KEY (`Id_admin`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `tbl_admin`
---
+-- ----------------------------
+-- Records of tbl_admin
+-- ----------------------------
+INSERT INTO `tbl_admin` VALUES ('1', 'test', 'admin', 'e10adc3949ba59abbe56e057f20f883e', 'test@test.com', null, null, '1', '2020-04-07 14:20:56', '2020-04-07 14:20:59', null, null);
 
-INSERT INTO `tbl_admin` (`Id_admin`, `name`, `username`, `password`, `email`, `file_name`, `path`, `status`, `create_times`, `update_times`, `create_by`, `update_by`) VALUES
-(1, 'test', 'admin', 'e10adc3949ba59abbe56e057f20f883e', 'test@test.com', NULL, NULL, 1, '2020-04-07 14:20:56', '2020-04-07 14:20:59', NULL, NULL);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tbl_advertise`
---
-
+-- ----------------------------
+-- Table structure for `tbl_advertise`
+-- ----------------------------
+DROP TABLE IF EXISTS `tbl_advertise`;
 CREATE TABLE `tbl_advertise` (
-  `advertise_id` int(11) NOT NULL,
+  `advertise_id` int(11) NOT NULL AUTO_INCREMENT,
   `topic` varchar(255) DEFAULT NULL COMMENT 'เลือกหัวข้อ / เรื่อง',
   `agenda` text COMMENT 'วาระการประชุม ',
   `company_name` varchar(255) DEFAULT NULL COMMENT 'ชื่อบริษัท / ชื่อหน่วยงาน',
@@ -81,64 +69,76 @@ CREATE TABLE `tbl_advertise` (
   `post_date` date DEFAULT NULL COMMENT 'วันที่ลงโฆษณา',
   `id_user` varchar(50) DEFAULT NULL,
   `id_order` varchar(255) DEFAULT NULL,
-  `credit` int(11) DEFAULT NULL
+  `credit` int(11) DEFAULT NULL,
+  PRIMARY KEY (`advertise_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
+-- ----------------------------
+-- Records of tbl_advertise
+-- ----------------------------
 
---
--- Table structure for table `tbl_contact`
---
-
+-- ----------------------------
+-- Table structure for `tbl_contact`
+-- ----------------------------
+DROP TABLE IF EXISTS `tbl_contact`;
 CREATE TABLE `tbl_contact` (
-  `id_contact` int(11) NOT NULL,
+  `id_contact` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
   `email` varchar(200) CHARACTER SET utf8 DEFAULT NULL,
   `phone` varchar(20) CHARACTER SET utf8 DEFAULT NULL,
   `message` text CHARACTER SET utf8,
   `create_times` datetime NOT NULL,
-  `update_times` datetime DEFAULT NULL
+  `update_times` datetime DEFAULT NULL,
+  PRIMARY KEY (`id_contact`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
--- --------------------------------------------------------
+-- ----------------------------
+-- Records of tbl_contact
+-- ----------------------------
 
---
--- Table structure for table `tbl_contact_us`
---
-
+-- ----------------------------
+-- Table structure for `tbl_contact_us`
+-- ----------------------------
+DROP TABLE IF EXISTS `tbl_contact_us`;
 CREATE TABLE `tbl_contact_us` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `topic` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
   `message` text CHARACTER SET utf8,
   `create_times` datetime NOT NULL,
-  `update_times` datetime DEFAULT NULL
+  `update_times` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
--- --------------------------------------------------------
+-- ----------------------------
+-- Records of tbl_contact_us
+-- ----------------------------
 
---
--- Table structure for table `tbl_omise`
---
-
+-- ----------------------------
+-- Table structure for `tbl_omise`
+-- ----------------------------
+DROP TABLE IF EXISTS `tbl_omise`;
 CREATE TABLE `tbl_omise` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `price` varchar(255) NOT NULL,
   `count` int(11) NOT NULL,
   `id_taxs` varchar(255) NOT NULL,
   `company` varchar(255) NOT NULL,
   `address` text NOT NULL,
   `id_user` int(11) NOT NULL,
-  `create_time` timestamp NULL DEFAULT NULL
+  `create_time` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
+-- ----------------------------
+-- Records of tbl_omise
+-- ----------------------------
 
---
--- Table structure for table `tbl_pdf`
---
-
+-- ----------------------------
+-- Table structure for `tbl_pdf`
+-- ----------------------------
+DROP TABLE IF EXISTS `tbl_pdf`;
 CREATE TABLE `tbl_pdf` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `id_user` int(11) DEFAULT NULL,
   `credit` int(11) DEFAULT NULL,
   `topic` varchar(255) DEFAULT NULL,
@@ -147,45 +147,54 @@ CREATE TABLE `tbl_pdf` (
   `created_at` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
   `update_at` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
   `id_order` varchar(255) DEFAULT NULL,
-  `status` int(11) DEFAULT '0'
+  `status` int(11) DEFAULT '0',
+  PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
+-- ----------------------------
+-- Records of tbl_pdf
+-- ----------------------------
 
---
--- Table structure for table `tbl_post`
---
-
+-- ----------------------------
+-- Table structure for `tbl_post`
+-- ----------------------------
+DROP TABLE IF EXISTS `tbl_post`;
 CREATE TABLE `tbl_post` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `topic` varchar(255) DEFAULT NULL,
   `details` text,
   `file_name` varchar(255) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
-  `updated_at` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP
+  `updated_at` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
+-- ----------------------------
+-- Records of tbl_post
+-- ----------------------------
 
---
--- Table structure for table `tbl_session`
---
-
+-- ----------------------------
+-- Table structure for `tbl_session`
+-- ----------------------------
+DROP TABLE IF EXISTS `tbl_session`;
 CREATE TABLE `tbl_session` (
-  `Id_session` int(11) NOT NULL,
+  `Id_session` int(11) NOT NULL AUTO_INCREMENT,
   `Ip_address` varchar(255) DEFAULT NULL,
   `username` varchar(255) NOT NULL,
-  `create_times` datetime DEFAULT NULL
+  `create_times` datetime DEFAULT NULL,
+  PRIMARY KEY (`Id_session`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
+-- ----------------------------
+-- Records of tbl_session
+-- ----------------------------
 
---
--- Table structure for table `tbl_user`
---
-
+-- ----------------------------
+-- Table structure for `tbl_user`
+-- ----------------------------
+DROP TABLE IF EXISTS `tbl_user`;
 CREATE TABLE `tbl_user` (
-  `id_user` int(11) NOT NULL,
+  `id_user` int(11) NOT NULL AUTO_INCREMENT,
   `email` varchar(150) DEFAULT NULL,
   `password` varchar(255) NOT NULL,
   `id_taxs` varchar(255) DEFAULT NULL,
@@ -195,134 +204,11 @@ CREATE TABLE `tbl_user` (
   `create_times` datetime NOT NULL,
   `update_times` datetime DEFAULT NULL,
   `time_forgot_password` varchar(255) DEFAULT NULL,
-  `forgot_password` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `forgot_password` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id_user`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `tbl_user`
---
-
-INSERT INTO `tbl_user` (`id_user`, `email`, `password`, `id_taxs`, `company`, `address`, `point`, `create_times`, `update_times`, `time_forgot_password`, `forgot_password`) VALUES
-(1, 'jame0925623256@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', '0503561005794', 'Infinity Phenomenal Software', '247/5 M.4\r\nNong Han, San Sai, Chiang Mai, 50290.', '10', '2020-04-07 15:14:52', '2020-04-20 14:31:57', NULL, NULL),
-(2, 'jame@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', '0801234567', 'infinity phenomenal software LTD.,PART', '121/1 หมู่ 4 ต.หนองจ๋อม อ.หนองหาร จ.เชียงใหม่ 50210', '0', '2020-04-21 18:37:25', NULL, NULL, NULL);
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `tbl_admin`
---
-ALTER TABLE `tbl_admin`
-  ADD PRIMARY KEY (`Id_admin`);
-
---
--- Indexes for table `tbl_advertise`
---
-ALTER TABLE `tbl_advertise`
-  ADD PRIMARY KEY (`advertise_id`);
-
---
--- Indexes for table `tbl_contact`
---
-ALTER TABLE `tbl_contact`
-  ADD PRIMARY KEY (`id_contact`);
-
---
--- Indexes for table `tbl_contact_us`
---
-ALTER TABLE `tbl_contact_us`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `tbl_omise`
---
-ALTER TABLE `tbl_omise`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `tbl_pdf`
---
-ALTER TABLE `tbl_pdf`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `tbl_post`
---
-ALTER TABLE `tbl_post`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `tbl_session`
---
-ALTER TABLE `tbl_session`
-  ADD PRIMARY KEY (`Id_session`);
-
---
--- Indexes for table `tbl_user`
---
-ALTER TABLE `tbl_user`
-  ADD PRIMARY KEY (`id_user`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `tbl_admin`
---
-ALTER TABLE `tbl_admin`
-  MODIFY `Id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT for table `tbl_advertise`
---
-ALTER TABLE `tbl_advertise`
-  MODIFY `advertise_id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `tbl_contact`
---
-ALTER TABLE `tbl_contact`
-  MODIFY `id_contact` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `tbl_contact_us`
---
-ALTER TABLE `tbl_contact_us`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `tbl_omise`
---
-ALTER TABLE `tbl_omise`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `tbl_pdf`
---
-ALTER TABLE `tbl_pdf`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `tbl_post`
---
-ALTER TABLE `tbl_post`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `tbl_session`
---
-ALTER TABLE `tbl_session`
-  MODIFY `Id_session` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `tbl_user`
---
-ALTER TABLE `tbl_user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+-- ----------------------------
+-- Records of tbl_user
+-- ----------------------------
+INSERT INTO `tbl_user` VALUES ('1', 'jame0925623256@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', '0503561005794', 'Infinity Phenomenal Software', '247/5 M.4\r\nNong Han, San Sai, Chiang Mai, 50290.', '10', '2020-04-07 15:14:52', '2020-04-20 14:31:57', null, null);

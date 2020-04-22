@@ -5,37 +5,37 @@
 		}
 	}
 </style>
-<section id="slider" class="slider-element clearfix" style="height: 85vh; background: url('public/assets/front-end/images/3369337.jpg') center center no-repeat; background-size: cover;">
-	<div class="vertical-middle">
-		<div class="container clearfix">
-			<!-- <div class="clearfix center divcenter" style="max-width: 700px;"> -->
-			<div class="clearfix center divcenter">
-				<div class="emphasis-title">
-					<h1 class="font-secondary" style="color: #123262;font-size: 2.5rem; font-weight: 900; text-shadow: 0 7px 10px rgba(0,0,0,0.07), 0 4px 4px rgba(0,0,0,0.2);margin-bottom: 1.5rem;">ลงประกาศโฆษณาเชิญประชุมผู้ถือหุ้น กรอบละ <span style="color:#FF0000;">45</span> บาท</h1>
-					<p style="font-weight: 300; font-size: 1.75rem; opacity: .7; color: #4A4A4A; text-shadow: 0 -4px 30px rgba(0, 0, 0, .25);margin-top:15px;"><b>ใช้งานง่าย สะดวก รวดเร็ว ประหยัด ดาวน์โหลดหนังสือพิมพ์ได้ในวันถัดไป</b></p>
-					<p style="font-weight: 300; font-size: 1.65rem; opacity: .7; color: #ff0000; text-shadow: 0 -4px 30px rgba(0, 0, 0, .25);margin-top:15px;"><b>หนังสือพิมพ์ วันบิสสิเนส ใบอนุญาตเลขที่ สสช 76/2562</b></p>
-				</div>
-				<div class="subscribe-widget" data-loader="button">
-					<div class="widget-subscribe-form-result"></div>
-					<form id="widget-subscribe-form" action="include/subscribe.php" method="post" class="nobottommargin h_main" data-animate="fadeInUp" style="padding:0px;border-radius: 20px 20px 20px 20px;margin:auto;">
-
-						<div class="input-group divcenter travel-date-group">
-							<input type="text" value="" class="form-control tleft default" placeholder="ค้นหาหนังสือพิมพ์จากวันที่" style="border: 0; box-shadow: none; overflow: hidden;margin:auto;border-radius: 20px 20px 20px 20px;">
-							<!-- <input type="email" id="widget-subscribe-form-email" name="widget-subscribe-form-email" class="form-control form-control-lg not-dark required email" placeholder="Enter your Email Address.." style="border: 0; box-shadow: none; overflow: hidden;"> -->
-							<div class="input-group-append">
-								<button href="#" class="button t400" type="submit" style="border-radius: 0px 20px 20px 0px;">ค้นหา</button>
+<form action="PDFHOME" method="GET">
+	<section id="slider" class="slider-element clearfix" style="height: 85vh; background: url('public/assets/front-end/images/3369337.jpg') center center no-repeat; background-size: cover;">
+		<div class="vertical-middle">
+			<div class="container clearfix">
+				<!-- <div class="clearfix center divcenter" style="max-width: 700px;"> -->
+				<div class="clearfix center divcenter">
+					<div class="emphasis-title">
+						<h1 class="font-secondary" style="color: #123262;font-size: 2.5rem; font-weight: 900; text-shadow: 0 7px 10px rgba(0,0,0,0.07), 0 4px 4px rgba(0,0,0,0.2);margin-bottom: 1.5rem;">ลงประกาศโฆษณาเชิญประชุมผู้ถือหุ้น กรอบละ <span style="color:#FF0000;">45</span> บาท</h1>
+						<p style="font-weight: 300; font-size: 1.75rem; opacity: .7; color: #4A4A4A; text-shadow: 0 -4px 30px rgba(0, 0, 0, .25);margin-top:15px;"><b>ใช้งานง่าย สะดวก รวดเร็ว ประหยัด ดาวน์โหลดหนังสือพิมพ์ได้ในวันถัดไป</b></p>
+					</div>
+					<div class="subscribe-widget">
+						<!-- <div class="widget-subscribe-form-result"></div> -->
+						<div id="widget-subscribe-form"  class="nobottommargin h_main" data-animate="fadeInUp" style="padding:0px;border-radius: 20px 20px 20px 20px;margin:auto;">
+							<div class="input-group divcenter travel-date-group">
+								<input type="text" value="" class="form-control tleft default" name="date" placeholder="ค้นหาหนังสือพิมพ์จากวันที่" style="border: 0; box-shadow: none; overflow: hidden;margin:auto;border-radius: 20px 20px 20px 20px;">
+								<!-- <input type="email" id="widget-subscribe-form-email" name="widget-subscribe-form-email" class="form-control form-control-lg not-dark required email" placeholder="Enter your Email Address.." style="border: 0; box-shadow: none; overflow: hidden;"> -->
+								<div class="input-group-append">
+									<button class="button t400" type="submit" style="border-radius: 0px 20px 20px 0px;">ค้นหา</button>
+								</div>
 							</div>
 						</div>
-					</form>
-				</div>
-				<!-- <div class="emphasis-title">
+					</div>
+					<!-- <div class="emphasis-title">
 					<p style="font-weight: 300; font-size: 1 rem;margin-top:100px;"><span style="color:#e74c3c">ติดต่อสอบถาม แจ้งปัญหาการใช้งาน</span></p>
 				</div> -->
+				</div>
 			</div>
 		</div>
+	</section>
+</form>
 
-	</div>
-</section>
 
 <!-- Content
 		============================================= -->

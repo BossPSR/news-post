@@ -32,6 +32,7 @@ $route['publish']           = 'front-end/Publish_ctr';
 $route['order-history']     = 'front-end/Order_history_ctr';
 $route['PDF']               = 'front-end/PDF_ctr';
 $route['PDF-F']               = 'front-end/CustomFpdf_ctr';
+$route['PDFHOME']               = 'front-end/CustomFpdf_ctr/home_pdf';
 $route['publish-download-template']       = 'front-end/Publish_ctr/download_template';
 $route['publish-download-pdf']            = 'front-end/Publish_ctr/download_pdf';
 $route['profile']           = 'front-end/Profile_ctr/profile';
