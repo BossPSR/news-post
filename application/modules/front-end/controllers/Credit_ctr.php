@@ -96,7 +96,7 @@ class Credit_ctr extends CI_Controller
             'credit'        => $priceM,
             'user_id'       => $userM,
             'total'         => $total,
-            'created_at'   => date('Y-m-d H:i:s'),
+            'created_at'    => date('Y-m-d H:i:s'),
         );
 
         $success = $this->db->insert('tbl_transfer', $data);
@@ -109,7 +109,7 @@ class Credit_ctr extends CI_Controller
             $this->db->update('tbl_transfer', $update);
 
             $this->session->set_flashdata('responseG', TRUE);
-            redirect('credit');
+            redirect('transfer');
         } else {
             $this->session->set_flashdata('msgG', TRUE);
             redirect('credit');

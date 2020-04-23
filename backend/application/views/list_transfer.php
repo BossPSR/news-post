@@ -85,7 +85,7 @@
                                                                 <?php if ($transfer['file_name'] == "") : ?>
                                                                     -
                                                                 <?php else : ?>
-                                                                    <a href="<?php echo $transfer['file_name'] ?>" target="_blank"><i class="feather icon-file-text" style="font-size: 25px; cursor: pointer;"></i></a>
+                                                                    <a href="../uploads/bank/<?php echo $transfer['file_name'] ?>" target="_blank"><i class="feather icon-file-text" style="font-size: 25px; cursor: pointer;"></i></a>
                                                                 <?php endif; ?>
                                                             </td>
                                                             <td>

@@ -209,7 +209,6 @@
 				});
 			}
 		</script>
-		<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 		<script type='text/javascript'>
 			$(document).ready(function() {
@@ -232,14 +231,14 @@
 								url: 'transfer_money',
 								data: $("#frmMoney").serialize(),
 								success: function(success) {
-									swal("Good job!", "Upload for data successfull", "success", {
+									swal("Good job!", "เพิ่มข้อมูลการโอนเงินเข้าสู่ระบบเรียบร้อยแล้ว", "success", {
 										button: false,
 									});
-									setTimeout("location.reload(true);", 1000);
+									setTimeout("window.location='transfer'", 1000);
 								}
 							});
 						} else {
-							swal("Cancelled", "Your imaginary file is safe :)", "error");
+							swal("Cancelled", "บันทึกข้อมูลการโอนล้มเหลว กรุณาลองอีกครั้ง :)", "error");
 						}
 					});
 				});

@@ -37,6 +37,8 @@
 	<link rel="stylesheet" href="public/assets/front-end/css/colors.php?color=1c85e8" type="text/css" />
 	<script src="public/assets/front-end/js/jquery.js"></script>
 	<script src="public/assets/front-end/sweetalert2.js"></script>
+	<script src="public/assets/front-end/sweet-alerts2.min.js"></script>
+
 
 
 	<!-- Document Title
