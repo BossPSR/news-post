@@ -1,5 +1,24 @@
 		<!-- Content
 		============================================= -->
+		<style>
+			button {
+				display: inline-block;
+				padding: 8px 32px;
+				border: 0;
+				font-size: 1rem;
+				font-weight: bold;
+				text-align: center;
+				text-decoration: none;
+				outline: none;
+				border-radius: 2px;
+				-webkit-user-select: none;
+				-moz-user-select: none;
+				-ms-user-select: none;
+				user-select: none;
+				-webkit-transition: background-color 0.2s;
+				transition: background-color 0.2s;
+			}
+		</style>
 		<section id="content">
 
 			<div class="content-wrap clearfix">
@@ -15,7 +34,7 @@
 									<div class="card-body" id="detail_credit">
 										<h4 style="margin: 0;">ระบุจำนวนเอง</h4>
 										<h4>( 45 บาท ต่อเครดิต )</h4>
-										<input type="number" class="form-control" style="margin: 0 auto 15px; width:50%;" id="credit">
+										<input type="number" name="numberS" class="form-control" style="margin: 0 auto 15px; width:50%;" id="credit">
 										<button type="button" class="btn btn-primary" onClick="before_buy();">ซื้อตอนนี้</button>
 									</div>
 								</div>
@@ -47,17 +66,27 @@
 								<span aria-hidden="true">&times;</span>
 							</button>
 						</div>
-						<form action="saveRecord_checkout" method="POST" class="checkout-form">
+
+						<form action="saveRecord_checkout" method="POST" class="checkout-form" style="margin-bottom: 0px;">
 							<div class="modal-body">
+								<div id="omise_detail"></div>
+								<div class="row">
+									<div class="col-6" id="omise_detail_price"></div>
+						</form>
 
-								<div id="omise_detail">
+						<form action="" name="frmMoney" id="frmMoney" method="POST" class="checkout-form" style="margin-bottom: 0px;display: contents;">
+							<input type="hidden" id="priceM" name="priceM" value="">
+							<input type="hidden" id="userM" name="userM" value="<?php echo $user['id_user']; ?>">
+							<div class="col-6">
+								<button type="button" id="moneyadd" class="btn btn-primary">โอนเงินผ่านบัญชีธนาคาร</button>
+							</div>
+						</form>
 
-								</div>
-								<div id="omise_detail_price">
-								
-								</div>
 
-							<!-- <script type="text/javascript" src="https://cdn.omise.co/omise.js"
+
+					</div>
+
+					<!-- <script type="text/javascript" src="https://cdn.omise.co/omise.js"
 								data-key="pkey_test_5jj79losaq3gdkmmo4x"
 								data-image=""
 								data-frame-label="One Business"
@@ -68,14 +97,13 @@
 							>
 							</script> -->
 
-							</div>
-							<div class="modal-footer">
-								<!-- <button type="submit" class="btn btn-primary">เติมเงิน</button> -->
-								<button type="button" class="btn btn-secondary" data-dismiss="modal">ยกเลิก</button>
-							</div>
-						</form>
-					</div>
 				</div>
+				<div class="modal-footer">
+					<!-- <button type="submit" class="btn btn-primary">เติมเงิน</button> -->
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">ยกเลิก</button>
+				</div>
+			</div>
+			</div>
 			</div>
 		<?php } ?>
 		<script src="https://cdn.omise.co/omise.js"></script>
@@ -91,6 +119,8 @@
 
 			function before_buy() {
 				let credit = $('#credit').val();
+				$('#priceM').val(credit);
+
 				credit_new = credit * 45;
 				if (credit > 0) {
 					let detailCredit = '<div style="width:70%; margin: auto;">';
@@ -138,7 +168,7 @@
 
 					$('#detail_credit').html(detailCredit);
 
-					detail_omise_price = '<script type="text/javascript" src="https://cdn.omise.co/omise.js" data-key="pkey_test_5jj79losaq3gdkmmo4x" data-image=""data-frame-label="One Business"data-button-label="ชำระเงิน"data-submit-label="ชำระเงิน"data-amount="' + credit_new + '00"data-currency="บาท">' + '<' + '/script>';
+					detail_omise_price = '<script type="text/javascript" src="https://cdn.omise.co/omise.js" data-key="pkey_test_5jj79losaq3gdkmmo4x" data-image=""data-frame-label="One Business"data-button-label="ชำระเงินผ่านบัตรเตรดิต"data-submit-label="ชำระเงิน"data-amount="' + credit_new + '00"data-currency="บาท">' + '<' + '/script>';
 					$('#omise_detail_price').html(detail_omise_price);
 				}
 			}
@@ -171,11 +201,47 @@
 							detail_omise += '<input type="hidden" name="result_compony_address" value="' + compony_address + '">';
 							detail_omise += '<input type="hidden" name="result_detail_address" value="' + detail_address + '">';
 							detail_omise += '<input type="hidden" class="form-control" name="id_user" value="<?php echo $user['id_user']; ?>">';
-							detail_omise += '<div id="omise_detail_price"></div>';	
+							detail_omise += '<div id="omise_detail_price"></div>';
 							$('#omise_detail').html(detail_omise);
 						}
 
 					}
 				});
 			}
+		</script>
+		<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+		<script type='text/javascript'>
+			$(document).ready(function() {
+				$('#moneyadd').click(function() {
+
+					swal({
+						icon: "warning",
+						title: "คุณแน่ใจไหม?",
+						text: "ต้องการชำระผ่านโอนใช่ไหม?",
+						closeOnEsc: true,
+						closeOnClickOutside: false,
+						buttons: {
+							cancel: true,
+							confirm: true,
+						},
+					}).then(function(isConfirm) {
+						if (isConfirm == true) {
+							$.ajax({
+								type: 'POST',
+								url: 'transfer_money',
+								data: $("#frmMoney").serialize(),
+								success: function(success) {
+									swal("Good job!", "Upload for data successfull", "success", {
+										button: false,
+									});
+									setTimeout("location.reload(true);", 1000);
+								}
+							});
+						} else {
+							swal("Cancelled", "Your imaginary file is safe :)", "error");
+						}
+					});
+				});
+			});
 		</script>

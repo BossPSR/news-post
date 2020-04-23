@@ -34,15 +34,12 @@ class Credit_ctr extends CI_Controller
             define('OMISE_PUBLIC_KEY', 'pkey_test_5jj79losaq3gdkmmo4x');
             define('OMISE_SECRET_KEY', 'skey_test_5jj79losj9r74qo9qoq');
 
-            $result_count    = $this->input->post('result_count');
-            $result_price  = $this->input->post('result_price');
-            $result_number_address  = $this->input->post('result_number_address');
+            $result_count            = $this->input->post('result_count');
+            $result_price            = $this->input->post('result_price');
+            $result_number_address   = $this->input->post('result_number_address');
             $result_compony_address  = $this->input->post('result_compony_address');
-            $result_detail_address  = $this->input->post('result_detail_address');
+            $result_detail_address   = $this->input->post('result_detail_address');
             $id_user = $this->input->post('id_user');
-
-
-
 
             $charge = OmiseCharge::create(array(
                 'amount' => $result_price * 100,
@@ -85,4 +82,39 @@ class Credit_ctr extends CI_Controller
             redirect('/');
         }
     }
+
+    public function transfer_money()
+    {
+        $priceM     = $this->input->post('priceM');
+        $userM      = $this->input->post('userM');
+        $total      = $this->input->post('priceM') * 45;
+        $dateYa     = date('Y-m-d');
+        $dateYa_ex  = explode('-', $dateYa);
+
+
+        $data = array(
+            'credit'        => $priceM,
+            'user_id'       => $userM,
+            'total'         => $total,
+            'created_at'   => date('Y-m-d H:i:s'),
+        );
+
+        $success = $this->db->insert('tbl_transfer', $data);
+        $first   = $this->db->insert_id();
+        if ($success > 0) {
+            $update = array(
+                'order_id' => 'TR' . $dateYa_ex[0] . '' . $dateYa_ex[1] . $first
+            );
+            $this->db->where('transfer_id', $first);
+            $this->db->update('tbl_transfer', $update);
+
+            $this->session->set_flashdata('responseG', TRUE);
+            redirect('credit');
+        } else {
+            $this->session->set_flashdata('msgG', TRUE);
+            redirect('credit');
+        }
+
+    }
+
 }

@@ -284,6 +284,7 @@
 									</a>
 									<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 										<a class="dropdown-item" href="profile">ข้อมูลส่วนตัว</a>
+										<a class="dropdown-item" href="transfer">ประวัติการซื้อเครดิต</a>
 										<a class="dropdown-item" href="publish">โฆษณาของฉัน</a>
 										<a class="dropdown-item" href="order-history">ประวัติรายการสั่งซื้อ</a>
 										<div class="dropdown-divider"></div>

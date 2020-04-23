@@ -62,7 +62,7 @@
 												<b>เลือกหัวข้อ / เรื่อง</b>
 												<select class="form-control topicK" name="topic" style="margin: 10px 0px 10px 0px;" id="op_title">
 													<option value="" selected disabled>** สามัญ **</option>
-													<option value="เชิญประชุมปิดงบประมาณ">เชิญประชุมปิดงบประมาณ</option>
+													<option value="เชิญประชุมปิดงบฯประจำปี">เชิญประชุมปิดงบฯ ประจำปี</option>
 													<option value="กำหนดรายละเอียดการประชุมเอง">กำหนดรายละเอียดการประชุมเอง</option>
 													<option selected disabled>** วิสามัญ **</option>
 													<option value="เชิญประชุมย้ายที่อยู่">เชิญประชุมย้ายที่อยู่</option>
@@ -504,7 +504,7 @@
 				$('#agendaA').val("");
 
 				let value_agenda = "";
-				if (val_opTitle == "เชิญประชุมปิดงบประมาณ") {
+				if (val_opTitle == "เชิญประชุมปิดงบฯประจำปี") {
 					value_agenda = "1. รับรองรายงานการประชุมครั้งที่ผ่านมา";
 					value_agenda += "\n";
 					value_agenda += "2. รายงานผลการดำเนินงานของบริษัทและรับรองงบการเงินประจำปี";
