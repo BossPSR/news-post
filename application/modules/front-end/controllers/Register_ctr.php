@@ -89,27 +89,27 @@ class Register_ctr extends CI_Controller
 		$message .= '<h2 style="text-align:center; margin:15px 0; color:#000000;">ตั้งค่ารหัสผ่านใหม่เพื่อใช้บริการ Report</h2>';
 		$message .= '<h4 style="text-align:center; color:#fe58a4; margin-bottom:15px;">กดลิงค์ด้านล่างเพื่อกดไปตั้งค่ารหัสผ่านของคุณคะ</h4>';
 		$message .= '<div style="text-align:center; width: 50%; font-size:18px; margin:0 auto 15px"></div>';
-		$message .= '<div style="text-align:center; font-size:18px; margin-bottom:15px; color:#000000;"><a href="https://ip-soft.co.th/ipsoft/forget_reset?id=' . $emailDetail['id'] . '&forgot_password=' . $token . '">ตั้งค่ารหัสผ่านใหม่</a></div>';
+		$message .= '<div style="text-align:center; font-size:18px; margin-bottom:15px; color:#000000;"><a href="https://ip-soft.co.th/ipsoft/forget_reset?id=' . $emailDetail['id_user'] . '&forgot_password=' . $token . '">ตั้งค่ารหัสผ่านใหม่</a></div>';
 		$message .= '</body>';
 
 		// $message = 'https://deejungdelivery.com/reset_password?id='.$emailDetail['id'].'&forgot_password='.$token;
 
 		//config email settings
 		$config['protocol'] = 'smtp';
-		$config['smtp_host'] = 'smtp.gmail.com';
-		$config['smtp_port'] = '2002';
-		$config['smtp_user'] = 'infinityp.soft@gmail.com';
-		$config['smtp_pass'] = 'P@Ssw0rd';  //sender's password
+		$config['smtp_host'] = 'cpanel09wh.bkk1.cloud.z.com';
+		$config['smtp_port'] = '465';
+		$config['smtp_user'] = 'nlohapitak@1siri.com';
+		$config['smtp_pass'] = 'Nuraks_11';  //sender's password
 		$config['mailtype'] = 'html';
 		$config['charset'] = 'utf-8';
 		$config['wordwrap'] = 'TRUE';
-		$config['smtp_crypto'] = 'tls';
+		$config['smtp_crypto'] = 'ssl';
 		$config['newline'] = "\r\n";
 
 		//$file_path = 'uploads/' . $file_name;
 		$this->load->library('email', $config);
 		$this->email->set_newline("\r\n");
-		$this->email->from('infinityp.soft@gmail.com');
+		$this->email->from('nlohapitak@1siri.com');
 		$this->email->to($userEmail);
 		$this->email->subject($subject);
 		$this->email->message($message);
